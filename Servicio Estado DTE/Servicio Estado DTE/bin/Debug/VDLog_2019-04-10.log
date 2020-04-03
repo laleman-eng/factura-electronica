@@ -1,0 +1,507 @@
+10-04-2019 00:00:01 Fin
+10-04-2019 00:00:31 Inicio
+10-04-2019 00:00:32 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:01:04 Fin
+10-04-2019 00:01:34 Inicio
+10-04-2019 00:01:34 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:01:36 Fin
+10-04-2019 00:02:06 Inicio
+10-04-2019 00:02:06 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:02:07 Fin
+10-04-2019 00:02:37 Inicio
+10-04-2019 00:02:38 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:02:39 Fin
+10-04-2019 00:03:09 Inicio
+10-04-2019 00:03:10 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:03:11 Fin
+10-04-2019 00:03:41 Inicio
+10-04-2019 00:03:46 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:03:57 Fin
+10-04-2019 00:04:27 Inicio
+10-04-2019 00:04:27 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:04:28 Fin
+10-04-2019 00:04:58 Inicio
+10-04-2019 00:05:00 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:05:01 Fin
+10-04-2019 00:05:31 Inicio
+10-04-2019 00:05:31 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:05:40 Fin
+10-04-2019 00:06:10 Inicio
+10-04-2019 00:06:11 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:06:12 Fin
+10-04-2019 00:06:42 Inicio
+10-04-2019 00:06:43 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:06:44 Fin
+10-04-2019 00:07:14 Inicio
+10-04-2019 00:07:16 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:07:19 Fin
+10-04-2019 00:07:49 Inicio
+10-04-2019 00:07:51 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:07:58 Fin
+10-04-2019 00:08:28 Inicio
+10-04-2019 00:08:30 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:08:33 Fin
+10-04-2019 00:09:03 Inicio
+10-04-2019 00:09:04 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:09:09 Fin
+10-04-2019 00:09:39 Inicio
+10-04-2019 00:09:40 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:09:45 Fin
+10-04-2019 00:10:15 Inicio
+10-04-2019 00:10:19 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 00:10:23 Fin
+10-04-2019 17:07:19 Inicio
+10-04-2019 17:07:54 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:08:17 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:08:17 Fin
+10-04-2019 17:08:47 Inicio
+10-04-2019 17:08:48 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:08:53 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:08:53 Fin
+10-04-2019 17:09:23 Inicio
+10-04-2019 17:09:24 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:09:25 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:09:25 Fin
+10-04-2019 17:09:55 Inicio
+10-04-2019 17:09:56 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:10:20 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:10:20 Fin
+10-04-2019 17:10:50 Inicio
+10-04-2019 17:10:51 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:10:57 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:10:57 Fin
+10-04-2019 17:11:27 Inicio
+10-04-2019 17:11:31 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:11:43 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:11:43 Fin
+10-04-2019 17:12:13 Inicio
+10-04-2019 17:12:15 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:12:30 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:12:30 Fin
+10-04-2019 17:13:00 Inicio
+10-04-2019 17:13:03 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:13:11 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:13:11 Fin
+10-04-2019 17:13:41 Inicio
+10-04-2019 17:13:44 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:13:56 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:13:56 Fin
+10-04-2019 17:14:26 Inicio
+10-04-2019 17:14:31 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:14:45 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:14:45 Fin
+10-04-2019 17:15:15 Inicio
+10-04-2019 17:15:17 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:15:54 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:15:54 Fin
+10-04-2019 17:16:25 Inicio
+10-04-2019 17:16:27 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:17:00 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:17:00 Fin
+10-04-2019 17:17:30 Inicio
+10-04-2019 17:17:32 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:17:48 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:17:48 Fin
+10-04-2019 17:18:18 Inicio
+10-04-2019 17:18:19 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:18:23 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:18:23 Fin
+10-04-2019 17:18:53 Inicio
+10-04-2019 17:18:56 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:19:03 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:19:03 Fin
+10-04-2019 17:19:33 Inicio
+10-04-2019 17:19:35 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:19:42 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:19:43 Fin
+10-04-2019 17:20:13 Inicio
+10-04-2019 17:20:15 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:20:20 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:20:20 Fin
+10-04-2019 17:20:50 Inicio
+10-04-2019 17:20:52 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:21:28 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:21:28 Fin
+10-04-2019 17:21:58 Inicio
+10-04-2019 17:22:00 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:22:08 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:22:08 Fin
+10-04-2019 17:22:38 Inicio
+10-04-2019 17:22:42 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:22:51 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:22:51 Fin
+10-04-2019 17:23:21 Inicio
+10-04-2019 17:23:25 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:23:38 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:23:38 Fin
+10-04-2019 17:24:08 Inicio
+10-04-2019 17:24:11 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:24:34 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:24:34 Fin
+10-04-2019 17:25:04 Inicio
+10-04-2019 17:25:07 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:25:13 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:25:13 Fin
+10-04-2019 17:25:43 Inicio
+10-04-2019 17:25:46 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:25:56 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:25:56 Fin
+10-04-2019 17:26:26 Inicio
+10-04-2019 17:26:31 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:27:05 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:27:05 Fin
+10-04-2019 17:27:35 Inicio
+10-04-2019 17:27:37 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:27:46 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:27:46 Fin
+10-04-2019 17:28:17 Inicio
+10-04-2019 17:28:18 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:28:28 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:28:28 Fin
+10-04-2019 17:28:58 Inicio
+10-04-2019 17:28:59 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:29:22 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:29:22 Fin
+10-04-2019 17:29:52 Inicio
+10-04-2019 17:29:55 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:30:03 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:30:03 Fin
+10-04-2019 17:30:33 Inicio
+10-04-2019 17:30:41 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:30:52 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:30:52 Fin
+10-04-2019 17:31:22 Inicio
+10-04-2019 17:31:23 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:31:34 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:31:34 Fin
+10-04-2019 17:32:04 Inicio
+10-04-2019 17:32:05 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:32:10 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:32:10 Fin
+10-04-2019 17:32:40 Inicio
+10-04-2019 17:32:41 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:32:47 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:32:47 Fin
+10-04-2019 17:33:17 Inicio
+10-04-2019 17:33:17 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:33:18 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:33:18 Fin
+10-04-2019 17:33:48 Inicio
+10-04-2019 17:33:49 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:33:53 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:33:53 Fin
+10-04-2019 17:34:23 Inicio
+10-04-2019 17:34:24 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:34:25 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:34:25 Fin
+10-04-2019 17:34:55 Inicio
+10-04-2019 17:34:56 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:34:59 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:34:59 Fin
+10-04-2019 17:35:29 Inicio
+10-04-2019 17:35:30 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:35:30 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:35:30 Fin
+10-04-2019 17:36:00 Inicio
+10-04-2019 17:36:02 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:36:04 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:36:04 Fin
+10-04-2019 17:36:34 Inicio
+10-04-2019 17:36:35 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:36:40 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:36:40 Fin
+10-04-2019 17:37:10 Inicio
+10-04-2019 17:37:11 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:37:12 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:37:12 Fin
+10-04-2019 17:37:42 Inicio
+10-04-2019 17:37:43 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:37:54 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:37:54 Fin
+10-04-2019 17:38:24 Inicio
+10-04-2019 17:38:25 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:38:26 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:38:26 Fin
+10-04-2019 17:38:56 Inicio
+10-04-2019 17:38:58 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:39:01 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:39:01 Fin
+10-04-2019 17:39:31 Inicio
+10-04-2019 17:39:31 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:39:33 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:39:33 Fin
+10-04-2019 17:40:03 Inicio
+10-04-2019 17:40:08 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:40:22 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:40:22 Fin
+10-04-2019 17:40:52 Inicio
+10-04-2019 17:40:55 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:40:58 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:40:58 Fin
+10-04-2019 17:41:28 Inicio
+10-04-2019 17:41:29 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:41:31 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:41:31 Fin
+10-04-2019 17:42:01 Inicio
+10-04-2019 17:42:02 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:42:09 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:42:09 Fin
+10-04-2019 17:42:39 Inicio
+10-04-2019 17:42:40 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:42:40 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:42:40 Fin
+10-04-2019 17:43:10 Inicio
+10-04-2019 17:43:12 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:43:13 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:43:13 Fin
+10-04-2019 17:43:43 Inicio
+10-04-2019 17:43:44 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:44:02 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:44:02 Fin
+10-04-2019 17:44:32 Inicio
+10-04-2019 17:44:33 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:44:35 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:44:35 Fin
+10-04-2019 17:45:05 Inicio
+10-04-2019 17:45:06 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:45:08 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:45:08 Fin
+10-04-2019 17:45:38 Inicio
+10-04-2019 17:45:39 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:45:41 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:45:41 Fin
+10-04-2019 17:46:11 Inicio
+10-04-2019 17:46:11 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:46:12 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:46:12 Fin
+10-04-2019 17:46:42 Inicio
+10-04-2019 17:46:43 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:46:45 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:46:45 Fin
+10-04-2019 17:47:15 Inicio
+10-04-2019 17:47:15 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:47:19 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:47:20 Fin
+10-04-2019 17:47:50 Inicio
+10-04-2019 17:47:50 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:47:55 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:47:55 Fin
+10-04-2019 17:48:25 Inicio
+10-04-2019 17:48:26 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:48:29 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:48:29 Fin
+10-04-2019 17:48:59 Inicio
+10-04-2019 17:49:00 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:49:08 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:49:08 Fin
+10-04-2019 17:49:38 Inicio
+10-04-2019 17:49:38 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:49:43 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:49:43 Fin
+10-04-2019 17:50:13 Inicio
+10-04-2019 17:50:13 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:50:14 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:50:14 Fin
+10-04-2019 17:50:44 Inicio
+10-04-2019 17:50:45 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:50:45 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:50:45 Fin
+10-04-2019 17:51:15 Inicio
+10-04-2019 17:51:16 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:51:17 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:51:17 Fin
+10-04-2019 17:51:47 Inicio
+10-04-2019 17:51:48 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:51:48 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:51:48 Fin
+10-04-2019 17:52:18 Inicio
+10-04-2019 17:52:19 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:52:28 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:52:28 Fin
+10-04-2019 17:52:58 Inicio
+10-04-2019 17:52:59 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:53:01 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:53:01 Fin
+10-04-2019 17:53:31 Inicio
+10-04-2019 17:53:32 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:53:34 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:53:34 Fin
+10-04-2019 17:54:04 Inicio
+10-04-2019 17:54:05 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:54:16 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:54:16 Fin
+10-04-2019 17:54:46 Inicio
+10-04-2019 17:54:46 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:55:20 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:55:20 Fin
+10-04-2019 17:55:50 Inicio
+10-04-2019 17:55:51 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:55:52 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:55:52 Fin
+10-04-2019 17:56:22 Inicio
+10-04-2019 17:56:27 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:56:49 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:56:49 Fin
+10-04-2019 17:57:19 Inicio
+10-04-2019 17:57:32 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:57:46 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:57:46 Fin
+10-04-2019 17:58:16 Inicio
+10-04-2019 17:59:13 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 17:59:29 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 17:59:30 Fin
+10-04-2019 18:00:00 Inicio
+10-04-2019 18:00:01 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:00:04 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:00:05 Fin
+10-04-2019 18:00:35 Inicio
+10-04-2019 18:00:37 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:01:05 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:01:05 Fin
+10-04-2019 18:01:35 Inicio
+10-04-2019 18:01:36 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:01:42 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:01:42 Fin
+10-04-2019 18:02:12 Inicio
+10-04-2019 18:02:13 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:02:14 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:02:14 Fin
+10-04-2019 18:02:44 Inicio
+10-04-2019 18:02:46 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:02:48 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:02:48 Fin
+10-04-2019 18:03:18 Inicio
+10-04-2019 18:03:18 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:03:28 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:03:28 Fin
+10-04-2019 18:03:58 Inicio
+10-04-2019 18:04:00 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:04:03 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:04:03 Fin
+10-04-2019 18:04:33 Inicio
+10-04-2019 18:04:34 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:04:40 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:04:40 Fin
+10-04-2019 18:05:10 Inicio
+10-04-2019 18:05:11 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:05:16 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:05:16 Fin
+10-04-2019 18:05:47 Inicio
+10-04-2019 18:05:55 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:06:36 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:06:36 Fin
+10-04-2019 18:07:06 Inicio
+10-04-2019 18:07:08 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:07:10 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:07:10 Fin
+10-04-2019 18:07:40 Inicio
+10-04-2019 18:07:40 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:07:42 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:07:42 Fin
+10-04-2019 18:08:12 Inicio
+10-04-2019 18:08:13 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:08:15 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:08:15 Fin
+10-04-2019 18:08:45 Inicio
+10-04-2019 18:08:45 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:08:47 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:08:47 Fin
+10-04-2019 18:09:17 Inicio
+10-04-2019 18:09:18 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:09:19 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:09:19 Fin
+10-04-2019 18:09:49 Inicio
+10-04-2019 18:09:50 Conectado a SAP -> Base Datos Prueba_LL2
+10-04-2019 18:09:52 **Error, base Prueba LL ConsultaEstado27: version 1.0 - Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
+10-04-2019 18:09:52 Fin

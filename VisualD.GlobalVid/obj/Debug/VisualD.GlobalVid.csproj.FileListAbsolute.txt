@@ -1,0 +1,40 @@
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.GlobalVid.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.GlobalVid.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.SBOFunctions.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.untLog.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.Core.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.MultiFunctions.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.Matrix_Helper.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.uEncrypt.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.SBOFunctions.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.untLog.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.Core.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.MultiFunctions.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.Matrix_Helper.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\bin\Debug\VisualD.uEncrypt.pdb
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.csprojResolveAssemblyReference.cache
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.dll
+C:\Visualk\Lourdes Romana\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.GlobalVid.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.GlobalVid.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\Interop.SAPbobsCOM.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\Interop.SAPbouiCOM.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.MultiFunctions.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOFunctions.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOObjectMg1.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.untLog.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.Core.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.Matrix_Helper.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOGeneralService.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.uEncrypt.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.MultiFunctions.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOFunctions.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOObjectMg1.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.untLog.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.Core.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.Matrix_Helper.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.SBOGeneralService.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\bin\Debug\VisualD.uEncrypt.pdb
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.csprojResolveAssemblyReference.cache
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.dll
+C:\VisualK\Proyectos\Factura Electronica VK 2\VisualD.GlobalVid\obj\Debug\VisualD.GlobalVid.pdb

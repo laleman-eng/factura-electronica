@@ -1,0 +1,564 @@
+09-07-2019 13:55:59 Inicio
+09-07-2019 13:56:09 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 13:59:07 Inicio
+09-07-2019 13:59:16 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:00:00 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4 RUT: 76038672-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:00 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:00 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 11679162 RUT: 81201000-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:00 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:01 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 10826615 RUT: 96556940-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:01 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:01 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 19 RUT: 76951717-0 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:01 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:02 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 751 RUT: 76590179-0 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:02 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:02 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 11647267 RUT: 81201000-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:02 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:03 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 175 RUT: 76098691-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:03 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:03 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 176 RUT: 76098691-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:03 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:03 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 2725 RUT: 9702257-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:03 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:04 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 20991666 RUT: 96800570-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:04 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:05 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 183 RUT: 96851330-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:05 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:05 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 2324137 RUT: 96571220-8 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:05 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:05 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 2021 RUT: 76067085-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:05 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:06 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 1406 RUT: 76121702-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:06 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:06 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 1407 RUT: 76121702-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:06 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:06 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 2593 RUT: 76644580-2 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:06 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:07 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 18 RUT: 76899037-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:07 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:07 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 8465682 RUT: 96670840-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:07 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:08 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 8640079 RUT: 96670840-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:08 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:08 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 318 RUT: 76345354-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:08 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:08 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 11423911 RUT: 96799250-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:08 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:09 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 15646 RUT: 76416414-8 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:09 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:09 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 62 RUT: 76588967-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:09 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:09 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 1150 RUT: 76443797-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:09 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:10 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 74355 RUT: 76237019-0 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:10 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:10 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 43 RUT: 76336001-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:10 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:10 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 764635 RUT: 88417000-1 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:10 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:11 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 20 RUT: 76951717-0 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:11 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:11 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4137851 RUT: 88381200-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:11 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:12 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4137852 RUT: 88381200-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:12 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:12 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 104283 RUT: 76246617-1 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:12 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:12 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 5874 RUT: 76232892-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:12 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:13 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 25371057 RUT: 89807200-2 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:13 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:13 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 520 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:13 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:13 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 521 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:13 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:14 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 48 RUT: 76410305-K -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:14 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:14 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 133 RUT: 96505390-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:14 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:14 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 63588927 RUT: 76124890-1 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:15 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:15 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 17796 RUT: 76070435-0 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:15 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:15 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 177 RUT: 76098691-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:15 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:15 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 299 RUT: 76962677-8 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:15 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:16 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 867384 RUT: 77574330-1 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:16 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:16 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 867867 RUT: 77574330-1 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:16 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:17 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 323523 RUT: 78936330-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:17 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:17 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 323909 RUT: 78936330-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:17 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:17 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 324155 RUT: 78936330-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:17 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:17 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 326601 RUT: 78936330-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:17 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:18 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 2256387 RUT: 85896100-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:18 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:18 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 16622190 RUT: 92580000-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:19 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:19 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 16622191 RUT: 92580000-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:19 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:19 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 16909494 RUT: 97004000-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:19 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:20 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 16931251 RUT: 97004000-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:20 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:20 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26818853 RUT: 97004000-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:20 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:20 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26818854 RUT: 97004000-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:20 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:21 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 522 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:21 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:21 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 523 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:21 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:21 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 524 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:21 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:22 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 525 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:22 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:22 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 7897381 RUT: 96697410-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:22 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:22 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 7897806 RUT: 96697410-9 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:22 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:22 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 526 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:22 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:23 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 527 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:23 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:23 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 528 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:23 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:23 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 529 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:23 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:24 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 9914 RUT: 77516780-7 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:24 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:24 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21441 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:24 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:24 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21442 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:24 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:25 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21443 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:25 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:25 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21444 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:25 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:25 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21445 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:25 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:26 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21446 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:26 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:26 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21447 RUT: 76255466-6 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:26 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:26 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 199 RUT: 76390764-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:26 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:27 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 200 RUT: 76390764-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:27 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:27 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 201 RUT: 76390764-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:27 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:27 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 202 RUT: 76390764-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:27 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:28 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 6 RUT: 76038672-3 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:28 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:28 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 530 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:28 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:28 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 531 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:28 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:29 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 532 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:29 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:29 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 533 RUT: 99594270-4 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 14:00:29 **Error ConsultaEstado36, base Visual Knowledge Chile S.A.: version 1.0 - 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] Syntax error or access violation;257 sql syntax error: incorrect syntax near ",": line 1 col 149 (at pos 149)
+ ** Trace:    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at Servicio_Estado_DTE.Service1.ConsultarEstado36(String UserWS, String PassWS, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1281
+09-07-2019 14:00:29 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 5651933 RUT: 99017000-2 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:29 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26566330 RUT: 97004000-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:29 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26566331 RUT: 97004000-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:30 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 3438250 RUT: 89862200-2 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:30 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 3438455 RUT: 89862200-2 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:30 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 3286564 RUT: 78885550-8 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:32 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 172 RUT: 96851330-3 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:35 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 173 RUT: 96851330-3 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:35 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 84 RUT: 96673120-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:37 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 494 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:37 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 495 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:37 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 496 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:38 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 497 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:38 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 19351 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:38 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 19352 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:38 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 19353 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:39 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 176 RUT: 96851330-3 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:39 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 419 RUT: 78880460-1 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 10826615 RUT: 96556940-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 751 RUT: 76590179-0 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 175 RUT: 76098691-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 176 RUT: 76098691-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 2324137 RUT: 96571220-8 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 18 RUT: 76899037-9 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 8465682 RUT: 96670840-9 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 11423911 RUT: 96799250-K EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 15646 RUT: 76416414-8 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 62 RUT: 76588967-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:40 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 1150 RUT: 76443797-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 43 RUT: 76336001-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4137851 RUT: 88381200-K EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4137852 RUT: 88381200-K EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 5874 RUT: 76232892-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 25371057 RUT: 89807200-2 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 520 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 521 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 48 RUT: 76410305-K EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 17796 RUT: 76070435-0 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 177 RUT: 76098691-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 299 RUT: 76962677-8 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:41 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 867384 RUT: 77574330-1 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 323523 RUT: 78936330-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 323909 RUT: 78936330-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 326601 RUT: 78936330-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 16909494 RUT: 97004000-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26818853 RUT: 97004000-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 26818854 RUT: 97004000-5 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 522 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 523 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 524 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 525 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 7897381 RUT: 96697410-9 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:42 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 7897806 RUT: 96697410-9 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 526 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 527 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 528 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 529 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 9914 RUT: 77516780-7 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21441 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21442 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21443 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21444 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21445 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21446 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:43 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 21447 RUT: 76255466-6 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:44 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 530 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:00:44 Se actualizo tabla VID_FEDTECPRA, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 531 RUT: 99594270-4 EstadoSII: Aceptado EstadoLey: Acepta por Omision
+09-07-2019 14:01:01 Fin
+09-07-2019 14:01:04 Inicio
+09-07-2019 14:01:05 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:01:53 Fin
+09-07-2019 14:01:56 Inicio
+09-07-2019 14:01:57 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:23:08 Inicio
+09-07-2019 14:23:14 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:24:02 Fin
+09-07-2019 14:24:05 Inicio
+09-07-2019 14:24:06 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:24:49 Fin
+09-07-2019 14:24:52 Inicio
+09-07-2019 14:24:53 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:25:33 Fin
+09-07-2019 14:25:36 Inicio
+09-07-2019 14:25:37 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:26:19 Fin
+09-07-2019 14:26:22 Inicio
+09-07-2019 14:26:23 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:27:07 Fin
+09-07-2019 14:27:10 Inicio
+09-07-2019 14:27:11 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:27:51 Fin
+09-07-2019 14:27:54 Inicio
+09-07-2019 14:27:55 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 14:28:37 Inicio
+09-07-2019 14:28:43 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:46:41 Inicio
+09-07-2019 18:46:50 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:47:19 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 33 Folio: 4541363 RUT: 61808000-5 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 18:47:19 Error DescomponerXML, base Visual Knowledge Chile S.A. TipoDoc: 34 Folio: 3486630 RUT: 89862200-2 -> This entry already exists in the following tables (ODBC -2035), TRACE    at SAPbobsCOM.IGeneralService.Add(GeneralData pIGeneralData)
+   at Servicio_Estado_DTE.Service1.DescomponerXML(Int32 DocEntry, String sXML, String TipoDoc, String Folio, String RUTEmisor, String CompnyName) in c:\VisualK\Proyectos\Factura Electronica VK 2\Servicio Estado DTE\Servicio Estado DTE\Service1.cs:line 1790
+09-07-2019 18:47:41 Fin
+09-07-2019 18:47:44 Inicio
+09-07-2019 18:47:45 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:48:27 Fin
+09-07-2019 18:48:30 Inicio
+09-07-2019 18:48:31 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:49:17 Fin
+09-07-2019 18:49:20 Inicio
+09-07-2019 18:49:22 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:50:07 Fin
+09-07-2019 18:50:10 Inicio
+09-07-2019 18:50:11 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:50:54 Fin
+09-07-2019 18:50:57 Inicio
+09-07-2019 18:50:59 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:51:48 Fin
+09-07-2019 18:51:51 Inicio
+09-07-2019 18:51:52 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:52:34 Fin
+09-07-2019 18:52:37 Inicio
+09-07-2019 18:52:39 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:53:24 Fin
+09-07-2019 18:53:27 Inicio
+09-07-2019 18:53:29 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:54:14 Fin
+09-07-2019 18:54:17 Inicio
+09-07-2019 18:54:18 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:55:00 Fin
+09-07-2019 18:55:03 Inicio
+09-07-2019 18:55:05 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:55:54 Fin
+09-07-2019 18:55:57 Inicio
+09-07-2019 18:55:58 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:56:45 Fin
+09-07-2019 18:56:48 Inicio
+09-07-2019 18:56:49 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:57:32 Fin
+09-07-2019 18:57:35 Inicio
+09-07-2019 18:57:36 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:58:19 Fin
+09-07-2019 18:58:22 Inicio
+09-07-2019 18:58:23 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:59:08 Fin
+09-07-2019 18:59:11 Inicio
+09-07-2019 18:59:12 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 18:59:56 Fin
+09-07-2019 18:59:59 Inicio
+09-07-2019 19:00:00 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 19:00:41 Fin
+09-07-2019 19:00:44 Inicio
+09-07-2019 19:00:45 Conectado a SAP -> Base Datos VISUALK_CL
+09-07-2019 19:01:27 Fin
+09-07-2019 19:01:30 Inicio
+09-07-2019 19:01:31 Conectado a SAP -> Base Datos VISUALK_CL
