@@ -40728,3 +40728,47 @@ Connection - Could not find SBO that match the connection string
 11-03-2020 05:31:53 [TMainClassExt] SHA1 EDSHA1.xls[l3WiVuQQFESO8H5GNN0JHJi2Fus=]
 11-03-2020 05:31:53 [TMainClassExt] SHA1 EDM.xls[HBL4vyseJwAQYUlIPmE5V1R+3Mc=]
 11-03-2020 05:31:53 [TMainClassExt] SHA1 EDRPKEY.xls[AZf335/9HD3a7QK20m+oUcM9h1E=]
+02-04-2020 10:03:51 [TMainClassExt] 
+02-04-2020 10:03:51 [TMainClassExt] Iniciando...
+02-04-2020 10:03:51 [TMainClassExt] 
+02-04-2020 10:03:51 [TMainClassExt] InitApp: aplicacion...
+02-04-2020 10:03:51 [TMainClassExt] ConectarApplication
+02-04-2020 10:03:51 [TMainClassExt] ConnectString: 0030002C0030002C00530041005000420044005F00440061007400650076002C0050004C006F006D0056004900490056
+02-04-2020 10:04:04 [TMainClassExt] InitApp: Estructura de datos - SHA1
+02-04-2020 10:04:04 [TMainClassExt] SHA1 EDSHA1.xls[l3WiVuQQFESO8H5GNN0JHJi2Fus=]
+02-04-2020 10:04:05 [TMainClassExt] CurrentDomain_UnhandledException 1). [SAP AG][LIBODBCHDB32 DLL][HDBODBC32] General error;260 invalid column name: CODE: line 1 col 43 (at pos 42)
+ Trace    at SAPbobsCOM.IRecordset.DoQuery(String QueryStr)
+   at VisualD.SBOFunctions.CSBOFunctions.ValidEstructSHA1(String oFile) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOFunctions\..\SBOLib-Source\VisualD.SBOFunctions.pas:line 3384
+   at VisualD.Main.TMainClass.initApp() in C:\VisualK\Proyectos\PrismLibDLL\VisualD.Main\..\SBOLib-Source\VisualD.Main.pas:line 580
+   at Factura_Electronica_VK.TMainClassExt.initApp() in C:\VisualK\Factura Electronica\Form1.cs:line 334
+   at VisualD.Main.TMainClass.Init() in C:\VisualK\Proyectos\PrismLibDLL\VisualD.Main\..\SBOLib-Source\VisualD.Main.pas:line 93
+   at Factura_Electronica_VK.Form1..ctor() in C:\VisualK\Factura Electronica\Form1.cs:line 54
+   at Factura_Electronica_VK.Program.Main() in C:\VisualK\Factura Electronica\Program.cs:line 20
+   at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+   at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ThreadHelper.ThreadStart()
+02-04-2020 10:05:14 [TMainClassExt] 
+02-04-2020 10:05:14 [TMainClassExt] Iniciando...
+02-04-2020 10:05:14 [TMainClassExt] 
+02-04-2020 10:05:14 [TMainClassExt] InitApp: aplicacion...
+02-04-2020 10:05:14 [TMainClassExt] ConectarApplication
+02-04-2020 10:05:14 [TMainClassExt] ConnectString: 0030002C0030002C00530041005000420044005F00440061007400650076002C0050004C006F006D0056004900490056
+02-04-2020 10:05:20 [TMainClassExt] InitApp: Estructura de datos - SHA1
+02-04-2020 10:05:20 [TMainClassExt] SHA1 EDSHA1.xls[l3WiVuQQFESO8H5GNN0JHJi2Fus=]
+02-04-2020 10:05:20 [TMainClassExt] SHA1 EDM.xls[HBL4vyseJwAQYUlIPmE5V1R+3Mc=]
+02-04-2020 10:05:20 [TMainClassExt] SHA1 EDRPKEY.xls[AZf335/9HD3a7QK20m+oUcM9h1E=]
+02-04-2020 10:11:15 [TMainClassExt] 
+02-04-2020 10:11:15 [TMainClassExt] Iniciando...
+02-04-2020 10:11:15 [TMainClassExt] 
+02-04-2020 10:11:15 [TMainClassExt] InitApp: aplicacion...
+02-04-2020 10:11:15 [TMainClassExt] ConectarApplication
+02-04-2020 10:11:15 [TMainClassExt] ConnectString: 0030002C0030002C00530041005000420044005F00440061007400650076002C0050004C006F006D0056004900490056
+02-04-2020 10:11:20 [TMainClassExt] InitApp: Estructura de datos - SHA1
+02-04-2020 10:11:21 [TMainClassExt] SHA1 EDSHA1.xls[l3WiVuQQFESO8H5GNN0JHJi2Fus=]
+02-04-2020 10:11:21 [TMainClassExt] SHA1 EDM.xls[HBL4vyseJwAQYUlIPmE5V1R+3Mc=]
+02-04-2020 10:11:21 [TMainClassExt] SHA1 EDRPKEY.xls[AZf335/9HD3a7QK20m+oUcM9h1E=]

@@ -72,7 +72,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                 //FSBOf.LoadForm(xmlPath, 'VID_Entrega.srf', Uid);
                 oForm = FSBOApp.Forms.Item(uid);
                 Flag = false;
-                oForm.Freeze(true);
+                
 
                 if (bFolderAdd)
                 {
@@ -101,6 +101,7 @@ namespace Factura_Electronica_VK.DeliveryNote
 
                     //}
 
+                    oForm.Freeze(true);
                     oForm.DataSources.UserDataSources.Add("VID_FEDCTO", SAPbouiCOM.BoDataType.dt_SHORT_TEXT, 1);
                     oItem = oForm.Items.Add("VID_FEDCTO", SAPbouiCOM.BoFormItemTypes.it_FOLDER);
 
@@ -388,6 +389,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                 Lista.Add("VID_Estado  , f,  f,  f,  f, n, 1");
                 //Lista.Add('CardCode  , f,  t,  t,  f, r, 1');
                 FSBOf.SetAutoManaged(ref oForm, Lista);
+                oForm.Freeze(false);
 
             }
             catch (Exception e)
