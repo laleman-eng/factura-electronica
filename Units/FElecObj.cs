@@ -509,6 +509,7 @@ namespace Factura_Electronica_VK.FElecObj
                                 TDeliveryNote.Transferencia = false;
                                 TDeliveryNote.bFolderAdd = true;
                                 TDeliveryNote.Devolucion = false;
+                                TDeliveryNote.SolicitudTraslado = false;
                                 break;
                             }
                         case "182": //Devolucion mercancia Compra
@@ -518,6 +519,7 @@ namespace Factura_Electronica_VK.FElecObj
                                 TDeliveryNote.Transferencia = false;
                                 TDeliveryNote.bFolderAdd = true;
                                 TDeliveryNote.Devolucion = true;
+                                TDeliveryNote.SolicitudTraslado = false;
                                 break;
                             }
                         case "940": //Transferencia Stock
@@ -532,20 +534,16 @@ namespace Factura_Electronica_VK.FElecObj
                             }
                         case "1250000940":// Solicitud de traslado de Mercancias
                             {
-
                                 oRecordSet = (SAPbobsCOM.Recordset)(SBOCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
-
                                 if (GlobalSettings.RunningUnderSQLServer)
                                 {
                                     s = @"Select isnull(U_DteSolTras,'N') dtesoltras from [@VID_FEPARAM]";
                                 }
                                 else
                                 {
-                                    s = @"Select IFNULL(""U_DteSolTras"",'N') dtesoltras ""@VID_FEPARAM"" ";   
+                                    s = @"Select IFNULL(""U_DteSolTras"",'N') dtesoltras FROM ""@VID_FEPARAM"" ";   
                                 }
-                                
                                 oRecordSet.DoQuery(s);
-
                                 if ((System.String)(oRecordSet.Fields.Item("dtesoltras").Value) == "Y")
                                 {
                                     result = (IvkFormInterface)(new TDeliveryNote());

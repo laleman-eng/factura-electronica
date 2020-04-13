@@ -72,36 +72,34 @@ namespace Factura_Electronica_VK.DeliveryNote
                 //FSBOf.LoadForm(xmlPath, 'VID_Entrega.srf', Uid);
                 oForm = FSBOApp.Forms.Item(uid);
                 Flag = false;
-                
 
+                oForm.Freeze(true);
                 if (bFolderAdd)
                 {
-                    //if (SolicitudTraslado)
-                    //{
-                    //    oItemB = oForm.Items.Item("17");
-                    //    oItem = oForm.Items.Add("lblFol", SAPbouiCOM.BoFormItemTypes.it_STATIC);
-                    //    oItem.Left = oItemB.Left;
-                    //    oItem.Width = oItemB.Width;
-                    //    oItem.Top = oItemB.Top + oItemB.Height + 10;
-                    //    oItem.Height = oItem.Height;
-                    //    oItem.LinkTo = "FolioNum";
-                    //    oStatic = (StaticText)(oForm.Items.Item("lblFol").Specific);
-                    //    oStatic.Caption = "Folio ";
+                    if (SolicitudTraslado)
+                    {
+                        oItemB = oForm.Items.Item("17");
+                        oItem = oForm.Items.Add("lblFol", SAPbouiCOM.BoFormItemTypes.it_STATIC);
+                        oItem.Left = oItemB.Left;
+                        oItem.Width = oItemB.Width;
+                        oItem.Top = oItemB.Top + oItemB.Height + 10;
+                        oItem.Height = oItem.Height;
+                        oItem.LinkTo = "FolioNum";
+                        oStatic = (StaticText)(oForm.Items.Item("lblFol").Specific);
+                        oStatic.Caption = "Folio";
 
-                    //    oItemB = oForm.Items.Item("lblFol");
-                    //    oItem = oForm.Items.Add("FolioNum", SAPbouiCOM.BoFormItemTypes.it_EDIT);
-                    //    oItem.Left = oItemB.Left + oItemB.Width + 5;
-                    //    oItem.Width = oItemB.Width + 60;
-                    //    oItem.Top = oItemB.Top;
-                    //    oItem.Height = oItem.Height;
-                    //    oEditText = (EditText)(oForm.Items.Item("FolioNum").Specific);
-                    //    oEditText.DataBind.SetBound(true, "OWTQ", "FolioNum");
+                        oItemB = oForm.Items.Item("lblFol");
+                        oItem = oForm.Items.Add("FolioNum", SAPbouiCOM.BoFormItemTypes.it_EDIT);
+                        oItem.Left = oItemB.Left + oItemB.Width + 5;
+                        oItem.Width = oItemB.Width + 15;
+                        oItem.Top = oItemB.Top;
+                        oItem.Height = oItem.Height;
+                        oEditText = (EditText)(oForm.Items.Item("FolioNum").Specific);
+                        oEditText.DataBind.SetBound(true, "OWTQ", "U_FolioSolTras");
+                        oItem.Enabled = false;
 
+                    }
 
-
-                    //}
-
-                    oForm.Freeze(true);
                     oForm.DataSources.UserDataSources.Add("VID_FEDCTO", SAPbouiCOM.BoDataType.dt_SHORT_TEXT, 1);
                     oItem = oForm.Items.Add("VID_FEDCTO", SAPbouiCOM.BoFormItemTypes.it_FOLDER);
 
@@ -428,7 +426,13 @@ namespace Factura_Electronica_VK.DeliveryNote
                         if (oForm.BusinessObject.Type != "67" && oForm.BusinessObject.Type != "1250000001")
                             oComboBox = (ComboBox)(oForm.Items.Item("88").Specific);
                         else
-                            oComboBox = (ComboBox)(oForm.Items.Item("40").Specific);
+                            if (oForm.BusinessObject.Type == "1250000001")
+                            {
+                                oForm.Items.Item("FolioNum").Enabled = false;
+                                oComboBox = (ComboBox)(oForm.Items.Item("1250000068").Specific);
+                            }
+                            else
+                                oComboBox = (ComboBox)(oForm.Items.Item("40").Specific);
                         var sSeries = (System.String)(oComboBox.Value);
 
                         if (GlobalSettings.RunningUnderSQLServer)
@@ -460,9 +464,15 @@ namespace Factura_Electronica_VK.DeliveryNote
                         if (oForm.BusinessObject.Type != "67" && oForm.BusinessObject.Type != "1250000001")
                             oComboBox = (ComboBox)(oForm.Items.Item("88").Specific);
                         else
-                            oComboBox = (ComboBox)(oForm.Items.Item("40").Specific);
-                        var sSeries = (System.String)(oComboBox.Value);
+                            if (oForm.BusinessObject.Type == "1250000001")
+                            {
+                                 oComboBox = (ComboBox)(oForm.Items.Item("1250000068").Specific);
+                                 oForm.Items.Item("FolioNum").Enabled = false;
+                            }
+                            else
+                                oComboBox = (ComboBox)(oForm.Items.Item("40").Specific);
 
+                        var sSeries = (System.String)(oComboBox.Value);
                         if (GlobalSettings.RunningUnderSQLServer)
                             s = @"select LEFT(ISNULL(UPPER(BeginStr),''),1) 'Valor' from NNM1 where Series = {0} --AND ObjectCode = '{1}'";
                         else
@@ -507,6 +517,13 @@ namespace Factura_Electronica_VK.DeliveryNote
             base.FormEvent(FormUID, ref pVal, ref BubbleEvent);
             try
             {
+               // System.Console.WriteLine("Form Event: " + pVal.EventType);
+
+                if (pVal.EventType == BoEventTypes.et_CLICK  && oForm.BusinessObject.Type == "1250000001")
+                {
+                    oForm.Items.Item("FolioNum").Enabled = false;
+                }
+
                 if ((pVal.EventType == BoEventTypes.et_ITEM_PRESSED) && (pVal.BeforeAction))
                 {
                     if ((pVal.ItemUID == "1") && (oForm.Mode == BoFormMode.fm_ADD_MODE))
@@ -525,7 +542,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                 {
                     GlobalSettings.PrevFormUID = oForm.UniqueID;
                 }
-
+            
                 if (((pVal.ItemUID == "40") || (pVal.ItemUID == "88")) && (pVal.EventType == BoEventTypes.et_COMBO_SELECT) && (!pVal.BeforeAction))
                 {
                     if (oForm.BusinessObject.Type != "67" && oForm.BusinessObject.Type != "1250000001")
@@ -601,6 +618,12 @@ namespace Factura_Electronica_VK.DeliveryNote
 
             try
             {
+                //System.Console.WriteLine("Data Event " + BusinessObjectInfo.EventType);
+
+                if ( BusinessObjectInfo.BeforeAction == false && BusinessObjectInfo.EventType == BoEventTypes.et_FORM_DATA_UPDATE)
+                {
+
+                }
 
                 if ((BusinessObjectInfo.BeforeAction == false) && (BusinessObjectInfo.EventType == BoEventTypes.et_FORM_DATA_ADD) && (BusinessObjectInfo.ActionSuccess) && (BusinessObjectInfo.Type != "112"))
                 {
@@ -702,7 +725,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                                             else if (oForm.BusinessObject.Type == "67")
                                                 oTransfer = (SAPbobsCOM.StockTransfer)(FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer));
                                             else if (oForm.BusinessObject.Type == "1250000001")
-                                                oTransfer = (SAPbobsCOM.StockTransfer)FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oInventoryTransferRequest);  // ##REVISAR
+                                                oTransfer = (SAPbobsCOM.StockTransfer)FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oInventoryTransferRequest);  
                                             else //21
                                                 oDocument = (SAPbobsCOM.Documents)(FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oPurchaseReturns));
 
@@ -712,7 +735,10 @@ namespace Factura_Electronica_VK.DeliveryNote
                                                 {
                                                     oTransfer.FolioNumber = FolioNum;
                                                     oTransfer.FolioPrefixString = "GE";
-                                                    //oTransfer.Printed := BoYesNoEnum.tYES;
+                                                    //oTransfer.Printed = BoYesNoEnum.tYES;
+
+                                                    if (oForm.BusinessObject.Type == "1250000001")
+                                                        oTransfer.UserFields.Fields.Item("U_FolioSolTras").Value = FolioNum;
 
                                                     lRetCode = oTransfer.Update();
                                                     if (lRetCode != 0)

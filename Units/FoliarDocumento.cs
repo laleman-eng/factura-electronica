@@ -721,7 +721,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                         TipoDocElect = "52";
                         tabla = "OWTR";
                     }
-                    else if (TTipoDoc == "52S") //guia despacho por transferencia de stock
+                    else if (TTipoDoc == "52S") //guia despacho por Solicitud de traslado
                     {
                         sDocSubType = "--";
                         ObjType = "1250000001";
@@ -808,8 +808,9 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                     oDeliveryNote.SBO_f = FSBOf;
                                     if (TTipoDoc == "52T")
                                         oDeliveryNote.EnviarFE_WebService(sDocEntry, "--", true, true, false, false, null, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, TTipoDoc, "67", true);
-                                    //  else //Solicitud de Transferencia ### 01-04-2020
-                                    //    oDeliveryNote.EnviarFE_WebService(sDocEntry, s, true, true, false, bMultiSoc, nMultiSoc, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, sTipo, "1250000001", bFolioPortal);
+                                    else //Solicitud de Transferencia ### 01-04-2020
+                                        oDeliveryNote.EnviarFE_WebService(sDocEntry, "--", true, true, false, false, null, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, TTipoDoc, "1250000001", true);
+                                    //oDeliveryNote.EnviarFE_WebService(sDocEntry, s, true, true, false, bMultiSoc, nMultiSoc, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, sTipo, "1250000001", bFolioPortal);
                                 }
                                 else if (oDocument != null)
                                 {
@@ -904,15 +905,19 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                         oStockTransfer = (SAPbobsCOM.StockTransfer)(FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oStockTransfer));
                                     else if (ObjType == "204")
                                         oDocument = (SAPbobsCOM.Documents)(FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oPurchaseDownPayments));
+                                    else if (ObjType == "1250000001")
+                                        oStockTransfer = (SAPbobsCOM.StockTransfer)FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oInventoryTransferRequest);
 
-
-                                    if ((ObjType == "67") && (oStockTransfer != null))
+                                    if (((ObjType == "67") || (ObjType == "1250000001")) && (oStockTransfer != null))
                                     {
                                         if (oStockTransfer.GetByKey(Convert.ToInt32(sDocEntry)))
                                         {
                                             oStockTransfer.FolioNumber = FolioNum;
                                             oStockTransfer.FolioPrefixString = "GE";
                                             //oTransfer.Printed := BoYesNoEnum.tYES;
+
+                                            if (ObjType == "1250000001")
+                                                oStockTransfer.UserFields.Fields.Item("U_FolioSolTras").Value = FolioNum;
 
                                             lRetCode = oStockTransfer.Update();
                                             if (lRetCode != 0)
@@ -999,6 +1004,8 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                 oDeliveryNote.SBO_f = FSBOf;
                                                 if (TTipoDoc == "52T")
                                                     oDeliveryNote.EnviarFE_WebService(sDocEntry, "--", true, true, false, false, null, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, TTipoDoc, "67", false);
+                                                else
+                                                    oDeliveryNote.EnviarFE_WebService(sDocEntry, "--", true, true, false, false, null, GlobalSettings.GLOB_EncryptSQL, GlobalSettings.RunningUnderSQLServer, TTipoDoc, "1250000001", false);
                                             }
                                         }
                                     }
