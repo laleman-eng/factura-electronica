@@ -1,0 +1,1 @@
+Regsvr32 "C:\VisualK\Factura Electronica\CrystalDecisionsDll\CrystalDecisions.CrystalReports.Engine.dll"

@@ -7594,3 +7594,28 @@
    at Factura_Electronica_VK.Functions.TFunctions.PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad) in C:\VisualK\Factura Electronica\Units\Functions.cs:line 2133, file C:\VisualK\Factura Electronica\bin\Debug\Reports\CL\52S_SBO_CASA_ROYAL.rpt
 12-04-2020 11:24:06 [TMainClassExt] EnviarFE No se ha creado PDF ** Trace:    at Factura_Electronica_VK.DeliveryNote.TDeliveryNote.EnviarFE_WebService(String DocEntry, String SubType, Boolean bTransferencia, Boolean RImprimir, Boolean bDevolucion, Boolean bMultiSoc, String nMultiSoc, String GLOB_EncryptSQL, Boolean RunningUnderSQLServer, String TipoDocElecAddon, String ObjType, Boolean bFPortal) in C:\VisualK\Factura Electronica\Units\DeliveryNote.cs:line 1334
 12-04-2020 11:25:11 [TDeliveryNote] 
+13-04-2020 08:11:20 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+13-04-2020 08:11:20 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+13-04-2020 08:11:20 [TMainClassExt] SHA1 UDFSAP.xls[qVk715S4Sw3ryU3U702XDiwrf0A=]
+13-04-2020 08:11:20 [TMainClassExt] App SBO in C# - Init!
+13-04-2020 08:11:21 [TMainClassExt] C# - Shine your crazy diamond!
+13-04-2020 08:11:30 [TDeliveryNote] 
+13-04-2020 08:11:39 [TMainClassExt] Campo opcional CdgIntRecep no soportado en query, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1462
+13-04-2020 08:11:40 [TMainClassExt] Campo opcional FchVencim no soportado en query, Sector D -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1632
+13-04-2020 08:12:25 [TMainClassExt] Log on failed., TRACE    at CrystalDecisions.CrystalReports.Engine.ReportDocument.VerifyDatabase()
+   at Factura_Electronica_VK.Functions.TFunctions.PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad) in C:\VisualK\Factura Electronica\Units\Functions.cs:line 2133, file C:\VisualK\Factura Electronica\bin\Debug\Reports\CL\52S_SBO_CASA_ROYAL.rpt
+13-04-2020 08:12:26 [TMainClassExt] EnviarFE No se ha creado PDF ** Trace:    at Factura_Electronica_VK.DeliveryNote.TDeliveryNote.EnviarFE_WebService(String DocEntry, String SubType, Boolean bTransferencia, Boolean RImprimir, Boolean bDevolucion, Boolean bMultiSoc, String nMultiSoc, String GLOB_EncryptSQL, Boolean RunningUnderSQLServer, String TipoDocElecAddon, String ObjType, Boolean bFPortal) in C:\VisualK\Factura Electronica\Units\DeliveryNote.cs:line 1334
+13-04-2020 08:13:23 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+13-04-2020 08:13:23 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+13-04-2020 08:13:23 [TMainClassExt] SHA1 UDFSAP.xls[qVk715S4Sw3ryU3U702XDiwrf0A=]
+13-04-2020 08:13:23 [TMainClassExt] App SBO in C# - Init!
+13-04-2020 08:13:24 [TMainClassExt] C# - Shine your crazy diamond!
+13-04-2020 08:13:31 [TDeliveryNote] 
+13-04-2020 08:13:40 [TMainClassExt] Campo opcional CdgIntRecep no soportado en query, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1462
+13-04-2020 08:13:40 [TMainClassExt] Campo opcional FchVencim no soportado en query, Sector D -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1632
+13-04-2020 08:14:26 [TMainClassExt] Log on failed., TRACE    at CrystalDecisions.CrystalReports.Engine.ReportDocument.VerifyDatabase()
+   at Factura_Electronica_VK.Functions.TFunctions.PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad) in C:\VisualK\Factura Electronica\Units\Functions.cs:line 2133, file C:\VisualK\Factura Electronica\bin\Debug\Reports\CL\52S_SBO_CASA_ROYAL.rpt

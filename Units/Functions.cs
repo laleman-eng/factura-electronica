@@ -2025,7 +2025,7 @@ namespace Factura_Electronica_VK.Functions
             
             TableLogOnInfo logOnInfo;
             //CrystalDecisions.CrystalReports.Engine.Table tabla;
-            ReportDocument rpt = new ReportDocument();
+            ReportDocument rpt = null; 
             ConnectionInfo connection = new ConnectionInfo();
             String oPath;
             String sNombreArchivo = "";
@@ -2039,7 +2039,7 @@ namespace Factura_Electronica_VK.Functions
 
             try
             {
-
+                rpt = new ReportDocument();
                 //ReportDocument rpt = new ReportDocument(); //******
                 oPath = System.IO.Path.GetDirectoryName(TMultiFunctions.ParamStr(0));
                 //sNombreArchivo = oPath + "\\Reports\\" + Localidad + "\\Reporte " + TipoDocElect + ".rpt";
@@ -2170,9 +2170,8 @@ namespace Factura_Electronica_VK.Functions
             }
             finally
             {
-                rpt.Dispose();
                 connection = null;
-                rpt.Dispose();
+                //rpt.Dispose();
                 rpt = null;
                 SBO_f._ReleaseCOMObject(orsL);
                 SBO_f._ReleaseCOMObject(rpt);
@@ -2213,6 +2212,8 @@ namespace Factura_Electronica_VK.Functions
                     Tipo = "DLN2";
                 else if (TipoDocElectAddon == "52T")
                     Tipo = "WTR1";
+                else if (TipoDocElectAddon == "52S")
+                    Tipo = "WTQ1";
                 else if (TipoDocElectAddon == "52D")
                     Tipo = "RPD2";
                 else if (TipoDocElectAddon == "56")

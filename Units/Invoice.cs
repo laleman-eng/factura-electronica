@@ -981,6 +981,7 @@ namespace Factura_Electronica_VK.Invoice
                                                         oDocument.FolioPrefixString = "FX";
 
                                                     oDocument.Printed = PrintStatusEnum.psYes;
+                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "doc";
 
                                                     lRetCode = oDocument.Update();
                                                     if (lRetCode != 0)

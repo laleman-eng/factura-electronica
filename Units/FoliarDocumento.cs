@@ -1016,6 +1016,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                             if (oDocument.FolioNumber == 0)
                                             {
                                                 oDocument.FolioNumber = FolioNum;
+                                                oDocument.UserFields.Fields.Item("U_Foliofe").Value = "fol";
 
                                                 if (TipoDocElect == "46") //Factura Compra
                                                 {

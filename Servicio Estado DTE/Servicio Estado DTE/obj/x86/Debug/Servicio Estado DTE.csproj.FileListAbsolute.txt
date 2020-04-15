@@ -1,0 +1,10 @@
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\bin\x86\Debug\Servicio Estado DTE.exe.config
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\bin\x86\Debug\Servicio Estado DTE.exe
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\bin\x86\Debug\Servicio Estado DTE.pdb
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\bin\x86\Debug\Newtonsoft.Json.dll
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\bin\x86\Debug\ServiceStack.Text.dll
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\x86\Debug\Servicio_Estado_DTE.ProjectInstaller.resources
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\x86\Debug\Servicio_Estado_DTE.Service1.resources
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\x86\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\x86\Debug\Servicio Estado DTE.exe
+C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\x86\Debug\Servicio Estado DTE.pdb
