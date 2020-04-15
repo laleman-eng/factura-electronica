@@ -95,10 +95,8 @@ C:\VisualK\Factura Electronica\bin\Debug\VisualD.vkFormInterface.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.Enterprise.Framework.dll
-C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.Enterprise.InfoStore.dll
+C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
@@ -108,9 +106,6 @@ C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.Object
 C:\VisualK\Factura Electronica\bin\Debug\log4net.dll
 C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\VisualK\Factura Electronica\bin\Debug\stdole.dll
-C:\VisualK\Factura Electronica\bin\Debug\CrystalDecisions.Enterprise.PluginManager.dll
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.dll
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Foundation.Logging.dll
 C:\VisualK\Factura Electronica\bin\Debug\DLLparaXML.pdb
 C:\VisualK\Factura Electronica\bin\Debug\VisualD.GlobalVid.pdb
 C:\VisualK\Factura Electronica\bin\Debug\VisualD.ADOSBOScriptExecute.pdb
@@ -135,11 +130,6 @@ C:\VisualK\Factura Electronica\bin\Debug\VisualD.uEncrypt.pdb
 C:\VisualK\Factura Electronica\bin\Debug\VisualD.untLog.pdb
 C:\VisualK\Factura Electronica\bin\Debug\VisualD.vkBaseForm.pdb
 C:\VisualK\Factura Electronica\bin\Debug\VisualD.vkFormInterface.pdb
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.ebus.netmodule
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.fssl.netmodule
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.Ssl.netmodule
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.netmodule
-C:\VisualK\Factura Electronica\bin\Debug\BusinessObjects.Enterprise.Sdk.ZipLib.netmodule
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura Electronica VK.csprojResolveAssemblyReference.cache
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura_Electronica_VK.Form1.resources
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura_Electronica_VK.Properties.Resources.resources
