@@ -252,5 +252,6 @@ C:\VisualK\Factura Electronica\VisualD.GlobalVid\bin\Debug\VisualD.Core.pdb
 C:\VisualK\Factura Electronica\VisualD.GlobalVid\bin\Debug\VisualD.Matrix_Helper.pdb
 C:\VisualK\Factura Electronica\VisualD.GlobalVid\bin\Debug\VisualD.SBOGeneralService.pdb
 C:\VisualK\Factura Electronica\VisualD.GlobalVid\bin\Debug\VisualD.uEncrypt.pdb
+C:\VisualK\Factura Electronica\VisualD.GlobalVid\obj\x86\Debug\VisualD.GlobalVid.csprojResolveAssemblyReference.cache
 C:\VisualK\Factura Electronica\VisualD.GlobalVid\obj\x86\Debug\VisualD.GlobalVid.dll
 C:\VisualK\Factura Electronica\VisualD.GlobalVid\obj\x86\Debug\VisualD.GlobalVid.pdb

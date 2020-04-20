@@ -735,6 +735,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                                                 {
                                                     oTransfer.FolioNumber = FolioNum;
                                                     oTransfer.FolioPrefixString = "GE";
+                                                    oTransfer.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                                     //oTransfer.Printed = BoYesNoEnum.tYES;
 
                                                     if (oForm.BusinessObject.Type == "1250000001")
@@ -838,7 +839,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                                                     oDocument.FolioNumber = FolioNum;
                                                     oDocument.FolioPrefixString = "GE";
                                                     oDocument.Printed = PrintStatusEnum.psYes;
-
+                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                                     lRetCode = oDocument.Update();
                                                     if (lRetCode != 0)
                                                     {
@@ -1461,12 +1462,14 @@ namespace Factura_Electronica_VK.DeliveryNote
                                     {
                                         oTransfer.FolioPrefixString = FolPref;
                                         oTransfer.FolioNumber = Convert.ToInt32(jFolio);
+                                        oTransfer.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                         lRetCode = oTransfer.Update();
                                     }
                                     else
                                     {
                                         oDocument.FolioPrefixString = FolPref;
                                         oDocument.FolioNumber = Convert.ToInt32(jFolio);
+                                        oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                         lRetCode = oDocument.Update();
                                     }
                                     if (lRetCode != 0)

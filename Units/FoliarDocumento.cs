@@ -913,6 +913,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                         if (oStockTransfer.GetByKey(Convert.ToInt32(sDocEntry)))
                                         {
                                             oStockTransfer.FolioNumber = FolioNum;
+                                            oStockTransfer.UserFields.Fields.Item("U_Foliofe").Value = "3";
                                             oStockTransfer.FolioPrefixString = "GE";
                                             //oTransfer.Printed := BoYesNoEnum.tYES;
 
@@ -931,7 +932,8 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                 oRecordSet.DoQuery(s);
                                                 s = FCmpny.GetLastErrorDescription();
                                                 FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento, " + s, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + " -  " + s);
+                                                OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + "Folio: " + FolioNum + " mensaje Error:" + s);
+
                                             }
                                             else
                                             {
@@ -1016,7 +1018,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                             if (oDocument.FolioNumber == 0)
                                             {
                                                 oDocument.FolioNumber = FolioNum;
-                                                oDocument.UserFields.Fields.Item("U_Foliofe").Value = "fol";
+                                                oDocument.UserFields.Fields.Item("U_Foliofe").Value = "3";
 
                                                 if (TipoDocElect == "46") //Factura Compra
                                                 {
@@ -1096,7 +1098,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                     oRecordSet.DoQuery(s);
                                                     s = FCmpny.GetLastErrorDescription();
                                                     FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento, " + s, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                    OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + " - " + s);
+                                                    OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + "Folio: " +FolioNum + " mensaje Error:" + s);
                                                 }
                                                 else
                                                 {

@@ -981,7 +981,7 @@ namespace Factura_Electronica_VK.Invoice
                                                         oDocument.FolioPrefixString = "FX";
 
                                                     oDocument.Printed = PrintStatusEnum.psYes;
-                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "doc";
+                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
 
                                                     lRetCode = oDocument.Update();
                                                     if (lRetCode != 0)
@@ -3326,6 +3326,7 @@ namespace Factura_Electronica_VK.Invoice
                                     FolPref = "FX";
                                 oDocumento.FolioPrefixString = FolPref;
                                 oDocumento.FolioNumber = Convert.ToInt32(jFolio);
+                                oDocumento.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                 lRetCode = oDocumento.Update();
                                 if (lRetCode != 0)
                                 {
