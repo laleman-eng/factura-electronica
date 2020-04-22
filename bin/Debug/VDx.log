@@ -7619,3 +7619,40 @@
    at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1632
 13-04-2020 08:14:26 [TMainClassExt] Log on failed., TRACE    at CrystalDecisions.CrystalReports.Engine.ReportDocument.VerifyDatabase()
    at Factura_Electronica_VK.Functions.TFunctions.PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad) in C:\VisualK\Factura Electronica\Units\Functions.cs:line 2133, file C:\VisualK\Factura Electronica\bin\Debug\Reports\CL\52S_SBO_CASA_ROYAL.rpt
+21-04-2020 12:10:17 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+21-04-2020 12:10:17 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+21-04-2020 12:10:17 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+21-04-2020 12:10:19 [TMainClassExt] App SBO in C# - Init!
+21-04-2020 12:10:19 [TMainClassExt] C# - Shine your crazy diamond!
+21-04-2020 12:17:15 [TInvoice] 
+21-04-2020 12:18:05 [TRegistrarCAF] 
+21-04-2020 12:18:08 [TDistribucionFolios] 
+21-04-2020 12:18:38 [TInvoice] 
+21-04-2020 12:18:57 [TDeliveryNote] 
+21-04-2020 12:20:44 [TMainClassExt] Campo opcional CdgIntRecep no soportado en query, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1462
+21-04-2020 12:20:45 [TMainClassExt] Campo opcional FchVencim no soportado en query, Sector D -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1632
+21-04-2020 12:20:45 [TMainClassExt] Campo opcional FchVencim no soportado en query, Sector D -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1632
+21-04-2020 12:27:35 [TInvoice] 
+21-04-2020 12:31:10 [TMainClassExt] Error GenerarXMLString, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringInvoice(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 44
+21-04-2020 12:31:10 [TMainClassExt] EnviarFE_WebServiceInvoice: Problema para generar xml Documento electronico 33 ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\Factura Electronica\Units\Invoice.cs:line 3113
+21-04-2020 12:55:27 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+21-04-2020 12:55:27 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+21-04-2020 12:55:27 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+21-04-2020 12:55:27 [TMainClassExt] App SBO in C# - Init!
+21-04-2020 12:55:28 [TMainClassExt] C# - Shine your crazy diamond!
+21-04-2020 12:56:26 [TInvoice] 
+21-04-2020 12:56:33 [TDeliveryNote] 
+21-04-2020 12:59:08 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+21-04-2020 12:59:08 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+21-04-2020 12:59:08 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+21-04-2020 12:59:08 [TMainClassExt] App SBO in C# - Init!
+21-04-2020 12:59:09 [TMainClassExt] C# - Shine your crazy diamond!
+21-04-2020 12:59:18 [TFoliarDocumento] 
+21-04-2020 12:59:41 [TMainClassExt] Error GenerarXMLString, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringInvoice(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 44
+21-04-2020 12:59:41 [TMainClassExt] EnviarFE_WebServiceInvoice: Problema para generar xml Documento electronico 33 ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\Factura Electronica\Units\Invoice.cs:line 3113
+21-04-2020 01:00:00 [TInvoice] 

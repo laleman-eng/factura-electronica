@@ -980,9 +980,8 @@ namespace Factura_Electronica_VK.Invoice
                                                     else if (sDocSubType == "IX") //Factura Exportacion
                                                         oDocument.FolioPrefixString = "FX";
 
-                                                    oDocument.Printed = PrintStatusEnum.psYes;
-                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
 
+                                                    oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                                     lRetCode = oDocument.Update();
                                                     if (lRetCode != 0)
                                                     {
@@ -995,65 +994,76 @@ namespace Factura_Electronica_VK.Invoice
                                                         oRecordSet.DoQuery(s);
 
                                                         FSBOApp.MessageBox("*****   No se ha asignado Folio al Documento   *****", 1, "Aceptar");
-                                                        FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento -> " + FCmpny.GetLastErrorDescription(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                        OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription());
+                                                        FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento -> " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                                        OutLog("**** No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
                                                     }
                                                     else
                                                     {
-                                                        //ahora debo marcar que el folio fue usado y colocar los datos del documento que uso el folio
-                                                        Reg = new TFunctions();
-                                                        Reg.SBO_f = FSBOf;
-
-                                                        if (GlobalSettings.RunningUnderSQLServer)
-                                                            s = "update [@VID_FEDISTD] set U_Estado = 'U', U_DocEntry = {0}, U_ObjType = '{1}', U_SubType = '{2}' where DocEntry = {3} and LineId = {4}";
-                                                        else
-                                                            s = @"update ""@VID_FEDISTD"" set ""U_Estado"" = 'U', ""U_DocEntry"" = {0}, ""U_ObjType"" = '{1}', ""U_SubType"" = '{2}' where ""DocEntry"" = {3} and ""LineId"" = {4}";
-                                                        s = String.Format(s, sDocEntry, oForm.BusinessObject.Type, sDocSubType, FDocEntry, FLineId);
-                                                        oRecordSet.DoQuery(s);
-                                                        //lRetCode = Reg.ActEstadoFolioUpt((System.Int32)(oRecordSet.Fields.Item("DocEntry").Value), (System.Int32)(oRecordSet.Fields.Item("LineId").Value), (System.Double)(oRecordSet.Fields.Item("U_Folio").Value), TipoDocElec, sDocEntry, "13", sDocSubType);
-                                                        bFolioAsignado = true;
-
-                                                        if (GeneraT == "Y")
-                                                        {
-                                                            //Colocar Timbre
-                                                            XmlDocument xmlCAF = new XmlDocument();
-                                                            XmlDocument xmlTimbre = new XmlDocument();
-                                                            if (CAF == "")
-                                                                throw new Exception("No se ha encontrado xml de CAF");
-                                                            //OutLog(oRecordSet.Fields.Item("U_CAF").Value.ToString());
-                                                            xmlCAF.LoadXml(CAF);
-                                                            xmlTimbre = TimbreSII.EmitirTimbre(TipoDocElec, Convert.ToString(oDocument.FolioNumber), oDocument.DocDate.ToString("yyyyMMdd"), oDocument.FederalTaxID.Replace(".", ""), oDocument.CardName, Convert.ToString(Math.Round(oDocument.DocTotal, 0)), oDocument.Lines.ItemDescription, xmlCAF, TaxIdNum);
-
-                                                            StringWriter sw = new StringWriter();
-                                                            XmlTextWriter tx = new XmlTextWriter(sw);
-                                                            xmlTimbre.WriteTo(tx);
-
-                                                            s = sw.ToString();// 
-
-                                                            if (s != "")
-                                                            {
-                                                                if (oDocument.GetByKey(Convert.ToInt32(sDocEntry)))
-                                                                {
-                                                                    oDocument.UserFields.Fields.Item("U_FETimbre").Value = s;
-                                                                    lRetCode = oDocument.Update();
-                                                                    if (lRetCode != 0)
-                                                                    {
-                                                                        FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento - " + s + " - " + FCmpny.GetLastErrorDescription(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                                        OutLog("No se ha creado Timbre en el documento: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + s + " - " + FCmpny.GetLastErrorDescription());
-                                                                    }
-                                                                    else
-                                                                        FSBOApp.StatusBar.SetText("Se ha creado satisfactoriamente Timbre en el documento", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
-                                                                }
-                                                            }
-                                                            else
-                                                                FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                        }
-
-                                                        lRetCode = 1;
+                                                        // se deja como impreso como un proceso aparte
+                                                        oDocument.Printed = PrintStatusEnum.psYes;
+                                                        lRetCode = oDocument.Update();
                                                         if (lRetCode != 0)
                                                         {
-                                                            SBO_f = FSBOf;
-                                                            EnviarFE_WebService(oForm.BusinessObject.Type, oDocument, TipoDocElec, bMultiSoc, nMultiSoc, GlobalSettings.RunningUnderSQLServer, sDocSubType, TTipoDoc, (FolioPortal == "Y" ? true : false));
+                                                            FSBOApp.StatusBar.SetText("No se ha cambiado variable impresa -> " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                                                            OutLog(" No se ha cambiado variable impresa: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
+                                                        }
+                                                        else
+                                                        { 
+                                                            //ahora debo marcar que el folio fue usado y colocar los datos del documento que uso el folio
+                                                            Reg = new TFunctions();
+                                                            Reg.SBO_f = FSBOf;
+
+                                                            if (GlobalSettings.RunningUnderSQLServer)
+                                                                s = "update [@VID_FEDISTD] set U_Estado = 'U', U_DocEntry = {0}, U_ObjType = '{1}', U_SubType = '{2}' where DocEntry = {3} and LineId = {4}";
+                                                            else
+                                                                s = @"update ""@VID_FEDISTD"" set ""U_Estado"" = 'U', ""U_DocEntry"" = {0}, ""U_ObjType"" = '{1}', ""U_SubType"" = '{2}' where ""DocEntry"" = {3} and ""LineId"" = {4}";
+                                                            s = String.Format(s, sDocEntry, oForm.BusinessObject.Type, sDocSubType, FDocEntry, FLineId);
+                                                            oRecordSet.DoQuery(s);
+                                                            //lRetCode = Reg.ActEstadoFolioUpt((System.Int32)(oRecordSet.Fields.Item("DocEntry").Value), (System.Int32)(oRecordSet.Fields.Item("LineId").Value), (System.Double)(oRecordSet.Fields.Item("U_Folio").Value), TipoDocElec, sDocEntry, "13", sDocSubType);
+                                                            bFolioAsignado = true;
+
+                                                            if (GeneraT == "Y")
+                                                            {
+                                                                //Colocar Timbre
+                                                                XmlDocument xmlCAF = new XmlDocument();
+                                                                XmlDocument xmlTimbre = new XmlDocument();
+                                                                if (CAF == "")
+                                                                    throw new Exception("No se ha encontrado xml de CAF");
+                                                                //OutLog(oRecordSet.Fields.Item("U_CAF").Value.ToString());
+                                                                xmlCAF.LoadXml(CAF);
+                                                                xmlTimbre = TimbreSII.EmitirTimbre(TipoDocElec, Convert.ToString(oDocument.FolioNumber), oDocument.DocDate.ToString("yyyyMMdd"), oDocument.FederalTaxID.Replace(".", ""), oDocument.CardName, Convert.ToString(Math.Round(oDocument.DocTotal, 0)), oDocument.Lines.ItemDescription, xmlCAF, TaxIdNum);
+
+                                                                StringWriter sw = new StringWriter();
+                                                                XmlTextWriter tx = new XmlTextWriter(sw);
+                                                                xmlTimbre.WriteTo(tx);
+
+                                                                s = sw.ToString();// 
+
+                                                                if (s != "")
+                                                                {
+                                                                    if (oDocument.GetByKey(Convert.ToInt32(sDocEntry)))
+                                                                    {
+                                                                        oDocument.UserFields.Fields.Item("U_FETimbre").Value = s;
+                                                                        lRetCode = oDocument.Update();
+                                                                        if (lRetCode != 0)
+                                                                        {
+                                                                            FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento - " + s + " - " + FCmpny.GetLastErrorDescription(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                                                            OutLog("No se ha creado Timbre en el documento: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + s + " - " + FCmpny.GetLastErrorDescription());
+                                                                        }
+                                                                        else
+                                                                            FSBOApp.StatusBar.SetText("Se ha creado satisfactoriamente Timbre en el documento", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                                                                    }
+                                                                }
+                                                                else
+                                                                    FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                                            }
+
+                                                            lRetCode = 1;
+                                                            if (lRetCode != 0)
+                                                            {
+                                                                SBO_f = FSBOf;
+                                                                EnviarFE_WebService(oForm.BusinessObject.Type, oDocument, TipoDocElec, bMultiSoc, nMultiSoc, GlobalSettings.RunningUnderSQLServer, sDocSubType, TTipoDoc, (FolioPortal == "Y" ? true : false));
+                                                            }
                                                         }
                                                     }
                                                 }
