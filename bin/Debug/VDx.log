@@ -7656,3 +7656,46 @@
    at DLLparaXML.TDLLparaXML.GenerarXMLStringInvoice(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 44
 21-04-2020 12:59:41 [TMainClassExt] EnviarFE_WebServiceInvoice: Problema para generar xml Documento electronico 33 ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\Factura Electronica\Units\Invoice.cs:line 3113
 21-04-2020 01:00:00 [TInvoice] 
+06-05-2020 05:14:23 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+06-05-2020 05:14:23 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+06-05-2020 05:14:23 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+06-05-2020 05:14:25 [TMainClassExt] App SBO in C# - Init!
+06-05-2020 05:14:26 [TMainClassExt] C# - Shine your crazy diamond!
+06-05-2020 08:21:18 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+06-05-2020 08:21:18 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+06-05-2020 08:21:18 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+06-05-2020 08:21:18 [TMainClassExt] App SBO in C# - Init!
+06-05-2020 08:21:18 [TMainClassExt] C# - Shine your crazy diamond!
+06-05-2020 08:40:02 [TAsignarFolios] 
+06-05-2020 08:46:18 [TRegistrarCAF] 
+06-05-2020 08:48:25 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+06-05-2020 08:48:25 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+06-05-2020 08:48:25 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+06-05-2020 08:48:29 [TMainClassExt] App SBO in C# - Init!
+06-05-2020 08:48:29 [TMainClassExt] C# - Shine your crazy diamond!
+06-05-2020 08:49:01 [TAsignarFolios] 
+06-05-2020 08:51:15 [TRegistrarCAF] 
+06-05-2020 09:44:14 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+06-05-2020 09:44:14 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+06-05-2020 09:44:14 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+06-05-2020 09:44:14 [TMainClassExt] App SBO in C# - Init!
+06-05-2020 09:44:16 [TMainClassExt] C# - Shine your crazy diamond!
+06-05-2020 09:44:35 [TDistribucionFolios] 
+06-05-2020 09:44:43 [TAsignarFolios] 
+06-05-2020 09:51:31 [TMainClassExt] TMainClass.SBOAppItemEvent: System call failed. (Exception from HRESULT: 0x80010100 (RPC_E_SYS_CALL_FAILED)) ** Trace:    at SAPbouiCOM.FormClass.get_Items()
+   at VisualD.vkBaseForm.TvkBaseForm.FormEvent(String _FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 315
+   at Factura_Electronica_VK.AsignarFolios.TAsignarFolios.FormEvent(String FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Factura Electronica\Units\AsignarFolios.cs:line 162
+   at VisualD.Main.TMainClass.SBOAppItemEvent(String FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.Main\..\SBOLib-Source\VisualD.Main.pas:line 468
+06-05-2020 09:51:33 [TMainClassExt] TMainClass.SBOAppItemEvent: Unable to cast COM object of type 'System.__ComObject' to interface type 'SAPbobsCOM.ICompany'. This operation failed because the QueryInterface call on the COM component for the interface with IID '{3BA8DAED-5B33-4CE4-A4B8-B4308D86E524}' failed due to the following error: System call failed. (Exception from HRESULT: 0x80010100 (RPC_E_SYS_CALL_FAILED)). ** Trace:    at System.StubHelpers.StubHelpers.GetCOMIPFromRCW(Object objSrc, IntPtr pCPCMD, IntPtr& ppTarget, Boolean& pfNeedsRelease)
+   at SAPbobsCOM.ICompany.GetLastError(Int32& errCode, String& errMsg)
+   at Factura_Electronica_VK.AsignarFolios.TAsignarFolios.FormEvent(String FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Factura Electronica\Units\AsignarFolios.cs:line 317
+   at VisualD.Main.TMainClass.SBOAppItemEvent(String FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.Main\..\SBOLib-Source\VisualD.Main.pas:line 468
+06-05-2020 09:51:33 [TMainClassExt] TMainClass.SBOAppItemEvent: Unable to cast COM object of type 'SAPbouiCOM.ItemEventClass' to interface type 'SAPbouiCOM.IItemEvent'. This operation failed because the QueryInterface call on the COM component for the interface with IID '{21925973-F8AC-47F9-A3D0-298612AEB94E}' failed due to the following error: System call failed. (Exception from HRESULT: 0x80010100 (RPC_E_SYS_CALL_FAILED)). ** Trace:    at System.StubHelpers.StubHelpers.GetCOMIPFromRCW(Object objSrc, IntPtr pCPCMD, IntPtr& ppTarget, Boolean& pfNeedsRelease)
+   at SAPbouiCOM.ItemEventClass.get_FormUID()
+   at VisualD.Main.TMainClass.SBOAppItemEvent(String FormUID, ItemEvent& pVal, Boolean& BubbleEvent) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.Main\..\SBOLib-Source\VisualD.Main.pas:line 429
+06-05-2020 09:53:25 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+06-05-2020 09:53:25 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+06-05-2020 09:53:25 [TMainClassExt] SHA1 UDFSAP.xls[1KOccbHdKlxFkoqEosLhfXKo7XM=]
+06-05-2020 09:53:25 [TMainClassExt] App SBO in C# - Init!
+06-05-2020 09:53:26 [TMainClassExt] C# - Shine your crazy diamond!
+06-05-2020 09:53:41 [TAsignarFolios] 

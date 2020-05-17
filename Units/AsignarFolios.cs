@@ -270,7 +270,7 @@ namespace Factura_Electronica_VK.AsignarFolios
                         
                         if (pVal.ColUID == "Hasta")
                         {
-                            //int hasta = Convert.ToInt32((System.String)(oDBDSD.GetValue("U_Hasta", pVal.Row - 1)).Trim());
+                            int hasta = Convert.ToInt32((System.String)(oDBDSD.GetValue("U_Hasta", pVal.Row - 1)).Trim());
 
                             if ((System.String)(oDBDSD.GetValue("U_Hasta", pVal.Row-1)).Trim() == "") 
                             {
@@ -635,7 +635,12 @@ namespace Factura_Electronica_VK.AsignarFolios
             }
         }//fin EnviarPortal
 
-
+        /// <summary>
+        /// Funcion que valida las columnas desde y hasta del Grid al momento de ir cargando la información
+        /// </summary>
+        /// <param name="iRow"></param>
+        /// <param name="sColumna"></param>
+        /// <returns></returns>
         private Boolean ValidarManual(Int32 iRow, String sColumna)
         {
             Boolean _result;
@@ -665,8 +670,11 @@ namespace Factura_Electronica_VK.AsignarFolios
                                    order by T1.U_Folio DESC"; }
                         else
                         {   s = @"select T0.""DocEntry"", T1.""LineId"", T1.""U_Folio""
-                                    from ""@VID_FEDIST"" T0 join ""@VID_FEDISTD"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
-                                   where T0.""U_TipoDoc"" = '{0}' and T0.""U_RangoF"" = '{1}' and T1.""U_Folio"" > 0 
+                                    from ""@VID_FEDIST"" T0 
+                                    join ""@VID_FEDISTD"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                    where T0.""U_TipoDoc"" = '{0}' 
+                                    and T0.""U_RangoF"" = '{1}' 
+                                    and T1.""U_Folio"" > 0 
                                    order by T1.""U_Folio"" DESC" ; }
                         s = String.Format(s, (System.String)(oDBDSH.GetValue("U_TipoDoc", 0)).Trim(), (System.String)(oDBDSH.GetValue("U_CAF", 0)).Trim());
                         oRecordSet.DoQuery(s);
@@ -748,7 +756,10 @@ namespace Factura_Electronica_VK.AsignarFolios
             }
         }//fin ValidarManual
 
-
+        /// <summary>
+        /// Valida unicamente que Cantidad de folios asignados  coincida con el total a asignar
+        /// </summary>
+        /// <returns></returns>
         private Boolean ValidarMatrix()
         {
             Boolean _result;
@@ -798,7 +809,10 @@ namespace Factura_Electronica_VK.AsignarFolios
             }
         }//fin ValidarMatrix
 
-        
+        /// <summary>
+        /// Valida los parametros iniciales para habilitar el grid para de asignación de folio
+        /// </summary>
+        /// <returns></returns>
         private Boolean Validar()
         {
             Boolean _result;

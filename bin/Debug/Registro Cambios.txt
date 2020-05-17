@@ -100,5 +100,11 @@ Version 92.1.42,3 (HANA,SQL)
 Version 92.1.44 (HANA)
 	-> se agrego nuevas excepciones globales al Form1.cs
 	-> campos opcionales agregados a SP y DllCreaXml (CdgIntRecep, FchVencim)
+Version 93.0.001 (HANA)
+	-> se resuelve problema de inicio automatico para funcionamiento del addon
+	-> se resuelve problema del campo LPGN
+	-> se crea campo en docmentos de marketing (DocSAP) para determinar cuando el addon folia por docmento SAP o mantenedor de folio
+	-> mejoras a nivel del manejo de excepciones para documentos de marketing
+	-> mejoras a nivel de mensajes del VDx.log
 
 
