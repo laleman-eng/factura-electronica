@@ -12,6 +12,7 @@ AS
 																		 ELSE REPLACE(T0.LicTradNum, '.', '')
 		 END																																[LicTradNum]
 		,REPLACE(CONVERT(CHAR(10), T0.TaxDate, 102),'.','-')																				[DocDate]
+		,ISNULL(T0.U_TipDespacho, '0')																										[TipoDespacho]
 		,REPLACE(CONVERT(CHAR(10), T0.DocDueDate, 102),'.','-')																				[DocDueDate]
 		,CASE WHEN T0.DocSubType = 'IX' OR RIGHT(N1.BeginStr, 3) = '111' OR RIGHT(N1.BeginStr, 3) = '110'
 							 THEN CASE WHEN T0.CurSource = 'L' THEN LTRIM(STR(T0.DocTotal,18,4))
@@ -69,6 +70,8 @@ AS
 		,LEFT(ISNULL(V0.SlpName, ''), 100)																									[SlpName]
 		,LEFT(ISNULL(C0.Phone1, ''), 30)																									[Phone1]
 		,ISNULL(T0.U_VK_Patente, '')																										[Patente]
+		,ISNULL(T0.U_RutChofer,'')																											[RutChofer]
+		,ISNULL(T0.U_NombreChofer,'')																										[NombreChofer]		
 		,CASE
 			WHEN T0.DocSubType = 'IX' OR RIGHT(N1.BeginStr, 3) = '111' OR RIGHT(N1.BeginStr, 3) = '110'
 				THEN CASE T6.ISOCurrCod
@@ -270,6 +273,7 @@ AS
 		,REPLACE(T0.LicTradNum, '.', '')																									[LicTradNum]
 		,REPLACE(CONVERT(CHAR(10), T0.TaxDate, 102),'.','-')																				[DocDate]
 		,REPLACE(CONVERT(CHAR(10), T0.DocDueDate, 102),'.','-')																				[DocDueDate]
+		,ISNULL(T0.U_TipDespacho, '0')																										[TipoDespacho]
 		,ROUND(T0.DocTotal, 0)																												[DocTotal]
 		,ROUND(ISNULL((SELECT SUM(TaxSum)
 						 FROM DPI4
@@ -305,6 +309,8 @@ AS
 		,LEFT(ISNULL(V0.SlpName, ''), 100)																									[SlpName]
 		,LEFT(ISNULL(C0.Phone1, ''), 30)																									[Phone1]
 		,ISNULL(T0.U_VK_Patente, '')																										[Patente]
+		,ISNULL(T0.U_RutChofer,'')																											[RutChofer]
+		,ISNULL(T0.U_NombreChofer,'')																										[NombreChofer]		
 		,T0.DocCur																															[DocCur]
 		,ROUND(T0.DocRate, 4)																												[DocRate]
 		,LEFT(ISNULL(U0.U_NAME, ''), 30)																									[Usuario]

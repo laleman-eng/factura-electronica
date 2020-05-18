@@ -194,6 +194,50 @@ namespace DLLparaXML
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
                         NroLinDR++;
                     }
+                    
+                    //Campo Condicional Patente
+                    if (((System.String)ors.Fields.Item("TipoDespacho").Value).Trim().Equals("2") || ((System.String)ors.Fields.Item("TipoDespacho").Value).Trim().Equals("3"))
+                    {
+                        try
+                        {
+                            xNodo = new XElement("Patente", ((System.String)ors.Fields.Item("Patente").Value).Trim());
+                            miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Campo Condicional Patente no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                        }
+                    }
+
+                    //Campo Condicional RUTChofer (si viene RUT, debe venir Nombre Chofer)
+                    try
+                    {
+                        if (((System.String)ors.Fields.Item("RUTChofer").Value).Trim() != "" && ((System.String)ors.Fields.Item("NombreChofer").Value).Trim() != "")
+                        {
+                            xNodo = new XElement("RUTChofer", ((System.String)ors.Fields.Item("RUTChofer").Value).Trim());
+                            miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        SBO_f.oLog.OutLog("Campo condicional RUTChofer no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                    }
+
+                    //Campo Condicional NombreChofer (se diuja si se coloco el Rut del chofer)
+                    try
+                    {
+                        if (((System.String)ors.Fields.Item("NombreChofer").Value).Trim() != "" && ((System.String)ors.Fields.Item("RUTChofer").Value).Trim() != "")
+                        {
+                            xNodo = new XElement("NombreChofer", ((System.String)ors.Fields.Item("NombreChofer").Value).Trim());
+                            miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        SBO_f.oLog.OutLog("Campo condicional NombreChofer no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                    }
+
+
 
                     //Campo Opcional CdgIntRecep 
                     try
@@ -1414,18 +1458,23 @@ namespace DLLparaXML
                                                      new XElement("Sucursal", ((System.String)ors.Fields.Item("SucursalAF").Value).Trim())
                                                     ),
                                             new XElement("Receptor",
-                                                     new XElement("CiudadPostal", ((System.String)ors.Fields.Item("CiudadPostal").Value).Trim()),
+                                       //              new XElement("CiudadPostal", ((System.String)ors.Fields.Item("CiudadPostal").Value).Trim()),
                                                      new XElement("CiudadRecep", ((System.String)ors.Fields.Item("CiudadRecep").Value).Trim()),
-                                                     new XElement("CmnaPostal", ((System.String)ors.Fields.Item("CmnaPostal").Value).Trim()),
+                                       //              new XElement("CmnaPostal", ((System.String)ors.Fields.Item("CmnaPostal").Value).Trim()),
                                                      new XElement("CmnaRecep", ((System.String)ors.Fields.Item("CmnaRecep").Value).Trim()),
                                                      new XElement("Contacto", ((System.String)ors.Fields.Item("Contacto").Value).Trim()),
                                                      new XElement("CorreoRecep", ((System.String)ors.Fields.Item("CorreoRecep").Value).Trim()),
-                                                     new XElement("DirPostal", ((System.String)ors.Fields.Item("DirPostal").Value).Trim()),
+                                      //               new XElement("DirPostal", ((System.String)ors.Fields.Item("DirPostal").Value).Trim()),
                                                      new XElement("DirRecep", ((System.String)ors.Fields.Item("DirRecep").Value).Trim()),
                                                      new XElement("GiroRecep", ((System.String)ors.Fields.Item("GiroRecep").Value).Trim()),
                                                      new XElement("RUTRecep", ((System.String)ors.Fields.Item("RUTRecep").Value).Trim()),
                                                      new XElement("RznSocRecep", ((System.String)ors.Fields.Item("RznSocRecep").Value).Trim())
                                                     ),
+                                            new XElement("Transporte",
+                                                      new XElement("DirDest", ((System.String)ors.Fields.Item("DirDest").Value).Trim()),
+                                                      new XElement("CmnaDest", ((System.String)ors.Fields.Item("CmnaDest").Value).Trim()),
+                                                      new XElement("CiudadDest", ((System.String)ors.Fields.Item("CiudadDest").Value).Trim())
+                                                        ),
                                             new XElement("Totales",
                                                      new XElement("CredEC", ((System.Int32)ors.Fields.Item("CredEC").Value)),
                                                      new XElement("IVA", ((System.Double)ors.Fields.Item("IVA").Value)),
@@ -1454,6 +1503,48 @@ namespace DLLparaXML
                                 xNodo = new XElement("CdgTraslado", ((System.Int32)ors.Fields.Item("CdgTraslado").Value));
                                 miXML.Descendants("Emisor").LastOrDefault().Add(xNodo);
                             }
+                        }
+
+                        //Campo Condicional Patente
+                        if (((System.String)ors.Fields.Item("TipoDespacho").Value).Trim().Equals("2") || ((System.String)ors.Fields.Item("TipoDespacho").Value).Trim().Equals("3"))
+                        {
+                            try
+                            {
+                                xNodo = new XElement("Patente", ((System.String)ors.Fields.Item("Patente").Value).Trim());
+                                miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                            }
+                            catch (Exception e)
+                            {
+                                SBO_f.oLog.OutLog("Campo Condicional Patente no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                            }
+                        }
+
+                        //Campo Condicional RUTChofer (si viene RUT, debe venir Nombre Chofer)
+                        try
+                        {
+                            if (((System.String)ors.Fields.Item("RUTChofer").Value).Trim() != "" && ((System.String)ors.Fields.Item("NombreChofer").Value).Trim() != "")
+                            {
+                                xNodo = new XElement("RUTChofer", ((System.String)ors.Fields.Item("RUTChofer").Value).Trim());
+                                miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Campo condicional RUTChofer no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                        }
+
+                        //Campo Condicional NombreChofer (se diuja si se coloco el Rut del chofer)
+                        try
+                        {
+                            if (((System.String)ors.Fields.Item("NombreChofer").Value).Trim() != "" && ((System.String)ors.Fields.Item("RUTChofer").Value).Trim() != "")
+                            {
+                                xNodo = new XElement("NombreChofer", ((System.String)ors.Fields.Item("NombreChofer").Value).Trim());
+                                miXML.Descendants("Transporte").LastOrDefault().Add(xNodo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Campo condicional NombreChofer no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
                     //Campo Opcional CdgIntRecep

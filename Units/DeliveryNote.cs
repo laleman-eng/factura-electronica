@@ -1277,7 +1277,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                         if (sXML == "")
                             throw new Exception("Problema para generar xml Documento electronico " + TipoDocElec);
 
-                       // SBO_f.oLog.OutLog(sXML);
+                      //  SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
 
                         //PARA DETALLE
                         if (RunningUnderSQLServer)

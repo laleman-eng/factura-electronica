@@ -1422,6 +1422,33 @@ namespace Factura_Electronica_VK.Invoice
                 else
                     oEditText.DataBind.SetBound(true, "OINV", "U_FESucursal");
 
+                oItemB = oForm.Items.Item("lblSucur");
+                oItem = oForm.Items.Add("lblTipDesp", SAPbouiCOM.BoFormItemTypes.it_STATIC);
+                oItem.Left = oItemB.Left;
+                oItem.Width = oItemB.Width;
+                oItem.Top = oItemB.Top + oItemB.Height + 1;
+                oItem.Height = oItem.Height;
+                oItem.FromPane = 330;
+                oItem.ToPane = 330;
+               // oItem.LinkTo = "VID_FEDesp";
+                oStatic = (StaticText)(oForm.Items.Item("lblTipDesp").Specific);
+                oStatic.Caption = "Tipo Despacho";
+
+                oItemB = oForm.Items.Item("lblTipDesp");
+                oItem = oForm.Items.Add("VID_FEDesp", SAPbouiCOM.BoFormItemTypes.it_COMBO_BOX);
+                oItem.Left = oItemB.Left + oItemB.Width + 5;
+                oItem.Width = oItemB.Width;
+                oItem.Top = oItemB.Top;
+                oItem.Height = oItem.Height;
+                oItem.FromPane = 330;
+                oItem.ToPane = 330;
+                oItem.DisplayDesc = true;
+                oComboBox = (ComboBox)(oForm.Items.Item("VID_FEDesp").Specific);
+                if (ObjType == "203")
+                    oComboBox.DataBind.SetBound(true, "ODPI", "U_TipDespacho");
+                else
+                    oComboBox.DataBind.SetBound(true, "OINV", "U_TipDespacho");
+
 
                 if (bFolderAdd)
                 {
@@ -3111,7 +3138,7 @@ namespace Factura_Electronica_VK.Invoice
 
                     if (sXML == "")
                         throw new Exception("Problema para generar xml Documento electronico " + TipoDocElec);
-                    //  SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
+                  //    SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
 
                     //PARA DETALLE
                     if (RunningUnderSQLServer)

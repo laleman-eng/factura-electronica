@@ -7,6 +7,7 @@ AS
 																		 ELSE REPLACE(T0."LicTradNum", '.', '')
 		 END																																"LicTradNum"
 		,TO_CHAR(T0."TaxDate", 'yyyy-MM-dd')																								"DocDate"
+		,IFNULL(T0."U_TipDespacho", '0')																									"TipoDespacho"
 		,TO_CHAR(T0."DocDueDate", 'yyyy-MM-dd')																								"DocDueDate"
 		,CASE WHEN T0."DocSubType" = 'IX' OR RIGHT(N1."BeginStr", 3) = '111' OR RIGHT(N1."BeginStr", 3) = '110' 
 											THEN CASE WHEN T0."CurSource" = 'L' THEN TO_VARCHAR(ROUND(T0."DocTotal",4))
@@ -61,6 +62,8 @@ AS
 		,LEFT(IFNULL(V0."SlpName", ''), 100)																								"SlpName"
 		,LEFT(IFNULL(C0."Phone1", ''), 30)																									"Phone1"
 		,IFNULL(T0."U_VK_Patente", '')																										"Patente"
+		,IFNULL(T0."U_RutChofer",'')																										"RutChofer"
+		,IFNULL(T0."U_NombreChofer",'')																										"NombreChofer"			
 		,CASE
 			WHEN T0."DocSubType" = 'IX' OR RIGHT(N1."BeginStr", 3) = '111' OR RIGHT(N1."BeginStr", 3) = '110'
 				THEN CASE T6."ISOCurrCod"
@@ -261,6 +264,7 @@ AS
 		,REPLACE(T0."LicTradNum", '.', '')																									"LicTradNum"
 		,TO_CHAR(T0."TaxDate", 'yyyy-MM-dd')																								"DocDate"
 		,TO_CHAR(T0."DocDueDate", 'yyyy-MM-dd')																								"DocDueDate"
+		,IFNULL(T0."U_TipDespacho", '0')																									"TipoDespacho"
 		,ROUND(T0."DocTotal", 0)																											"DocTotal"
 		,ROUND(IFNULL((SELECT SUM("TaxSum")
 						 FROM "DPI4"
@@ -293,6 +297,8 @@ AS
 		,LEFT(IFNULL(V0."SlpName", ''), 100)																								"SlpName"
 		,LEFT(IFNULL(C0."Phone1", ''), 30)																									"Phone1"
 		,IFNULL(T0."U_VK_Patente", '')																										"Patente"
+		,IFNULL(T0."U_RutChofer",'')																										"RutChofer"
+		,IFNULL(T0."U_NombreChofer",'')																										"NombreChofer"			
 		,T0."DocCur"																														"DocCur"
 		,ROUND(T0."DocRate", 4)																												"DocRate"
 		,LEFT(IFNULL(U0."U_NAME", ''), 30)																									"Usuario"
