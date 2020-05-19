@@ -23,8 +23,8 @@ C:\VisualK\Proyectos\Factura Electronica VK 2\DLL Crea XML\DLLparaXML\bin\Debug\
 C:\VisualK\Proyectos\Factura Electronica VK 2\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.csprojResolveAssemblyReference.cache
 C:\VisualK\Proyectos\Factura Electronica VK 2\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.dll
 C:\VisualK\Proyectos\Factura Electronica VK 2\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.pdb
-C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\bin\Debug\DLLparaXML.dll
-C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\bin\Debug\DLLparaXML.pdb
-C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.csprojResolveAssemblyReference.cache
-C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.dll
-C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.pdb
+C:\Visualk\factura-electronica\DLL Crea XML\DLLparaXML\bin\Debug\DLLparaXML.dll
+C:\Visualk\factura-electronica\DLL Crea XML\DLLparaXML\bin\Debug\DLLparaXML.pdb
+C:\Visualk\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.csprojResolveAssemblyReference.cache
+C:\Visualk\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.dll
+C:\Visualk\factura-electronica\DLL Crea XML\DLLparaXML\obj\Debug\DLLparaXML.pdb

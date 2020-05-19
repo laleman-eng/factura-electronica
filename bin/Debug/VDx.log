@@ -10458,3 +10458,1006 @@
     </DocumentoInterno>
   </Documento>
 </DTE>
+18-05-2020 07:08:28 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+18-05-2020 07:08:28 [TMainClassExt] InitApp: Estructura de datos 1 - Facturación Electronica
+18-05-2020 07:08:28 [TMainClassExt] Procesando Archivo C:\Visualk\factura-electronica\bin\Debug\Docs\UDFFELEC.xls
+18-05-2020 07:08:29 [TMainClassExt] Numero de registros leidos 150 C:\Visualk\factura-electronica\bin\Debug\Docs\UDFFELEC.xls
+18-05-2020 07:08:29 [TMainClassExt] AddUserTableWrn: Tabla VID_FELOG previamente creada.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - ObjType Existente.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - FolioNum Existente.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - SubType Existente.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - Status Existente.
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldValidValueWrn: Valor - EC - Existente para Campo - Status
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldValidValueWrn: Valor - EE - Existente para Campo - Status
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RR - Existente para Campo - Status
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RZ - Existente para Campo - Status
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldValidValueWrn: Valor - AR - Existente para Campo - Status
+18-05-2020 07:08:29 [TMainClassExt] AddUserFieldsWrn: Campo - Message Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - UserCode Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - DocDate Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - Json Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - SeriePE Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - Id Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - Validation Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserTableWrn: Tabla VID_FELOGD previamente creada.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - ID_Log Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - Evento Existente.
+18-05-2020 07:08:30 [TMainClassExt] AddUserFieldsWrn: Campo - Glosa Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - FechaIn Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - TipoEvento Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPARAM previamente creada.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - Servidor Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - Base Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - Usuario Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - Password Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - MonLocal Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - FolioGuia Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FolioGuia
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FolioGuia
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - BlqPrint Existente.
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - BlqPrint
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - BlqPrint
+18-05-2020 07:08:31 [TMainClassExt] AddUserFieldsWrn: Campo - Distrib Existente.
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Distrib
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Distrib
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldsWrn: Campo - FPortal Existente.
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FPortal
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FPortal
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldsWrn: Campo - DteSolTras Existente.
+18-05-2020 07:08:32 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:32 [TMainClassExt] LastField U_Campo LastValue DTESOLTRAS
+18-05-2020 07:08:32 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - DteSolTras
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - DteSolTras
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldsWrn: Campo - Val90 Existente.
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Val90
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Val90
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldsWrn: Campo - MultiSoc Existente.
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MultiSoc
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MultiSoc
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldsWrn: Campo - ValDescL Existente.
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - ValDescL
+18-05-2020 07:08:32 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - ValDescL
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - OficinaSII Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - GenerarT Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - GenerarT
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - GenerarT
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - ProcVenta Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - ProcCompra Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - ProcBol Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - ProcGuia Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - FechaRes Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - AbrirDoc Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - AbrirDoc
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - AbrirDoc
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - NumRes Existente.
+18-05-2020 07:08:33 [TMainClassExt] AddUserFieldsWrn: Campo - BuscarCAF Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - httpBol Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - SubirSuc Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - SubirSuc
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - SubirSuc
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - URLEasyDot Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - UserED Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - PwdED Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - CantImp Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - ImpFiscal Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - ImpFiscal
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - ImpFiscal
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - NomImp Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - Mails_CL Existente.
+18-05-2020 07:08:34 [TMainClassExt] AddUserFieldsWrn: Campo - UserWSCL Existente.
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - PassWSCL Existente.
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - CrearDocC Existente.
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CrearDocC
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CrearDocC
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - CrearDocCS Existente.
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CrearDocCS
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CrearDocCS
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - OP18 Existente.
+18-05-2020 07:08:35 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:35 [TMainClassExt] LastField U_Campo LastValue OP18
+18-05-2020 07:08:35 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - OP8 Existente.
+18-05-2020 07:08:35 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:35 [TMainClassExt] LastField U_Campo LastValue OP8
+18-05-2020 07:08:35 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - URLPDF Existente.
+18-05-2020 07:08:35 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:35 [TMainClassExt] LastField U_Campo LastValue URLPDF
+18-05-2020 07:08:35 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - MostrarXML Existente.
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MostrarXML
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MostrarXML
+18-05-2020 07:08:35 [TMainClassExt] AddUserFieldsWrn: Campo - FProv Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue FPROV
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FProv
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FProv
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldsWrn: Campo - DiasOC Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue DIASOC
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldsWrn: Campo - DifPor Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue DIFPOR
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldsWrn: Campo - DifMon Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue DIFMON
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDif Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue TIPODIF
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - M - Existente para Campo - TipoDif
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - TipoDif
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldsWrn: Campo - EntMer Existente.
+18-05-2020 07:08:36 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:36 [TMainClassExt] LastField U_Campo LastValue ENTMER
+18-05-2020 07:08:36 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - EntMer
+18-05-2020 07:08:36 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - EntMer
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldsWrn: Campo - CodEM Existente.
+18-05-2020 07:08:37 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:37 [TMainClassExt] LastField U_Campo LastValue CODEM
+18-05-2020 07:08:37 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldsWrn: Campo - VListNegra Existente.
+18-05-2020 07:08:37 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:37 [TMainClassExt] LastField U_Campo LastValue VLISTNEGRA
+18-05-2020 07:08:37 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - VListNegra
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - VListNegra
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldsWrn: Campo - MListNegra Existente.
+18-05-2020 07:08:37 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:37 [TMainClassExt] LastField U_Campo LastValue MLISTNEGRA
+18-05-2020 07:08:37 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MListNegra
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MListNegra
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldsWrn: Campo - MListBlanca Existente.
+18-05-2020 07:08:37 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:37 [TMainClassExt] LastField U_Campo LastValue MLISTBLANCA
+18-05-2020 07:08:37 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MListBlanca
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MListBlanca
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldsWrn: Campo - MFacDifer Existente.
+18-05-2020 07:08:37 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:37 [TMainClassExt] LastField U_Campo LastValue MFACDIFER
+18-05-2020 07:08:37 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MFacDifer
+18-05-2020 07:08:37 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MFacDifer
+18-05-2020 07:08:38 [TMainClassExt] AddUserFieldsWrn: Campo - CEdoPortal Existente.
+18-05-2020 07:08:38 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:38 [TMainClassExt] LastField U_Campo LastValue CEDOPORTAL
+18-05-2020 07:08:38 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:38 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CEdoPortal
+18-05-2020 07:08:38 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CEdoPortal
+18-05-2020 07:08:40 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:40 [TMainClassExt] LastField U_Campo LastValue BUSCAREMDOCNUM
+18-05-2020 07:08:40 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:40 [TMainClassExt] AddUserFieldsOk: Campo - BuscarEMDocNum Ok.
+18-05-2020 07:08:41 [TMainClassExt] AddUserFieldValidValueOk: Valid Value - BuscarEMDocNum Ok.
+18-05-2020 07:08:42 [TMainClassExt] AddUserFieldValidValueOk: Valid Value - BuscarEMDocNum Ok.
+18-05-2020 07:08:42 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPROCED previamente creada.
+18-05-2020 07:08:42 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:42 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoDoc
+18-05-2020 07:08:42 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoDoc
+18-05-2020 07:08:42 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 52 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112 - Existente para Campo - TipoDoc
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomE Existente.
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldsWrn: Campo - Habili Existente.
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Habili
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Habili
+18-05-2020 07:08:43 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomD Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomR Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomL Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomS Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - CantLineas Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomDe Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomC Existente.
+18-05-2020 07:08:44 [TMainClassExt] AddUDOWrn: AddUDO - VID_FELOG Existente.
+18-05-2020 07:08:46 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FELOG Ok.
+18-05-2020 07:08:46 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEPARAM Existente.
+18-05-2020 07:08:47 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEPARAM Ok.
+18-05-2020 07:08:47 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEPROCED Existente.
+18-05-2020 07:08:49 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEPROCED Ok.
+18-05-2020 07:08:49 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+18-05-2020 07:08:49 [TMainClassExt] InitApp: Estructura de datos 2 - Facturación Electronica CL
+18-05-2020 07:08:49 [TMainClassExt] Procesando Archivo C:\Visualk\factura-electronica\bin\Debug\Docs\UDFFELECCL.xls
+18-05-2020 07:08:49 [TMainClassExt] Numero de registros leidos 308 C:\Visualk\factura-electronica\bin\Debug\Docs\UDFFELECCL.xls
+18-05-2020 07:08:49 [TMainClassExt] AddUserTableWrn: Tabla VID_FEIMPADIC previamente creada.
+18-05-2020 07:08:49 [TMainClassExt] AddUserFieldsWrn: Campo - CodImpto Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Desc Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Porc Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDOCE previamente creada.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Elec Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Elec
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Elec
+18-05-2020 07:08:50 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDOCED previamente creada.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Indicato Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Descrip Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserTableWrn: Tabla VID_FEIMPTO previamente creada.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Name de SBO.
+18-05-2020 07:08:50 [TMainClassExt] AddUserTableWrn: Tabla VID_FEIMPTOD previamente creada.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - CodeImp Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Descrip Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserTableWrn: Tabla VID_FECAF previamente creada.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Fecha Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Desde Existente.
+18-05-2020 07:08:50 [TMainClassExt] AddUserFieldsWrn: Campo - Hasta Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - Utilizados Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - Asignables Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - FolioDesde Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - CAF Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDIST previamente creada.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - Sucursal Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - Desde Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - Hasta Existente.
+18-05-2020 07:08:51 [TMainClassExt] AddUserFieldsWrn: Campo - RangoF Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDISTD previamente creada.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - ObjType Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - SubType Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - Estado Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldValidValueWrn: Valor - D - Existente para Campo - Estado
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldValidValueWrn: Valor - U - Existente para Campo - Estado
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldValidValueWrn: Valor - R - Existente para Campo - Estado
+18-05-2020 07:08:52 [TMainClassExt] AddUserTableWrn: Tabla VID_FESUC previamente creada.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - Name de SBO.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - Habilitada Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Habilitada
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Habilitada
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:52 [TMainClassExt] AddUserTableWrn: Tabla VID_FEASIGFOL previamente creada.
+18-05-2020 07:08:52 [TMainClassExt] AddUserFieldsWrn: Campo - CAF Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - DocDate Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - Desde Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - Hasta Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - FoliosAs Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - FoliosUt Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - CantDist Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - FormaAsig Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldValidValueWrn: Valor - M - Existente para Campo - FormaAsig
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldValidValueWrn: Valor - A - Existente para Campo - FormaAsig
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - CantAAsig Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - FoliosAsig Existente.
+18-05-2020 07:08:53 [TMainClassExt] AddUserFieldsWrn: Campo - FoliosDisp Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - FolioDesde Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - SeriePE Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserTableWrn: Tabla VID_FEASIGFOLD previamente creada.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Sucursal Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Desde Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Hasta Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - CantAsig Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - CantDisp Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserTableWrn: Tabla VID_FEMULTISOC previamente creada.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Servidor Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Base Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Usuario Existente.
+18-05-2020 07:08:54 [TMainClassExt] AddUserFieldsWrn: Campo - Password Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - Habilitada Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Habilitada
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Habilitada
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - Sociedad Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - RUT Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserTableWrn: Tabla VID_FERECHAZO previamente creada.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntryO Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - SubTypeO Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - ObjTypeO Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntryD Existente.
+18-05-2020 07:08:55 [TMainClassExt] AddUserFieldsWrn: Campo - SubTypeD Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - ObjTypeD Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserTableWrn: Tabla VID_FEREF previamente creada.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - DocSBO Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - DocSubTp Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - CodRef Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodRef
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodRef
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodRef
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - RazRef Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - draftKey Existente.
+18-05-2020 07:08:56 [TMainClassExt] AddUserFieldsWrn: Campo - IndGlobal Existente.
+18-05-2020 07:08:56 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:56 [TMainClassExt] LastField U_Campo LastValue INDGLOBAL
+18-05-2020 07:08:56 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - IndGlobal
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - IndGlobal
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDTE Existente.
+18-05-2020 07:08:57 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:08:57 [TMainClassExt] LastField U_Campo LastValue TIPODTE
+18-05-2020 07:08:57 [TMainClassExt] Sap Error: 
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 00 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111 - Existente para Campo - TipoDTE
+18-05-2020 07:08:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 30 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 35 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 38 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 40 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 45 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 55 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 60 - Existente para Campo - TipoDTE
+18-05-2020 07:08:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 101 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 104 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 106 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserTableWrn: Tabla VID_FEREFD previamente creada.
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDTE Existente.
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 00 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33a - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46a - Existente para Campo - TipoDTE
+18-05-2020 07:08:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 30 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 35 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 38 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 40 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 45 - Existente para Campo - TipoDTE
+18-05-2020 07:09:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 55 - Existente para Campo - TipoDTE
+18-05-2020 07:09:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 60 - Existente para Campo - TipoDTE
+18-05-2020 07:09:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 101 - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 104 - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 106 - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 30b - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32b - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 35b - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 38b - Existente para Campo - TipoDTE
+18-05-2020 07:09:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 40b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 45b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 55b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 60b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 101b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 104b - Existente para Campo - TipoDTE
+18-05-2020 07:09:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 106b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43b - Existente para Campo - TipoDTE
+18-05-2020 07:09:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112b - Existente para Campo - TipoDTE
+18-05-2020 07:09:05 [TMainClassExt] AddUserFieldsWrn: Campo - DocDate Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - DocFolio Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - DocTotal Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - DocTotalFC Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - LineaRef Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPLANCTA previamente creada.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - Cuenta Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - Desc Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - Clasif Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPLANCTAD previamente creada.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - CtaSAP Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - DescSAP Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDTEVTA previamente creada.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:09:06 [TMainClassExt] AddUserFieldsWrn: Campo - RUT Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - Razon Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - FechaRecep Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - HoraRecep Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - FechaEmi Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - Monto Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - IVA Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoC Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - EstadoC
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - EstadoC
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - EstadoC
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoSII Existente.
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - EstadoSII
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - A - Existente para Campo - EstadoSII
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - R - Existente para Campo - EstadoSII
+18-05-2020 07:09:07 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoLey Existente.
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACD - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RCD - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ERM - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFP - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFT - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACO - Existente para Campo - EstadoLey
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldsWrn: Campo - ObjType Existente.
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldsWrn: Campo - AcuseRecibo Existente.
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - AcuseRecibo
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - AprobComer Existente.
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - AprobComer
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - AprobComer
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - AprobComer
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - Descrip Existente.
+18-05-2020 07:09:09 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDTECPRA previamente creada.
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - RUT Existente.
+18-05-2020 07:09:09 [TMainClassExt] AddUserFieldsWrn: Campo - Razon Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - FechaRecep Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - HoraRecep Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - FechaEmi Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - FechaVenc Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - Monto Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - MontoExe Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - Descuento Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - IVA Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoC Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - EstadoC
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - EstadoC
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - EstadoC
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoSII Existente.
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - EstadoSII
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - A - Existente para Campo - EstadoSII
+18-05-2020 07:09:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - R - Existente para Campo - EstadoSII
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoLey Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACD - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RCD - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ERM - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFP - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFT - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACO - Existente para Campo - EstadoLey
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - ObjType Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - Descrip Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - FechaMov Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - HoraMov Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - Xml Existente.
+18-05-2020 07:09:11 [TMainClassExt] AddUserFieldsWrn: Campo - Validacion Existente.
+18-05-2020 07:09:11 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:09:11 [TMainClassExt] LastField U_Campo LastValue VALIDACION
+18-05-2020 07:09:11 [TMainClassExt] Sap Error: 
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - CodRefGen Existente.
+18-05-2020 07:09:12 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:09:12 [TMainClassExt] LastField U_Campo LastValue CODREFGEN
+18-05-2020 07:09:12 [TMainClassExt] Sap Error: 
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - FolioRefGen Existente.
+18-05-2020 07:09:12 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:09:12 [TMainClassExt] LastField U_Campo LastValue FOLIOREFGEN
+18-05-2020 07:09:12 [TMainClassExt] Sap Error: 
+18-05-2020 07:09:12 [TMainClassExt] AddUserTableWrn: Tabla VID_FEDTECPRAD previamente creada.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - CodRef Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserTableWrn: Tabla VID_FEXMLC previamente creada.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - RUTEmisor Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDTE Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - Folio Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - FchEmis Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - FchVenc Existente.
+18-05-2020 07:09:12 [TMainClassExt] AddUserFieldsWrn: Campo - RznSoc Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - GiroEmis Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - DirOrigen Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - CmnaOrigen Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - CiudadOrigen Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - RUTReceptor Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - RznSocRecep Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - GiroRecep Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - Contacto Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - DirRecep Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - CmnaRecep Existente.
+18-05-2020 07:09:13 [TMainClassExt] AddUserFieldsWrn: Campo - CiudadRecep Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - MntNeto Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - MntExe Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - TasaIVA Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - IVA Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - MntTotal Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - FchResol Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - NroResol Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - PDF417 Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - FmaPago Existente.
+18-05-2020 07:09:14 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:09:14 [TMainClassExt] LastField U_Campo LastValue FMAPAGO
+18-05-2020 07:09:14 [TMainClassExt] Sap Error: 
+18-05-2020 07:09:14 [TMainClassExt] AddUserTableWrn: Tabla VID_FEXMLCD previamente creada.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - VlrCodigo Existente.
+18-05-2020 07:09:14 [TMainClassExt] AddUserFieldsWrn: Campo - NmbItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - DscItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - QtyItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - PrcItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - MontoItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - CodImpAdic Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - UnmdItem Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserTableWrn: Tabla VID_FEXMLCR previamente creada.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - TpoDocRef Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - FolioRef Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - FchRef Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - RazonRef Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserTableWrn: Tabla VID_FEXMLCI previamente creada.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - TipoImp Existente.
+18-05-2020 07:09:15 [TMainClassExt] AddUserFieldsWrn: Campo - TasaImp Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - MontoImp Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserTableWrn: Tabla VID_FELISTANE previamente creada.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - CardCode Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - CardName Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Activado Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Activado
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Activado
+18-05-2020 07:09:16 [TMainClassExt] AddUserTableWrn: Tabla VID_FELISTABL previamente creada.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - CardCode Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - CardName Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Activado Existente.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Activado
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Activado
+18-05-2020 07:09:16 [TMainClassExt] AddUserTableWrn: Tabla VID_FECODPAIS previamente creada.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Name de SBO.
+18-05-2020 07:09:16 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPTOEMB previamente creada.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Code de SBO.
+18-05-2020 07:09:16 [TMainClassExt] AddUserFieldsWrn: Campo - Name de SBO.
+18-05-2020 07:09:16 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEIMPADIC Existente.
+18-05-2020 07:09:18 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEIMPADIC Ok.
+18-05-2020 07:09:18 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEDOCE Existente.
+18-05-2020 07:09:19 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEDOCE Ok.
+18-05-2020 07:09:19 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEIMPTO Existente.
+18-05-2020 07:09:21 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEIMPTO Ok.
+18-05-2020 07:09:21 [TMainClassExt] AddUDOWrn: AddUDO - VID_FECAF Existente.
+18-05-2020 07:09:23 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FECAF Ok.
+18-05-2020 07:09:23 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEDIST Existente.
+18-05-2020 07:09:24 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEDIST Ok.
+18-05-2020 07:09:24 [TMainClassExt] AddUDOWrn: AddUDO - VID_FESUC Existente.
+18-05-2020 07:09:26 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FESUC Ok.
+18-05-2020 07:09:26 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEASIGFOL Existente.
+18-05-2020 07:09:27 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEASIGFOL Ok.
+18-05-2020 07:09:27 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEMULTISOC Existente.
+18-05-2020 07:09:29 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEMULTISOC Ok.
+18-05-2020 07:09:29 [TMainClassExt] AddUDOWrn: AddUDO - VID_FERECHAZO Existente.
+18-05-2020 07:09:30 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FERECHAZO Ok.
+18-05-2020 07:09:30 [TMainClassExt] AddUDOWrn: AddUDO - VID_FERefDocs Existente.
+18-05-2020 07:09:32 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FERefDocs Ok.
+18-05-2020 07:09:32 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEPLANCTA Existente.
+18-05-2020 07:09:33 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEPLANCTA Ok.
+18-05-2020 07:09:33 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEDTEVTA Existente.
+18-05-2020 07:09:35 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEDTEVTA Ok.
+18-05-2020 07:09:35 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEDTECPRA Existente.
+18-05-2020 07:09:36 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEDTECPRA Ok.
+18-05-2020 07:09:36 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEXMLC Existente.
+18-05-2020 07:09:38 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEXMLC Ok.
+18-05-2020 07:09:38 [TMainClassExt] AddUDOWrn: AddUDO - VID_FELISTANE Existente.
+18-05-2020 07:09:39 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FELISTANE Ok.
+18-05-2020 07:09:39 [TMainClassExt] AddUDOErr: AddUDO -  [UDO1.TableName][line: 1] , 'No existe tabla VID_FECODPAIS de clase Documento'
+18-05-2020 07:09:39 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+18-05-2020 07:09:40 [TMainClassExt] InitApp: Estructura de datos 3 - Facturación Electronica CL
+18-05-2020 07:09:40 [TMainClassExt] Procesando Archivo C:\Visualk\factura-electronica\bin\Debug\Docs\UDFSAP.xls
+18-05-2020 07:09:40 [TMainClassExt] Numero de registros leidos 324 C:\Visualk\factura-electronica\bin\Debug\Docs\UDFSAP.xls
+18-05-2020 07:09:40 [TMainClassExt] Tabla SBO: ODLN
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldsWrn: Campo - TipDespacho Existente.
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - TipDespacho
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - TipDespacho
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - TipDespacho
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldsWrn: Campo - Traslado Existente.
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - Traslado
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - Traslado
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - Traslado
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - Traslado
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - Traslado
+18-05-2020 07:09:40 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - Traslado
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 7 - Existente para Campo - Traslado
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - Traslado
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - Traslado
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldsWrn: Campo - FETimbre Existente.
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoFE Existente.
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - A - Existente para Campo - EstadoFE
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - E - Existente para Campo - EstadoFE
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - R - Existente para Campo - EstadoFE
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - EstadoFE
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - EstadoFE
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldsWrn: Campo - CodIVANoRec Existente.
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodIVANoRec
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodIVANoRec
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodIVANoRec
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodIVANoRec
+18-05-2020 07:09:41 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodIVANoRec
+18-05-2020 07:09:41 [TMainClassExt] Tabla SBO: OINV
+18-05-2020 07:09:42 [TMainClassExt] AddUserFieldsWrn: Campo - VK_Patente Existente.
+18-05-2020 07:13:46 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:13:46 [TMainClassExt] LastField U_Campo LastValue RUTCHOFER
+18-05-2020 07:13:46 [TMainClassExt] Sap Error: 
+18-05-2020 07:13:46 [TMainClassExt] AddUserFieldsOk: Campo - RutChofer Ok.
+18-05-2020 07:17:54 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:17:54 [TMainClassExt] LastField U_Campo LastValue NOMBRECHOFER
+18-05-2020 07:17:54 [TMainClassExt] Sap Error: 
+18-05-2020 07:17:54 [TMainClassExt] AddUserFieldsOk: Campo - NombreChofer Ok.
+18-05-2020 07:17:54 [TMainClassExt] AddUserFieldsWrn: Campo - CodIVANoRec Existente.
+18-05-2020 07:17:54 [TMainClassExt] AddUserFieldsWrn: Campo - 90_dias Existente.
+18-05-2020 07:17:54 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - 90_dias
+18-05-2020 07:17:54 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - 90_dias
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldsWrn: Campo - IndServicioBol Existente.
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - IndServicioBol
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - IndServicioBol
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - IndServicioBol
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - IndServicioBol
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldsWrn: Campo - CodModVenta Existente.
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodModVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodModVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodModVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodModVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodModVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldsWrn: Campo - CodClauVenta Existente.
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 10 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 17 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:55 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 18 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodClauVenta
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldsWrn: Campo - TotClauVenta Existente.
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldsWrn: Campo - CodViaTransp Existente.
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 10 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 7 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:56 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodViaTransp
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - NombreTransp Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - RUTCiaTransp Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - NomCiaTransp Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - IdAdicTransp Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - Booking Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - Operador Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - CodPtoEmbarque Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - IdAdicPtoEmb Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - CodPtoDesemb Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - IdAdicPtoDesemb Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - Tara Existente.
+18-05-2020 07:17:57 [TMainClassExt] AddUserFieldsWrn: Campo - CodUnidMedTara Existente.
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 10 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 13 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 14 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 15 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 16 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 17 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 18 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 19 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 20 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:58 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 23 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 24 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 7 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - CodUnidMedTara
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldsWrn: Campo - PesoBruto Existente.
+18-05-2020 07:17:59 [TMainClassExt] AddUserFieldsWrn: Campo - CodUnidPesoBr Existente.
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 10 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 13 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 14 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 15 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 16 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 17 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 18 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 19 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 20 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:00 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 23 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 24 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 7 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - CodUnidPesoBr
+18-05-2020 07:18:01 [TMainClassExt] AddUserFieldsWrn: Campo - PesoNeto Existente.
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldsWrn: Campo - CodUnidPesNet Existente.
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 10 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 13 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 14 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 15 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 16 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 17 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 18 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 19 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:02 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 20 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 23 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 24 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 7 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 8 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:03 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 9 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - CodUnidPesNet
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - TotItems Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - TotBultos Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - CodPaisRecep Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - CodPaisDestin Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - TipoMoneda Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldsWrn: Campo - FmaPagExp Existente.
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 21 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:04 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 50 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 51 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 52 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 53 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 54 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 55 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 57 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 58 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:05 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 59 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:06 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 60 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:06 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:06 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 62 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:06 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 63 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:06 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 64 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 65 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 66 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 67 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 68 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 69 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 70 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 71 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 72 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 73 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 74 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 75 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 80 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 81 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 82 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 83 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 84 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 85 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldsWrn: Campo - TipoBultos Existente.
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - TipoBultos
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - TipoBultos
+18-05-2020 07:18:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 13 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 16 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 17 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 18 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 21 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 22 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 23 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 24 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 26 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 27 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 28 - Existente para Campo - TipoBultos
+18-05-2020 07:18:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 29 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 30 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 31 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 35 - Existente para Campo - TipoBultos
+18-05-2020 07:18:11 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 36 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 37 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 38 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 42 - Existente para Campo - TipoBultos
+18-05-2020 07:18:12 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 44 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 45 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 47 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - TipoBultos
+18-05-2020 07:18:13 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 51 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 62 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 63 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 64 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 65 - Existente para Campo - TipoBultos
+18-05-2020 07:18:14 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 66 - Existente para Campo - TipoBultos
+18-05-2020 07:18:15 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 75 - Existente para Campo - TipoBultos
+18-05-2020 07:18:15 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 77 - Existente para Campo - TipoBultos
+18-05-2020 07:18:15 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 78 - Existente para Campo - TipoBultos
+18-05-2020 07:18:15 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 80 - Existente para Campo - TipoBultos
+18-05-2020 07:18:15 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 81 - Existente para Campo - TipoBultos
+18-05-2020 07:18:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 82 - Existente para Campo - TipoBultos
+18-05-2020 07:18:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 83 - Existente para Campo - TipoBultos
+18-05-2020 07:18:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 85 - Existente para Campo - TipoBultos
+18-05-2020 07:18:16 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 88 - Existente para Campo - TipoBultos
+18-05-2020 07:18:17 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 89 - Existente para Campo - TipoBultos
+18-05-2020 07:18:17 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 90 - Existente para Campo - TipoBultos
+18-05-2020 07:18:17 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 91 - Existente para Campo - TipoBultos
+18-05-2020 07:18:17 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 92 - Existente para Campo - TipoBultos
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - TipoBultos
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldsWrn: Campo - CantBultos Existente.
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldsWrn: Campo - FmaPagExp Existente.
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 0 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 11 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 12 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 21 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - FmaPagExp
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldsWrn: Campo - EstadoSII Existente.
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - EstadoSII
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACD - Existente para Campo - EstadoSII
+18-05-2020 07:18:18 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RCD - Existente para Campo - EstadoSII
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ERM - Existente para Campo - EstadoSII
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFP - Existente para Campo - EstadoSII
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RFT - Existente para Campo - EstadoSII
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - ACO - Existente para Campo - EstadoSII
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldsWrn: Campo - VID_FEDocB Existente.
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldsWrn: Campo - TpoTranCpra Existente.
+18-05-2020 07:18:19 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:18:19 [TMainClassExt] LastField U_Campo LastValue TPOTRANCPRA
+18-05-2020 07:18:19 [TMainClassExt] Sap Error: 
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 4 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 5 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 6 - Existente para Campo - TpoTranCpra
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldsWrn: Campo - TpoTranVta Existente.
+18-05-2020 07:18:19 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:18:19 [TMainClassExt] LastField U_Campo LastValue TPOTRANVTA
+18-05-2020 07:18:19 [TMainClassExt] Sap Error: 
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - TpoTranVta
+18-05-2020 07:18:19 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - TpoTranVta
+18-05-2020 07:18:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - TpoTranVta
+18-05-2020 07:18:20 [TMainClassExt] AddUserFieldsWrn: Campo - CdgSiiSuc Existente.
+18-05-2020 07:18:20 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:18:20 [TMainClassExt] LastField U_Campo LastValue CDGSIISUC
+18-05-2020 07:18:20 [TMainClassExt] Sap Error: 
+18-05-2020 07:22:35 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:22:35 [TMainClassExt] LastField U_Campo LastValue FOLIOFE
+18-05-2020 07:22:35 [TMainClassExt] Sap Error: 
+18-05-2020 07:22:35 [TMainClassExt] AddUserFieldsOk: Campo - Foliofe Ok.
+18-05-2020 07:27:02 [TMainClassExt] AddUserFieldValidValueOk: Valid Value - Foliofe Ok.
+18-05-2020 07:27:05 [TMainClassExt] AddUserFieldValidValueOk: Valid Value - Foliofe Ok.
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldValidValueOk: Valid Value - Foliofe Ok.
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldsWrn: Campo - FESucursal Existente.
+18-05-2020 07:27:07 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:27:07 [TMainClassExt] LastField U_Campo LastValue FESUCURSAL
+18-05-2020 07:27:07 [TMainClassExt] Sap Error: 
+18-05-2020 07:27:07 [TMainClassExt] Tabla SBO: OCRD
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldsWrn: Campo - FE_Export Existente.
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FE_Export
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FE_Export
+18-05-2020 07:27:07 [TMainClassExt] Tabla SBO: RIN1
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDTELF Existente.
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 00 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:07 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 99 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:08 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 30 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 32 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 35 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 38 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 40 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 45 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 55 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 60 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 101 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:09 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 104 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 106 - Existente para Campo - TipoDTELF
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldsWrn: Campo - FolioLiqF Existente.
+18-05-2020 07:27:10 [TMainClassExt] Tabla SBO: OCTG
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldsWrn: Campo - FmaPago Existente.
+18-05-2020 07:27:10 [TMainClassExt] InsertUDOHeaderData : Esta entrada ya existe en las tablas siguientes (ODBC -2035) ** Trace:    en SAPbobsCOM.GeneralServiceClass.Add(GeneralData pIGeneralData)
+   en VisualD.SBOGeneralService.TSBOGeneralService.InsertUDOHeaderData(String UDOId, String[] FieldsId, Object[] Values) en C:\VisualK\Proyectos\PrismLibDLL\VisualD.SBOGeneralService\..\SBOLib-Source\VisualD.SBOGeneralService.pas:línea 80
+18-05-2020 07:27:10 [TMainClassExt] LastField U_Campo LastValue FMAPAGO
+18-05-2020 07:27:10 [TMainClassExt] Sap Error: 
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 1 - Existente para Campo - FmaPago
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 2 - Existente para Campo - FmaPago
+18-05-2020 07:27:10 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 3 - Existente para Campo - FmaPago
+18-05-2020 07:27:11 [TMainClassExt] App SBO in C# - Init!
+18-05-2020 07:27:11 [TMainClassExt] C# - Shine your crazy diamond!
+18-05-2020 07:55:37 [TInvoice] 
+18-05-2020 07:56:03 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+18-05-2020 07:56:03 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+18-05-2020 07:56:03 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+18-05-2020 07:56:03 [TMainClassExt] App SBO in C# - Init!
+18-05-2020 07:56:03 [TMainClassExt] C# - Shine your crazy diamond!
+18-05-2020 07:56:10 [TConfigFE] 
+18-05-2020 07:56:27 [TInvoice] 
+18-05-2020 09:05:38 [TInvoice] 

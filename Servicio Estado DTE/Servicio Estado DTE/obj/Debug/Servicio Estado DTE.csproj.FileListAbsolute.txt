@@ -76,12 +76,12 @@ C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug
 C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
 C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.exe
 C:\VisualK\Factura Electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.pdb
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe.config
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.pdb
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csprojResolveAssemblyReference.cache
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.ProjectInstaller.resources
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.Service1.resources
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.exe
-C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.pdb
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe.config
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.pdb
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csprojResolveAssemblyReference.cache
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.ProjectInstaller.resources
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.Service1.resources
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.exe
+C:\Visualk\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.pdb
