@@ -3,3 +3,7 @@ C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\bin\x86\Debug\DLLparaXML.
 C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\obj\x86\Debug\DLLparaXML.csprojResolveAssemblyReference.cache
 C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\obj\x86\Debug\DLLparaXML.dll
 C:\VisualK\Factura Electronica\DLL Crea XML\DLLparaXML\obj\x86\Debug\DLLparaXML.pdb
+C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\bin\x86\Debug\DLLparaXML.dll
+C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\bin\x86\Debug\DLLparaXML.pdb
+C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\obj\x86\Debug\DLLparaXML.dll
+C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\obj\x86\Debug\DLLparaXML.pdb

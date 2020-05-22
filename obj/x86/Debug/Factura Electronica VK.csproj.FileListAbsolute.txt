@@ -136,63 +136,79 @@ C:\VisualK\Factura Electronica\obj\x86\Debug\Factura_Electronica_VK.Properties.R
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura Electronica VK.csproj.GenerateResource.Cache
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura Electronica.exe
 C:\VisualK\Factura Electronica\obj\x86\Debug\Factura Electronica.pdb
-C:\Visualk\factura-electronica\bin\Debug\Factura Electronica.exe.config
-C:\Visualk\factura-electronica\bin\Debug\Factura Electronica.exe
-C:\Visualk\factura-electronica\bin\Debug\Factura Electronica.pdb
-C:\Visualk\factura-electronica\bin\Debug\DLLparaXML.dll
-C:\Visualk\factura-electronica\bin\Debug\Interop.SAPbobsCOM.dll
-C:\Visualk\factura-electronica\bin\Debug\Interop.SAPbouiCOM.dll
-C:\Visualk\factura-electronica\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Core.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Dimensions.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOne.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOneForm.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOneListener.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.GlobalVid.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Main.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MainObjBase.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MasterDataMatrixForm.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Matrix_Helper.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MenuConfFr.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MultiFunctions.dll
-C:\Visualk\factura-electronica\bin\Debug\Visuald.ReportWindowFr.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOCrystalPreview.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOFunctions.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOGeneralService.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOObjectMg1.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.uEncrypt.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.untLog.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.vkBaseForm.dll
-C:\Visualk\factura-electronica\bin\Debug\VisualD.vkFormInterface.dll
-C:\Visualk\factura-electronica\bin\Debug\DLLparaXML.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.GlobalVid.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Core.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Dimensions.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOne.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOneForm.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.DynamicOneListener.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Main.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MainObjBase.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MasterDataMatrixForm.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.Matrix_Helper.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MenuConfFr.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.MultiFunctions.pdb
-C:\Visualk\factura-electronica\bin\Debug\Visuald.ReportWindowFr.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOCrystalPreview.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOFunctions.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOGeneralService.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.SBOObjectMg1.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.uEncrypt.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.untLog.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.vkBaseForm.pdb
-C:\Visualk\factura-electronica\bin\Debug\VisualD.vkFormInterface.pdb
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura Electronica VK.csprojResolveAssemblyReference.cache
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura_Electronica_VK.Form1.resources
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura_Electronica_VK.Properties.Resources.resources
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura Electronica VK.csproj.GenerateResource.Cache
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura Electronica.exe
-C:\Visualk\factura-electronica\obj\x86\Debug\Factura Electronica.pdb
+C:\VisualK\factura-electronica\bin\Debug\Factura Electronica.exe.config
+C:\VisualK\factura-electronica\bin\Debug\Factura Electronica.exe
+C:\VisualK\factura-electronica\bin\Debug\Factura Electronica.pdb
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.Shared.dll
+C:\VisualK\factura-electronica\bin\Debug\DLLparaXML.dll
+C:\VisualK\factura-electronica\bin\Debug\Interop.SAPbobsCOM.dll
+C:\VisualK\factura-electronica\bin\Debug\Interop.SAPbouiCOM.dll
+C:\VisualK\factura-electronica\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Core.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Dimensions.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOne.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOneForm.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOneListener.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.GlobalVid.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Main.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MainObjBase.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MasterDataMatrixForm.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Matrix_Helper.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MenuConfFr.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MultiFunctions.dll
+C:\VisualK\factura-electronica\bin\Debug\Visuald.ReportWindowFr.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOCrystalPreview.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOFunctions.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOGeneralService.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOObjectMg1.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.uEncrypt.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.untLog.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.vkBaseForm.dll
+C:\VisualK\factura-electronica\bin\Debug\VisualD.vkFormInterface.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\VisualK\factura-electronica\bin\Debug\log4net.dll
+C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\VisualK\factura-electronica\bin\Debug\stdole.dll
+C:\VisualK\factura-electronica\bin\Debug\DLLparaXML.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.GlobalVid.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Core.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Dimensions.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOne.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOneForm.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.DynamicOneListener.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Main.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MainObjBase.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MasterDataMatrixForm.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.Matrix_Helper.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MenuConfFr.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.MultiFunctions.pdb
+C:\VisualK\factura-electronica\bin\Debug\Visuald.ReportWindowFr.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOCrystalPreview.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOFunctions.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOGeneralService.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.SBOObjectMg1.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.uEncrypt.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.untLog.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.vkBaseForm.pdb
+C:\VisualK\factura-electronica\bin\Debug\VisualD.vkFormInterface.pdb
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica VK.csprojResolveAssemblyReference.cache
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura_Electronica_VK.Form1.resources
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura_Electronica_VK.Properties.Resources.resources
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica VK.csproj.GenerateResource.Cache
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica.exe
+C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica.pdb

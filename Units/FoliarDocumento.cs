@@ -932,7 +932,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                 oRecordSet.DoQuery(s);
                                                 s = FCmpny.GetLastErrorDescription();
                                                 FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento, " + s, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + "Folio: " + FolioNum + " mensaje Error:" + s);
+                                                OutLog("No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + " Folio: " + FolioNum + " mensaje Error:" + s);
 
                                             }
                                             else

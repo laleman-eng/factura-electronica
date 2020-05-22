@@ -103,15 +103,17 @@ Version 92.1.44 (HANA)
 Version 93.0.001 (HANA)
 	-> se resuelve problema de inicio automatico para funcionamiento del addon
 	-> se resuelve problema del campo LPGN
-	-> se crea campo en docmentos de marketing (DocSAP) para determinar cuando el addon folia por docmento SAP o mantenedor de folio
+	-> se crea campo en documentos de marketing (DocSAP) para determinar cuando el addon folia por docmento SAP o mantenedor de folio
 	-> mejoras a nivel del manejo de excepciones para documentos de marketing
 	-> mejoras a nivel de mensajes del VDx.log
 Version 93.0.003 (HANA)
 	-> Se agrega en documento Factura combobox Tipo traslado
 	-> se crea campo RutChofer y Nombre chofer para documento de marketing
 	-> se crea campos patente, RutChofer y NombreChofer en XML para Factura y Guia
-	-> modificaciones en SP Y VIEW de encabezado para Factra y Guia
-	-> nodo transporte en XML para Guia 
+	-> Modificaciones en SP Y VIEW de encabezado para Factra y Guia
+	-> Nodo transporte en XML para Guia 
 	-> cambios de campos Postal nodo Receptor por Dest en nodo transporte  [CiudadDest,CmnaDest,DirDest]
-
+Version 93.0.004 (HANA)
+	-> Mejoras en las validaciones de asignacion de folio
+ 
 

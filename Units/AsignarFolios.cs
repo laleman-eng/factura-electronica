@@ -706,7 +706,8 @@ namespace Factura_Electronica_VK.AsignarFolios
                     iSum = 0;
                     iCantAsig = Convert.ToInt32((System.String)(oDBDSH.GetValue("U_CantAAsig", 0)));
                     ivalor = Convert.ToInt32((System.String)(oDBDSD.GetValue("U_" + sColumna, iRow-1)));
-                    while (i < iRow)
+                    int cantidadRegistros = oDBDSD.Size;
+                    while (i < cantidadRegistros)
                     {
                         if (i != iRow - 1)
                         {
@@ -716,7 +717,7 @@ namespace Factura_Electronica_VK.AsignarFolios
                                 {
                                     bSeSolapa = true;
                                     Suc = (System.String)(oDBDSD.GetValue("U_Sucursal", i));
-                                    i = iRow;
+                                    break;
                                 }
                             }
                         }
