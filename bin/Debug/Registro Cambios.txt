@@ -113,7 +113,7 @@ Version 93.0.003 (HANA)
 	-> Modificaciones en SP Y VIEW de encabezado para Factra y Guia
 	-> Nodo transporte en XML para Guia 
 	-> cambios de campos Postal nodo Receptor por Dest en nodo transporte  [CiudadDest,CmnaDest,DirDest]
-Version 93.0.004 (HANA)
+Version 93.0.004 (HANA) (93.0.005 SQL)
 	-> Mejoras en las validaciones de asignacion de folio
  
 
