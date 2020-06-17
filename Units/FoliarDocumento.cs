@@ -50,6 +50,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
         //oColumn     : SAPBouiCOM.Column;
         private CultureInfo _nf = new System.Globalization.CultureInfo("en-US");
         private String s;
+        public VisualD.SBOFunctions.CSBOFunctions SBO_f;
 
         public new bool InitForm(string uid, string xmlPath, ref Application application, ref SAPbobsCOM.Company company, ref CSBOFunctions SBOFunctions, ref TGlobalVid _GlobalSettings)
         {
@@ -623,8 +624,13 @@ namespace Factura_Electronica_VK.FoliarDocumento
             String TTipoDoc = "";
             String SubType = "";
             String tabla = "";
+            DateTime t;
+
             try
             {
+                Reg = new TFunctions();
+                Reg.SBO_f = FSBOf;
+
                 if (FSBOApp.MessageBox("¿Esta seguro que desea foliar los documentos seleccionados?", 1, "Si", "No", "") == 1)
                 {
                     oComboBox = (ComboBox)(oForm.Items.Item("TipoDoc").Specific);
@@ -866,6 +872,15 @@ namespace Factura_Electronica_VK.FoliarDocumento
                             }
                             else if (Distribuido)//
                             {
+                                String actDebug = "";
+                                if (GlobalSettings.RunningUnderSQLServer)
+                                    s = @"SELECT ISNULL(U_ActDebug, 'N') 'ActDebug' FROM [@VID_FEPARAM]";
+                                else
+                                    s = @"SELECT IFNULL(""U_ActDebug"", 'N') ""ActDebug"" FROM ""@VID_FEPARAM""";
+                                oRecordSet.DoQuery(s);
+                                if (oRecordSet.RecordCount > 0)
+                                    actDebug = ((System.String)oRecordSet.Fields.Item("ActDebug").Value).Trim();
+
                                 if (GlobalSettings.RunningUnderSQLServer)
                                     s = @"EXEC VID_SP_FE_BUSCAR_FOLIO '{0}'";
                                 else
@@ -880,6 +895,12 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                     FolioNum = (System.Int32)(oRecordSet.Fields.Item("Folio").Value);
                                     FDocEntry = (System.Int32)(oRecordSet.Fields.Item("DocEntry").Value);
                                     FLineId = (System.Int32)(oRecordSet.Fields.Item("LineId").Value);
+
+                                    if (actDebug == "Y")
+                                    {
+                                        t = DateTime.Now;
+                                        Reg.SBO_f.oLog.OutLog("Obtencion Folio BD: " + FolioNum + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                    }
 
                                     if (FolioNum == 0)
                                         throw new Exception("No se ha encontrado número de Folio disponible");
@@ -1087,6 +1108,13 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                 }
 
                                                 lRetCode = oDocument.Update();
+
+                                                if (actDebug == "Y")
+                                                {
+                                                    t = DateTime.Now;
+                                                    Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion Folio result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                }
+
                                                 if (lRetCode != 0)
                                                 {
                                                     bFolioAsignado = false;
@@ -1105,6 +1133,13 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                     // se deja como impreso como un proceso aparte    
                                                     oDocument.Printed = PrintStatusEnum.psYes;
                                                     lRetCode = oDocument.Update();
+
+                                                    if (actDebug == "Y")
+                                                    {
+                                                        t = DateTime.Now;
+                                                        Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion documento impreso result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                    }
+
                                                     if (lRetCode != 0)
                                                     {
                                                         s = FCmpny.GetLastErrorDescription();
@@ -1147,6 +1182,13 @@ namespace Factura_Electronica_VK.FoliarDocumento
                                                                 {
                                                                     oDocument.UserFields.Fields.Item("U_FETimbre").Value = s;
                                                                     lRetCode = oDocument.Update();
+
+                                                                    if (actDebug == "Y")
+                                                                    {
+                                                                        t = DateTime.Now;
+                                                                        Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion timbre result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                                    }
+
                                                                     if (lRetCode != 0)
                                                                     {
                                                                         FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento - DocEntry: " + sDocEntry + " ObjType: " + ObjType + " Documento Electronico: " + TipoDocElect + " - " + s, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);

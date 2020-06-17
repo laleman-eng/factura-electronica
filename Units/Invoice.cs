@@ -43,6 +43,7 @@ namespace Factura_Electronica_VK.Invoice
         private SAPbouiCOM.StaticText oStatic;
         private SAPbouiCOM.EditText oEditText;
         private SAPbouiCOM.ComboBox oComboBox;
+        public VisualD.SBOFunctions.CSBOFunctions SBO_f = new CSBOFunctions();
 
         private SAPbouiCOM.DataTable odt;
         private SAPbouiCOM.Grid ogrid;
@@ -51,6 +52,7 @@ namespace Factura_Electronica_VK.Invoice
         private CultureInfo _nf = new System.Globalization.CultureInfo("en-US");
         private Boolean bMultiSoc;
         private String SerieAnterior = "";
+        private DateTime t;
         //
         private List<string> Lista;
 
@@ -64,7 +66,8 @@ namespace Factura_Electronica_VK.Invoice
         { get; set; }
         public static Boolean Liquidacion
         { get; set; }
-        public VisualD.SBOFunctions.CSBOFunctions SBO_f;
+
+    
 
         public new bool InitForm(string uid, string xmlPath, ref Application application, ref SAPbobsCOM.Company company, ref CSBOFunctions SBOFunctions, ref TGlobalVid _GlobalSettings)
         {
@@ -76,6 +79,7 @@ namespace Factura_Electronica_VK.Invoice
 
             try
             {
+
                 oRecordSet = (SAPbobsCOM.Recordset)(FCmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
                 //FSBOf.LoadForm(xmlPath, 'VID_Entrega.srf', Uid);
                 //var sPath : String := TMultiFunctions.ExtractFilePath(TMultiFunctions.ParamStr(0));
@@ -774,6 +778,7 @@ namespace Factura_Electronica_VK.Invoice
             String TipoDocElect;
             String Distribuido = "N";
             String TTipoDoc = "";
+            String actDebug="N";
 
             SAPbobsCOM.Documents oDocument;
             base.FormDataEvent(ref BusinessObjectInfo, ref BubbleEvent);
@@ -789,6 +794,9 @@ namespace Factura_Electronica_VK.Invoice
                 //        oForm.Items.Item("VID_Estado").Enabled = false;
                 //    }
                 //}
+                Reg = new TFunctions();
+                Reg.SBO_f = FSBOf;
+
 
                 if ((BusinessObjectInfo.BeforeAction == false) && (BusinessObjectInfo.EventType == BoEventTypes.et_FORM_DATA_ADD) && (BusinessObjectInfo.ActionSuccess))
                 {
@@ -812,15 +820,16 @@ namespace Factura_Electronica_VK.Invoice
                         }
 
                         if (GlobalSettings.RunningUnderSQLServer)
-                            s = "select ISNULL(U_Distrib,'N') 'Distribuido', ISNULL(U_FPortal,'N') 'FolioPortal', ISNULL(U_MultiSoc,'N') MultiSoc, ISNULL(U_GenerarT,'N') GeneraT from [@VID_FEPARAM] WITH (NOLOCK)";
+                            s = "select ISNULL(U_Distrib,'N') 'Distribuido', ISNULL(U_FPortal,'N') 'FolioPortal', ISNULL(U_MultiSoc,'N') MultiSoc, ISNULL(U_GenerarT,'N') GeneraT , ISNULL(U_ActDebug,'N') ActDebug from [@VID_FEPARAM] WITH (NOLOCK)";
                         else
-                            s = @"select IFNULL(""U_Distrib"",'N') ""Distribuido"", IFNULL(""U_FPortal"",'N') ""FolioPortal"", IFNULL(""U_MultiSoc"",'N') ""MultiSoc"", IFNULL(""U_GenerarT"",'N') ""GeneraT"" from ""@VID_FEPARAM"" ";
+                            s = @"select IFNULL(""U_Distrib"",'N') ""Distribuido"", IFNULL(""U_FPortal"",'N') ""FolioPortal"", IFNULL(""U_MultiSoc"",'N') ""MultiSoc"", IFNULL(""U_GenerarT"",'N') ""GeneraT"", IFNULL(""U_ActDebug"",'N') ""ActDebug""  from ""@VID_FEPARAM"" ";
                         oRecordSet.DoQuery(s);
                         if (oRecordSet.RecordCount > 0)
                         {
                             GeneraT = ((System.String)oRecordSet.Fields.Item("GeneraT").Value).Trim();
                             Distribuido = ((System.String)oRecordSet.Fields.Item("Distribuido").Value).Trim();
                             FolioPortal = ((System.String)oRecordSet.Fields.Item("FolioPortal").Value).Trim();
+                            actDebug = ((System.String)oRecordSet.Fields.Item("ActDebug").Value).Trim();
 
                             if ((System.String)(oRecordSet.Fields.Item("MultiSoc").Value) == "Y")
                                 bMultiSoc = true;
@@ -948,6 +957,11 @@ namespace Factura_Electronica_VK.Invoice
                                             FDocEntry = (System.Int32)(oRecordSet.Fields.Item("DocEntry").Value);
                                             FLineId = (System.Int32)(oRecordSet.Fields.Item("LineId").Value);
 
+                                            if (actDebug == "Y")
+                                            {
+                                                t = DateTime.Now;
+                                                Reg.SBO_f.oLog.OutLog("Obtencion Folio BD: " + FolioNum + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                            }
                                             if (FolioNum == 0)
                                                 throw new Exception("No se ha encontrado número de Folio disponible");
 
@@ -983,6 +997,13 @@ namespace Factura_Electronica_VK.Invoice
 
                                                     oDocument.UserFields.Fields.Item("U_Foliofe").Value = "2";
                                                     lRetCode = oDocument.Update();
+
+                                                    if (actDebug == "Y")
+                                                    {
+                                                        t = DateTime.Now;
+                                                        Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion Folio result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                    }
+
                                                     if (lRetCode != 0)
                                                     {
                                                         bFolioAsignado = false;
@@ -995,17 +1016,23 @@ namespace Factura_Electronica_VK.Invoice
 
                                                         FSBOApp.MessageBox("*****   No se ha asignado Folio al Documento   *****", 1, "Aceptar");
                                                         FSBOApp.StatusBar.SetText("No se ha asignado Folio al Documento -> " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                        OutLog("**** No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
+                                                        Reg.SBO_f.oLog.OutLog("**** No se ha asignado Folio al Documento DocEntry: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
                                                     }
                                                     else
                                                     {
                                                         // se deja como impreso como un proceso aparte
                                                         oDocument.Printed = PrintStatusEnum.psYes;
                                                         lRetCode = oDocument.Update();
+                                                        if (actDebug == "Y")
+                                                        {
+                                                            t = DateTime.Now;
+                                                            Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion documento impreso result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                        }
+
                                                         if (lRetCode != 0)
                                                         {
                                                             FSBOApp.StatusBar.SetText("No se ha cambiado variable impresa -> " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
-                                                            OutLog(" No se ha cambiado variable impresa: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
+                                                            Reg.SBO_f.oLog.OutLog(" No se ha cambiado variable impresa: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + FCmpny.GetLastErrorDescription() + "codigo: " + lRetCode);
                                                         }
                                                         else
                                                         { 
@@ -1045,10 +1072,16 @@ namespace Factura_Electronica_VK.Invoice
                                                                     {
                                                                         oDocument.UserFields.Fields.Item("U_FETimbre").Value = s;
                                                                         lRetCode = oDocument.Update();
+                                                                        if (actDebug == "Y")
+                                                                        {
+                                                                            t = DateTime.Now;
+                                                                            Reg.SBO_f.oLog.OutLog("Update documento SAP asignacion timbre result: " + lRetCode + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                                                        }
+
                                                                         if (lRetCode != 0)
                                                                         {
                                                                             FSBOApp.StatusBar.SetText("No se ha creado Timbre en el documento - " + s + " - " + FCmpny.GetLastErrorDescription(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                                                            OutLog("No se ha creado Timbre en el documento: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + s + " - " + FCmpny.GetLastErrorDescription());
+                                                                            Reg.SBO_f.oLog.OutLog("No se ha creado Timbre en el documento: " + sDocEntry + " Tipo: " + oForm.BusinessObject.Type + " - " + s + " - " + FCmpny.GetLastErrorDescription());
                                                                         }
                                                                         else
                                                                             FSBOApp.StatusBar.SetText("Se ha creado satisfactoriamente Timbre en el documento", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
@@ -3005,16 +3038,17 @@ namespace Factura_Electronica_VK.Invoice
             SAPbobsCOM.Recordset ors2 = ((SAPbobsCOM.Recordset)Cmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
             TDLLparaXML Dll = new TDLLparaXML();
             Dll.SBO_f = SBO_f;
+            String ActDebug = "";
 
             try
             {
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum 
-                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML'
+                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_ActDebug,'N') 'ActDebug'
                            FROM [@VID_FEPARAM] T0, OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML""
+                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug""
                            FROM ""@VID_FEPARAM"" T0, ""OADM"" A0 ";
 
                 ors.DoQuery(s);
@@ -3034,7 +3068,7 @@ namespace Factura_Electronica_VK.Invoice
                     passED = Reg.DesEncriptar((System.String)(ors.Fields.Item("Pass").Value).ToString().Trim());
                     TaxIdNum = (System.String)(ors.Fields.Item("TaxIdNum").Value).ToString().Trim();
                     MostrarXML = ((System.String)ors.Fields.Item("MostrarXML").Value).Trim();
-
+                    ActDebug = ((System.String)ors.Fields.Item("ActDebug").Value).Trim();
                     if (bFPortal)
                     {
                         if ((System.String)(ors.Fields.Item("OP8").Value).ToString().Trim() == "")
@@ -3138,7 +3172,14 @@ namespace Factura_Electronica_VK.Invoice
 
                     if (sXML == "")
                         throw new Exception("Problema para generar xml Documento electronico " + TipoDocElec);
-                  //    SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
+
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        Reg.SBO_f.oLog.OutLog("XML DE Encabezado: " + sXML + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
+
+                    //    SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
 
                     //PARA DETALLE
                     if (RunningUnderSQLServer)
@@ -3163,7 +3204,11 @@ namespace Factura_Electronica_VK.Invoice
                    // SBO_f.oLog.OutLog(sXML);  TEST para visualizar XML de detalle
                     if (sXML == "")
                         throw new Exception("Problema para generar xml Documento electronico (Detalle)" + TipoDocElec);
-                    
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        Reg.SBO_f.oLog.OutLog("XML DE Detalle: " + sXML + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
 
                     //PARA REFERENCIA
                     if (ProcR != "")
@@ -3190,6 +3235,13 @@ namespace Factura_Electronica_VK.Invoice
 
                             if (sXML == "")
                                 throw new Exception("Problema para generar xml Documento electronico (Referencia)" + TipoDocElec);
+
+                            if (ActDebug == "Y")
+                            {
+                                t = DateTime.Now;
+                                Reg.SBO_f.oLog.OutLog("XML DE Referencia: " + sXML + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                            }
+
                         }
 
                     }
@@ -3222,8 +3274,20 @@ namespace Factura_Electronica_VK.Invoice
          //           SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de 
                     if (!bFPortal)
                     {
+                  
+                        if (ActDebug == "Y")
+                        {
+                            t = DateTime.Now;
+                            Reg.SBO_f.oLog.OutLog("Inicio PDF String: "+ t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                        }
                         //Cargar PDF
                         s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
+
+                        if (ActDebug == "Y")
+                        {
+                            t = DateTime.Now;
+                            Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                        }
 
                         if (s == "")
                             throw new Exception("No se ha creado PDF");
@@ -3264,8 +3328,13 @@ namespace Factura_Electronica_VK.Invoice
                     }
 
                     if (MostrarXML == "Y")
-                        SBO_f.oLog.OutLog(oXml.InnerXml);
+                        Reg.SBO_f.oLog.OutLog(oXml.InnerXml);
                     s = Reg.UpLoadDocumentByUrl(oXml, RunningUnderSQLServer, URL, userED, passED);
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        Reg.SBO_f.oLog.OutLog("Envio XML Portal: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
                     var results = JsonConvert.DeserializeObject<dynamic>(s);
                     jStatus = results.Status;
                     jCodigo = results.Codigo;

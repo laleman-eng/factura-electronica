@@ -2036,6 +2036,8 @@ namespace Factura_Electronica_VK.Functions
             String Tipo = "";
             string str1;
             SAPbobsCOM.Recordset orsL = ((SAPbobsCOM.Recordset)SBO_f.Cmpny.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
+            DateTime t;
+            String ActDebug = "";
 
             try
             {
@@ -2056,14 +2058,13 @@ namespace Factura_Electronica_VK.Functions
                     rpt.Load(sNombreArchivo);
                     rpt.Refresh();
 
-                    
                     //Lb.EncryptFile("rsaPublicKey.txt")
                     try
                     {
                         if (RunningUnderSQLServer)
-                            s = "SELECT ISNULL(U_Usr,'') 'Usuario', ISNULL(U_Pw,'') 'Pass' FROM [@VID_MENUSU] ";
+                            s = "SELECT ISNULL(U_Usr,'') 'Usuario', ISNULL(U_Pw,'') 'Pass' , ISNULL(U_ActDebug,'N') 'ActDebug' FROM [@VID_MENUSU], [@VID_FEPARAM] ";
                         else
-                            s = @"SELECT IFNULL(""U_Usr"",'') ""Usuario"", IFNULL(""U_Pw"",'') ""Pass"", IFNULL(""U_Srvr"", '') ""Servidor"" FROM ""@VID_MENUSU"" ";
+                            s = @"SELECT IFNULL(""U_Usr"",'') ""Usuario"", IFNULL(""U_Pw"",'') ""Pass"", IFNULL(""U_Srvr"", '') ""Servidor"" , IFNULL (""U_ActDebug"",'N') ""ActDebug"" FROM ""@VID_MENUSU"", ""@VID_FEPARAM"" ";
                         orsL.DoQuery(s);
                         if (orsL.RecordCount == 0)
                         {
@@ -2075,7 +2076,9 @@ namespace Factura_Electronica_VK.Functions
                             SBO_f.SBOApp.StatusBar.SetText(s, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error);
                             return "";
                         }
-                        
+                        else
+                            ActDebug = ((System.String)orsL.Fields.Item("ActDebug").Value).Trim();
+
                         if (RunningUnderSQLServer)
                         {
                             connection.ServerName = SBO_f.Cmpny.Server.ToString().Trim();
@@ -2105,7 +2108,11 @@ namespace Factura_Electronica_VK.Functions
                             rpt.DataSourceConnections[0].SetConnection(((System.String)orsL.Fields.Item("Servidor").Value).Trim(), SBO_f.Cmpny.CompanyDB.ToString().Trim(), ((System.String)orsL.Fields.Item("Usuario").Value).Trim(), ((System.String)orsL.Fields.Item("Pass").Value).Trim());
                             //rpt.DataSourceConnections[0].SetConnection("hanab1:30015", "SBO_SYNTHEON", "SYSTEM", "SAPB1Admin");
                         }
-
+                        if (ActDebug == "Y")
+                        { 
+                            t = DateTime.Now;
+                            SBO_f.oLog.OutLog("Conexion con RPT: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -2131,14 +2138,22 @@ namespace Factura_Electronica_VK.Functions
                     }
 
                     rpt.VerifyDatabase();
-
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        SBO_f.oLog.OutLog("Verificacion DataBase RPT: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
                     //rpt.SetParameterValue("ObjectId@", ObjType);
                     rpt.SetParameterValue("DocKey@", DocEntry);
                     //rpt.PrintToPrinter(1, false, 1, 1);
                     //rpt.ExportToDisk(ExportFormatType.PortableDocFormat, "C:\\Paso\\prueba" + Folio + ".pdf");
 
                     oStream = rpt.ExportToStream(ExportFormatType.PortableDocFormat);
-
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        SBO_f.oLog.OutLog("Exportacion del RPT: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
                     rpt.Close();
 
                     byte[] b1 = new byte[oStream.Length];
@@ -2146,7 +2161,11 @@ namespace Factura_Electronica_VK.Functions
                     oStream.Read(b1, 0, Convert.ToInt32(oStream.Length));
 
                     str1 = Convert.ToBase64String(b1);
-
+                    if (ActDebug == "Y")
+                    {
+                        t = DateTime.Now;
+                        SBO_f.oLog.OutLog("conversion a base64: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
                     /*oStream.Position = 0;
                     using (StreamReader reader = new StreamReader(oStream, Encoding.UTF8))
                     {

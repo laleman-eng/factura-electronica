@@ -115,5 +115,7 @@ Version 93.0.003 (HANA)
 	-> cambios de campos Postal nodo Receptor por Dest en nodo transporte  [CiudadDest,CmnaDest,DirDest]
 Version 93.0.004 (HANA) (93.0.005 SQL)
 	-> Mejoras en las validaciones de asignacion de folio
+Version 93.0.006 (HANA)
+	-> Nuevo campo ActDebug en parametrizacion del addon, si esta habilitado muestra los tiempos de generacion de DTE desde factura y foliacion masiva (solo factura) 
  
 

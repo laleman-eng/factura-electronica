@@ -12251,3 +12251,2081 @@
 21-05-2020 11:59:38 [TMainClassExt] App SBO in C# - Init!
 21-05-2020 11:59:38 [TMainClassExt] C# - Shine your crazy diamond!
 21-05-2020 11:59:45 [TAsignarFolios] 
+02-06-2020 09:32:22 [TMainClassExt] SHA1 UDFFELEC.xls[/U4UYLSgxyagIAK4Cxt6NW0DLHo=]
+02-06-2020 09:32:22 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+02-06-2020 09:32:22 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+02-06-2020 09:32:24 [TMainClassExt] App SBO in C# - Init!
+02-06-2020 09:32:24 [TMainClassExt] C# - Shine your crazy diamond!
+02-06-2020 09:33:01 [TDistribucionFolios] 
+02-06-2020 09:35:19 [TInvoice] 
+02-06-2020 09:41:09 [TInvoice] 
+02-06-2020 09:41:14 [TDeliveryNote] 
+02-06-2020 09:41:39 [TMainClassExt] Error GenerarXMLString, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringDelivery(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 1433
+02-06-2020 09:41:39 [TMainClassExt] EnviarFE Problema para generar xml Documento electronico 52 ** Trace:    at Factura_Electronica_VK.DeliveryNote.TDeliveryNote.EnviarFE_WebService(String DocEntry, String SubType, Boolean bTransferencia, Boolean RImprimir, Boolean bDevolucion, Boolean bMultiSoc, String nMultiSoc, String GLOB_EncryptSQL, Boolean RunningUnderSQLServer, String TipoDocElecAddon, String ObjType, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\DeliveryNote.cs:line 1278
+02-06-2020 09:41:53 [TDeliveryNote] 
+02-06-2020 09:42:47 [TDeliveryNote] 
+02-06-2020 09:43:08 [TInvoice] 
+02-06-2020 09:43:25 [TInvoice] Obtencion Folio BD: 1177 21:43:21:690
+16-06-2020 10:09:17 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+16-06-2020 10:09:19 [TMainClassExt] InitApp: Estructura de datos 1 - Facturación Electronica
+16-06-2020 10:09:19 [TMainClassExt] Procesando Archivo C:\VisualK\factura-electronica\bin\Debug\Docs\UDFFELEC.xls
+16-06-2020 10:09:19 [TMainClassExt] Numero de registros leidos 153 C:\VisualK\factura-electronica\bin\Debug\Docs\UDFFELEC.xls
+16-06-2020 10:09:19 [TMainClassExt] AddUserTableWrn: Tabla VID_FELOG previamente creada.
+16-06-2020 10:09:19 [TMainClassExt] AddUserFieldsWrn: Campo - DocEntry Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - ObjType Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - FolioNum Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - SubType Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - Status Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - EC - Existente para Campo - Status
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - EE - Existente para Campo - Status
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RR - Existente para Campo - Status
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - RZ - Existente para Campo - Status
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldValidValueWrn: Valor - AR - Existente para Campo - Status
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - Message Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - UserCode Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - DocDate Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - Json Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - SeriePE Existente.
+16-06-2020 10:09:20 [TMainClassExt] AddUserFieldsWrn: Campo - Id Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Validation Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserTableWrn: Tabla VID_FELOGD previamente creada.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - ID_Log Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Evento Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Glosa Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - FechaIn Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - TipoEvento Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPARAM previamente creada.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Servidor Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Base Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Usuario Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - Password Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - MonLocal Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - FolioGuia Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FolioGuia
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FolioGuia
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldsWrn: Campo - BlqPrint Existente.
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - BlqPrint
+16-06-2020 10:09:21 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - BlqPrint
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - Distrib Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Distrib
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Distrib
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - FPortal Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FPortal
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FPortal
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - DteSolTras Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - DteSolTras
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - DteSolTras
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - Val90 Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Val90
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Val90
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - MultiSoc Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MultiSoc
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MultiSoc
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - ValDescL Existente.
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - ValDescL
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - ValDescL
+16-06-2020 10:09:22 [TMainClassExt] AddUserFieldsWrn: Campo - OficinaSII Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - GenerarT Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - GenerarT
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - GenerarT
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - ProcVenta Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - ProcCompra Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - ProcBol Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - ProcGuia Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - FechaRes Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - AbrirDoc Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - AbrirDoc
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - AbrirDoc
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - NumRes Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - BuscarCAF Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - httpBol Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - SubirSuc Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - SubirSuc
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - SubirSuc
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - URLEasyDot Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - UserED Existente.
+16-06-2020 10:09:23 [TMainClassExt] AddUserFieldsWrn: Campo - PwdED Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - CantImp Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - ImpFiscal Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - ImpFiscal
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - ImpFiscal
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - NomImp Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - Mails_CL Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - UserWSCL Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - PassWSCL Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - CrearDocC Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CrearDocC
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CrearDocC
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - CrearDocCS Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CrearDocCS
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CrearDocCS
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - OP18 Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - OP8 Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - URLPDF Existente.
+16-06-2020 10:09:24 [TMainClassExt] AddUserFieldsWrn: Campo - MostrarXML Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MostrarXML
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MostrarXML
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - FProv Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - FProv
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - FProv
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - DiasOC Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - DifPor Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - DifMon Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDif Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - M - Existente para Campo - TipoDif
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - P - Existente para Campo - TipoDif
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - EntMer Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - EntMer
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - EntMer
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - CodEM Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - VListNegra Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - VListNegra
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - VListNegra
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldsWrn: Campo - MListNegra Existente.
+16-06-2020 10:09:25 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MListNegra
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MListNegra
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - MListBlanca Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MListBlanca
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MListBlanca
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - MFacDifer Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - MFacDifer
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - MFacDifer
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - CEdoPortal Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - CEdoPortal
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - CEdoPortal
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - BuscarEMDocNum Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - BuscarEMDocNum
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - BuscarEMDocNum
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - ActDebug Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - ActDebug
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - ActDebug
+16-06-2020 10:09:26 [TMainClassExt] AddUserTableWrn: Tabla VID_FEPROCED previamente creada.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldsWrn: Campo - TipoDoc Existente.
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 33 - Existente para Campo - TipoDoc
+16-06-2020 10:09:26 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 34 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 39 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 41 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 43 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 46 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 52 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 56 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 61 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 110 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 111 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - 112 - Existente para Campo - TipoDoc
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomE Existente.
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldsWrn: Campo - Habili Existente.
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - Y - Existente para Campo - Habili
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldValidValueWrn: Valor - N - Existente para Campo - Habili
+16-06-2020 10:09:27 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomD Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomR Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomL Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomS Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - CantLineas Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomDe Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - BaseMul Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUserFieldsWrn: Campo - ProcNomC Existente.
+16-06-2020 10:09:28 [TMainClassExt] AddUDOWrn: AddUDO - VID_FELOG Existente.
+16-06-2020 10:09:30 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FELOG Ok.
+16-06-2020 10:09:30 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEPARAM Existente.
+16-06-2020 10:09:32 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEPARAM Ok.
+16-06-2020 10:09:32 [TMainClassExt] AddUDOWrn: AddUDO - VID_FEPROCED Existente.
+16-06-2020 10:09:33 [TMainClassExt] UDODefBasicOk: UDODefBasic - VID_FEPROCED Ok.
+16-06-2020 10:09:33 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+16-06-2020 10:09:33 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+16-06-2020 10:10:22 [TMainClassExt] App SBO in C# - Init!
+16-06-2020 10:10:22 [TMainClassExt] C# - Shine your crazy diamond!
+16-06-2020 10:31:53 [TConfigFE] 
+16-06-2020 10:32:05 [TMainClassExt] oDS.TableName @VID_FEPARAM
+16-06-2020 10:33:07 [TInvoice] 
+16-06-2020 11:59:35 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+16-06-2020 11:59:35 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+16-06-2020 11:59:35 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+16-06-2020 11:59:36 [TMainClassExt] App SBO in C# - Init!
+16-06-2020 11:59:36 [TMainClassExt] C# - Shine your crazy diamond!
+16-06-2020 11:59:52 [TInvoice] 
+17-06-2020 12:00:23 [TInvoice] Obtencion Folio BD: 1178 0:0:19:701
+17-06-2020 12:00:29 [TInvoice] Update documento SAP asignacion Folio result: 0 0:0:29:424
+17-06-2020 12:00:30 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:0:30:224
+17-06-2020 12:00:38 [TInvoice] Update documento SAP asignacion timbre result: 0 0:0:38:120
+17-06-2020 12:00:38 [TMainClassExt] EnviarFE_WebServiceInvoice: Invalid field name ** Trace:    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3065
+17-06-2020 12:04:38 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:04:38 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:04:38 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:04:38 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:04:39 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:04:54 [TInvoice] 
+17-06-2020 12:05:20 [TInvoice] Obtencion Folio BD: 1179 0:5:20:9
+17-06-2020 12:05:21 [TInvoice] Update documento SAP asignacion Folio result: 0 0:5:21:351
+17-06-2020 12:05:22 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:5:22:295
+17-06-2020 12:05:23 [TInvoice] Update documento SAP asignacion timbre result: 0 0:5:23:430
+17-06-2020 12:05:37 [TMainClassExt] Error GenerarXMLString, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringInvoice(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 44
+17-06-2020 12:05:38 [TMainClassExt] EnviarFE_WebServiceInvoice: Problema para generar xml Documento electronico 33 ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3168
+17-06-2020 12:08:13 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:08:13 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:08:13 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:08:13 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:08:13 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:08:41 [TInvoice] 
+17-06-2020 12:08:54 [TInvoice] Obtencion Folio BD: 1180 0:8:54:772
+17-06-2020 12:08:56 [TInvoice] Update documento SAP asignacion Folio result: 0 0:8:56:110
+17-06-2020 12:08:56 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:8:56:851
+17-06-2020 12:08:58 [TInvoice] Update documento SAP asignacion timbre result: 0 0:8:58:45
+17-06-2020 12:09:03 [TInvoice] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1180</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653243</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 0:9:3:887
+17-06-2020 12:09:04 [TInvoice] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1180</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653243</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 0:9:4:216
+17-06-2020 12:09:05 [TInvoice] Inicio PDF String: 0:9:5:472
+17-06-2020 12:09:21 [TInvoice] Fin PDF String: 0:9:21:70
+17-06-2020 12:09:21 [TInvoice] Envio XML Portal: 0:9:21:943
+17-06-2020 12:16:05 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:16:05 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:16:05 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:16:05 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:16:06 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:16:27 [TInvoice] 
+17-06-2020 12:16:42 [TInvoice] Obtencion Folio BD: 1181 0:16:42:651
+17-06-2020 12:16:43 [TInvoice] Update documento SAP asignacion Folio result: 0 0:16:43:998
+17-06-2020 12:16:44 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:16:44:739
+17-06-2020 12:16:45 [TInvoice] Update documento SAP asignacion timbre result: 0 0:16:45:929
+17-06-2020 12:16:47 [TInvoice] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1181</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653244</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 0:16:47:62
+17-06-2020 12:16:47 [TInvoice] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1181</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653244</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 0:16:47:352
+17-06-2020 12:16:47 [TInvoice] Inicio PDF String: 0:16:47:667
+17-06-2020 12:16:54 [TInvoice] Fin PDF String: 0:16:54:364
+17-06-2020 12:16:54 [TInvoice] Envio XML Portal: 0:16:54:789
+17-06-2020 12:19:03 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:19:03 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:19:03 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:19:03 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:19:03 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:19:39 [TInvoice] 
+17-06-2020 12:19:53 [TInvoice] Obtencion Folio BD: 1182 0:19:53:320
+17-06-2020 12:19:54 [TInvoice] Update documento SAP asignacion Folio result: 0 0:19:54:609
+17-06-2020 12:19:55 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:19:55:354
+17-06-2020 12:19:56 [TInvoice] Update documento SAP asignacion timbre result: 0 0:19:56:462
+17-06-2020 12:19:57 [TInvoice] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1182</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653245</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 0:19:57:577
+17-06-2020 12:19:57 [TInvoice] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1182</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653245</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 0:19:57:867
+17-06-2020 12:19:58 [TInvoice] Inicio PDF String: 0:19:58:203
+17-06-2020 12:20:02 [TMainClassExt] Conexion con RPT: 0:19:59:710
+17-06-2020 12:20:10 [TMainClassExt] Verificacion DataBase RPT: 0:20:10:752
+17-06-2020 12:20:11 [TMainClassExt] Exportacion del RPT: 0:20:11:489
+17-06-2020 12:20:11 [TMainClassExt] conversion a base64: 0:20:11:584
+17-06-2020 12:20:11 [TInvoice] Fin PDF String: 0:20:11:592
+17-06-2020 12:20:11 [TInvoice] Envio XML Portal: 0:20:11:955
+17-06-2020 12:20:42 [TConfigFE] 
+17-06-2020 12:20:48 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 12:21:04 [TInvoice] 
+17-06-2020 12:21:37 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 12:21:45 [TInvoice] 
+17-06-2020 12:22:00 [TInvoice] Obtencion Folio BD: 1184 0:22:0:797
+17-06-2020 12:22:01 [TInvoice] Update documento SAP asignacion Folio result: 0 0:22:1:919
+17-06-2020 12:22:02 [TInvoice] Update documento SAP asignacion documento impreso result: 0 0:22:2:648
+17-06-2020 12:22:03 [TInvoice] Update documento SAP asignacion timbre result: 0 0:22:3:761
+17-06-2020 12:22:04 [TInvoice] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1184</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653247</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 0:22:4:733
+17-06-2020 12:22:05 [TInvoice] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1184</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653247</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 0:22:5:12
+17-06-2020 12:22:05 [TInvoice] Inicio PDF String: 0:22:5:332
+17-06-2020 12:22:06 [TMainClassExt] Conexion con RPT: 0:22:6:324
+17-06-2020 12:22:09 [TMainClassExt] Verificacion DataBase RPT: 0:22:9:963
+17-06-2020 12:22:10 [TMainClassExt] Exportacion del RPT: 0:22:10:605
+17-06-2020 12:22:10 [TMainClassExt] conversion a base64: 0:22:10:715
+17-06-2020 12:22:10 [TInvoice] Fin PDF String: 0:22:10:725
+17-06-2020 12:22:11 [TInvoice] Envio XML Portal: 0:22:11:49
+17-06-2020 12:23:14 [TFoliarDocumento] 
+17-06-2020 12:23:51 [TMainClassExt] EnviarFE_WebServiceInvoice: Object reference not set to an instance of an object. ** Trace:    at VisualD.untLog.TObjectWithLog.Add(String sData) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.untLog\..\SBOLib-Source\VisualD.untLog.pas:line 164
+   at VisualD.vkBaseForm.TvkBaseForm.OutLog(String sStr) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 185
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3173
+17-06-2020 12:23:55 [TMainClassExt] EnviarFE_WebServiceInvoice: Object reference not set to an instance of an object. ** Trace:    at VisualD.untLog.TObjectWithLog.Add(String sData) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.untLog\..\SBOLib-Source\VisualD.untLog.pas:line 164
+   at VisualD.vkBaseForm.TvkBaseForm.OutLog(String sStr) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 185
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3173
+17-06-2020 12:23:59 [TMainClassExt] EnviarFE_WebServiceInvoice: Object reference not set to an instance of an object. ** Trace:    at VisualD.untLog.TObjectWithLog.Add(String sData) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.untLog\..\SBOLib-Source\VisualD.untLog.pas:line 164
+   at VisualD.vkBaseForm.TvkBaseForm.OutLog(String sStr) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 185
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3173
+17-06-2020 12:28:58 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:28:58 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:28:58 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:28:59 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:28:59 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:29:39 [TFoliarDocumento] 
+17-06-2020 12:30:04 [TFoliarDocumento] Obtencion Folio BD: 0 0:30:4:604
+17-06-2020 12:30:04 [TFoliarDocumento] FoliarDoctos: No se ha encontrado número de Folio disponible ** Trace:    at Factura_Electronica_VK.FoliarDocumento.TFoliarDocumento.FoliarDoctos() in C:\VisualK\factura-electronica\Units\FoliarDocumento.cs:line 902
+17-06-2020 12:30:31 [TDistribucionFolios] 
+17-06-2020 12:30:50 [TAsignarFolios] 
+17-06-2020 12:31:34 [TMainClassExt] oDS.TableName @VID_FEASIGFOL
+17-06-2020 12:31:39 [TMainClassExt] oDS.TableName @VID_FECAF
+17-06-2020 12:31:39 [TMainClassExt] oDS.TableName @VID_FEDIST
+17-06-2020 12:32:03 [TFoliarDocumento] 
+17-06-2020 12:32:30 [TFoliarDocumento] Obtencion Folio BD: 1301 0:32:30:90
+17-06-2020 12:32:40 [TFoliarDocumento] Update documento SAP asignacion Folio result: 0 0:32:40:690
+17-06-2020 12:32:41 [TFoliarDocumento] Update documento SAP asignacion documento impreso result: 0 0:32:41:500
+17-06-2020 12:32:42 [TFoliarDocumento] Update documento SAP asignacion timbre result: 0 0:32:42:664
+17-06-2020 12:32:44 [TMainClassExt] EnviarFE_WebServiceInvoice: Object reference not set to an instance of an object. ** Trace:    at VisualD.untLog.TObjectWithLog.Add(String sData) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.untLog\..\SBOLib-Source\VisualD.untLog.pas:line 164
+   at VisualD.vkBaseForm.TvkBaseForm.OutLog(String sStr) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 185
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3173
+17-06-2020 12:36:20 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 12:36:20 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 12:36:20 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 12:36:20 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 12:36:21 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 12:36:47 [TFoliarDocumento] 
+17-06-2020 12:37:13 [TFoliarDocumento] Obtencion Folio BD: 1302 0:37:13:835
+17-06-2020 12:37:15 [TFoliarDocumento] Update documento SAP asignacion Folio result: 0 0:37:15:102
+17-06-2020 12:37:16 [TFoliarDocumento] Update documento SAP asignacion documento impreso result: 0 0:37:16:13
+17-06-2020 12:37:17 [TFoliarDocumento] Update documento SAP asignacion timbre result: 0 0:37:17:134
+17-06-2020 12:37:36 [TMainClassExt] EnviarFE_WebServiceInvoice: Object reference not set to an instance of an object. ** Trace:    at VisualD.untLog.TObjectWithLog.Add(String sData) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.untLog\..\SBOLib-Source\VisualD.untLog.pas:line 164
+   at VisualD.vkBaseForm.TvkBaseForm.OutLog(String sStr) in C:\VisualK\Proyectos\PrismLibDLL\VisualD.vkBaseForm\..\SBOLib-Source\VisualD.vkBaseForm.pas:line 185
+   at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3173
+17-06-2020 01:06:14 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:06:14 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:06:14 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:06:14 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:06:14 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:07:10 [TInvoice] 
+17-06-2020 01:07:26 [TInvoice] FormDataEvent: Object reference not set to an instance of an object. ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.FormDataEvent(BusinessObjectInfo& BusinessObjectInfo, Boolean& BubbleEvent) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 957
+17-06-2020 01:19:34 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:19:34 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:19:34 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:19:34 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:19:35 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:19:56 [TInvoice] 
+17-06-2020 01:20:11 [TInvoice] FormDataEvent: Object reference not set to an instance of an object. ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.FormDataEvent(BusinessObjectInfo& BusinessObjectInfo, Boolean& BubbleEvent) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 958
+17-06-2020 01:25:41 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:25:41 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:25:41 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:25:41 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:25:42 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:25:51 [TInvoice] 
+17-06-2020 01:26:42 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:26:42 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:26:42 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:26:42 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:26:43 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:26:52 [TInvoice] 
+17-06-2020 01:26:57 [TInvoice] InitForm: Object reference not set to an instance of an object. ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.InitForm(String uid, String xmlPath, Application& application, Company& company, CSBOFunctions& SBOFunctions, TGlobalVid& _GlobalSettings) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 82
+17-06-2020 01:31:26 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:31:27 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:31:27 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:31:27 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:31:27 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:31:42 [TInvoice] 
+17-06-2020 01:31:51 [TInvoice] InitForm: Object reference not set to an instance of an object. ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.InitForm(String uid, String xmlPath, Application& application, Company& company, CSBOFunctions& SBOFunctions, TGlobalVid& _GlobalSettings) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 85
+17-06-2020 01:34:46 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:34:46 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:34:46 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:34:46 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:34:47 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:34:53 [TInvoice] 
+17-06-2020 01:34:57 [TMainClassExt] Inicio
+17-06-2020 01:38:02 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:38:02 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:38:02 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:38:02 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:38:03 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:38:09 [TInvoice] 
+17-06-2020 01:38:54 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:38:54 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:38:54 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:38:54 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:38:54 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:40:21 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:40:22 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:40:22 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:40:22 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:40:23 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:40:32 [TInvoice] 
+17-06-2020 01:40:36 [TMainClassExt] Inicio
+17-06-2020 01:44:43 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:44:43 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:44:43 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:44:43 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:44:43 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:44:53 [TInvoice] 
+17-06-2020 01:45:09 [TInvoice] 
+17-06-2020 01:45:41 [TMainClassExt] Obtencion Folio BD: 1303 1:45:37:913
+17-06-2020 01:52:33 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:52:33 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:52:33 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:52:33 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:52:34 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 01:52:47 [TInvoice] 
+17-06-2020 01:53:04 [TMainClassExt] Obtencion Folio BD: 1304 1:53:1:225
+17-06-2020 01:53:08 [TMainClassExt] Update documento SAP asignacion Folio result: 0 1:53:8:411
+17-06-2020 01:53:13 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 1:53:13:813
+17-06-2020 01:53:14 [TMainClassExt] Update documento SAP asignacion timbre result: 0 1:53:14:929
+17-06-2020 01:53:16 [TMainClassExt] Error GenerarXMLString, Sector E -> Invalid field name, TRACE    at SAPbobsCOM.FieldsClass.Item(Object Index)
+   at DLLparaXML.TDLLparaXML.GenerarXMLStringInvoice(Recordset& ors, Recordset& ors2, String TipoDocElec, XDocument& miXML, String Sector) in C:\VisualK\factura-electronica\DLL Crea XML\DLLparaXML\Class1.cs:line 44
+17-06-2020 01:53:16 [TMainClassExt] EnviarFE_WebServiceInvoice: Problema para generar xml Documento electronico 33 ** Trace:    at Factura_Electronica_VK.Invoice.TInvoice.EnviarFE_WebService(String sObjType, Documents oDocumento, String TipoDocElec, Boolean bMultiSoc, String nMultiSoc, Boolean RunningUnderSQLServer, String DocType, String TipoDocElecAddon, Boolean bFPortal) in C:\VisualK\factura-electronica\Units\Invoice.cs:line 3174
+17-06-2020 01:56:52 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 01:56:52 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 01:56:52 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 01:56:52 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 01:56:53 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 02:01:06 [TInvoice] 
+17-06-2020 02:01:21 [TMainClassExt] Obtencion Folio BD: 1305 2:1:21:209
+17-06-2020 02:01:22 [TMainClassExt] Update documento SAP asignacion Folio result: 0 2:1:22:539
+17-06-2020 02:01:23 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 2:1:23:284
+17-06-2020 02:01:24 [TMainClassExt] Update documento SAP asignacion timbre result: 0 2:1:24:453
+17-06-2020 02:01:28 [TMainClassExt] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1305</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653253</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 2:1:28:909
+17-06-2020 02:01:29 [TMainClassExt] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1305</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653253</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 2:1:29:209
+17-06-2020 02:01:29 [TMainClassExt] Inicio PDF String: 2:1:29:572
+17-06-2020 02:01:31 [TMainClassExt] Conexion con RPT: 2:1:31:27
+17-06-2020 02:01:34 [TMainClassExt] Verificacion DataBase RPT: 2:1:34:695
+17-06-2020 02:01:35 [TMainClassExt] Exportacion del RPT: 2:1:35:421
+17-06-2020 02:01:35 [TMainClassExt] conversion a base64: 2:1:35:507
+17-06-2020 02:01:35 [TMainClassExt] Fin PDF String: 2:1:35:514
+17-06-2020 02:01:36 [TMainClassExt] Envio XML Portal: 2:1:36:70
+17-06-2020 02:02:10 [TConfigFE] 
+17-06-2020 02:02:17 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 02:02:58 [TConfigFE] 
+17-06-2020 02:03:15 [TInvoice] 
+17-06-2020 02:03:48 [TConfigFE] 
+17-06-2020 02:03:53 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 02:04:04 [TReImprimir] 
+17-06-2020 02:04:11 [TFoliarDocumento] 
+17-06-2020 02:04:26 [TFoliarDocumento] FoliarDoctos: Object reference not set to an instance of an object. ** Trace:    at Factura_Electronica_VK.FoliarDocumento.TFoliarDocumento.FoliarDoctos() in C:\VisualK\factura-electronica\Units\FoliarDocumento.cs:line 899
+17-06-2020 02:07:29 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 02:07:29 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 02:07:29 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 02:07:29 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 02:07:30 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 02:07:42 [TFoliarDocumento] 
+17-06-2020 02:09:20 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 02:09:20 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 02:09:20 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 02:09:20 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 02:09:21 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 02:09:40 [TReImprimir] 
+17-06-2020 02:09:44 [TFoliarDocumento] 
+17-06-2020 02:09:58 [TMainClassExt] Obtencion Folio BD: 1307 2:9:56:291
+17-06-2020 02:11:12 [TMainClassExt] SHA1 UDFFELEC.xls[7KL8usRrCqb5X7iE7ximMTD8V40=]
+17-06-2020 02:11:12 [TMainClassExt] SHA1 UDFFELECCL.xls[hKW0v67lpUCpTG0LgtYEvo9Pp3k=]
+17-06-2020 02:11:12 [TMainClassExt] SHA1 UDFSAP.xls[a8uN7nil0IxfThD8WDmFMpVjyMw=]
+17-06-2020 02:11:12 [TMainClassExt] App SBO in C# - Init!
+17-06-2020 02:11:13 [TMainClassExt] C# - Shine your crazy diamond!
+17-06-2020 02:11:41 [TFoliarDocumento] 
+17-06-2020 02:12:06 [TMainClassExt] Obtencion Folio BD: 1308 2:12:1:739
+17-06-2020 02:12:07 [TMainClassExt] Update documento SAP asignacion Folio result: 0 2:12:7:711
+17-06-2020 02:12:08 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 2:12:8:475
+17-06-2020 02:12:09 [TMainClassExt] Update documento SAP asignacion timbre result: 0 2:12:9:630
+17-06-2020 02:12:14 [TMainClassExt] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-10</FchEmis>
+        <FchVenc>2020-06-10</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1308</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-10</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653236</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 2:12:14:238
+17-06-2020 02:12:14 [TMainClassExt] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-10</FchEmis>
+        <FchVenc>2020-06-10</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1308</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-10</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653236</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 2:12:14:560
+17-06-2020 02:12:14 [TMainClassExt] Inicio PDF String: 2:12:14:937
+17-06-2020 02:12:16 [TMainClassExt] Conexion con RPT: 2:12:16:367
+17-06-2020 02:12:20 [TMainClassExt] Verificacion DataBase RPT: 2:12:20:201
+17-06-2020 02:12:20 [TMainClassExt] Exportacion del RPT: 2:12:20:972
+17-06-2020 02:12:21 [TMainClassExt] conversion a base64: 2:12:21:64
+17-06-2020 02:12:21 [TMainClassExt] Fin PDF String: 2:12:21:72
+17-06-2020 02:12:21 [TMainClassExt] Envio XML Portal: 2:12:21:510
+17-06-2020 02:12:41 [TMainClassExt] Obtencion Folio BD: 1309 2:12:41:713
+17-06-2020 02:12:42 [TMainClassExt] Update documento SAP asignacion Folio result: 0 2:12:42:976
+17-06-2020 02:12:43 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 2:12:43:713
+17-06-2020 02:12:44 [TMainClassExt] Update documento SAP asignacion timbre result: 0 2:12:44:809
+17-06-2020 02:12:45 [TMainClassExt] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1309</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653251</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 2:12:45:849
+17-06-2020 02:12:46 [TMainClassExt] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1309</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653251</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 2:12:46:134
+17-06-2020 02:12:46 [TMainClassExt] Inicio PDF String: 2:12:46:459
+17-06-2020 02:12:47 [TMainClassExt] Conexion con RPT: 2:12:47:470
+17-06-2020 02:12:51 [TMainClassExt] Verificacion DataBase RPT: 2:12:51:143
+17-06-2020 02:12:51 [TMainClassExt] Exportacion del RPT: 2:12:51:820
+17-06-2020 02:12:52 [TMainClassExt] conversion a base64: 2:12:52:378
+17-06-2020 02:12:52 [TMainClassExt] Fin PDF String: 2:12:52:386
+17-06-2020 02:12:52 [TMainClassExt] Envio XML Portal: 2:12:52:641
+17-06-2020 02:13:04 [TConfigFE] 
+17-06-2020 02:13:10 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 02:13:37 [TConfigFE] 
+17-06-2020 02:13:43 [TMainClassExt] oDS.TableName @VID_FEPARAM
+17-06-2020 02:13:51 [TInvoice] 
+17-06-2020 02:14:08 [TMainClassExt] Obtencion Folio BD: 1311 2:14:8:918
+17-06-2020 02:14:10 [TMainClassExt] Update documento SAP asignacion Folio result: 0 2:14:10:108
+17-06-2020 02:14:10 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 2:14:10:842
+17-06-2020 02:14:11 [TMainClassExt] Update documento SAP asignacion timbre result: 0 2:14:11:984
+17-06-2020 02:14:13 [TMainClassExt] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1311</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653255</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 2:14:13:19
+17-06-2020 02:14:13 [TMainClassExt] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-17</FchEmis>
+        <FchVenc>2020-06-17</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1311</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-17</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653255</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 2:14:13:307
+17-06-2020 02:14:13 [TMainClassExt] Inicio PDF String: 2:14:13:638
+17-06-2020 02:14:14 [TMainClassExt] Conexion con RPT: 2:14:14:636
+17-06-2020 02:14:18 [TMainClassExt] Verificacion DataBase RPT: 2:14:18:281
+17-06-2020 02:14:18 [TMainClassExt] Exportacion del RPT: 2:14:18:939
+17-06-2020 02:14:19 [TMainClassExt] conversion a base64: 2:14:19:500
+17-06-2020 02:14:19 [TMainClassExt] Fin PDF String: 2:14:19:509
+17-06-2020 02:14:19 [TMainClassExt] Envio XML Portal: 2:14:19:779
+17-06-2020 02:14:44 [TFoliarDocumento] 
+17-06-2020 02:14:57 [TMainClassExt] Obtencion Folio BD: 1312 2:14:57:73
+17-06-2020 02:14:58 [TMainClassExt] Update documento SAP asignacion Folio result: 0 2:14:58:270
+17-06-2020 02:14:59 [TMainClassExt] Update documento SAP asignacion documento impreso result: 0 2:14:59:21
+17-06-2020 02:15:00 [TMainClassExt] Update documento SAP asignacion timbre result: 0 2:15:0:190
+17-06-2020 02:15:01 [TMainClassExt] XML DE Encabezado: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-10</FchEmis>
+        <FchVenc>2020-06-10</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1312</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-10</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653237</COMP>
+    </DocumentoInterno>
+  </Documento>
+</DTE> 2:15:1:267
+17-06-2020 02:15:01 [TMainClassExt] XML DE Detalle: <DTE>
+  <Documento>
+    <Encabezado>
+      <IdDoc>
+        <FchEmis>2020-06-10</FchEmis>
+        <FchVenc>2020-06-10</FchVenc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>1312</Folio>
+        <IndServicio>0</IndServicio>
+        <MntBruto>0</MntBruto>
+        <MntCancel>0</MntCancel>
+        <SaldoInsol>0</SaldoInsol>
+        <TpoTranCompra></TpoTranCompra>
+        <TpoTranVenta></TpoTranVenta>
+        <FmaPago>1</FmaPago>
+        <MntPagos>
+          <FchPago>2020-06-10</FchPago>
+          <MntPago>16990</MntPago>
+          <GlosaPagos>Contado</GlosaPagos>
+        </MntPagos>
+      </IdDoc>
+      <Emisor>
+        <CdgVendedor>-Ningún empleado del departamento de ventas-</CdgVendedor>
+        <RUTEmisor>830306005te</RUTEmisor>
+        <RznSoc>Electronica Casa Royal Limitada</RznSoc>
+        <GiroEmis></GiroEmis>
+        <Sucursal>Central</Sucursal>
+        <Telefono></Telefono>
+        <CdgSIISucur>0</CdgSIISucur>
+        <Sucursal></Sucursal>
+      </Emisor>
+      <Receptor>
+        <CiudadPostal>PUENTE ALTO</CiudadPostal>
+        <CiudadRecep>PUENTE ALTO</CiudadRecep>
+        <CmnaPostal>PUENTE ALTO</CmnaPostal>
+        <CmnaRecep>PUENTE ALTO</CmnaRecep>
+        <Contacto></Contacto>
+        <CorreoRecep>josefasol.perezcid@gmail.com</CorreoRecep>
+        <DirPostal>TOTORALILLO 576</DirPostal>
+        <DirRecep>TOTORALILLO 576</DirRecep>
+        <GiroRecep>PERSONA NATURAL</GiroRecep>
+        <RUTRecep>20819225-6</RUTRecep>
+        <RznSocRecep>JOSEFA PÃ©REZ</RznSocRecep>
+      </Receptor>
+      <Totales>
+        <CredEC>0</CredEC>
+        <IVA>2713</IVA>
+        <IVANoRet>0</IVANoRet>
+        <IVAProp>0</IVAProp>
+        <IVATerc>0</IVATerc>
+        <MntBase>0</MntBase>
+        <MntExe>0</MntExe>
+        <MntMargenCom>0</MntMargenCom>
+        <MntNeto>14277</MntNeto>
+        <MntTotal>16990</MntTotal>
+        <MontoNF>0</MontoNF>
+        <MontoPeriodo>0</MontoPeriodo>
+        <SaldoAnterior>0</SaldoAnterior>
+        <TasaIVA>19</TasaIVA>
+        <VlrPagar>0</VlrPagar>
+      </Totales>
+    </Encabezado>
+    <DocumentoInterno>
+      <COMP>132653237</COMP>
+    </DocumentoInterno>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>2</IndExe>
+      <MontoItem>14277</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>296265</VlrCodigo>
+      </CdgItem>
+      <NmbItem>GUIRA</NmbItem>
+      <DscItem>GUIRA</DscItem>
+      <PrcItem>14277.311</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem>UN</UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <DescuentoMonto>0</DescuentoMonto>
+      <DescuentoPct>0</DescuentoPct>
+      <IndExe>1</IndExe>
+      <MontoItem>0</MontoItem>
+      <CdgItem>
+        <TpoCodigo>INT1</TpoCodigo>
+        <VlrCodigo>199800</VlrCodigo>
+      </CdgItem>
+      <NmbItem>TRANSPORTE ECOMMERCE ANTERIOR</NmbItem>
+      <DscItem>TRANSPORTE ECOMMERCE ANTERIOR</DscItem>
+      <PrcItem>0</PrcItem>
+      <PrcRef>0</PrcRef>
+      <QtyItem>1</QtyItem>
+      <QtyRef>0</QtyRef>
+      <RecargoPct>0</RecargoPct>
+      <UnmdItem></UnmdItem>
+      <CodImpAdic></CodImpAdic>
+      <RecargoMonto>0</RecargoMonto>
+    </Detalle>
+  </Documento>
+</DTE> 2:15:1:551
+17-06-2020 02:15:01 [TMainClassExt] Inicio PDF String: 2:15:1:907
+17-06-2020 02:15:02 [TMainClassExt] Conexion con RPT: 2:15:2:904
+17-06-2020 02:15:06 [TMainClassExt] Verificacion DataBase RPT: 2:15:6:625
+17-06-2020 02:15:07 [TMainClassExt] Exportacion del RPT: 2:15:7:297
+17-06-2020 02:15:07 [TMainClassExt] conversion a base64: 2:15:7:854
+17-06-2020 02:15:07 [TMainClassExt] Fin PDF String: 2:15:7:862
+17-06-2020 02:15:08 [TMainClassExt] Envio XML Portal: 2:15:8:182
