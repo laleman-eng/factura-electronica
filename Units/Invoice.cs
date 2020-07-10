@@ -3049,7 +3049,7 @@ namespace Factura_Electronica_VK.Invoice
                            FROM [@VID_FEPARAM] T0, OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug"" , IFNULL(""U_GenReport"", 'N') ""GenReport""
+                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug"" , IFNULL(""U_GenReport"", 'Y') ""GenReport""
                            FROM ""@VID_FEPARAM"" T0, ""OADM"" A0 ";
 
                 ors.DoQuery(s);

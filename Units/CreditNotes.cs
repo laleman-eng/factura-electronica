@@ -1932,6 +1932,7 @@ namespace Factura_Electronica_VK.CreditNotes
             SAPbobsCOM.Documents oDocument;
             TDLLparaXML Dll = new TDLLparaXML();
             Dll.SBO_f = SBO_f;
+            String GenReport = "";
 
             try
             {
@@ -1943,11 +1944,11 @@ namespace Factura_Electronica_VK.CreditNotes
 
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum 
-                                , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML'
+                                , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_GenReport,'Y') 'GenReport'
                             FROM [@VID_FEPARAM] T0, OADM A0 ";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                                , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML""
+                                , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_GenReport"", 'Y') ""GenReport""
                             FROM ""@VID_FEPARAM"" T0, ""OADM"" A0  ";
 
                 ors.DoQuery(s);
@@ -1967,6 +1968,7 @@ namespace Factura_Electronica_VK.CreditNotes
                     //validar que exista procedimentos para tipo documento
                     URL = ((System.String)ors.Fields.Item("URL").Value).Trim();
                     MostrarXML = ((System.String)ors.Fields.Item("MostrarXML").Value).Trim();
+                    GenReport = ((System.String)ors.Fields.Item("GenReport").Value).Trim();
 
                     if (bFPortal)
                     {
@@ -2134,16 +2136,21 @@ namespace Factura_Electronica_VK.CreditNotes
 
                         if (!bFPortal)
                         {
-                            //Cargar PDF
-                            s = Reg.PDFenString(TipoDocElecAddon, oDocument.DocEntry.ToString(), sObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
+                            if (GenReport == "Y")
+                            {
+                                //aca mas adelante preguntare si es Crystal Report o Stimulsoft 
 
-                            if (s == "")
-                                throw new Exception("No se ha creado PDF");
+                                //Cargar PDF
+                                s = Reg.PDFenString(TipoDocElecAddon, oDocument.DocEntry.ToString(), sObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
 
-                            //Agrega el PDF al xml
-                            xNodo = new XElement("Anexo",
-                                                            new XElement("PDF", s));
-                            miXML.Descendants("DTE").LastOrDefault().Add(xNodo);
+                                if (s == "")
+                                    throw new Exception("No se ha creado PDF");
+
+                                //Agrega el PDF al xml
+                                xNodo = new XElement("Anexo",
+                                                                new XElement("PDF", s));
+                                miXML.Descendants("DTE").LastOrDefault().Add(xNodo);
+                            }
                         }
 
                         //Pasar a xmlDocument
