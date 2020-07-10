@@ -3039,16 +3039,17 @@ namespace Factura_Electronica_VK.Invoice
             TDLLparaXML Dll = new TDLLparaXML();
             Dll.SBO_f = SBO_f;
             String ActDebug = "";
+            String GenReport = "";
 
             try
             {
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum 
-                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_ActDebug,'N') 'ActDebug'
+                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_ActDebug,'N') 'ActDebug' , ISNULL(U_GenReport,'Y') 'GenReport'
                            FROM [@VID_FEPARAM] T0, OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug""
+                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug"" , IFNULL(""U_GenReport"", 'N') ""GenReport""
                            FROM ""@VID_FEPARAM"" T0, ""OADM"" A0 ";
 
                 ors.DoQuery(s);
@@ -3069,6 +3070,7 @@ namespace Factura_Electronica_VK.Invoice
                     TaxIdNum = (System.String)(ors.Fields.Item("TaxIdNum").Value).ToString().Trim();
                     MostrarXML = ((System.String)ors.Fields.Item("MostrarXML").Value).Trim();
                     ActDebug = ((System.String)ors.Fields.Item("ActDebug").Value).Trim();
+                    GenReport = ((System.String)ors.Fields.Item("GenReport").Value).Trim();
                     if (bFPortal)
                     {
                         if ((System.String)(ors.Fields.Item("OP8").Value).ToString().Trim() == "")
@@ -3280,22 +3282,27 @@ namespace Factura_Electronica_VK.Invoice
                             t = DateTime.Now;
                             Reg.SBO_f.oLog.OutLog("Inicio PDF String: "+ t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
                         }
-                        //Cargar PDF
-                        s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
-
-                        if (ActDebug == "Y")
+                        
+                        if (GenReport == "Y")
                         {
-                            t = DateTime.Now;
-                            Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                            //aca mas adelante preguntare si es Crystal Report o Stimulsoft 
+                            //Cargar PDF
+                            s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
+
+                            if (ActDebug == "Y")
+                            {
+                                t = DateTime.Now;
+                                Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                            }
+
+                            if (s == "")
+                                throw new Exception("No se ha creado PDF");
+
+                            //Agrega el PDF al xml
+                            xNodo = new XElement("Anexo",
+                                                            new XElement("PDF", s));
+                            miXML.Descendants("DTE").LastOrDefault().Add(xNodo);
                         }
-
-                        if (s == "")
-                            throw new Exception("No se ha creado PDF");
-
-                        //Agrega el PDF al xml
-                        xNodo = new XElement("Anexo",
-                                                        new XElement("PDF", s));
-                        miXML.Descendants("DTE").LastOrDefault().Add(xNodo);
                     }
 
 
