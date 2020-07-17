@@ -98,10 +98,13 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>CrystalDecisionsDll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>CrystalDecisionsDll\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Interop.DynamicOneAX">
       <HintPath>VisualD_Dll_x86\Interop.DynamicOneAX.dll</HintPath>
