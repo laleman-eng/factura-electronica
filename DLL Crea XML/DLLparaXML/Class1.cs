@@ -482,7 +482,7 @@ namespace DLLparaXML
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
                                             new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
+                                                       // new XElement("TpoCodigo", "INT1"),
                                                         new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
@@ -508,11 +508,29 @@ namespace DLLparaXML
                                     xNodo = new XElement("FchVencim", ((System.String)ors.Fields.Item("FchVencim").Value).Trim());
                                     miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                 }
-                            }
+                         }
                         catch(Exception e)
                         {
                             SBO_f.oLog.OutLog("Campo opcional FchVencim no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
+
+                        // Campo opcional TpoCodigo
+                        try
+                        {
+                            if (((System.String)ors.Fields.Item("TpoCodigo").Value).Trim() != "")
+                            {
+                                xNodo = new XElement("TpoCodigo", ((System.String)ors.Fields.Item("TpoCodigo").Value).Trim());
+                                miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Campo opcional TpoCodigo no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                        }
+
+
+
+
                         //if (result == null)
                         //    miXML.Root.Add(xNodo);
                         //else
