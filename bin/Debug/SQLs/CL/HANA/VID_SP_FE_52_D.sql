@@ -13,7 +13,7 @@ SELECT   ROW_NUMBER() OVER(ORDER BY T0."LineaOrden", T0."LineaOrden2")							"Nr
 		,T0."DiscPrcnt"																			"DescuentoPct"
 		,T0."Indicador_Exento"																	"IndExe"
 		,T0."LineTotal"																			"MontoItem"
-		,T0."Dscription"																		"NmbItem"
+		,T0."ItemCode"																			"NmbItem"
 		,T0."Price"																				"PrcItem"
 		,0.0																					"PrcRef"
 		,T0."Quantity"																			"QtyItem"
