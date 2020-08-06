@@ -42,6 +42,7 @@ namespace Factura_Electronica_VK.Monitor
         private String s;
         private Boolean bMultiSoc;
 
+        //Monitor Envio Documentos Electronicos 
         public new bool InitForm(string uid, string xmlPath, ref Application application, ref SAPbobsCOM.Company company, ref CSBOFunctions SBOFunctions, ref TGlobalVid _GlobalSettings)
         {
             bool Result = base.InitForm(uid, xmlPath, ref application, ref company, ref SBOFunctions, ref _GlobalSettings);

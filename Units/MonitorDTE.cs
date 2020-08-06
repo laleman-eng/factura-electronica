@@ -44,7 +44,8 @@ namespace Factura_Electronica_VK.MonitorDTE
         private TFunctions Funciones = new TFunctions();
         private CultureInfo _nf = new System.Globalization.CultureInfo("en-US");
         private String s;
-
+        
+        //Monitor de Estado DTE 
         public new bool InitForm(string uid, string xmlPath, ref SAPbouiCOM.Application application, ref SAPbobsCOM.Company company, ref CSBOFunctions SBOFunctions, ref TGlobalVid _GlobalSettings)
         {
             Int32 CantRol;
