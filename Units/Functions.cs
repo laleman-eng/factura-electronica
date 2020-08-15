@@ -21,6 +21,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using CrystalDecisions.ReportSource;
 
+
 namespace Factura_Electronica_VK.Functions
 {
     class TFunctions
@@ -2019,6 +2020,41 @@ namespace Factura_Electronica_VK.Functions
             }
         }
 
+
+        public String PDFenStringStimulsoft(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad, XmlDocument xml, String ted)
+        {
+            String oPath;
+            String sNombreArchivo = "";
+            
+            try
+            {
+                XmlDocument xmlTed = new XmlDocument();
+                xmlTed.LoadXml(ted);
+                oPath = System.IO.Path.GetDirectoryName(TMultiFunctions.ParamStr(0));
+                sNombreArchivo = oPath + "\\Reports\\" + Localidad + "\\" + TipoDocElectAddon + "_" + SBO_f.Cmpny.CompanyDB + ".mrt";
+                if (!File.Exists(sNombreArchivo))
+                {
+                    SBO_f.oLog.OutLog("No existe reporte: " + sNombreArchivo);
+                }
+                else 
+                {
+                  //  StimulsoftUtility stm = new StimulsoftUtility();
+                   // string baseto64 = stm.getStimulsoftReportBase64(sNombreArchivo, xml, xmlTed);
+                  //  SBO_f.oLog.OutLog(baseto64);
+                }
+                
+
+            }
+            catch (Exception e)
+            {
+                //oSBOApplication.MessageBox(e.Message + ", TRACE " + e.StackTrace);
+                SBO_f.oLog.OutLog(e.Message + ", TRACE " + e.StackTrace + ", file " + sNombreArchivo);
+                return "";
+            }
+
+
+            return "";
+        }
 
         public String PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad)
         {

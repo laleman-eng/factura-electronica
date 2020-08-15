@@ -147,6 +147,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VDStimulsoftReport">
+      <HintPath>VDStimulsoftReport\VDStimulsoftReport.dll</HintPath>
+    </Reference>
     <Reference Include="VisualD.ADOSBOScriptExecute">
       <HintPath>vd_dll_securex86_1.0.2.76\VisualD.ADOSBOScriptExecute.dll</HintPath>
     </Reference>
@@ -309,7 +312,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

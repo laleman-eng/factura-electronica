@@ -3046,11 +3046,11 @@ namespace Factura_Electronica_VK.Invoice
             {
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum 
-                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_ActDebug,'N') 'ActDebug' , ISNULL(U_GenReport,'Y') 'GenReport' , ISNULL(U_TpoReport,'N') 'TpoReport'
+                               , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_ActDebug,'N') 'ActDebug' , ISNULL(U_GenReport,'Y') 'GenReport' , ISNULL(U_TpoReport,'S') 'TpoReport'
                            FROM [@VID_FEPARAM] T0, OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug"" , IFNULL(""U_GenReport"", 'Y') ""GenReport"" , IFNULL(""U_TpoReport"", 'N') ""TpoReport""
+                               , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_ActDebug"", 'N') ""ActDebug"" , IFNULL(""U_GenReport"", 'Y') ""GenReport"" , IFNULL(""U_TpoReport"", 'S') ""TpoReport""
                            FROM ""@VID_FEPARAM"" T0, ""OADM"" A0 ";
 
                 ors.DoQuery(s);
@@ -3154,13 +3154,11 @@ namespace Factura_Electronica_VK.Invoice
                     if (TipoDocElec == "43")
                         miXML = new XDocument(
                                              new XDeclaration("1.0", "utf-8", "yes"),
-                            //new XComment("Lista de Alumnos"),
                                                 new XElement("DTE",
                                                     new XElement("Liquidacion")));
                     else
                         miXML = new XDocument(
                                              new XDeclaration("1.0", "utf-8", "yes"),
-                            //new XComment("Lista de Alumnos"),
                                                 new XElement("DTE",
                                                     new XElement("Documento")));
 
@@ -3287,14 +3285,30 @@ namespace Factura_Electronica_VK.Invoice
                         
                         if (GenReport == "Y")
                         {
-                            //aca mas adelante preguntare si es Crystal Report o Stimulsoft 
-                            //Cargar PDF
-                            s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
-
-                            if (ActDebug == "Y")
+                            if (TpoReport == "C")
                             {
-                                t = DateTime.Now;
-                                Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                //Cargar PDF
+                                s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
+                                if (ActDebug == "Y")
+                                {
+                                    t = DateTime.Now;
+                                    Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                                }
+                                else //StimulsoftReport
+                                {
+                                    if (((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
+                                    {
+                                        XmlDocument xml = new XmlDocument();
+                                        using (var xmlReader = miXML.CreateReader())
+                                        {
+                                            xml.Load(xmlReader);
+                                        }
+                                        s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                    }
+                                    else { 
+                                        //no tiene timbre el documento 
+                                    }
+                                }
                             }
 
                             if (s == "")
