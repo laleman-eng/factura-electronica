@@ -3285,7 +3285,7 @@ namespace Factura_Electronica_VK.Invoice
                         
                         if (GenReport == "Y")
                         {
-                            if (TpoReport == "C")
+                            if (TpoReport == "C")  // Crystal Report 
                             {
                                 //Cargar PDF
                                 s = Reg.PDFenString(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
@@ -3294,23 +3294,23 @@ namespace Factura_Electronica_VK.Invoice
                                     t = DateTime.Now;
                                     Reg.SBO_f.oLog.OutLog("Fin PDF String: " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
                                 }
-                                else //StimulsoftReport
+                            }
+                            else // Stimulsoft 
+                            {
+                                if (((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
                                 {
-                                    if (((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
+                                    XmlDocument xml = new XmlDocument();
+                                    using (var xmlReader = miXML.CreateReader())
                                     {
-                                        XmlDocument xml = new XmlDocument();
-                                        using (var xmlReader = miXML.CreateReader())
-                                        {
-                                            xml.Load(xmlReader);
-                                        }
-                                        s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                        xml.Load(xmlReader);
                                     }
-                                    else { 
-                                        //no tiene timbre el documento 
-                                    }
+                                    s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocumento.DocEntry.ToString(), sObjType, "", oDocumento.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocumento.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                }
+                                else
+                                {
+                                    //no tiene timbre el documento 
                                 }
                             }
-
                             if (s == "")
                                 throw new Exception("No se ha creado PDF");
 

@@ -142,9 +142,14 @@ C:\VisualK\factura-electronica\bin\Debug\Factura Electronica.pdb
 C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\VisualK\factura-electronica\bin\Debug\CrystalDecisions.Shared.dll
 C:\VisualK\factura-electronica\bin\Debug\DLLparaXML.dll
+C:\VisualK\factura-electronica\bin\Debug\IDAutomation.PDF417.dll
 C:\VisualK\factura-electronica\bin\Debug\Interop.SAPbobsCOM.dll
 C:\VisualK\factura-electronica\bin\Debug\Interop.SAPbouiCOM.dll
 C:\VisualK\factura-electronica\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\VisualK\factura-electronica\bin\Debug\Stimulsoft.Base.dll
+C:\VisualK\factura-electronica\bin\Debug\Stimulsoft.Data.dll
+C:\VisualK\factura-electronica\bin\Debug\Stimulsoft.Report.dll
+C:\VisualK\factura-electronica\bin\Debug\VDStimulsoftReport.dll
 C:\VisualK\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.dll
 C:\VisualK\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.dll
 C:\VisualK\factura-electronica\bin\Debug\VisualD.Core.dll

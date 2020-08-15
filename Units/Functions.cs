@@ -20,6 +20,7 @@ using System.Net;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using CrystalDecisions.ReportSource;
+using VDStimulsoftReport;
 
 
 namespace Factura_Electronica_VK.Functions
@@ -2038,9 +2039,10 @@ namespace Factura_Electronica_VK.Functions
                 }
                 else 
                 {
-                  //  StimulsoftUtility stm = new StimulsoftUtility();
-                   // string baseto64 = stm.getStimulsoftReportBase64(sNombreArchivo, xml, xmlTed);
-                  //  SBO_f.oLog.OutLog(baseto64);
+                    VDStimulsoftReport.StimulsoftUtility stm = new VDStimulsoftReport.StimulsoftUtility();
+                    string baseto64 = stm.getStimulsoftReportBase64(sNombreArchivo, xml, xmlTed);
+                    SBO_f.oLog.OutLog(baseto64);
+                    return baseto64;
                 }
                 
 
@@ -2051,9 +2053,8 @@ namespace Factura_Electronica_VK.Functions
                 SBO_f.oLog.OutLog(e.Message + ", TRACE " + e.StackTrace + ", file " + sNombreArchivo);
                 return "";
             }
-
-
             return "";
+
         }
 
         public String PDFenString(String TipoDocElectAddon, String DocEntry, String ObjType, String Serie, String Folio, Boolean RunningUnderSQLServer, String Localidad)

@@ -106,6 +106,9 @@
       <HintPath>CrystalDecisionsDll\CrystalDecisions.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="IDAutomation.PDF417">
+      <HintPath>..\TestDllStimulsoftReport\TestDllStimulsoftReport\dll\IDAutomation.PDF417.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.DynamicOneAX">
       <HintPath>VisualD_Dll_x86\Interop.DynamicOneAX.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -131,6 +134,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ServiceStack.Text.dll</HintPath>
     </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDllStimulsoftReport\TestDllStimulsoftReport\dll\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Data, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDllStimulsoftReport\TestDllStimulsoftReport\dll\Stimulsoft.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDllStimulsoftReport\TestDllStimulsoftReport\dll\Stimulsoft.Report.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -147,8 +162,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VDStimulsoftReport">
-      <HintPath>VDStimulsoftReport\VDStimulsoftReport.dll</HintPath>
+    <Reference Include="VDStimulsoftReport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDllStimulsoftReport\TestDllStimulsoftReport\dll\VDStimulsoftReport.dll</HintPath>
     </Reference>
     <Reference Include="VisualD.ADOSBOScriptExecute">
       <HintPath>vd_dll_securex86_1.0.2.76\VisualD.ADOSBOScriptExecute.dll</HintPath>
