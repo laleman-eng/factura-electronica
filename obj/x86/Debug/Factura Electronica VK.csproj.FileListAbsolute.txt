@@ -175,6 +175,7 @@ C:\VisualK\factura-electronica\bin\Debug\VisualD.vkBaseForm.dll
 C:\VisualK\factura-electronica\bin\Debug\VisualD.vkFormInterface.dll
 C:\VisualK\factura-electronica\bin\Debug\DLLparaXML.pdb
 C:\VisualK\factura-electronica\bin\Debug\VisualD.GlobalVid.pdb
+C:\VisualK\factura-electronica\bin\Debug\VDStimulsoftReport.pdb
 C:\VisualK\factura-electronica\bin\Debug\VisualD.ADOSBOScriptExecute.pdb
 C:\VisualK\factura-electronica\bin\Debug\VisualD.ChooseFromListSubQuery.pdb
 C:\VisualK\factura-electronica\bin\Debug\VisualD.Core.pdb

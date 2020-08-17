@@ -2041,7 +2041,9 @@ namespace Factura_Electronica_VK.Functions
                 {
                     VDStimulsoftReport.StimulsoftUtility stm = new VDStimulsoftReport.StimulsoftUtility();
                     string baseto64 = stm.getStimulsoftReportBase64(sNombreArchivo, xml, xmlTed);
-                    SBO_f.oLog.OutLog(baseto64);
+                    if (baseto64 == "")
+                        SBO_f.oLog.OutLog("Error Dll Stimulsoft");
+                    //SBO_f.oLog.OutLog(baseto64);
                     return baseto64;
                 }
                 
@@ -2067,7 +2069,6 @@ namespace Factura_Electronica_VK.Functions
             String oPath;
             String sNombreArchivo = "";
             String Pass = "";
-            String PDFString;
             System.IO.Stream oStream;
             Boolean Seguir = false;
             String Tipo = "";

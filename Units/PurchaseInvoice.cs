@@ -733,6 +733,7 @@ namespace Factura_Electronica_VK.PurchaseInvoice
             TDLLparaXML Dll = new TDLLparaXML();
             Dll.SBO_f = SBO_f;
             String GenReport = "";
+            String TpoReport = "";
 
             try
             {
@@ -743,11 +744,11 @@ namespace Factura_Electronica_VK.PurchaseInvoice
 
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum  
-                                , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_GenReport,'Y') 'GenReport'
+                                , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_GenReport,'Y') 'GenReport' , ISNULL(U_TpoReport,'S') 'TpoReport'
                             FROM [@VID_FEPARAM] T0, OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                                , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_GenReport"", 'Y') ""GenReport""
+                                , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_GenReport"", 'Y') ""GenReport"" , IFNULL(""U_TpoReport"", 'S') ""TpoReport""
                             FROM ""@VID_FEPARAM"" T0, ""OADM"" A0  ";
 
                 ors.DoQuery(s);
@@ -768,6 +769,7 @@ namespace Factura_Electronica_VK.PurchaseInvoice
                     TaxIdNum = (System.String)(ors.Fields.Item("TaxIdNum").Value).ToString().Trim();
                     MostrarXML = ((System.String)ors.Fields.Item("MostrarXML").Value).Trim();
                     GenReport = ((System.String)ors.Fields.Item("GenReport").Value).Trim();
+                    TpoReport = ((System.String)ors.Fields.Item("TpoReport").Value).Trim();
                     //validar que exista procedimentos para tipo documento
                     URL = ((System.String)ors.Fields.Item("URL").Value).Trim();
                     if (bFolioPortal)
@@ -896,10 +898,26 @@ namespace Factura_Electronica_VK.PurchaseInvoice
                         {
                             if (GenReport == "Y")
                             {
-                                //aca mas adelante preguntare si es Crystal Report o Stimulsoft
-
-                                s = Reg.PDFenString(TipoDocElecAddon, oDocument.DocEntry.ToString(), sObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
-
+                                if (TpoReport == "C")  // Crystal Report 
+                                {
+                                    s = Reg.PDFenString(TipoDocElecAddon, oDocument.DocEntry.ToString(), sObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL");
+                                }
+                                else // Stimulsoft 
+                                {
+                                    if (((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
+                                    {
+                                        XmlDocument xml = new XmlDocument();
+                                        using (var xmlReader = miXML.CreateReader())
+                                        {
+                                            xml.Load(xmlReader);
+                                        }
+                                        s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocument.DocEntry.ToString(), sObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                    }
+                                    else
+                                    {
+                                        //no tiene timbre el documento 
+                                    }
+                                }
                                 if (s == "")
                                     throw new Exception("No se ha creado PDF");
 

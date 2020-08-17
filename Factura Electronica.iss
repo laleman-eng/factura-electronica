@@ -52,6 +52,12 @@ Source: bin\Debug\Registro Cambios.txt; DestDir: {app}
 Source: bin\Debug\DLLparaXML.dll; DestDir: {app}
 Source: bin\Debug\DLLparaXML.pdb; DestDir: {app}
 Source: bin\Debug\App.config; DestDir: {app}
+Source: bin\Debug\VDStimulsoftReport.dll; DestDir: {app}
+Source: bin\Debug\VDStimulsoftReport.pdb; DestDir: {app}
+Source: bin\Debug\IDAutomation.PDF417.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Base.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Data.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Report.dll; DestDir: {app}
 ;Documentos
 Source: bin\Debug\Docs\UDFSAP.xls; DestDir: {app}\Docs
 Source: bin\Debug\Docs\UDFFELEC.xls; DestDir: {app}\Docs
@@ -209,6 +215,10 @@ Source: bin\Debug\SQLs\CL\Portal\VID_SP_FOLIOSSUCURSAL.sql; DestDir: {app}\SQLs\
 Source: bin\Debug\Reports\CL\Traslado.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 41.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 61.rpt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\33_CIRUMED_2018.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\46_CIRUMED_2018.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\52_CIRUMED_2018.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\61_CIRUMED_2018.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\SQL\ReporteXML.rpt; DestDir: {app}\Reports\CL\SQL
 Source: bin\Debug\Reports\CL\HANA\ReporteXML.rpt; DestDir: {app}\Reports\CL\HANA
 
