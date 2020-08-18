@@ -75,7 +75,7 @@ namespace Factura_Electronica_VK.AsignarFolios
                 Lista.Add("FormaAsig , f,  t,  f,  f, n, 1");
                 Lista.Add("CantAAsig , f,  t,  f,  f, n, 1");
                 Lista.Add("mtx       , f,  t,  f,  f, n, 1");
-                FSBOf.SetAutoManaged(ref oForm, Lista);
+                FSBOf.SetAutoManaged(oForm, Lista);
 
                 AddChooseFromList();
                 oEditText = (EditText)(oForm.Items.Item("CAF").Specific);

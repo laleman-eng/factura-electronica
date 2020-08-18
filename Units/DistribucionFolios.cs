@@ -64,7 +64,7 @@ namespace Factura_Electronica_VK.DistribucionFolios
                 Lista.Add("RangoF    , f,  t,  t,  f, r, 1");
                 Lista.Add("TipoDoc   , f,  t,  t,  f, r, 1");
                 Lista.Add("btnDist   , f,  t,  f,  f, n, 1");
-                FSBOf.SetAutoManaged(ref oForm, Lista);
+                FSBOf.SetAutoManaged(oForm, Lista);
 
                 //carga tipo documentos
                 if (GlobalSettings.RunningUnderSQLServer)

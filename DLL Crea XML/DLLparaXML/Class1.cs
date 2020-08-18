@@ -70,7 +70,7 @@ namespace DLLparaXML
                     var E41 = ((System.String)ors.Fields.Item("TpoTranCompra").Value);
                     var E42 = ((System.String)ors.Fields.Item("TpoTranVenta").Value);
                     var E43 = ((System.String)ors.Fields.Item("FmaPago").Value);
-                    var E44 = ((System.String)ors.Fields.Item("CdgSIISucur").Value.Trim());
+                    var E44 = ((System.String)ors.Fields.Item("CdgSIISucur").Value).Trim();
 
                     xNodo = new XElement("Encabezado",
                                             new XElement("IdDoc",

@@ -5,8 +5,6 @@
 Source: bin\Debug\AddOnInstallAPI.dll; Flags: dontcopy
 Source: bin\Debug\AddOnInstallAPI_Wrapper.exe; DestDir: {app}
 Source: bin\Debug\AddOnInstallAPI_x64.dll; DestDir: {app}
-Source: C:\Program Files\Codejock Software\ISSkin\ISSkin.dll; DestDir: {app}; Flags: dontcopy
-Source: C:\Program Files\Codejock Software\ISSkin\Styles\Office2007.cjstyles; DestDir: {tmp}; Flags: dontcopy
 Source: bin\Debug\Interop.SAPbobsCOM.dll; DestDir: {app}
 Source: bin\Debug\Interop.SAPbouiCOM.dll; DestDir: {app}
 Source: bin\Debug\VisualD.MasterDataMatrixForm.dll; DestDir: {app}
@@ -48,18 +46,25 @@ Source: bin\Debug\Factura Electronica.exe; DestDir: {app}
 Source: bin\Debug\Factura Electronica.pdb; DestDir: {app}
 Source: bin\Debug\CrystalDecisions.CrystalReports.Engine.dll; DestDir: {app}
 Source: bin\Debug\CrystalDecisions.Shared.dll; DestDir: {app}
+Source: bin\Debug\VDStimulsoftReport.dll; DestDir: {app}
+Source: bin\Debug\VDStimulsoftReport.pdb; DestDir: {app}
+Source: bin\Debug\IDAutomation.PDF417.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Base.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Data.dll; DestDir: {app}
+Source: bin\Debug\Stimulsoft.Report.dll; DestDir: {app}
+Source: bin\Debug\DLLparaXML.dll; DestDir: {app}
+Source: bin\Debug\DLLparaXML.pdb; DestDir: {app}
+Source: bin\Debug\Newtonsoft.Json.dll; DestDir: {app}
+Source: bin\Debug\Registro Cambios.txt; DestDir: {app}
 ;Documentos
 Source: bin\Debug\Docs\UDFSAP.xls; DestDir: {app}\Docs
 Source: bin\Debug\Docs\UDFFELEC.xls; DestDir: {app}\Docs
-Source: bin\Debug\Docs\UDFFELECPE.xls; DestDir: {app}\Docs
 Source: bin\Debug\Docs\UDFFELECCL.xls; DestDir: {app}\Docs
+Source: bin\Debug\Docs\VID_FECODPAIS.csv; DestDir: {app}\Docs
+Source: bin\Debug\Docs\VID_FEPTOEMB.csv; DestDir: {app}\Docs
 ;Menus
 Source: bin\Debug\Menus\Menu.xml; DestDir: {app}\Menus
-Source: bin\Debug\Menus\MenuPE.xml; DestDir: {app}\Menus
-Source: bin\Debug\Menus\MenuCL.xml; DestDir: {app}\Menus
 Source: bin\Debug\Menus\RemoveMenu.xml; DestDir: {app}\Menus
-Source: bin\Debug\Menus\RemoveMenuPE.xml; DestDir: {app}\Menus
-Source: bin\Debug\Menus\RemoveMenuCL.xml; DestDir: {app}\Menus
 ;Forms
 Source: bin\Debug\Forms\strCnn.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_ReImprimir.srf; DestDir: {app}\Forms
@@ -78,98 +83,121 @@ Source: bin\Debug\Forms\VID_FEPROCED.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_FELIBROS.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_GLibro.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_GELibro.srf; DestDir: {app}\Forms
-Source: bin\Debug\Forms\FM_IVA.srf; DestDir: {app}\Forms
-Source: bin\Debug\Forms\FM_NOTES.srf; DestDir: {app}\Forms
-Source: bin\Debug\Forms\FM_UMISO.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_FEFOLIAR.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_LibroCompra.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_LibroVenta.srf; DestDir: {app}\Forms
 Source: bin\Debug\Forms\VID_FEFOLIAR.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FEPLANCTA.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FECTASAP.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_MenuConf.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FELibrosElect.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FEMonDTE.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_EnviarEstadoDTE.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FEREUTFOL.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FEListaBlanca.srf; DestDir: {app}\Forms
+Source: bin\Debug\Forms\VID_FEListaNegra.srf; DestDir: {app}\Forms
 ;procedimientos HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_FN_FE_LimpiaCaracteres.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_52_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_52_E.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_52_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Balance.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Boleta_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Boleta_E.sql; DestDir: {app}\SQLs\CL\HANA
-Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Boleta_Desc.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Bultos.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_BUSCAR_FOLIO.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_CambioEstDoc.sql; DestDir: {app}\SQLs\CL\HANA
-Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LOTES.sql; DestDir: {app}\SQLs\CL\HANA
-Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_ENVIO_LIBRO_COMPRAS.sql; DestDir: {app}\SQLs\CL\HANA
-Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_ENVIO_LIBRO_VENTAS.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_Diccionario.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIBRO_COMPRAS.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIBRO_VENTAS.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LibroDiario.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LibroMayor.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_NotaCredito_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_NotaCredito_E.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_NotaCredito_R.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\HANA
-Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_SERIES.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIQUI_C.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIQUI_D.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIQUI_E.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_SP_FE_LIQUI_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_D.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_D_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_E.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_E_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_52_R_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_D.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_D_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_E.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_E_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_NotaCredito_R_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_D_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_E_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\HANA
+Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OINV_R_EXTRA.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\HANA
 Source: bin\Debug\SQLs\CL\HANA\VID_VW_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\HANA
 ;procedimientos SQL Chile
+Source: bin\Debug\SQLs\CL\SQLServer\VID_FN_FE_LimpiaCaracteres.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_52_D.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_52_E.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_52_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_CambioEstDoc.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_SERIES.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LOTES.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Boleta_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Balance.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Boleta_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Boleta_Desc.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_FN_FE_LimpiaCaracteres.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Boleta_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Bultos.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_BUSCAR_FOLIO.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_CambioEstDoc.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Diccionario.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIBRO_COMPRAS.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIBRO_VENTAS.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_ENVIO_LIBRO_COMPRAS.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_ENVIO_LIBRO_VENTAS.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_BUSCAR_FOLIO.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_D.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_E.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LibroDiario.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LibroMayor.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_NotaCredito_D.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_NotaCredito_E.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_NotaCredito_R.sql; DestDir: {app}\SQLs\CL\SQLServer
-Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_Bultos.sql; DestDir: {app}\SQLs\CL\SQLServer
-;procedimientos SQL Peru
-Source: bin\Debug\SQLs\PE\SQLServer\VID_FN_FE_LimpiaCaracteres.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Boleta_D.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Boleta_E.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Boleta_R.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Credito_D.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Credito_E.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Credito_R.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Debito_D.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Debito_E.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_Debito_R.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_OINV_D.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_OINV_E.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_SP_FE_PE_OINV_R.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_VW_FE_PE_OINV_D.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_VW_FE_PE_OINV_E.sql; DestDir: {app}\SQLs\PE\SQLServer
-Source: bin\Debug\SQLs\PE\SQLServer\VID_VW_FE_PE_OINV_R.sql; DestDir: {app}\SQLs\PE\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIQUI_C.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIQUI_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIQUI_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_SP_FE_LIQUI_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_D_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_E_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_52_R_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_D_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_E_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_NotaCredito_R_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_D_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_E_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OINV_R_EXTRA.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\SQLServer
+Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\SQLServer
+
+
 ;procedimientos Portal
 Source: bin\Debug\SQLs\CL\Portal\Crear Tabla VID_FELOTES.sql; DestDir: {app}\SQLs\CL\Portal
 Source: bin\Debug\SQLs\CL\Portal\Crear Tabla VID_FESERIES.sql; DestDir: {app}\SQLs\CL\Portal
@@ -183,12 +211,15 @@ Source: bin\Debug\SQLs\CL\Portal\VID_SP_FOLIOSSUCURSAL.sql; DestDir: {app}\SQLs\
 Source: bin\Debug\Reports\CL\Traslado.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 41.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 61.rpt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\33_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 
 ;Factura Movil
-Source: bin\Debug\pe.facturamovil.dll; DestDir: {app}
 Source: bin\Debug\RestSharp.dll; DestDir: {app}
 Source: bin\Debug\ServiceStack.Text.dll; DestDir: {app}
 Source: bin\Debug\System.Net.Http.dll; DestDir: {app}
+
+;Servicio FE
+Source: Servicio Estado DTE\Servicio Estado DTE\Output\SetupServFE.exe; DestDir: {app}
 
 [Setup]
 UsePreviousLanguage=no
@@ -253,11 +284,6 @@ i               : integer;
 //Copy
 function SHFileOperation(const lpFileOp: TSHFileOpStruct):Integer; external 'SHFileOperation@shell32.dll stdcall';
 
-//Skin support
-procedure LoadSkin(lpszPath: String; lpszIniFileName: String); external 'LoadSkin@files:isskin.dll stdcall';
-procedure UnloadSkin(); external 'UnloadSkin@files:isskin.dll stdcall';
-function  ShowWindow(hWnd: Integer; uType: Integer): Integer; external 'ShowWindow@user32.dll stdcall';
-
 //SAP B1
 function EndInstallEx(Dir:String;Ok:Boolean): integer;
 var
@@ -307,7 +333,6 @@ begin
    //MsgBox(s, mbInformation, MB_OK);
 end;
 
-function RestartNeeded :integer; external 'RestartNeeded@files:AddOnInstallAPI.dll stdcall delayload ';
 
 
 Function ExistStrInParam(StrInParam:string) : boolean;
@@ -316,7 +341,7 @@ var
 begin
 result:=false;
   for j:=0 to ParamCount do
-  if ParamStr(j)=StrInParam then
+  if UpperCase(ParamStr(j)) = UpperCase(StrInParam) then
   begin
    result:=true;
    break;
@@ -357,7 +382,7 @@ begin
    else
    begin
    MsgBox('El Instalador debe ser ejecutado desde SAP Business One.', mbInformation, MB_OK);
-   EndInstallEx('',false);//Avisa a Sap B1 que se aborto la instalacion
+   EndInstallEx('Foo',false);//Avisa a Sap B1 que se aborto la instalacion
    Result := False;
    end;
 end;
@@ -372,9 +397,6 @@ var
 ResultCode      : Integer;
 UninstallerPath : String;
 begin
-   ExtractTemporaryFile('Office2007.cjstyles');
-   LoadSkin(ExpandConstant('{tmp}\Office2007.cjstyles'), 'NormalBlack.ini');
-
    Params:='';
    for i:=0 to ParamCount do
    Params:=Params+' Param'+inttoStr(i)+' = '+paramstr(i)+#13;
@@ -386,19 +408,13 @@ begin
     UninstallerPath:=CurrentLocation + '\unins000.exe';
     //MsgBox('UninstallerPath '+UninstallerPath, mbInformation, MB_OK);
     Exec(UninstallerPath, '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
-    EndUninstall('',true);
+    EndUninstall('Foo',true);
     result:=False;
    end
    else
    begin
    result := PreparePaths;
    end;
-end;
-
-procedure DeinitializeSetup();
-begin
-	ShowWindow(StrToInt(ExpandConstant('{wizardhwnd}')), 0);
-	UnloadSkin();
 end;
 
 function NextButtonClick(CurPageID: Integer): Boolean;
@@ -414,7 +430,7 @@ begin
           if FinishedInstall then
           begin
              SetAddOnFolder(AddOnDir);
-             EndInstallEx('',True);
+             EndInstallEx('Foo',True);
           end;
        end;
    end;
@@ -464,7 +480,7 @@ procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
 { no se usa por el momento debido a que el instalador llama al unist000.exe
 	case CurUninstallStep of
-		ssDone : EndUninstall('',true);
+		ssDone : EndUninstall('Foo',True);
 	end;
 }
 end;
@@ -472,12 +488,17 @@ end;
 Name: {app}\Docs
 Name: {app}\Menus
 Name: {app}\Forms
+Name: {app}\PDF
+Name: {app}\xml
 Name: {app}\SQLs
 Name: {app}\Reports
 Name: {app}\Reports\CL
+Name: {app}\Reports\CL\SQL
+Name: {app}\Reports\CL\HANA
 Name: {app}\SQLs\CL
 Name: {app}\SQLs\CL\HANA
 Name: {app}\SQLs\CL\SQLServer
 Name: {app}\SQLs\CL\Portal
-Name: {app}\SQLs\PE
-Name: {app}\SQLs\PE\SQLServer
+Name: {app}\SQLs\CL\Carga
+[Components]
+Name: main; Description: Instala Servicio verifica estado FE; Languages: ; Types: custom compact full

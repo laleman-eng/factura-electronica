@@ -273,7 +273,7 @@ namespace Factura_Electronica_VK.Invoice
                 Lista.Add("VID_Estado   , f,  f,  f,  f, n, 1");
                 Lista.Add("VID_EstSII, f,  f,  f,  f, n, 1");
                 //Lista.Add('CardCode  , f,  t,  t,  f, r, 1');
-                FSBOf.SetAutoManaged(ref oForm, Lista);
+                FSBOf.SetAutoManaged(oForm, Lista);
 
             }
             catch (Exception e)

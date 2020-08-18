@@ -61,12 +61,28 @@ namespace VisualD.GlobalVid
         public string Ser_Serie = "";
         public string GLOB_EncryptSQL = "Addon BPP";
         public TSBOObjectMg SBOMeta { get; set; }
+        private SAPbobsCOM.Company FCompany;
 
 #if HANA
         public string GLOB_TipoBD = "Hana";
 #else
         public string GLOB_TipoBD = "SQLServer";
 #endif
+
+        public SAPbobsCOM.Company oCompany
+        {
+
+            get
+            {
+                return FCompany;
+            }
+
+            set
+            {
+                FCompany = value;
+            }
+
+        }
 
         public Boolean ValidarCierre
         {

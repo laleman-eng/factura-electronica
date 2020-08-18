@@ -386,7 +386,7 @@ namespace Factura_Electronica_VK.DeliveryNote
                 // Ok Ad  Fnd Vw Rq Sec
                 Lista.Add("VID_Estado  , f,  f,  f,  f, n, 1");
                 //Lista.Add('CardCode  , f,  t,  t,  f, r, 1');
-                FSBOf.SetAutoManaged(ref oForm, Lista);
+                FSBOf.SetAutoManaged(oForm, Lista);
                 oForm.Freeze(false);
 
             }

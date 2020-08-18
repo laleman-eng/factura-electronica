@@ -68,7 +68,7 @@ namespace Factura_Electronica_VK.PlanCuentaSII
 
                 // Ok  Ad  Fnd Vw Rq Sec
                 Lista.Add("grid       , t,  t,  f,  t, n, 1 ");
-                FSBOf.SetAutoManaged(ref oForm, Lista);
+                FSBOf.SetAutoManaged(oForm, Lista);
 
                 oForm.DataSources.UserDataSources.Add("Cuenta", SAPbouiCOM.BoDataType.dt_SHORT_TEXT, 30);
                 oEditText = ((EditText)oForm.Items.Item("Cuenta").Specific);
