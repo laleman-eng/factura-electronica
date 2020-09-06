@@ -205,3 +205,6 @@ C:\VisualK\factura-electronica\obj\x86\Debug\Factura_Electronica_VK.Properties.R
 C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica VK.csproj.GenerateResource.Cache
 C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica.exe
 C:\VisualK\factura-electronica\obj\x86\Debug\Factura Electronica.pdb
+C:\VisualK\factura-electronica(ErrorGenerarAddonHANA)\bin\Debug\Factura Electronica.exe.config
+C:\VisualK\factura-electronica(ErrorGenerarAddonHANA)\obj\x86\Debug\Factura Electronica.exe
+C:\VisualK\factura-electronica(ErrorGenerarAddonHANA)\obj\x86\Debug\Factura Electronica.pdb

@@ -1118,6 +1118,7 @@ namespace Factura_Electronica_VK.DeliveryNote
             Dll.SBO_f = SBO_f;
             String GenReport = "";
             String TpoReport = "";
+            String urlLinkPdf = "";
 
             try
             {
@@ -1136,11 +1137,13 @@ namespace Factura_Electronica_VK.DeliveryNote
 
                 if (RunningUnderSQLServer)
                     s = @"SELECT U_httpBol 'URL', ISNULL(U_UserWSCL,'') 'User', ISNULL(U_PassWSCL,'') 'Pass', REPLACE(ISNULL(TaxIdNum,''),'.','') TaxIdNum 
-                                 , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' , ISNULL(U_GenReport,'Y') 'GenReport' , ISNULL(U_TpoReport,'S') 'TpoReport'
+                                 , ISNULL(U_OP18,'') 'OP18', ISNULL(U_OP8,'') 'OP8', ISNULL(U_URLPDF,'') 'URLPDF', ISNULL(U_MostrarXML,'N') 'MostrarXML' 
+                                 , ISNULL(U_GenReport,'Y') 'GenReport' , ISNULL(U_TpoReport,'S') 'TpoReport', ISNULL(U_UrlLinkPdf,'') 'UrlLinkPdf '
                             FROM [@VID_FEPARAM], OADM A0";
                 else
                     s = @"SELECT ""U_httpBol"" ""URL"", IFNULL(""U_UserWSCL"",'') ""User"", IFNULL(""U_PassWSCL"",'') ""Pass"", REPLACE(IFNULL(""TaxIdNum"",''),'.','') ""TaxIdNum"" 
-                                 , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" , IFNULL(""U_GenReport"", 'Y') ""GenReport"" , IFNULL(""U_TpoReport"", 'S') ""TpoReport""
+                                 , IFNULL(""U_OP18"",'') ""OP18"", IFNULL(""U_OP8"",'') ""OP8"", IFNULL(""U_URLPDF"",'') ""URLPDF"", IFNULL(""U_MostrarXML"",'N') ""MostrarXML"" 
+                                 , IFNULL(""U_GenReport"", 'Y') ""GenReport"" , IFNULL(""U_TpoReport"", 'S') ""TpoReport"" , IFNULL(""U_UrlLinkPdf"", '') ""UrlLinkPdf""
                             FROM ""@VID_FEPARAM"" T0, ""OADM"" A0 ";
 
                 ors.DoQuery(s);
@@ -1162,6 +1165,8 @@ namespace Factura_Electronica_VK.DeliveryNote
                     MostrarXML = ((System.String)ors.Fields.Item("MostrarXML").Value).Trim();
                     GenReport = ((System.String)ors.Fields.Item("GenReport").Value).Trim();
                     TpoReport = ((System.String)ors.Fields.Item("TpoReport").Value).Trim();
+                    urlLinkPdf = ((System.String)ors.Fields.Item("UrlLinkPdf").Value).Trim();
+
                     //validar que exista procedimentos para tipo documento
                     URL = ((System.String)ors.Fields.Item("URL").Value).Trim();
                     if (bFPortal)
@@ -1672,18 +1677,25 @@ namespace Factura_Electronica_VK.DeliveryNote
                             else
                                 SBO_f.SBOApp.StatusBar.SetText("Documento ya se ha enviado anteriormente a EasyDot", SAPbouiCOM.BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
                         }
+                         string dataEncriptedLink;
+                        if (bTransferencia)
+                            dataEncriptedLink = Reg.encriptarLinkPdfDescarga(oTransfer.FolioNumber, TipoDocElec, TaxIdNum.Replace("-", "").Replace(".", ""));
+                        else
+                            dataEncriptedLink = Reg.encriptarLinkPdfDescarga(oDocument.FolioNumber, TipoDocElec, TaxIdNum.Replace("-", "").Replace(".", ""));
+                        
+                        string urlPdf = urlLinkPdf + dataEncriptedLink;
 
                         if (Status == "EC")
                         {
                             if (bTransferencia)
                             {
                                 oTransfer.UserFields.Fields.Item("U_EstadoFE").Value = "P";
-                                lRetCode = oTransfer.Update();
+                                oTransfer.UserFields.Fields.Item("U_ReportPdf").Value = urlPdf;
                             }
                             else
                             {
                                 oDocument.UserFields.Fields.Item("U_EstadoFE").Value = "P";
-                                lRetCode = oDocument.Update();
+                                oDocument.UserFields.Fields.Item("U_ReportPdf").Value = urlPdf;
                             }
                         }
                         else if (Status == "RR")
@@ -1691,27 +1703,26 @@ namespace Factura_Electronica_VK.DeliveryNote
                             if (bTransferencia)
                             {
                                 oTransfer.UserFields.Fields.Item("U_EstadoFE").Value = "A";
-                                lRetCode = oTransfer.Update();
+                                oTransfer.UserFields.Fields.Item("U_ReportPdf").Value = urlPdf;
                             }
                             else
                             {
                                 oDocument.UserFields.Fields.Item("U_EstadoFE").Value = "A";
-                                lRetCode = oDocument.Update();
+                                oDocument.UserFields.Fields.Item("U_ReportPdf").Value = urlPdf;
                             }
                         }
                         else
                         {
                             if (bTransferencia)
-                            {
                                 oTransfer.UserFields.Fields.Item("U_EstadoFE").Value = "N";
-                                lRetCode = oTransfer.Update();
-                            }
                             else
-                            {
                                 oDocument.UserFields.Fields.Item("U_EstadoFE").Value = "N";
-                                lRetCode = oDocument.Update();
-                            }
                         }
+
+                         if (bTransferencia)
+                             lRetCode = oTransfer.Update();
+                         else
+                             lRetCode = oDocument.Update();
                     }
 
                 }

@@ -63,11 +63,13 @@ namespace VisualD.GlobalVid
         public TSBOObjectMg SBOMeta { get; set; }
         private SAPbobsCOM.Company FCompany;
 
-#if HANA
         public string GLOB_TipoBD = "Hana";
-#else
-        public string GLOB_TipoBD = "SQLServer";
-#endif
+
+        //#if HANA
+        //        public string GLOB_TipoBD = "Hana";
+        //#else
+        //        public string GLOB_TipoBD = "SQLServer";
+        //#endif
 
         public SAPbobsCOM.Company oCompany
         {

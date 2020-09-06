@@ -89,7 +89,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>HANA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug SAP910 x86|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -116,7 +116,8 @@
   <Choose>
     <When Condition=" '$(Configuration)'=='Debug SAP910 x86' ">
       <PropertyGroup>
-        <DefineConstants></DefineConstants>
+        <DefineConstants>
+        </DefineConstants>
       </PropertyGroup>
       <ItemGroup>
         <Reference Include="Interop.SAPbobsCOM">
@@ -145,7 +146,8 @@
     </When>
     <When Condition=" '$(Configuration)'=='Debug SAP910 x64' ">
       <PropertyGroup>
-        <DefineConstants></DefineConstants>
+        <DefineConstants>
+        </DefineConstants>
       </PropertyGroup>
       <ItemGroup>
         <Reference Include="Interop.SAPbobsCOM">

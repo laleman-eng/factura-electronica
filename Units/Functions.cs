@@ -21,7 +21,8 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using CrystalDecisions.ReportSource;
 using VDStimulsoftReport;
-
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Factura_Electronica_VK.Functions
 {
@@ -2476,5 +2477,53 @@ namespace Factura_Electronica_VK.Functions
                 SBO_f._ReleaseCOMObject(oGen);
             }
         }//fin insertar datos en tabla rechazados
+
+        public string Encrypt(string clearText)
+        {
+            try
+            {
+                string KeyValue = "ZxMpF02U9Abk9";
+                string EncryptionKey = KeyValue;
+                byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+                using (Aes encryptor = Aes.Create())
+                {
+                    Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                    encryptor.Key = pdb.GetBytes(32);
+                    encryptor.IV = pdb.GetBytes(16);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                        {
+                            cs.Write(clearBytes, 0, clearBytes.Length);
+                            cs.Close();
+                        }
+                        clearText = Convert.ToBase64String(ms.ToArray());
+                    }
+                }
+                return clearText;
+            }
+            catch (Exception e)
+            {
+                SBO_f.oLog.OutLog("Error funcion Ecrypt: " + e.Message + " ** Trace: " + e.StackTrace);
+                return "";
+            }
+        }
+
+        public string encriptarLinkPdfDescarga(int folio, string tipodte, string rut)
+        {
+            try
+            {
+                string dataLink = "FOLIO:" + folio.ToString() + ";TIPODTE:" + tipodte + ";RUT:" + rut;
+                string dataEncriptedLink = Encrypt(dataLink);
+                return (dataEncriptedLink);
+            }
+            catch (Exception e)
+            {
+                SBO_f.oLog.OutLog("Error funcion encriptarLinkPdfDescarga: " + e.Message + " ** Trace: " + e.StackTrace);
+                return "";
+            }
+
+        }
+
     }//fin Class
 }

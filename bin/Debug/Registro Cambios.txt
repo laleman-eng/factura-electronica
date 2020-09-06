@@ -117,6 +117,6 @@ Version 93.0.004 (HANA) (93.0.005 SQL)
 	-> Mejoras en las validaciones de asignacion de folio
 Version 93.0.006 (HANA)
 	-> Nuevo campo ActDebug en parametrizacion del addon, si esta habilitado muestra los tiempos de generacion de DTE desde factura y foliacion masiva (solo factura) 
-Version 93.0.007 (HANA) (93.0.008 SQL)
+Version 93.0.007 (HANA) (93.0.008 SQL) 
 	-> nuevo parmetro GenReport para indicar si reporte se genera de forma local o no
-
+	-> # bug excel de estructura no viene con campo ActDebug 
