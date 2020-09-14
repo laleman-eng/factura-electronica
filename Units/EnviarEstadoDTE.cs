@@ -656,6 +656,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                               ,CAST(' ' AS VARCHAR(30)) 'OC'
                               ,ISNULL((SELECT TOP 1 A.U_FolioRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry AND A.U_TpoDocRef = '" + sEMCode + @"'),'') 'EMOri'
                               ,CAST(' ' AS VARCHAR(30)) 'EM'
+                              ,CASE WHEN T0.U_TipoDoc = '61' THEN ISNULL((SELECT TOP 1 A.U_FolioRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry AND A.U_TpoDocRef = '33'),'') 
+									WHEN T0.U_TipoDoc = '56' THEN ISNULL((SELECT TOP 1 A.U_FolioRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry AND (A.U_TpoDocRef = '61' or A.U_TpoDocRef = '33')),'') 
+									ELSE ''
+							   END 'RefOri'
+							 ,CAST(' ' AS VARCHAR(30)) 'Ref'
+							 ,ISNULL((SELECT TOP 1 A.U_TpoDocRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry),'') 'TpoRefOri'
+							 ,CAST(' ' AS VARCHAR(30)) 'TpoRef'
                               ,CAST(' ' AS VARCHAR(250)) 'Desc_Valida'
                               ,ISNULL(T2.U_CardCode,CAST(' ' AS VARCHAR(30))) 'LB'
                               ,ISNULL(T3.U_CardCode,CAST(' ' AS VARCHAR(30))) 'LN'
@@ -675,7 +682,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 							   LEFT JOIN [@VID_FELISTANE] T3 ON T1.CardCode = T3.U_CardCode AND ISNULL(T3.U_Activado,'N') = 'Y'
                                LEFT JOIN [@VID_FEXMLC] T4 ON T0.DocEntry = T4.Code
                          WHERE (ISNULL(T0.U_EstadoLey,'') = '' OR ISNULL(T0.U_EstadoLey,'') = 'ERM')
-                           AND T0.U_TipoDoc IN ('33', '34', '43')
+                           AND T0.U_TipoDoc IN ('33', '34', '61', '56')
                          ORDER BY 10 ASC, 2, 5 ";
                 else
                     s = @"SELECT
@@ -715,6 +722,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                               ,CAST(' ' AS VARCHAR(30)) ""OC""
                               ,IFNULL((SELECT MAX(A.""U_FolioRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" AND A.""U_TpoDocRef"" = '" + sEMCode + @"'),'') ""EMOri""
                               ,CAST(' ' AS VARCHAR(30)) ""EM""
+                              ,CASE WHEN T0.""U_TipoDoc"" = '61' THEN IFNULL((SELECT MAX (A.""U_FolioRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" AND A.""U_TpoDocRef"" = '33'),'') 
+                                    WHEN T0.""U_TipoDoc"" = '56' THEN IFNULL((SELECT MAX (A.""U_FolioRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" AND (A.""U_TpoDocRef"" = '61' OR A.""U_TpoDocRef"" = '33')),'') 
+                                    ELSE ''
+                                END AS ""RefOri""
+                              ,CAST(' ' AS VARCHAR(30)) ""Ref""
+                              ,IFNULL((SELECT MAX(A.""U_TpoDocRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" ),'') ""TpoRefOri""
+                              ,CAST(' ' AS VARCHAR(30)) ""TpoRef""
                               ,CAST(' ' AS VARCHAR(250)) ""Desc_Valida""
                               ,IFNULL(T2.""U_CardCode"", CAST(' ' AS VARCHAR(30))) ""LB""
                               ,IFNULL(T3.""U_CardCode"", CAST(' ' AS VARCHAR(30))) ""LN""
@@ -734,7 +748,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 							   LEFT JOIN ""@VID_FELISTANE"" T3 ON T1.""CardCode"" = T3.""U_CardCode"" AND IFNULL(T3.""U_Activado"",'N') = 'Y'
                                LEFT JOIN ""@VID_FEXMLC"" T4 ON T0.""DocEntry"" = T4.""Code""
                          WHERE (IFNULL(T0.""U_EstadoLey"",'') = '' OR IFNULL(T0.""U_EstadoLey"",'') = 'ERM')
-                           AND T0.""U_TipoDoc"" IN ('33', '34', '43')
+                           AND T0.""U_TipoDoc"" IN ('33', '34', '61' , '56')
                          ORDER BY 10 ASC, 2, 5 ";
 
                 oGrid = (Grid)(oForm.Items.Item("grid").Specific);
@@ -870,7 +884,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 
                 oGrid.Columns.Item("OCOri").Type = BoGridColumnType.gct_EditText;
                 oEditColumn = ((EditTextColumn)oGrid.Columns.Item("OCOri"));
-                oEditColumn.Visible = false;
+                oEditColumn.Visible = false;  //#
 
                 oGrid.Columns.Item("EM").Type = BoGridColumnType.gct_EditText;
                 oEditColumn = ((EditTextColumn)oGrid.Columns.Item("EM"));
@@ -879,8 +893,24 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 oEditColumn.Editable = ValidarEM == "Y" ? true : false;
                 oEditColumn.LinkedObjectType = "20";
 
+                oGrid.Columns.Item("Ref").Type = BoGridColumnType.gct_EditText;
+                oEditColumn = ((EditTextColumn)oGrid.Columns.Item("Ref"));
+                oEditColumn.Visible = false;
 
-                oGrid.Columns.Item("EMOri").Visible = false;
+                oGrid.Columns.Item("RefOri").Type = BoGridColumnType.gct_EditText;
+                oEditColumn = ((EditTextColumn)oGrid.Columns.Item("RefOri"));
+                oEditColumn.Visible = true;
+                oEditColumn.TitleObject.Caption = "Referencia";
+                oEditColumn.Editable = false;
+                oEditColumn.LinkedObjectType = "20"; // aca sacaquer consulta para obtener objecto
+
+                oGrid.Columns.Item("TpoRefOri").Type = BoGridColumnType.gct_EditText;
+                oEditColumn = ((EditTextColumn)oGrid.Columns.Item("TpoRefOri"));
+                oEditColumn.Visible = true;
+                oEditColumn.TitleObject.Caption = "Tipo Ref";
+                oEditColumn.Editable = false;
+
+                oGrid.Columns.Item("EMOri").Visible = false;//#
 
                 oGrid.Columns.Item("Desc_Valida").Type = BoGridColumnType.gct_EditText;
                 oEditColumn = ((EditTextColumn)oGrid.Columns.Item("Desc_Valida"));
@@ -888,6 +918,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 oEditColumn.Editable = false;
                 oEditColumn.TitleObject.Caption = "Validaciones";
 
+                oGrid.Columns.Item("TpoRef").Visible = false;
                 oGrid.Columns.Item("LB").Visible = false;
                 oGrid.Columns.Item("LN").Visible = false;
                 oGrid.Columns.Item("V_PORC").Visible = false;
@@ -1868,6 +1899,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 {
                     valorFila = oGrid.GetDataTableRowIndex(numfila);
                     oProgressBar.Value += 1;
+                    string tipoDoc = oGrid.DataTable.GetValue("U_TipoDoc", valorFila).ToString();
 
                     if (valorFila != -1)
                     {
@@ -2123,7 +2155,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 
                         //Valida Forma de Pagos 1 = CONTADO / 3 = ENTREGA GRATUITA
                         string sFormPag = oGrid.DataTable.GetValue("U_FmaPago", numfila).ToString();
-                        if (sFormPag != "2")
+                        if (sFormPag != "2" && (tipoDoc == "33" || tipoDoc == "34"))
                         {
                             if (sFormPag == "1" || sFormPag == "3")
                             {
@@ -2137,6 +2169,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 //oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
                                 oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, false);
                             }
+                        }
+                        else
+                        {
+                            if (tipoDoc == "61" || tipoDoc == "56")
+                            {
+                                oGrid.DataTable.SetValue("U_EstadoLey", numfila, "");
+                                oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, false);
+                            }
+                                
                         }
 
                         //Colorea en semaforo para dias restantes
