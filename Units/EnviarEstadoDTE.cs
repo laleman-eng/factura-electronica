@@ -282,7 +282,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 
             try
             {
-                if ((pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED) && (pVal.BeforeAction) && (pVal.ItemUID == "grid") && (pVal.ColUID == "OC" || pVal.ColUID == "EM"))
+                if ((pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED) && (pVal.BeforeAction) && (pVal.ItemUID == "grid") && (pVal.ColUID == "OC" || pVal.ColUID == "EM" || pVal.ColUID == "RefOri"))
                 {
                     oForm.Freeze(true);
                     oForm.Items.Item("Logo").Click();
@@ -351,19 +351,49 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             catch { }
                         }
                     }
+                    else if (pVal.ColUID == "RefOri")
+                    {
+                        string objType = oGrid.DataTable.GetValue("TpoRefOri", pVal.Row).ToString();
+                        string table;
+                        switch (objType)
+                        {
+                            case "33":
+                                ((EditTextColumn)oGrid.Columns.Item("RefOri")).LinkedObjectType = "18";
+                                table = "OPCH";
+                                break;
+                            case "61":
+                                ((EditTextColumn)oGrid.Columns.Item("RefOri")).LinkedObjectType = "19";
+                                table = "ORPC";
+                                break;
+                            default:
+                                table = "OPCH";
+                                break;
+                        }
+                        try
+                        {
+                            if (GlobalSettings.RunningUnderSQLServer)
+                                s = @"SELECT DocEntry FROM {0} WHERE DocNum = {1}";
+                            else
+                                s = @"SELECT ""DocEntry"" FROM ""{0}"" WHERE ""DocNum"" = {1}";
+
+                            string sDocNum = oGrid.DataTable.GetValue("RefOri", pVal.Row).ToString().Trim();
+                            s = string.Format(s, table, FSBOf.IsNumber(sDocNum) ? sDocNum : "0");
+                            oRecordSet.DoQuery(s);
+                            TempDocNumLink = sDocNum;
+                            oGrid.DataTable.SetValue("RefOri", pVal.Row, oRecordSet.Fields.Item("DocEntry").Value.ToString());
+                        }
+                        catch { }
+                    }
                 }
 
-                if ((pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED) && (!pVal.BeforeAction) && (pVal.ItemUID == "grid") && (pVal.ColUID == "OC" || pVal.ColUID == "EM"))
+                if ((pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED) && (!pVal.BeforeAction) && (pVal.ItemUID == "grid") && (pVal.ColUID == "OC" || pVal.ColUID == "EM" || pVal.ColUID == "RefOri"))
                 {
                     if (pVal.ColUID == "OC")
-                    {
-                        oGrid.DataTable.SetValue("OC", pVal.Row, TempDocNumLink);
-                    }
+                        oGrid.DataTable.SetValue("OC", pVal.Row, TempDocNumLink); //como busca por DocEntry se devuel el valor DocNum 
                     else if (pVal.ColUID == "EM")
-                    {
                         oGrid.DataTable.SetValue("EM", pVal.Row, TempDocNumLink);
-
-                    }
+                    else if (pVal.ColUID == "RefOri")
+                        oGrid.DataTable.SetValue("RefOri", pVal.Row, TempDocNumLink);
                     oForm.Freeze(false);
                 }
 
@@ -902,7 +932,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 oEditColumn.Visible = true;
                 oEditColumn.TitleObject.Caption = "Referencia";
                 oEditColumn.Editable = false;
-                oEditColumn.LinkedObjectType = "20"; // aca sacaquer consulta para obtener objecto
+                oEditColumn.LinkedObjectType = "18"; // se asigna este por defecto pero es dinamico cuando le da click
 
                 oGrid.Columns.Item("TpoRefOri").Type = BoGridColumnType.gct_EditText;
                 oEditColumn = ((EditTextColumn)oGrid.Columns.Item("TpoRefOri"));
