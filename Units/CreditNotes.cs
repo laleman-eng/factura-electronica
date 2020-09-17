@@ -1995,8 +1995,8 @@ namespace Factura_Electronica_VK.CreditNotes
 
                     s = String.Format(s, TipoDocElec);
                     ors.DoQuery(s);
-                    throw new Exception("No se encuentra procedimientos para Documento electronico " + TipoDocElec);
-                    if (ors.RecordCount == 0);
+                    if (ors.RecordCount == 0)
+                        throw new Exception("No se encuentra procedimientos para Documento electronico " + TipoDocElec);
                     else if (((System.String)ors.Fields.Item("ProcNomE").Value).Trim() == "")
                         throw new Exception("No se encuentra procedimiento Encabezado para Documento electronico " + TipoDocElec);
                     else if (((System.String)ors.Fields.Item("ProcNomD").Value).Trim() == "")
