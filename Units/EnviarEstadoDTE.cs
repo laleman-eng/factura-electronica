@@ -930,7 +930,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 oGrid.Columns.Item("RefOri").Type = BoGridColumnType.gct_EditText;
                 oEditColumn = ((EditTextColumn)oGrid.Columns.Item("RefOri"));
                 oEditColumn.Visible = true;
-                oEditColumn.TitleObject.Caption = "Referencia";
+                oEditColumn.TitleObject.Caption = "Ref NC ND";
                 oEditColumn.Editable = false;
                 oEditColumn.LinkedObjectType = "18"; // se asigna este por defecto pero es dinamico cuando le da click
 
@@ -2016,172 +2016,219 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         string sDescValida;
                         string sValidaRes = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString().Trim().Length > 0 ? oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString() : "";
                         string sValidaOC;
+                        string sValidaRef="";
 
-                        if (sOC.Length == 0 && ((System.String)oGrid.DataTable.GetValue("OC", valorFila)).Trim() == "" && ValidarEM != "Y") // NO OCOrig + NO OC + NO LB + NO LN && ListaBlanca.Length == 0 && ListaNegra.Length == 0
-                        {
-                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                            //oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                            oGrid.DataTable.SetValue("U_Validacion", numfila, "NO OC");
-                            oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Orden de Compra SAP, ");
-                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                            TotRecl += 1;
-                        }
+                         if (tipoDoc == "56" || tipoDoc == "61")  //validaciones para creacion de NC Y ND
+                         {
+                             //validar tipo de referencia 
+                             if (((System.String)oGrid.DataTable.GetValue("TpoRefOri", valorFila)).Trim() == "")
+                             {
+                                 oGrid.DataTable.SetValue("U_Validacion", numfila, "NO Tpo Ref");
+                                 oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Tipo Documento en SAP, ");
+                                 oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                 TotRecl += 1;
+                             }
+                             else
+                             {
+                                 if (((System.String)oGrid.DataTable.GetValue("RefOri", valorFila)).Trim() == "")
+                                 {
+                                     if (((System.String)oGrid.DataTable.GetValue("TpoRefOri", valorFila)).Trim() == "33")
+                                     {
+                                         oGrid.DataTable.SetValue("U_Validacion", numfila, "NO FE");
+                                         oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Referencia Factura en SAP, ");
+                                         oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                         TotRecl += 1;
+                                     }
+                                     else
+                                     {
+                                         oGrid.DataTable.SetValue("U_Validacion", numfila, "NO NC");
+                                         oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Referencia Nota Credito en SAP,  ");
+                                         oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                         TotRecl += 1;
+                                     }
+                                 }
+                             }
 
-                        if (((System.String)oGrid.DataTable.GetValue("OC", valorFila)).Trim() == "")
+                             if (tipoDoc == "61" && ((System.String)oGrid.DataTable.GetValue("Desc_Valida", valorFila)).Trim() == "") 
+                                sValidaRef = ValidarNC_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
+
+                             if (sValidaRef.Length != 0)
+                             {
+                                 oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                 oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRef);
+                                 oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                             }
+
+                         }
+
+                        if (tipoDoc == "33" ||tipoDoc == "34" )   //Validaciones para creacion de factura 
                         {
-                            oGrid.DataTable.SetValue("OC", numfila, sOC);
-                            if (sOC.Length > 0)
+                            if (sOC.Length == 0 && ((System.String)oGrid.DataTable.GetValue("OC", valorFila)).Trim() == "" && ValidarEM != "Y") // NO OCOrig + NO OC + NO LB + NO LN && ListaBlanca.Length == 0 && ListaNegra.Length == 0
                             {
-                                sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
+                                oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                //oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                oGrid.DataTable.SetValue("U_Validacion", numfila, "NO OC");
+                                oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Orden de Compra SAP, ");
+                                oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                TotRecl += 1;
+                            }
 
-                                if (ValidarEM != "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida OC y NO Lista Blanca / Negra 
+                            if (((System.String)oGrid.DataTable.GetValue("OC", valorFila)).Trim() == "")
+                            {
+                                oGrid.DataTable.SetValue("OC", numfila, sOC);
+                                if (sOC.Length > 0)
                                 {
-                                    sValidaOC = ValidarOC_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
-                                    oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaOC);
+                                    sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
 
-                                    if (sValidaOC.Length == 0) //Si viene vacio esta OK
+                                    if (ValidarEM != "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida OC y NO Lista Blanca / Negra 
                                     {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "Y");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
-                                        TotAcep += 1;
-                                        TotSele += 1;
-                                    }
-                                    else
-                                    {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                                        bEditable = ModificarFCT == "Y" ? true : false;
-                                        oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
-                                        TotRecl += 1;
+                                        sValidaOC = ValidarOC_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
+                                        oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaOC);
+
+                                        if (sValidaOC.Length == 0) //Si viene vacio esta OK
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "Y");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
+                                            TotAcep += 1;
+                                            TotSele += 1;
+                                        }
+                                        else
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                            bEditable = ModificarFCT == "Y" ? true : false;
+                                            oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
+                                            TotRecl += 1;
+                                        }
                                     }
                                 }
                             }
-                        }
-                        else
-                        {
-                            sOC = oGrid.DataTable.GetValue("OC", valorFila).ToString().Trim();
-                            if (sOC.Length > 0)
+                            else
                             {
-                                sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
-
-                                if (ValidarEM != "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida OC y NO Lista Blanca / Negra 
+                                sOC = oGrid.DataTable.GetValue("OC", valorFila).ToString().Trim();
+                                if (sOC.Length > 0)
                                 {
-                                    sValidaOC = ValidarOC_Manual(sOC, CardCode, dTotal, FecEmis, out sValidaRes);
-                                    oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaOC);
+                                    sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
 
-                                    if (sValidaOC.Length == 0) //Si viene vacio esta OK
+                                    if (ValidarEM != "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida OC y NO Lista Blanca / Negra 
                                     {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "Y");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
-                                        TotAcep += 1;
-                                        TotSele += 1;
-                                    }
-                                    else
-                                    {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                                        bEditable = ModificarFCT == "Y" ? true : false;
-                                        oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
-                                        TotRecl += 1;
+                                        sValidaOC = ValidarOC_Manual(sOC, CardCode, dTotal, FecEmis, out sValidaRes);
+                                        oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaOC);
+
+                                        if (sValidaOC.Length == 0) //Si viene vacio esta OK
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "Y");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
+                                            TotAcep += 1;
+                                            TotSele += 1;
+                                        }
+                                        else
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                            bEditable = ModificarFCT == "Y" ? true : false;
+                                            oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
+                                            TotRecl += 1;
+                                        }
                                     }
                                 }
                             }
-                        }
 
 
 
-                        //Campo EMOri
-                        var sEM = oGrid.DataTable.GetValue("EMOri", valorFila).ToString().Trim();
-                        var sEMOrig = sEM;
-                        string sValidaEM;
+                            //Campo EMOri
+                            var sEM = oGrid.DataTable.GetValue("EMOri", valorFila).ToString().Trim();
+                            var sEMOrig = sEM;
+                            string sValidaEM;
 
-                        if (sEM.Length == 0 && ((System.String)oGrid.DataTable.GetValue("EM", valorFila)).Trim() == "" && ValidarEM == "Y") // NO OCOrig + NO OC + NO LB + NO LN  && ListaBlanca.Length == 0 && ListaNegra.Length == 0
-                        {
-                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                            //oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                            oGrid.DataTable.SetValue("U_Validacion", numfila, "NO EM");
-                            oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Entrada Mercancia SAP, ");
-                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                            TotRecl += 1;
-                        }
-
-                        if (((System.String)oGrid.DataTable.GetValue("EM", valorFila)).Trim() == "")
-                        {
-                            oGrid.DataTable.SetValue("EM", numfila, sEM);
-                            if (sEM.Length > 0)
+                            if (sEM.Length == 0 && ((System.String)oGrid.DataTable.GetValue("EM", valorFila)).Trim() == "" && ValidarEM == "Y") // NO OCOrig + NO OC + NO LB + NO LN  && ListaBlanca.Length == 0 && ListaNegra.Length == 0
                             {
-                                sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
+                                oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                //oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                oGrid.DataTable.SetValue("U_Validacion", numfila, "NO EM");
+                                oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRes + "Sin asignar Entrada Mercancia SAP, ");
+                                oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                TotRecl += 1;
+                            }
 
-                                if (ValidarEM == "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida EM y NO Lista Blanca / Negra
+                            if (((System.String)oGrid.DataTable.GetValue("EM", valorFila)).Trim() == "")
+                            {
+                                oGrid.DataTable.SetValue("EM", numfila, sEM);
+                                if (sEM.Length > 0)
                                 {
-                                    sValidaEM = ValidarEM_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
-                                    oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaEM);
+                                    sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
 
-                                    if (sValidaEM.Length == 0) //Si viene vacio esta OK
+                                    if (ValidarEM == "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida EM y NO Lista Blanca / Negra
                                     {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "Y");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
-                                        TotAcep += 1;
-                                        TotSele += 1;
-                                    }
-                                    else
-                                    {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                                        bEditable = ModificarFCT == "Y" ? true : false;
-                                        oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
-                                        TotRecl += 1;
+                                        sValidaEM = ValidarEM_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
+                                        oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaEM);
 
+                                        if (sValidaEM.Length == 0) //Si viene vacio esta OK
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "Y");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
+                                            TotAcep += 1;
+                                            TotSele += 1;
+                                        }
+                                        else
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                            bEditable = ModificarFCT == "Y" ? true : false;
+                                            oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
+                                            TotRecl += 1;
+
+                                        }
                                     }
                                 }
                             }
-                        }
-                        else
-                        {
-                            sEM = oGrid.DataTable.GetValue("EM", valorFila).ToString().Trim();
-                            if (sEM.Length > 0)
+                            else
                             {
-                                sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
-
-                                if (ValidarEM == "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida EM y NO Lista Blanca / Negra
+                                sEM = oGrid.DataTable.GetValue("EM", valorFila).ToString().Trim();
+                                if (sEM.Length > 0)
                                 {
-                                    sValidaEM = ValidarEM_Manual(sEM, CardCode, dTotal, FecEmis, out sValidaRes);
-                                    oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaEM);
+                                    sDescValida = oGrid.DataTable.GetValue("Desc_Valida", numfila).ToString();
 
-                                    if (sValidaEM.Length == 0) //Si viene vacio esta OK
+                                    if (ValidarEM == "Y" && ListaBlanca.Length == 0 && ListaNegra.Length == 0) // Valida EM y NO Lista Blanca / Negra
                                     {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "Y");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
-                                        TotAcep += 1;
-                                        TotSele += 1;
-                                    }
-                                    else
-                                    {
-                                        oGrid.DataTable.SetValue("Acepta", numfila, "N");
-                                        oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
-                                        oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
-                                        oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                                        bEditable = ModificarFCT == "Y" ? true : false;
-                                        oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
-                                        TotRecl += 1;
+                                        sValidaEM = ValidarEM_Manual(sEM, CardCode, dTotal, FecEmis, out sValidaRes);
+                                        oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaEM);
+
+                                        if (sValidaEM.Length == 0) //Si viene vacio esta OK
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "Y");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
+                                            TotAcep += 1;
+                                            TotSele += 1;
+                                        }
+                                        else
+                                        {
+                                            oGrid.DataTable.SetValue("Acepta", numfila, "N");
+                                            oGrid.DataTable.SetValue("U_EstadoLey", numfila, "RCD");
+                                            oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                            oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                            bEditable = ModificarFCT == "Y" ? true : false;
+                                            oGrid.CommonSetting.SetCellEditable(valorFila + 1, 14, bEditable);
+                                            TotRecl += 1;
+                                        }
                                     }
                                 }
                             }
-                        }
+                        }//Fin validaciones crecion de factura 
 
                         //Valida Forma de Pagos 1 = CONTADO / 3 = ENTREGA GRATUITA
                         string sFormPag = oGrid.DataTable.GetValue("U_FmaPago", numfila).ToString();
@@ -2992,6 +3039,163 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 return "Error Validar";
             }
         }
+
+        private string ValidarNC_Xml(String DocEntry, String pCardCode, double pMntTotalXml, DateTime pFchEmisXml, out string ValidaRes)
+        {
+            string respuesta = "";
+            string ValidaResL = "";
+
+            try
+            {
+                SAPbobsCOM.Recordset orsaux = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
+
+                if (GlobalSettings.RunningUnderSQLServer)
+                    s = @"SELECT COUNT(*) 'Cant', T2.U_FolioRef, T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor, ISNULL(REPLACE(T4.LicTradNum,'.',''),'') as 'RUT'
+                                                    FROM [@VID_FEXMLCR] T2
+                                                    JOIN [@VID_FEXMLC] T0 ON T0.Code = T2.Code
+                                                    LEFT JOIN OPCH T3 ON CAST(T3.DocNum as NVARCHAR(20)) = T2.U_FolioRef
+                                                    LEFT JOIN OCRD T4 ON T3.CardCode = T4.CardCode
+                                                    WHERE T2.Code = '{0}'
+                                                    AND T2.U_TpoDocRef = '33'
+                                                    GROUP BY T2.U_FolioRef
+                                                    , T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor,T4.LicTradNum";
+                else
+                    s = @"SELECT COUNT(*) ""Cant"", T2.""U_FolioRef"", T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"", IFNULL(REPLACE(T4.""LicTradNum"",'.',''),'') as ""RUT""
+                                                  FROM ""@VID_FEXMLCR"" T2
+                                                  JOIN ""@VID_FEXMLC"" T0 ON T0.""Code"" = T2.""Code""
+                                                  LEFT JOIN ""OPOR"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
+                                                  LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
+                                                 WHERE T2.""Code"" = '{0}'
+                                                   AND T2.""U_TpoDocRef"" = '33'
+                                                  GROUP BY T2.""U_FolioRef"" 
+                                                 , T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"",T4.""LicTradNum"" ";
+                s = String.Format(s, DocEntry);
+                orsaux.DoQuery(s);
+                if (((System.Int32)orsaux.Fields.Item("Cant").Value) == 0)
+                {
+                    respuesta = "No tiene FE, ";
+                    ValidaResL = "NO FE";
+                }
+                else if (((System.Int32)orsaux.Fields.Item("Cant").Value) > 1)
+                {
+                    respuesta = "Tiene mas de una FE, ";
+                    ValidaResL = "FE > 1";
+                }
+                else
+                    respuesta = "";
+
+                string RutSN = orsaux.Fields.Item("RUT").Value.ToString().Trim();
+                var RUTxml = ((System.String)orsaux.Fields.Item("U_RUTEmisor").Value).Trim();
+                if (RutSN != RUTxml && RutSN.Length > 0)
+                {
+                    respuesta = "El RUT del SN no coinciden entre XML y FE SAP , ";
+                    ValidaResL = "RUT SN OC";
+                }
+
+                if (respuesta == "")//asi filtro que solo sea para el caso que tenga una OC
+                {
+                    var FchEmisXml = ((System.DateTime)orsaux.Fields.Item("U_FchEmis").Value);
+                    var FchvencXml = ((System.DateTime)orsaux.Fields.Item("U_FchVenc").Value);
+                    var RznSocXml = ((System.String)orsaux.Fields.Item("U_RznSoc").Value).Trim();
+                    var MntNetoXml = ((System.Double)orsaux.Fields.Item("U_MntNeto").Value);
+                    var MntExeXml = ((System.Double)orsaux.Fields.Item("U_MntExe").Value);
+                    var MntTotalXml = ((System.Double)orsaux.Fields.Item("U_MntTotal").Value);
+                    var IVAXml = ((System.Double)orsaux.Fields.Item("U_IVA").Value);
+                    var FolioOC = ((System.String)orsaux.Fields.Item("U_FolioRef").Value).Trim();
+
+                    if (GlobalSettings.RunningUnderSQLServer)//Busca CardCode
+                        s = @"SELECT CardCode, REPLACE(LicTradNum,'.','') as 'RUT' FROM OCRD WHERE REPLACE(LicTradNum,'.','') = '{0}' AND CardType = 'S' AND frozenFor = 'N'";
+                    else
+                        s = @"SELECT ""CardCode"", REPLACE(""LicTradNum"",'.','') as ""RUT"" FROM ""OCRD"" WHERE REPLACE(""LicTradNum"",'.','') = '{0}' AND ""CardType"" = 'S' AND ""frozenFor"" = 'N'";
+                    s = String.Format(s, RUTxml.Replace(".", ""));
+                    orsaux.DoQuery(s);
+                    var CardCode = "";
+                    if (orsaux.RecordCount == 0)
+                    {
+                        respuesta = "No se ha encontrado proveedor en el Maestro SN, ";
+                        ValidaResL = "NO SN";
+                    }
+                    else
+                        CardCode = ((System.String)orsaux.Fields.Item("CardCode").Value).Trim();
+                    if (respuesta == "")//si se encontro el SN
+                    {
+                        //Busca datos de la Factura
+                        if (GlobalSettings.RunningUnderSQLServer)
+                            s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
+                                                        FROM OPCH T0
+                                                        JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
+                                                        WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}'
+                                                        AND T0.CardCode = '{1}'
+                                                        GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
+                        else
+                            s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
+                                                        FROM ""OPCH"" T0
+                                                        JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                                        WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}'
+                                                        AND T0.""CardCode"" = '{1}'
+                                                        GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                        s = String.Format(s, FolioOC, CardCode);
+                        orsaux.DoQuery(s);
+
+                        if (orsaux.RecordCount == 0)
+                        {
+                            respuesta = "No se ha encontrado Factura en SAP, ";
+                            ValidaResL = "NO FE";
+                        }
+                        else
+                        {
+                            var OCDocEntry = ((System.Int32)orsaux.Fields.Item("DocEntry").Value);
+                            var OCDocStatus = ((System.String)orsaux.Fields.Item("DocStatus").Value).Trim();
+                            var OCDocTotal = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
+                            var OCVatSum = ((System.Double)orsaux.Fields.Item("VatSum").Value);
+                            var OCDocDate = ((System.DateTime)orsaux.Fields.Item("DocDate").Value);
+                            var CantLineasOC = ((System.Int32)orsaux.Fields.Item("Cant").Value);
+                            var AnuladoOC = ((System.String)orsaux.Fields.Item("CANCELED").Value).Trim();
+                            var Autorizada = ((System.String)orsaux.Fields.Item("Confirmed").Value).Trim();
+
+                            if (OCDocStatus != "O")
+                            {
+                                respuesta = "La Factura en SAP esta Cerrada, ";
+                                ValidaResL = "ESTADO FE";
+                            }
+                            if (OCDocStatus == "O" && Autorizada == "N")
+                            {
+                                respuesta = "La Factura en SAP No esta Autorizada, ";
+                                ValidaResL = "ESTADO FE";
+                            }
+                            if (AnuladoOC == "Y")
+                            {
+                                respuesta = "La Factura en SAP esta Anulada, ";
+                                ValidaResL = "FE ANULADA";
+                            }
+
+                            if (OCDocStatus == "O" && AnuladoOC == "N")
+                            {
+                                //validar diferencia entre NC Y FACTURA
+
+                            }
+
+
+                        }
+
+                    }
+                }
+                
+
+
+
+            }
+            catch (Exception e)
+            {
+                FSBOApp.StatusBar.SetText("Error ValidarNC -> " + e.Message, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                OutLog("Error ValidarNC -> " + e.Message + ", TRACE " + e.StackTrace);
+            }
+
+           ValidaRes = ValidaResL;
+            return respuesta;
+        }
+
+
 
     }//fin class
 }
