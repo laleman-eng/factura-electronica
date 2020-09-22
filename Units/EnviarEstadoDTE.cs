@@ -2048,17 +2048,29 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                      }
                                  }
                              }
-
-                             if (tipoDoc == "61" && ((System.String)oGrid.DataTable.GetValue("Desc_Valida", valorFila)).Trim() == "") 
-                                sValidaRef = ValidarNC_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
-
-                             if (sValidaRef.Length != 0)
+                             if (((System.String)oGrid.DataTable.GetValue("Desc_Valida", valorFila)).Trim() == "" ) 
                              {
-                                 oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
-                                 oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRef);
-                                 oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
-                             }
+                                 if (tipoDoc == "61") 
+                                    sValidaRef = ValidarNC_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes);
+                                 else if (tipoDoc == "56")
+                                     sValidaRef = ValidarND_Xml(DocEntry, CardCode, dTotal, FecEmis, out sValidaRes, ((System.String)oGrid.DataTable.GetValue("TpoRefOri", valorFila)).Trim(), ValidarEM);
 
+                                 if (sValidaRef.Length == 0) // si viene vacio esta OK
+                                 {
+                                     oGrid.DataTable.SetValue("Acepta", numfila, "Y");
+                                     oGrid.DataTable.SetValue("U_EstadoLey", numfila, "ACD");
+                                     oGrid.DataTable.SetValue("U_Validacion", numfila, "OK");
+                                     oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.LightGreen));
+                                     TotAcep += 1;
+                                     TotSele += 1;
+                                 }
+                                 else 
+                                 {
+                                     oGrid.DataTable.SetValue("U_Validacion", numfila, sValidaRes);
+                                     oGrid.DataTable.SetValue("Desc_Valida", numfila, sValidaRef);
+                                     oGrid.CommonSetting.SetCellBackColor(numfila + 1, 6, ColorTranslator.ToOle(Color.FromArgb(240, 128, 128)));
+                                 }
+                             }
                          }
 
                         if (tipoDoc == "33" ||tipoDoc == "34" )   //Validaciones para creacion de factura 
@@ -3063,7 +3075,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     s = @"SELECT COUNT(*) ""Cant"", T2.""U_FolioRef"", T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"", IFNULL(REPLACE(T4.""LicTradNum"",'.',''),'') as ""RUT""
                                                   FROM ""@VID_FEXMLCR"" T2
                                                   JOIN ""@VID_FEXMLC"" T0 ON T0.""Code"" = T2.""Code""
-                                                  LEFT JOIN ""OPOR"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
+                                                  LEFT JOIN ""OPCH"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
                                                   LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
                                                  WHERE T2.""Code"" = '{0}'
                                                    AND T2.""U_TpoDocRef"" = '33'
@@ -3092,7 +3104,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     ValidaResL = "RUT SN OC";
                 }
 
-                if (respuesta == "")//asi filtro que solo sea para el caso que tenga una OC
+                if (respuesta == "")//asi filtro que solo sea para el caso que tenga una FE
                 {
                     var FchEmisXml = ((System.DateTime)orsaux.Fields.Item("U_FchEmis").Value);
                     var FchvencXml = ((System.DateTime)orsaux.Fields.Item("U_FchVenc").Value);
@@ -3172,18 +3184,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             if (OCDocStatus == "O" && AnuladoOC == "N")
                             {
                                 //validar diferencia entre NC Y FACTURA
-
+                                if (OCDocTotal > MntTotalXml)
+                                {
+                                    respuesta = "NC es Mayor a la Factura asociada, ";
+                                    ValidaResL = "NC Invalida";
+                                }
                             }
-
-
                         }
-
                     }
                 }
-                
-
-
-
             }
             catch (Exception e)
             {
@@ -3195,6 +3204,275 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
             return respuesta;
         }
 
+        private string ValidarND_Xml(String DocEntry, String pCardCode, double pMntTotalXml, DateTime pFchEmisXml, out string ValidaRes, string tpoRef , string ValidarEM)
+        {
+            string respuesta = "";
+            string ValidaResL = "";
+            string table = "";
+            string table1 = "";
+            string msjaux = "";
+            string tableRecepcion = "";
+            int objRecepcion;
+            string msjRecepcion = "";
+            try
+            {
+                SAPbobsCOM.Recordset orsaux = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
+                if (GlobalSettings.RunningUnderSQLServer)
+                    s = @"SELECT COUNT(*) 'Cant', T2.U_FolioRef, T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor, ISNULL(REPLACE(T4.LicTradNum,'.',''),'') as 'RUT'
+                                                    FROM [@VID_FEXMLCR] T2
+                                                    JOIN [@VID_FEXMLC] T0 ON T0.Code = T2.Code
+                                                    LEFT JOIN {1} T3 ON CAST(T3.DocNum as NVARCHAR(20)) = T2.U_FolioRef
+                                                    LEFT JOIN OCRD T4 ON T3.CardCode = T4.CardCode
+                                                    WHERE T2.Code = '{0}'
+                                                    AND T2.U_TpoDocRef = '{2}'
+                                                    GROUP BY T2.U_FolioRef
+                                                    , T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor,T4.LicTradNum";
+                else
+                    s = @"SELECT COUNT(*) ""Cant"", T2.""U_FolioRef"", T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"", IFNULL(REPLACE(T4.""LicTradNum"",'.',''),'') as ""RUT""
+                                                  FROM ""@VID_FEXMLCR"" T2
+                                                  JOIN ""@VID_FEXMLC"" T0 ON T0.""Code"" = T2.""Code""
+                                                  LEFT JOIN ""{1}"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
+                                                  LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
+                                                 WHERE T2.""Code"" = '{0}'
+                                                   AND T2.""U_TpoDocRef"" = '{2}'
+                                                  GROUP BY T2.""U_FolioRef"" 
+                                                 , T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"",T4.""LicTradNum"" ";
+
+                if (ValidarEM == "Y")
+                {
+                    tableRecepcion = "OPDN";
+                    objRecepcion = 20;
+                    msjRecepcion = "EM";
+                }
+                else
+                {
+                    tableRecepcion = "OPOR";
+                    objRecepcion = 22;
+                    msjRecepcion = "OC";
+                }
+                if (tpoRef == "33")
+                {
+                    table = "OPCH";
+                    msjaux = "FE";
+                    table1 = "PCH1";
+                }
+                else
+                {
+                    table = "ORPC";
+                    msjaux = "NC";
+                    table1 = "RPC1";
+                }
+                s = String.Format(s, DocEntry,table,tpoRef);
+                orsaux.DoQuery(s);
+                if (((System.Int32)orsaux.Fields.Item("Cant").Value) == 0)
+                {
+                    respuesta = "No tiene Documento de Referencia" + msjaux + " , ";
+                    ValidaResL = "NO" + msjaux;
+                }
+                else if (((System.Int32)orsaux.Fields.Item("Cant").Value) > 1)
+                {
+                    respuesta = "Tiene mas de una Doc Ref, ";
+                    ValidaResL = "FE > 1";
+                }
+                else
+                    respuesta = "";
+                
+                string RutSN = orsaux.Fields.Item("RUT").Value.ToString().Trim();
+                var RUTxml = ((System.String)orsaux.Fields.Item("U_RUTEmisor").Value).Trim();
+                if (RutSN != RUTxml && RutSN.Length > 0)
+                {
+                    respuesta = "El RUT del SN no coinciden entre XML y " + msjaux + " SAP , ";
+                    ValidaResL = "RUT SN " + msjaux;
+                }
+
+                if (respuesta == "")//asi filtro que solo sea para el caso que tenga una FE
+                {
+                    var FchEmisXml = ((System.DateTime)orsaux.Fields.Item("U_FchEmis").Value);
+                    var FchvencXml = ((System.DateTime)orsaux.Fields.Item("U_FchVenc").Value);
+                    var RznSocXml = ((System.String)orsaux.Fields.Item("U_RznSoc").Value).Trim();
+                    var MntNetoXml = ((System.Double)orsaux.Fields.Item("U_MntNeto").Value);
+                    var MntExeXml = ((System.Double)orsaux.Fields.Item("U_MntExe").Value);
+                    var MntTotalXml = ((System.Double)orsaux.Fields.Item("U_MntTotal").Value);
+                    var IVAXml = ((System.Double)orsaux.Fields.Item("U_IVA").Value);
+                    var FolioRef = ((System.String)orsaux.Fields.Item("U_FolioRef").Value).Trim();
+
+                    if (GlobalSettings.RunningUnderSQLServer)//Busca CardCode
+                        s = @"SELECT CardCode, REPLACE(LicTradNum,'.','') as 'RUT' FROM OCRD WHERE REPLACE(LicTradNum,'.','') = '{0}' AND CardType = 'S' AND frozenFor = 'N'";
+                    else
+                        s = @"SELECT ""CardCode"", REPLACE(""LicTradNum"",'.','') as ""RUT"" FROM ""OCRD"" WHERE REPLACE(""LicTradNum"",'.','') = '{0}' AND ""CardType"" = 'S' AND ""frozenFor"" = 'N'";
+                    s = String.Format(s, RUTxml.Replace(".", ""));
+                    orsaux.DoQuery(s);
+                    var CardCode = "";
+                    if (orsaux.RecordCount == 0)
+                    {
+                        respuesta = "No se ha encontrado proveedor en el Maestro SN, ";
+                        ValidaResL = "NO SN";
+                    }
+                    else
+                        CardCode = ((System.String)orsaux.Fields.Item("CardCode").Value).Trim();
+                    if (respuesta == "")//si se encontro el SN
+                    {
+                        //Busca datos Documento Referencia
+                        if (GlobalSettings.RunningUnderSQLServer)
+                            s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
+                                                        FROM {2} T0
+                                                        JOIN {3} T1 ON T1.DocEntry = T0.DocEntry
+                                                        WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}'
+                                                        AND T0.CardCode = '{1}'
+                                                        GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
+                        else
+                            s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
+                                                        FROM ""{2}"" T0
+                                                        JOIN ""{3}"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                                        WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}'
+                                                        AND T0.""CardCode"" = '{1}'
+                                                        GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                        s = String.Format(s, FolioRef, CardCode, table, table1);
+                        orsaux.DoQuery(s);
+                        if (orsaux.RecordCount == 0)
+                        {
+                            respuesta = "No se ha encontrado " + msjaux + " en SAP, ";
+                            ValidaResL = "NO " + msjaux;
+                        }
+                        else 
+                        {
+                            var OCDocEntry = ((System.Int32)orsaux.Fields.Item("DocEntry").Value);
+                            var OCDocStatus = ((System.String)orsaux.Fields.Item("DocStatus").Value).Trim();
+                            var OCDocTotal = ((System.Double)orsaux.Fields.Item("DocTotal").Value); 
+                            var OCVatSum = ((System.Double)orsaux.Fields.Item("VatSum").Value);
+                            var OCDocDate = ((System.DateTime)orsaux.Fields.Item("DocDate").Value);
+                            var CantLineasOC = ((System.Int32)orsaux.Fields.Item("Cant").Value);
+                            var AnuladoOC = ((System.String)orsaux.Fields.Item("CANCELED").Value).Trim();
+                            var Autorizada = ((System.String)orsaux.Fields.Item("Confirmed").Value).Trim();
+
+                            if (OCDocStatus != "O" && tpoRef == "33") // # se valida solo para NC referneciado a Facura ya que las NC al crear estan cerradas
+                            {
+                                respuesta = "La " + msjaux + " en SAP esta Cerrada, ";
+                                ValidaResL = "ESTADO " + msjaux;
+                            }
+                            if (OCDocStatus == "O" && Autorizada == "N")
+                            {
+                                respuesta = "La "+ msjaux + " en SAP No esta Autorizada, ";
+                                ValidaResL = "ESTADO " + msjaux;
+                            }
+                            if (AnuladoOC == "Y")
+                            {
+                                respuesta = "La " + msjaux + " en SAP esta Anulada, ";
+                                ValidaResL = msjaux + " ANULADA";
+                            }
+
+                            if (AnuladoOC == "N")  //OCDocStatus == "O" se descarta por que la NC al crear esta cerrada 
+                            {
+                                if (tpoRef == "33") //escenario 1 ND Ref Factura 
+                                {
+                                    //Datos Documento Recepcion (OC o EM ) y su total para sacar diferencia vs ND
+                                    if (GlobalSettings.RunningUnderSQLServer)
+                                        s = @"SELECT T1.BaseDocNum, T1.BaseEntry, T1.BaseType, T3.DocTotal
+                                              FROM OPCH T0
+                                              JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
+                                              JOIN {1} T3 ON T3.DocEntry = T1.BaseEntry
+                                              WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = {2}"; //22 OC 20 EM
+                                    else
+                                        s = @"SELECT T1.""BaseDocNum"", T1.""BaseEntry"", T1.""BaseType"", T3.""DocTotal""
+                                              FROM ""OPCH"" T0
+                                              JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                              JOIN ""{1}"" T3 ON T3.""DocEntry"" = T1.""BaseEntry""
+                                              WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = {2}"; //22 OC 20 EM
+                                    s = String.Format(s, FolioRef, tableRecepcion, objRecepcion);
+                                    orsaux.DoQuery(s);
+                                    if (orsaux.RecordCount == 0)
+                                    {
+                                        respuesta = msjaux + " no posee " + msjRecepcion + " en SAP, ";
+                                        ValidaResL = msjaux + " NO " + msjRecepcion; 
+                                    }
+                                    else
+                                    {
+                                        var DocTotalRecep = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
+                                        if (DocTotalRecep - OCDocTotal < MntTotalXml)
+                                        {
+                                            respuesta = "ND es Mayor a la Recepcion menos Factura , ";
+                                            ValidaResL = "ND Invalida";
+                                        }
+                                    }
+                                } //Fin Ref Factura 
+                                else   //escenario 2 ND Ref NC 
+                                {
+                                    //Traigo datos de Factura 
+                                    if (GlobalSettings.RunningUnderSQLServer)
+                                        s = @"SELECT T1.BaseDocNum, T1.BaseEntry, T1.BaseType, T3.DocTotal
+                                              FROM ORPC T0
+                                              JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
+                                              JOIN OPCH T3 ON T3.DocEntry = T1.BaseEntry
+                                              WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = 18"; //Factura
+                                    else
+                                        s = @"SELECT T1.""BaseDocNum"", T1.""BaseEntry"", T1.""BaseType"", T3.""DocTotal""
+                                              FROM ""ORPC"" T0
+                                              JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                              JOIN ""OPCH"" T3 ON T3.""DocEntry"" = T1.""BaseEntry""
+                                              WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = 18"; //22 OC 20 EM
+                                    s = String.Format(s, FolioRef);
+                                    orsaux.DoQuery(s);
+                                    if (orsaux.RecordCount == 0)
+                                    {
+                                        respuesta = msjaux + " no posee Factura en SAP, ";
+                                        ValidaResL = msjaux + " NO FE";                                     
+                                    }
+                                    else 
+                                    {
+                                        var DocNumFE = ((System.Int32)orsaux.Fields.Item("BaseDocNum").Value);
+                                        var DocTotalFE = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
+                                        //De fa Factura salto a la OC O EM de acuerdo al parametro y con el DocEntry
+                                        //Datos Documento Recepcion (OC o EM ) y su total para sacar diferencia vs ND
+                                        if (GlobalSettings.RunningUnderSQLServer)
+                                            s = @"SELECT T1.BaseDocNum, T1.BaseEntry, T1.BaseType, T3.DocTotal
+                                              FROM OPCH T0
+                                              JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
+                                              JOIN {1} T3 ON T3.DocEntry = T1.BaseEntry
+                                              WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = {2}"; //22 OC 20 EM
+                                        else
+                                            s = @"SELECT T1.""BaseDocNum"", T1.""BaseEntry"", T1.""BaseType"", T3.""DocTotal""
+                                              FROM ""OPCH"" T0
+                                              JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                              JOIN ""{1}"" T3 ON T3.""DocEntry"" = T1.""BaseEntry""
+                                              WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = {2}"; //22 OC 20 EM
+                                        s = String.Format(s, DocNumFE, tableRecepcion, objRecepcion);
+                                        orsaux.DoQuery(s);
+                                        if (orsaux.RecordCount == 0)
+                                        {
+                                            respuesta = "FE no posee " + msjRecepcion + " en SAP, ";
+                                            ValidaResL = "FE NO " + msjRecepcion;
+                                        }
+                                        else
+                                        {
+                                            var DocTotalRecep = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
+                                            //  Total ND     OC o EM Total     Total FE    Total NC
+                                            if (MntTotalXml > DocTotalRecep - DocTotalFE + OCDocTotal )
+                                            {
+                                                respuesta = "ND es Mayor a la Recepcion menos Factura mas NC , ";
+                                                ValidaResL = "ND Invalida";
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                FSBOApp.StatusBar.SetText("Error ValidarND -> " + e.Message, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                OutLog("Error ValidarND -> " + e.Message + ", TRACE " + e.StackTrace);
+            }
+
+           ValidaRes = ValidaResL;
+            return respuesta;
+        }
+        
 
 
     }//fin class
