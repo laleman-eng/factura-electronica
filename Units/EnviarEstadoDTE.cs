@@ -428,42 +428,53 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     for (Int32 i = 0; i < oGrid.DataTable.Rows.Count; i++)
                     {
                         var ocheckColumn = (CheckBoxColumn)oGrid.Columns.Item("Acepta");
-                        string sEstado = oGrid.DataTable.GetValue("U_EstadoLey", i).ToString();
+                        if (ocheckColumn.IsChecked(i))
+                        {
+                            string sEstado = oGrid.DataTable.GetValue("U_EstadoLey", i).ToString();
 
-                        string ValidarEM = oDTParams.GetValue("EntMer", 0).ToString().Trim();
-                        string sEMCode = oDTParams.GetValue("CodEM", 0).ToString().Trim();
-                        string sDocOrig = ValidarEM == "Y" ? oGrid.DataTable.GetValue("EM", i).ToString().Trim() : oGrid.DataTable.GetValue("OC", i).ToString().Trim();
-                        string sTipoDocOrig = ValidarEM == "Y" ? "Entrada de Mercancia" : "Orden de Compra";
-                        string sCodDocOrig = ValidarEM == "Y" ? sEMCode : "OC";
-                        string sFormPag = oGrid.DataTable.GetValue("U_FmaPago", i).ToString();
-                        string sRutProv = oGrid.DataTable.GetValue("U_RUT", i).ToString().Trim();
+                            string ValidarEM = oDTParams.GetValue("EntMer", 0).ToString().Trim();
+                            string sEMCode = oDTParams.GetValue("CodEM", 0).ToString().Trim();
+                            string sDocOrig = ValidarEM == "Y" ? oGrid.DataTable.GetValue("EM", i).ToString().Trim() : oGrid.DataTable.GetValue("OC", i).ToString().Trim();
+                            string sTipoDocOrig = ValidarEM == "Y" ? "Entrada de Mercancia" : "Orden de Compra";
+                            string sCodDocOrig = ValidarEM == "Y" ? sEMCode : "OC";
+                            string sFormPag = oGrid.DataTable.GetValue("U_FmaPago", i).ToString();
+                            string sRutProv = oGrid.DataTable.GetValue("U_RUT", i).ToString().Trim();
+                            string tipoDoc = oGrid.DataTable.GetValue("U_TipoDoc", i).ToString();
+                            string descripcionValidacion = oGrid.DataTable.GetValue("Desc_Valida", i).ToString();
 
-                        if (sEstado.Trim() == "" && ocheckColumn.IsChecked(i) && sFormPag != "1" && sFormPag != "3")
-                        {
-                            ValidaSelec = false;
-                            FSBOApp.MessageBox("Los Documentos Seleccionados deben tener asignado un Estado. Folio : " + oGrid.DataTable.GetValue("U_Folio", i).ToString(), 1, "Ok", "");
-                            break;
-                        }
-                        else if (sDocOrig.Trim() == "" && ocheckColumn.IsChecked(i) && (sEstado.Trim() == "ACD" || sFormPag == "1" || sFormPag == "3"))
-                        {
-                            ValidaSelec = false;
-                            FSBOApp.MessageBox("Los Documentos Seleccionados deben tener asignado una " + sTipoDocOrig + @" de Referencia. Folio : " + oGrid.DataTable.GetValue("U_Folio", i).ToString(), 1, "Ok", "");
-                            break;
-                        }
-                        else if (ocheckColumn.IsChecked(i))
-                        {
-                            if (ValidaDocRefProveedor(sRutProv, sCodDocOrig, sDocOrig))
+                            if (sEstado.Trim() == "" && sFormPag != "1" && sFormPag != "3" && (tipoDoc == "33" || tipoDoc == "34"))
                             {
                                 ValidaSelec = false;
-                                FSBOApp.MessageBox("Para el Proveedor " + sRutProv + " , Folio : '" + oGrid.DataTable.GetValue("U_Folio", i).ToString() + "' Ya se Asigno la " + sTipoDocOrig + " Numero: '" + sDocOrig + @"' a una Compra Generada", 1, "Ok", "");
+                                FSBOApp.MessageBox("Los Documentos Seleccionados deben tener asignado un Estado. Folio : " + oGrid.DataTable.GetValue("U_Folio", i).ToString(), 1, "Ok", "");
                                 break;
                             }
-                            string resp = ValidaDocEstado(sCodDocOrig, sDocOrig);
-                            if (resp.Trim().Length > 0)
+                            else if (sDocOrig.Trim() == "" && (sEstado.Trim() == "ACD" || sFormPag == "1" || sFormPag == "3") && (tipoDoc == "33" || tipoDoc == "34"))
                             {
                                 ValidaSelec = false;
-                                FSBOApp.MessageBox("Para el Proveedor " + sRutProv + " , Folio : '" + oGrid.DataTable.GetValue("U_Folio", i).ToString() + "'  " + resp, 1, "Ok", "");
+                                FSBOApp.MessageBox("Los Documentos Seleccionados deben tener asignado una " + sTipoDocOrig + @" de Referencia. Folio : " + oGrid.DataTable.GetValue("U_Folio", i).ToString(), 1, "Ok", "");
                                 break;
+                            }
+                            else if ((tipoDoc == "56" || tipoDoc == "61") && descripcionValidacion != "")
+                            {
+                                ValidaSelec = false;
+                                FSBOApp.MessageBox("Documento Folio: " + oGrid.DataTable.GetValue("U_Folio", i).ToString() + " no se puede procesar ya que tiene la siguiente validación: " + descripcionValidacion, 1, "Ok", "");
+                                break;
+                            }
+                            else if (tipoDoc == "33" || tipoDoc == "34")
+                            {
+                                if (ValidaDocRefProveedor(sRutProv, sCodDocOrig, sDocOrig))
+                                {
+                                    ValidaSelec = false;
+                                    FSBOApp.MessageBox("Para el Proveedor " + sRutProv + " , Folio : '" + oGrid.DataTable.GetValue("U_Folio", i).ToString() + "' Ya se Asigno la " + sTipoDocOrig + " Numero: '" + sDocOrig + @"' a una Compra Generada", 1, "Ok", "");
+                                    break;
+                                }
+                                string resp = ValidaDocEstado(sCodDocOrig, sDocOrig);
+                                if (resp.Trim().Length > 0)
+                                {
+                                    ValidaSelec = false;
+                                    FSBOApp.MessageBox("Para el Proveedor " + sRutProv + " , Folio : '" + oGrid.DataTable.GetValue("U_Folio", i).ToString() + "'  " + resp, 1, "Ok", "");
+                                    break;
+                                }
                             }
                         }
                     }
@@ -1035,156 +1046,66 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 for (Int32 i = 0; i < oGrid.DataTable.Rows.Count; i++)
                 {
                     var ocheckColumn = (CheckBoxColumn)oGrid.Columns.Item("Acepta");
-
-                    sFormPag = oGrid.DataTable.GetValue("U_FmaPago", i).ToString();
-
-                    if (sFormPag == "1" || sFormPag == "3")// Si Forma Pago es Contado o Efectivo Aceptar
-                        oGrid.DataTable.SetValue("U_EstadoLey", i, "ACD");
-
-                    if (((System.String)oGrid.DataTable.GetValue("U_EstadoLey", i)).Trim() != "" && ocheckColumn.IsChecked(i))
+                    if (ocheckColumn.IsChecked(i))
                     {
-                        string sEnviarEstadoPortal = oDTParams.GetValue("CEdoPortal", 0).ToString().Trim();
-                        string CrearBaseEM = oDTParams.GetValue("EntMer", 0).ToString().Trim();
-                        string sEMCode = oDTParams.GetValue("CodEM", 0).ToString().Trim();
-                        string sTipoBase = CrearBaseEM == "Y" ? sEMCode : "OC";
+                        sFormPag = oGrid.DataTable.GetValue("U_FmaPago", i).ToString();
+                        string tipoDoc = oGrid.DataTable.GetValue("U_TipoDoc", i).ToString();
 
-                        string DocRefAct = CrearBaseEM == "Y" ? oGrid.DataTable.GetValue("EM", i).ToString() : oGrid.DataTable.GetValue("OC", i).ToString();
+                        if (tipoDoc == "33" || tipoDoc == "34")
+                        {
+                            if (sFormPag == "1" || sFormPag == "3" )// Si Forma Pago es Contado o regalo
+                                oGrid.DataTable.SetValue("U_EstadoLey", i, "ACD");
 
-                        EstadoOld = ((System.String)oGrid.DataTable.GetValue("EstadoLeyOld", i)).Trim();
-                        EstadoOriginal = ((System.String)oGrid.DataTable.GetValue("U_EstadoLey", i)).Trim();
-                        if (EstadoOriginal == EstadoOld)
-                            continue;
-                        if ((EstadoOriginal == "ACD") && (EstadoOld != "ERM"))
-                            EstadoFinal = "ERM";
-                        else
-                            EstadoFinal = EstadoOriginal;
+                            if (((System.String)oGrid.DataTable.GetValue("U_EstadoLey", i)).Trim() != "")
+                            {
+                                string sEnviarEstadoPortal = oDTParams.GetValue("CEdoPortal", 0).ToString().Trim();
+                                string CrearBaseEM = oDTParams.GetValue("EntMer", 0).ToString().Trim();
+                                string sEMCode = oDTParams.GetValue("CodEM", 0).ToString().Trim();
+                                string sTipoBase = CrearBaseEM == "Y" ? sEMCode : "OC";
 
-                        if (GlobalSettings.RunningUnderSQLServer)
-                            s = @"SELECT T1.FldValue Code, T1.Descr Name
+
+                                string DocRefAct = CrearBaseEM == "Y" ? oGrid.DataTable.GetValue("EM", i).ToString() : oGrid.DataTable.GetValue("OC", i).ToString();
+
+                                EstadoOld = ((System.String)oGrid.DataTable.GetValue("EstadoLeyOld", i)).Trim();
+                                EstadoOriginal = ((System.String)oGrid.DataTable.GetValue("U_EstadoLey", i)).Trim();
+                                if (EstadoOriginal == EstadoOld)
+                                    continue;
+                                if (EstadoOriginal == "ACD" && EstadoOld != "ERM" )
+                                    EstadoFinal = "ERM";
+                                else
+                                    EstadoFinal = EstadoOriginal;
+
+                                if (GlobalSettings.RunningUnderSQLServer)
+                                    s = @"SELECT T1.FldValue Code, T1.Descr Name
                                   FROM CUFD T0
                                   JOIN UFD1 T1 ON T1.TableID = T0.TableID
                                               AND T1.FieldID = T0.FieldID
                                  WHERE T0.TableID = '@VID_FEDTEVTA'
                                    AND T0.AliasID = 'EstadoLey'
                                    AND T1.FldValue = '{0}'";
-                        else
-                            s = @"SELECT T1.""FldValue"" ""Code"", T1.""Descr"" ""Name""
+                                else
+                                    s = @"SELECT T1.""FldValue"" ""Code"", T1.""Descr"" ""Name""
                                   FROM ""CUFD"" T0
                                   JOIN ""UFD1"" T1 ON T1.""TableID"" = T0.""TableID""
                                               AND T1.""FieldID"" = T0.""FieldID""
                                  WHERE T0.""TableID"" = '@VID_FEDTEVTA'
                                    AND T0.""AliasID"" = 'EstadoLey'
                                    AND T1.""FldValue"" = '{0}'";
-                        s = String.Format(s, EstadoFinal);
-                        oRecordSet.DoQuery(s);
-                        EstadoDescrip = ((System.String)oRecordSet.Fields.Item("Name").Value).Trim();
-                        ValidacionAct = ((System.String)oGrid.DataTable.GetValue("Desc_Valida", i)).Trim();
+                                s = String.Format(s, EstadoFinal);
+                                oRecordSet.DoQuery(s);
+                                EstadoDescrip = ((System.String)oRecordSet.Fields.Item("Name").Value).Trim();
+                                ValidacionAct = ((System.String)oGrid.DataTable.GetValue("Desc_Valida", i)).Trim();
 
-                        URLFinal = URL.Replace("{0}", TaxIdNum.Replace("-", "").Replace(".", ""));
-                        URLFinal = URLFinal.Replace("{1}", ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
-                        URLFinal = URLFinal.Replace("{2}", ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim());
-                        URLFinal = URLFinal.Replace("{3}", ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Replace(".", "").Trim());
-                        URLFinal = URLFinal.Replace("{4}", EstadoFinal);
-                        URLFinal = URLFinal.Replace("&amp;", "&");
-
-                        bool StatusResult = false;
-                        string sDescripcion = "";
-                        if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "Y")
-                        {
-                            request = WebRequest.Create(URLFinal);
-                            if ((UserWS != "") && (PassWS != ""))
-                                request.Credentials = new NetworkCredential(UserWS, PassWS);
-                            request.Method = "POST";
-                            postData = "";//** xmlDOC.InnerXml;
-                            byteArray = Encoding.UTF8.GetBytes(postData);
-                            request.ContentType = "text/xml";
-                            request.ContentLength = byteArray.Length;
-                            dataStream = request.GetRequestStream();
-                            dataStream.Write(byteArray, 0, byteArray.Length);
-                            dataStream.Close();
-                            response = request.GetResponse();
-                            Console.WriteLine(((HttpWebResponse)(response)).StatusDescription);
-                            dataStream = response.GetResponseStream();
-                            reader = new StreamReader(dataStream);
-                            responseFromServer = reader.ReadToEnd();
-                            reader.Close();
-                            dataStream.Close();
-                            response.Close();
-                            s = responseFromServer;
-                            var results = JsonConvert.DeserializeObject<dynamic>(s);
-                            var jStatus = results.Status;
-                            var jCodigo = results.Codigo;
-                            var jDescripcion = results.Descripcion;
-                            sDescripcion = ((System.String)jDescripcion.Value).Trim();
-
-                            request = null;
-                            response = null;
-                            dataStream = null;
-                            reader = null;
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            StatusResult = ((System.String)jStatus.Value).Trim() == "OK" ? true : false;
-                        }
-                        else
-                        {
-                            StatusResult = true; //asumo que le envie al portal
-                            sDescripcion = "";
-                            if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "N")
-                            {
-                                if ((EstadoFinal == "ACD") && ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34")))
-                                    CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
-                            }
-                        }
-
-                        if (StatusResult)
-                        {
-                            oDBDSHC.Clear();
-                            oConditions = new SAPbouiCOM.Conditions();
-                            oCondition = oConditions.Add();
-                            oCondition.Alias = "DocEntry";
-                            oCondition.Operation = BoConditionOperation.co_EQUAL;
-                            var DocEntry = ((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)).ToString();
-                            oCondition.CondVal = DocEntry;
-                            oDBDSHC.Query(oConditions);
-
-                            oDBDSHC.SetValue("U_EstadoLey", 0, EstadoFinal);
-                            oDBDSHC.SetValue("U_EstadoSII", 0, "A");
-                            oDBDSHC.SetValue("U_Descrip", 0, EstadoDescrip);
-                            oDBDSHC.SetValue("U_Validacion", 0, ValidacionAct);
-                            oDBDSHC.SetValue("U_FechaMov", 0, DateTime.Now.Date.ToString("yyyyMMdd"));
-                            oDBDSHC.SetValue("U_HoraMov", 0, DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString("00"));
-                            oDBDSHC.SetValue("U_CodRefGen", 0, sTipoBase);
-                            oDBDSHC.SetValue("U_FolioRefGen", 0, DocRefAct);
-
-                            lRetCode = Funciones.UpdDataSourceInt1("VID_FEDTECPRA", oDBDSHC, "", null, "", null, "", null);
-                            if (lRetCode == 0)
-                            {
-                                FSBOApp.StatusBar.SetText("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                OutLog("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
-                            }
-                            else
-                            {
-                                if (sFormPag != "1" && sFormPag != "3")
-                                    FSBOApp.StatusBar.SetText("Documento actualizado en el portal, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
-
-                                if ((EstadoFinal == "ACD") && sEnviarEstadoPortal == "Y" && ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34")))
-                                    CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
-                            }
-
-                            //para la aceptacion primero envia el recibo de mercaderia y luego debe enviar la aceptacion
-                            if ((EstadoOriginal == "ACD") && (EstadoOld != "ERM"))
-                            {
                                 URLFinal = URL.Replace("{0}", TaxIdNum.Replace("-", "").Replace(".", ""));
                                 URLFinal = URLFinal.Replace("{1}", ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
                                 URLFinal = URLFinal.Replace("{2}", ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim());
                                 URLFinal = URLFinal.Replace("{3}", ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Replace(".", "").Trim());
-                                URLFinal = URLFinal.Replace("{4}", EstadoOriginal);
+                                URLFinal = URLFinal.Replace("{4}", EstadoFinal);
                                 URLFinal = URLFinal.Replace("&amp;", "&");
 
-  
-                                StatusResult = false;
-                                sDescripcion = "";
-                                if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "Y")
+                                bool StatusResult = false;
+                                string sDescripcion = "";
+                                if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "Y" )
                                 {
                                     request = WebRequest.Create(URLFinal);
                                     if ((UserWS != "") && (PassWS != ""))
@@ -1206,11 +1127,11 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     dataStream.Close();
                                     response.Close();
                                     s = responseFromServer;
-                                    var results1 = JsonConvert.DeserializeObject<dynamic>(s);
-                                    var jStatus1 = results1.Status;
-                                    var jCodigo1 = results1.Codigo;
-                                    var jDescripcion1 = results1.Descripcion;
-                                    sDescripcion = ((System.String)jDescripcion1.Value).Trim();
+                                    var results = JsonConvert.DeserializeObject<dynamic>(s);
+                                    var jStatus = results.Status;
+                                    var jCodigo = results.Codigo;
+                                    var jDescripcion = results.Descripcion;
+                                    sDescripcion = ((System.String)jDescripcion.Value).Trim();
 
                                     request = null;
                                     response = null;
@@ -1218,49 +1139,31 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     reader = null;
                                     GC.Collect();
                                     GC.WaitForPendingFinalizers();
-                                    StatusResult = ((System.String)jStatus1.Value).Trim() == "OK" ? true : false;
+                                    StatusResult = ((System.String)jStatus.Value).Trim() == "OK" ? true : false;
                                 }
                                 else
                                 {
-                                    StatusResult = true;
+                                    StatusResult = true; //asumo que le envie al portal
+                                    sDescripcion = "";
                                     if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "N")
                                     {
-                                        if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
+                                        if (EstadoFinal == "ACD" && (tipoDoc == "33" || tipoDoc == "34"))
                                             CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
                                     }
-
                                 }
+
                                 if (StatusResult)
                                 {
-                                    if (GlobalSettings.RunningUnderSQLServer)
-                                        s = @"SELECT T1.FldValue Code, T1.Descr Name
-                                              FROM CUFD T0
-                                              JOIN UFD1 T1 ON T1.TableID = T0.TableID
-                                                          AND T1.FieldID = T0.FieldID
-                                             WHERE T0.TableID = '@VID_FEDTEVTA'
-                                               AND T0.AliasID = 'EstadoLey'
-                                               AND T1.FldValue = '{0}'";
-                                    else
-                                        s = @"SELECT T1.""FldValue"" ""Code"", T1.""Descr"" ""Name""
-                                              FROM ""CUFD"" T0
-                                              JOIN ""UFD1"" T1 ON T1.""TableID"" = T0.""TableID""
-                                                          AND T1.""FieldID"" = T0.""FieldID""
-                                             WHERE T0.""TableID"" = '@VID_FEDTEVTA'
-                                               AND T0.""AliasID"" = 'EstadoLey'
-                                               AND T1.""FldValue"" = '{0}'";
-                                    s = String.Format(s, EstadoOriginal);
-                                    oRecordSet.DoQuery(s);
-                                    EstadoDescrip = ((System.String)oRecordSet.Fields.Item("Name").Value).Trim();
-
                                     oDBDSHC.Clear();
                                     oConditions = new SAPbouiCOM.Conditions();
                                     oCondition = oConditions.Add();
                                     oCondition.Alias = "DocEntry";
                                     oCondition.Operation = BoConditionOperation.co_EQUAL;
+                                    var DocEntry = ((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)).ToString();
                                     oCondition.CondVal = DocEntry;
                                     oDBDSHC.Query(oConditions);
 
-                                    oDBDSHC.SetValue("U_EstadoLey", 0, EstadoOriginal);
+                                    oDBDSHC.SetValue("U_EstadoLey", 0, EstadoFinal);
                                     oDBDSHC.SetValue("U_EstadoSII", 0, "A");
                                     oDBDSHC.SetValue("U_Descrip", 0, EstadoDescrip);
                                     oDBDSHC.SetValue("U_Validacion", 0, ValidacionAct);
@@ -1269,19 +1172,139 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     oDBDSHC.SetValue("U_CodRefGen", 0, sTipoBase);
                                     oDBDSHC.SetValue("U_FolioRefGen", 0, DocRefAct);
 
-                                    if (Funciones.UpdDataSourceInt1("VID_FEDTECPRA", oDBDSHC, "", null, "", null, "", null) == 0)
+                                    lRetCode = Funciones.UpdDataSourceInt1("VID_FEDTECPRA", oDBDSHC, "", null, "", null, "", null);
+                                    if (lRetCode == 0)
                                     {
-                                        FSBOApp.StatusBar.SetText("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                                        OutLog("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
+                                        FSBOApp.StatusBar.SetText("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                        OutLog("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
                                     }
                                     else
                                     {
-                                        if (sFormPag != "1" && sFormPag != "3")
-                                            FSBOApp.StatusBar.SetText("Documento actualizado en el portal, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
-                                        if (sEnviarEstadoPortal == "Y")
+                                        if (sFormPag != "1" && sFormPag != "3" && (tipoDoc == "33" || tipoDoc == "34"))
+                                            FSBOApp.StatusBar.SetText("Documento actualizado en el portal, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
+
+                                        if ((EstadoFinal == "ACD") && sEnviarEstadoPortal == "Y" && ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34")))
+                                            CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                    }
+
+                                    //para la aceptacion primero envia el recibo de mercaderia y luego debe enviar la aceptacion
+                                    if ((EstadoOriginal == "ACD") && (EstadoOld != "ERM"))
+                                    {
+                                        URLFinal = URL.Replace("{0}", TaxIdNum.Replace("-", "").Replace(".", ""));
+                                        URLFinal = URLFinal.Replace("{1}", ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
+                                        URLFinal = URLFinal.Replace("{2}", ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim());
+                                        URLFinal = URLFinal.Replace("{3}", ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Replace(".", "").Trim());
+                                        URLFinal = URLFinal.Replace("{4}", EstadoOriginal);
+                                        URLFinal = URLFinal.Replace("&amp;", "&");
+
+
+                                        StatusResult = false;
+                                        sDescripcion = "";
+                                        if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "Y")
                                         {
-                                            if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
-                                                CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                            request = WebRequest.Create(URLFinal);
+                                            if ((UserWS != "") && (PassWS != ""))
+                                                request.Credentials = new NetworkCredential(UserWS, PassWS);
+                                            request.Method = "POST";
+                                            postData = "";//** xmlDOC.InnerXml;
+                                            byteArray = Encoding.UTF8.GetBytes(postData);
+                                            request.ContentType = "text/xml";
+                                            request.ContentLength = byteArray.Length;
+                                            dataStream = request.GetRequestStream();
+                                            dataStream.Write(byteArray, 0, byteArray.Length);
+                                            dataStream.Close();
+                                            response = request.GetResponse();
+                                            Console.WriteLine(((HttpWebResponse)(response)).StatusDescription);
+                                            dataStream = response.GetResponseStream();
+                                            reader = new StreamReader(dataStream);
+                                            responseFromServer = reader.ReadToEnd();
+                                            reader.Close();
+                                            dataStream.Close();
+                                            response.Close();
+                                            s = responseFromServer;
+                                            var results1 = JsonConvert.DeserializeObject<dynamic>(s);
+                                            var jStatus1 = results1.Status;
+                                            var jCodigo1 = results1.Codigo;
+                                            var jDescripcion1 = results1.Descripcion;
+                                            sDescripcion = ((System.String)jDescripcion1.Value).Trim();
+
+                                            request = null;
+                                            response = null;
+                                            dataStream = null;
+                                            reader = null;
+                                            GC.Collect();
+                                            GC.WaitForPendingFinalizers();
+                                            StatusResult = ((System.String)jStatus1.Value).Trim() == "OK" ? true : false;
+                                        }
+                                        else
+                                        {
+                                            StatusResult = true;
+                                            if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "N")
+                                            {
+                                                if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
+                                                    CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                            }
+
+                                        }
+                                        if (StatusResult)
+                                        {
+                                            if (GlobalSettings.RunningUnderSQLServer)
+                                                s = @"SELECT T1.FldValue Code, T1.Descr Name
+                                              FROM CUFD T0
+                                              JOIN UFD1 T1 ON T1.TableID = T0.TableID
+                                                          AND T1.FieldID = T0.FieldID
+                                             WHERE T0.TableID = '@VID_FEDTEVTA'
+                                               AND T0.AliasID = 'EstadoLey'
+                                               AND T1.FldValue = '{0}'";
+                                            else
+                                                s = @"SELECT T1.""FldValue"" ""Code"", T1.""Descr"" ""Name""
+                                              FROM ""CUFD"" T0
+                                              JOIN ""UFD1"" T1 ON T1.""TableID"" = T0.""TableID""
+                                                          AND T1.""FieldID"" = T0.""FieldID""
+                                             WHERE T0.""TableID"" = '@VID_FEDTEVTA'
+                                               AND T0.""AliasID"" = 'EstadoLey'
+                                               AND T1.""FldValue"" = '{0}'";
+                                            s = String.Format(s, EstadoOriginal);
+                                            oRecordSet.DoQuery(s);
+                                            EstadoDescrip = ((System.String)oRecordSet.Fields.Item("Name").Value).Trim();
+
+                                            oDBDSHC.Clear();
+                                            oConditions = new SAPbouiCOM.Conditions();
+                                            oCondition = oConditions.Add();
+                                            oCondition.Alias = "DocEntry";
+                                            oCondition.Operation = BoConditionOperation.co_EQUAL;
+                                            oCondition.CondVal = DocEntry;
+                                            oDBDSHC.Query(oConditions);
+
+                                            oDBDSHC.SetValue("U_EstadoLey", 0, EstadoOriginal);
+                                            oDBDSHC.SetValue("U_EstadoSII", 0, "A");
+                                            oDBDSHC.SetValue("U_Descrip", 0, EstadoDescrip);
+                                            oDBDSHC.SetValue("U_Validacion", 0, ValidacionAct);
+                                            oDBDSHC.SetValue("U_FechaMov", 0, DateTime.Now.Date.ToString("yyyyMMdd"));
+                                            oDBDSHC.SetValue("U_HoraMov", 0, DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString("00"));
+                                            oDBDSHC.SetValue("U_CodRefGen", 0, sTipoBase);
+                                            oDBDSHC.SetValue("U_FolioRefGen", 0, DocRefAct);
+
+                                            if (Funciones.UpdDataSourceInt1("VID_FEDTECPRA", oDBDSHC, "", null, "", null, "", null) == 0)
+                                            {
+                                                FSBOApp.StatusBar.SetText("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                                OutLog("No se actualizado tabla @VID_FEDTECPRA, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
+                                            }
+                                            else
+                                            {
+                                                if (sFormPag != "1" && sFormPag != "3")
+                                                    FSBOApp.StatusBar.SetText("Documento actualizado en el portal, dejar en estado " + EstadoOriginal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
+                                                if (sEnviarEstadoPortal == "Y")
+                                                {
+                                                    if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
+                                                        CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            FSBOApp.StatusBar.SetText("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                                            OutLog("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
                                         }
                                     }
                                 }
@@ -1290,15 +1313,21 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     FSBOApp.StatusBar.SetText("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
                                     OutLog("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
                                 }
+
                             }
                         }
-                        else
+                        else if (tipoDoc == "61" || tipoDoc == "56")
                         {
-                            FSBOApp.StatusBar.SetText("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
-                            OutLog("No se actualizado en el portal(" + sDescripcion + "), RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString());
+                            //si es true actualizo estado para que no aparezca 
+                            CrearDocNCND(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, ((System.String)oGrid.DataTable.GetValue("TpoRefOri", i)).Trim(), ((System.String)oGrid.DataTable.GetValue("RefOri", i)).Trim());
+                            
+                        }
+                        else { 
+                            FSBOApp.StatusBar.SetText("Tipo Documento no soportado", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                            OutLog("Tipo Documento no soportado");
                         }
                     }
-                }
+                }//fin For
                 return true;
             }
             catch (Exception x)
@@ -1823,9 +1852,9 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 string TablaC = CodRef == "OC" ? "OPOR" : "OPDN" ;
                 string TablaD = CodRef == "OC" ? "POR1" : "PDN1";
                 string sBuscarEMDocNum = oDTParams.GetValue("BuscarEMDocNum", 0).ToString().Trim();
-                if (sBuscarEMDocNum == "Y") //buscar EM por DocNum
+
+                if (CodRef == "OC")
                 {
-                    //Busca datos de la OC/EM
                     if (GlobalSettings.RunningUnderSQLServer)
                         s = @"SELECT T0.DocEntry, T0.CardCode, T0.DocStatus, T0.Confirmed, T0.CANCELED, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
                                                         FROM {0} T0
@@ -1840,24 +1869,43 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                         GROUP BY T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"",  T0.""CANCELED"",  T0.""Confirmed"",T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
                     s = String.Format(s, TablaC, TablaD, NumRef);
                 }
-                else //buscar EM por FolioNum
+                else  //EM
                 {
-                    if (GlobalSettings.RunningUnderSQLServer)
-                        s = @"SELECT T0.DocEntry, T0.CardCode, T0.DocStatus, T0.Confirmed, T0.CANCELED, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
+                    if (sBuscarEMDocNum == "Y") //buscar EM por DocNum
+                    {
+                        if (GlobalSettings.RunningUnderSQLServer)
+                            s = @"SELECT T0.DocEntry, T0.CardCode, T0.DocStatus, T0.Confirmed, T0.CANCELED, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
+                                                        FROM {0} T0
+                                                        JOIN {1} T1 ON T1.DocEntry = T0.DocEntry
+                                                        WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{2}'
+                                                        GROUP BY T0.DocEntry, T0.CardCode, T0.DocStatus,  T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
+                        else
+                            s = @"SELECT T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"", T0.""Confirmed"", T0.""CANCELED"",  T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
+                                                        FROM ""{0}"" T0
+                                                        JOIN ""{1}"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                                        WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{2}'
+                                                        GROUP BY T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"",  T0.""CANCELED"",  T0.""Confirmed"",T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                        s = String.Format(s, TablaC, TablaD, NumRef);
+                    }
+                    else //buscar EM por FolioNum
+                    {
+                        if (GlobalSettings.RunningUnderSQLServer)
+                            s = @"SELECT T0.DocEntry, T0.CardCode, T0.DocStatus, T0.Confirmed, T0.CANCELED, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
                                                         FROM {0} T0
                                                         JOIN {1} T1 ON T1.DocEntry = T0.DocEntry
                                                         WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{2}'
                                                         GROUP BY T0.DocEntry, T0.CardCode, T0.DocStatus,  T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
-                    else
-                        s = @"SELECT T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"", T0.""Confirmed"", T0.""CANCELED"",  T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
+                        else
+                            s = @"SELECT T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"", T0.""Confirmed"", T0.""CANCELED"",  T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
                                                         FROM ""{0}"" T0
                                                         JOIN ""{1}"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                                         WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{2}'
                                                         GROUP BY T0.""DocEntry"", T0.""CardCode"", T0.""DocStatus"",  T0.""CANCELED"",  T0.""Confirmed"",T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
-                    s = String.Format(s, TablaC, TablaD, NumRef);
+                        s = String.Format(s, TablaC, TablaD, NumRef);
+                    }
                 }
-                orsaux.DoQuery(s);
 
+                orsaux.DoQuery(s);
                 if (orsaux.RecordCount == 0)
                 {
                     respuesta = "No se ha encontrado Orden de Compra en SAP, ";
@@ -3156,35 +3204,35 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         }
                         else
                         {
-                            var OCDocEntry = ((System.Int32)orsaux.Fields.Item("DocEntry").Value);
-                            var OCDocStatus = ((System.String)orsaux.Fields.Item("DocStatus").Value).Trim();
-                            var OCDocTotal = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
-                            var OCVatSum = ((System.Double)orsaux.Fields.Item("VatSum").Value);
-                            var OCDocDate = ((System.DateTime)orsaux.Fields.Item("DocDate").Value);
-                            var CantLineasOC = ((System.Int32)orsaux.Fields.Item("Cant").Value);
-                            var AnuladoOC = ((System.String)orsaux.Fields.Item("CANCELED").Value).Trim();
+                            var FEDocEntry = ((System.Int32)orsaux.Fields.Item("DocEntry").Value);
+                            var FEDocStatus = ((System.String)orsaux.Fields.Item("DocStatus").Value).Trim();
+                            var FEDocTotal = ((System.Double)orsaux.Fields.Item("DocTotal").Value);
+                            var FEVatSum = ((System.Double)orsaux.Fields.Item("VatSum").Value);
+                            var FEDocDate = ((System.DateTime)orsaux.Fields.Item("DocDate").Value);
+                            var CantLineasFE = ((System.Int32)orsaux.Fields.Item("Cant").Value);
+                            var AnuladoFE = ((System.String)orsaux.Fields.Item("CANCELED").Value).Trim();
                             var Autorizada = ((System.String)orsaux.Fields.Item("Confirmed").Value).Trim();
 
-                            if (OCDocStatus != "O")
+                            if (FEDocStatus != "O")
                             {
                                 respuesta = "La Factura en SAP esta Cerrada, ";
                                 ValidaResL = "ESTADO FE";
                             }
-                            if (OCDocStatus == "O" && Autorizada == "N")
+                            if (FEDocStatus == "O" && Autorizada == "N")
                             {
                                 respuesta = "La Factura en SAP No esta Autorizada, ";
                                 ValidaResL = "ESTADO FE";
                             }
-                            if (AnuladoOC == "Y")
+                            if (AnuladoFE == "Y")
                             {
                                 respuesta = "La Factura en SAP esta Anulada, ";
                                 ValidaResL = "FE ANULADA";
                             }
 
-                            if (OCDocStatus == "O" && AnuladoOC == "N")
+                            if (FEDocStatus == "O" && AnuladoFE == "N")
                             {
                                 //validar diferencia entre NC Y FACTURA
-                                if (OCDocTotal > MntTotalXml)
+                                if (MntTotalXml > FEDocTotal)
                                 {
                                     respuesta = "NC es Mayor a la Factura asociada, ";
                                     ValidaResL = "NC Invalida";
@@ -3472,8 +3520,256 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
            ValidaRes = ValidaResL;
             return respuesta;
         }
-        
 
+        private bool CrearDocNCND(Int32 DocEntry, String RUT, Int32 FolioNum, String TipoDoc, int nFilaGrid, String tpoRef, String folioRef)
+        {
+            
+            SAPbobsCOM.Recordset ors = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
+            SAPbobsCOM.Recordset orsAux = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
+            String CardCode;
+            String CodDocRef;
+            SAPbobsCOM.Documents oDocuments;
+            Int32 lRetCode;
+            Int32 nErr;
+            String sErr;
+
+            try
+            {
+                if (GlobalSettings.RunningUnderSQLServer)
+                    s = @"SELECT ISNULL(U_CrearDocC,'N') 'Crear', ISNULL(U_FProv,'Y') 'FProv' FROM [@VID_FEPARAM]";
+                else
+                    s = @"SELECT IFNULL(""U_CrearDocC"",'N') ""Crear"", IFNULL(""U_FProv"",'Y') ""FProv"" FROM ""@VID_FEPARAM"" ";
+                ors.DoQuery(s);
+                if (((System.String)ors.Fields.Item("Crear").Value).Trim() == "Y")
+                {
+                    if (GlobalSettings.RunningUnderSQLServer)
+                        s = @"SELECT CardCode FROM OCRD WHERE REPLACE(LicTradNum,'.','') = '{0}' AND CardType = 'S' AND frozenFor = 'N'";
+                    else
+                        s = @"SELECT ""CardCode"" FROM ""OCRD"" WHERE REPLACE(""LicTradNum"",'.','') = '{0}' AND ""CardType"" = 'S' AND ""frozenFor"" = 'N'";
+                    s = String.Format(s, RUT.Replace(".", ""));
+                    ors.DoQuery(s);
+                    if (ors.RecordCount == 0)
+                    {
+                        FSBOApp.StatusBar.SetText("No se ha encontrado proveedor en el Maestro SN, RUT " + RUT, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                        AgregarMensajeGridResumen("No se ha encontrado proveedor en el Maestro SN, RUT " + RUT);
+                        return false;
+                    }
+                    else
+                    {
+                        CardCode = ((System.String)ors.Fields.Item("CardCode").Value).Trim();
+
+                        if (tpoRef == "33") //si NC o ND referencia a factura 
+                        {
+                            if (GlobalSettings.RunningUnderSQLServer)
+                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
+                                            FROM OPCH T0
+                                            JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
+                                            WHERE T0.DocNum = {0}
+                                            AND T0.CardCode = '{1}'
+                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
+                            else
+                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
+                                            FROM ""OPCH"" T0
+                                            JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                            WHERE T0.""DocNum"" = {0}
+                                            AND T0.""CardCode"" = '{1}'
+                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                        }
+                        else  //referencia a una NC
+                        {
+                            if (GlobalSettings.RunningUnderSQLServer)
+                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
+                                            FROM ORPC T0
+                                            JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
+                                            WHERE T0.DocNum = {0}
+                                            AND T0.CardCode = '{1}'
+                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
+                            else
+                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
+                                            FROM ""ORPC"" T0
+                                            JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                            WHERE T0.""DocNum"" = {0}
+                                            AND T0.""CardCode"" = '{1}'
+                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                        }
+                        s = String.Format(s, folioRef, CardCode);
+                        ors.DoQuery(s);
+                        if (ors.RecordCount == 0)
+                        {
+                            FSBOApp.StatusBar.SetText("No se ha encontrado " + tpoRef + " en SAP -> " + folioRef, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                            AgregarMensajeGridResumen("No se ha encontrado " + tpoRef + " en SAP -> " + folioRef, "", true);
+                            return false;
+                        }
+                        else
+                        {
+                            var CantLineasOC = ((System.Int32)ors.Fields.Item("Cant").Value);
+                            var OCDocEntry = ((System.Int32)ors.Fields.Item("DocEntry").Value);
+                            var OCDocStatus = ((System.String)ors.Fields.Item("DocStatus").Value).Trim();
+                            var OCDocTotal = ((System.Double)ors.Fields.Item("DocTotal").Value);
+                            var OCVatSum = ((System.Double)ors.Fields.Item("VatSum").Value);
+                            var BaseType = tpoRef == "33"? 18:19;
+                            //Detalle
+                            if (GlobalSettings.RunningUnderSQLServer)
+                                s = @"SELECT U_FchEmis, U_FchVenc, U_RznSoc, U_MntNeto, U_MntExe, U_MntTotal, U_IVA
+                                                      FROM [@VID_FEXMLC] 
+                                                     WHERE Code = '{0}'";
+                            else
+                                s = @"SELECT ""U_FchEmis"", ""U_FchVenc"", ""U_RznSoc"", ""U_MntNeto"", ""U_MntExe"", ""U_MntTotal"", ""U_IVA""
+                                                      FROM ""@VID_FEXMLC""
+                                                     WHERE ""Code"" = '{0}'";
+                            s = String.Format(s, DocEntry);
+                            orsAux.DoQuery(s);
+                            var FchEmis = ((System.DateTime)orsAux.Fields.Item("U_FchEmis").Value);
+                            var Fchvenc = ((System.DateTime)orsAux.Fields.Item("U_FchVenc").Value);
+                            var RznSoc = ((System.String)orsAux.Fields.Item("U_RznSoc").Value).Trim();
+                            var MntNeto = ((System.Double)orsAux.Fields.Item("U_MntNeto").Value);
+                            var MntExe = ((System.Double)orsAux.Fields.Item("U_MntExe").Value);
+                            var MntTotal = ((System.Double)orsAux.Fields.Item("U_MntTotal").Value);
+                            var IVA = ((System.Double)orsAux.Fields.Item("U_IVA").Value);
+                            if (tpoRef == "33") //si NC o ND referencia a factura 
+                            {
+                                if (GlobalSettings.RunningUnderSQLServer)
+                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.OpenQty 'Quantity'
+                                              FROM OPCH T0
+                                              JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
+                                             WHERE 1=1
+                                               AND T0.DocNum = {0}
+                                            UNION 
+                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity--, P1.BaseLine
+                                              FROM OPOR T0
+                                              JOIN POR1 T1 ON T1.DocEntry = T0.DocEntry
+                                              JOIN PDN1 P1 ON P1.BaseEntry = T1.DocEntry
+                                                          AND P1.BaseType = T0.ObjType
+			                                              AND P1.BaseLine = T1.LineNum
+                                             WHERE 1=1
+                                               AND T0.DocNum = {0}";
+                                else
+                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""OpenQty"" ""Quantity""
+                                              FROM ""OPCH"" T0
+                                              JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                             WHERE 1=1
+                                               AND T0.""DocNum"" = {0}
+                                            UNION 
+                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" --, P1.BaseLine
+                                              FROM ""OPOR"" T0
+                                              JOIN ""POR1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                              JOIN ""PDN1"" P1 ON P1.""BaseEntry"" = T1.""DocEntry""
+                                                          AND P1.""BaseType"" = T0.""ObjType""
+			                                              AND P1.""BaseLine"" = T1.""LineNum""
+                                             WHERE 1=1
+                                               AND T0.""DocNum"" = {0}";
+                            }
+                            else  //referencia a una NC
+                            {
+                                if (GlobalSettings.RunningUnderSQLServer)
+                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.OpenQty 'Quantity'
+                                              FROM ORPC T0
+                                              JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
+                                             WHERE 1=1
+                                               AND T0.DocNum = {0}
+                                            UNION 
+                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity--, P1.BaseLine
+                                              FROM OPOR T0
+                                              JOIN POR1 T1 ON T1.DocEntry = T0.DocEntry
+                                              JOIN PDN1 P1 ON P1.BaseEntry = T1.DocEntry
+                                                          AND P1.BaseType = T0.ObjType
+			                                              AND P1.BaseLine = T1.LineNum
+                                             WHERE 1=1
+                                               AND T0.DocNum = {0}";
+                                else
+                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""OpenQty"" ""Quantity""
+                                              FROM ""ORPC"" T0
+                                              JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                             WHERE 1=1
+                                               AND T0.""DocNum"" = {0}
+                                            UNION 
+                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" --, P1.BaseLine
+                                              FROM ""OPOR"" T0
+                                              JOIN ""POR1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
+                                              JOIN ""PDN1"" P1 ON P1.""BaseEntry"" = T1.""DocEntry""
+                                                          AND P1.""BaseType"" = T0.""ObjType""
+			                                              AND P1.""BaseLine"" = T1.""LineNum""
+                                             WHERE 1=1
+                                               AND T0.""DocNum"" = {0}";
+                            }
+                            s = String.Format(s, folioRef);
+                            orsAux.DoQuery(s);
+                            if (orsAux.RecordCount > 0)
+                            {
+                                var men = "";
+                                if (tpoRef == "33") //si NC o ND referencia a factura 
+                                {
+                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseCreditNotes));
+                                    men = "Nota de Credito";
+                                }
+                                else
+                                {
+                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseInvoices));
+                                    men = "Nota de Debito";
+                                    //oDocuments.DocObjectCode = BoObjectTypes.
+                                    //oDocuments. investigar para crear NOTA DE DEBITO DE COMPRA 
+                                }
+                                oDocuments.CardCode = CardCode;
+                                oDocuments.CardName = RznSoc;
+                                var date = DateTime.Now;
+                                oDocuments.DocDate = DateTime.Now;
+                                oDocuments.DocDueDate = Fchvenc;
+                                oDocuments.FolioPrefixString = TipoDoc;
+                                oDocuments.FolioNumber = FolioNum;
+                                oDocuments.Comments = "Creado por addon FE en Aceptación del DTE,  Basado en " + tpoRef + " " + folioRef + ".";
+                                while (!orsAux.EoF)
+                                {
+                                    oDocuments.Lines.BaseEntry = ((System.Int32)orsAux.Fields.Item("DocEntry").Value);
+                                    oDocuments.Lines.BaseLine = ((System.Int32)orsAux.Fields.Item("LineNum").Value);
+                                    oDocuments.Lines.BaseType = Convert.ToInt32(((System.String)orsAux.Fields.Item("ObjType").Value), _nf);
+                                    oDocuments.Lines.Quantity = ((System.Double)orsAux.Fields.Item("Quantity").Value);
+                                    oDocuments.Lines.Add();
+                                    orsAux.MoveNext();
+                                }
+                                oDocuments.DocTotal = MntTotal;
+                                lRetCode = oDocuments.Add();
+                                if (lRetCode != 0)
+                                {
+                                    FCmpny.GetLastError(out nErr, out sErr);
+                                    OutLog("No se ha creado documento en SAP, " + men + " -> " + FolioNum.ToString() + " - " + sErr);
+                                    FSBOApp.StatusBar.SetText("No se ha creado documento en SAP, " + men + " -> " + FolioNum.ToString() + " - " + sErr, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                                    AgregarMensajeGridResumen("No se ha creado documento en SAP, " + men + " -> " + FolioNum.ToString() + " - " + sErr, "", true);
+                                }
+                                else
+                                {
+                                    FSBOApp.StatusBar.SetText("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
+                                    //guardar registro para monitor de registros creados
+                                    var NuevoDocEntry = FCmpny.GetNewObjectKey();
+                                    if (GlobalSettings.RunningUnderSQLServer)
+                                        s = @"UPDATE [@VID_FEDTECPRA] SET U_DocEntry = {1}, U_ObjType = '{2}' WHERE DocEntry = {0}";
+                                    else
+                                        s = @"UPDATE ""@VID_FEDTECPRA"" SET ""U_DocEntry"" = {1}, ""U_ObjType"" = '{2}' WHERE ""DocEntry"" = {0}";
+                                    s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO 
+                                    orsAux.DoQuery(s);
+                                    AgregarMensajeGridResumen("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), NuevoDocEntry);
+
+                                }
+                            }
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception x)
+            {
+                FSBOApp.StatusBar.SetText("CrearDocto: " + x.Message, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                OutLog("CrearDocto: " + x.Message + " ** Trace: " + x.StackTrace);
+                return false;
+            }
+            finally
+            {
+                FSBOf._ReleaseCOMObject(ors);
+                //FSBOf._ReleaseCOMObject(orsAux);
+            }
+
+           
+        }
 
     }//fin class
 }
