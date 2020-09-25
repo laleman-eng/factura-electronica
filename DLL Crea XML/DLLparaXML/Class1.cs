@@ -1008,7 +1008,7 @@ namespace DLLparaXML
                                                         new XElement("MntSeguro", ((System.Double)ors.Fields.Item("MntSeguro").Value))
                                                         )
                                             );
-                        miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
+                        miXML.Descendants("Encabezado").LastOrDefault().Add(xNodo);
 
 
                         if (((System.String)ors.Fields.Item("FmaPagExp").Value).Trim() != "")
