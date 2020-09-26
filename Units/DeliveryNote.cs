@@ -1346,21 +1346,37 @@ namespace Factura_Electronica_VK.DeliveryNote
                                 }
                                 else // Stimulsoft 
                                 {
-                                    if (((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
+                                    if (bTransferencia)
                                     {
-                                        XmlDocument xml = new XmlDocument();
-                                        using (var xmlReader = miXML.CreateReader())
+                                        if (((System.String)oTransfer.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
                                         {
-                                            xml.Load(xmlReader);
-                                        }
-                                        if (bTransferencia)
+                                            XmlDocument xml = new XmlDocument();
+                                            using (var xmlReader = miXML.CreateReader())
+                                            {
+                                                xml.Load(xmlReader);
+                                            }
                                             s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oTransfer.DocEntry.ToString(), ObjType, "", oTransfer.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oTransfer.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                        }
                                         else
-                                            s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocument.DocEntry.ToString(), ObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                        {
+                                            //no tiene timbre la transferencia 
+                                        }
                                     }
                                     else
                                     {
-                                        //no tiene timbre el documento 
+                                        if (((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim() != "")
+                                        {
+                                            XmlDocument xml = new XmlDocument();
+                                            using (var xmlReader = miXML.CreateReader())
+                                            {
+                                                xml.Load(xmlReader);
+                                            }
+                                            s = Reg.PDFenStringStimulsoft(TipoDocElecAddon, oDocument.DocEntry.ToString(), ObjType, "", oDocument.FolioNumber.ToString(), RunningUnderSQLServer, "CL", xml, ((System.String)oDocument.UserFields.Fields.Item("U_FETimbre").Value).Trim());
+                                        }
+                                        else
+                                        {
+                                            //no tiene timbre el documento 
+                                        }
                                     }
                                 }
                                 if (s == "")
