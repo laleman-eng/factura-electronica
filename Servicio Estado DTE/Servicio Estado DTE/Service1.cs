@@ -2612,8 +2612,8 @@ namespace Servicio_Estado_DTE
                 if (Descrip != "")
                     oFELOGData.SetProperty("U_Descrip", Descrip);
 
-                if (xmlResponse != "")
-                    oFELOGData.SetProperty("U_Xml", xmlResponse);
+                if (xmlResponse != "")  
+                    oFELOGData.SetProperty("U_Xml", xmlResponse);   //hay XML muy grandes que no permite guardarlos en SAP 
                 //oFELOGData.SetProperty("U_FechaMov", DateTime.Now.Date);               
                 //oFELOGData.SetProperty("U_HoraMov", DateTime.Now);
 

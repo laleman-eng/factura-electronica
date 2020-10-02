@@ -545,6 +545,18 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     oGrid2.Rows.SelectedRows.Add(pVal.Row);
                 }
 
+                if (pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED && pVal.BeforeAction && pVal.ItemUID == "grid2" && pVal.ColUID == "Documento")
+                {
+                    SAPbouiCOM.DataTable dataTable = oGrid2.DataTable;
+                    string message = oGrid2.DataTable.GetValue("Descripcion", pVal.Row).ToString();
+                    if (message.Contains("Credito"))
+                    {
+                        ((EditTextColumn)oGrid2.Columns.Item("Documento")).LinkedObjectType = "19";
+                    }
+                    
+                }
+    
+
                 if ((pVal.EventType == BoEventTypes.et_DOUBLE_CLICK) && (!pVal.BeforeAction) && (pVal.ColUID == "Acepta") && (pVal.Row == -1))
                 {
                     if (((CheckBox)oForm.Items.Item("chk_sel").Specific).Checked)
@@ -3629,13 +3641,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             if (tpoRef == "33") //si NC o ND referencia a factura 
                             {
                                 if (GlobalSettings.RunningUnderSQLServer)
-                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.OpenQty 'Quantity'
+                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.Quantity, T1.ItemCode  
                                               FROM OPCH T0
                                               JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
                                                AND T0.DocNum = {0}
                                             UNION 
-                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity--, P1.BaseLine
+                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode 
                                               FROM OPOR T0
                                               JOIN POR1 T1 ON T1.DocEntry = T0.DocEntry
                                               JOIN PDN1 P1 ON P1.BaseEntry = T1.DocEntry
@@ -3644,13 +3656,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                              WHERE 1=1
                                                AND T0.DocNum = {0}";
                                 else
-                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""OpenQty"" ""Quantity""
+                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode"" 
                                               FROM ""OPCH"" T0
                                               JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
                                                AND T0.""DocNum"" = {0}
                                             UNION 
-                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" --, P1.BaseLine
+                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"", P1.""ItemCode"" 
                                               FROM ""OPOR"" T0
                                               JOIN ""POR1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                               JOIN ""PDN1"" P1 ON P1.""BaseEntry"" = T1.""DocEntry""
@@ -3662,13 +3674,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             else  //referencia a una NC
                             {
                                 if (GlobalSettings.RunningUnderSQLServer)
-                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.OpenQty 'Quantity'
+                                    s = @"SELECT T0.DocEntry, T1.LineNum, T1.ObjType, T1.Quantity, T1.ItemCode 
                                               FROM ORPC T0
                                               JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
                                                AND T0.DocNum = {0}
                                             UNION 
-                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity--, P1.BaseLine
+                                            SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode
                                               FROM OPOR T0
                                               JOIN POR1 T1 ON T1.DocEntry = T0.DocEntry
                                               JOIN PDN1 P1 ON P1.BaseEntry = T1.DocEntry
@@ -3677,13 +3689,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                              WHERE 1=1
                                                AND T0.DocNum = {0}";
                                 else
-                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""OpenQty"" ""Quantity""
+                                    s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode""
                                               FROM ""ORPC"" T0
                                               JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
                                                AND T0.""DocNum"" = {0}
                                             UNION 
-                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" --, P1.BaseLine
+                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" P1.""ItemCode""
                                               FROM ""OPOR"" T0
                                               JOIN ""POR1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                               JOIN ""PDN1"" P1 ON P1.""BaseEntry"" = T1.""DocEntry""
@@ -3697,7 +3709,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             if (orsAux.RecordCount > 0)
                             {
                                 var men = "";
-                                if (tpoRef == "33") //si NC o ND referencia a factura 
+                                if (TipoDoc == "61") //si NC
                                 {
                                     oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseCreditNotes));
                                     men = "Nota de Credito";
@@ -3705,9 +3717,8 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 else
                                 {
                                     oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseInvoices));
+                                    oDocuments.DocumentSubType = BoDocumentSubType.bod_PurchaseDebitMemo;
                                     men = "Nota de Debito";
-                                    //oDocuments.DocObjectCode = BoObjectTypes.
-                                    //oDocuments. investigar para crear NOTA DE DEBITO DE COMPRA 
                                 }
                                 oDocuments.CardCode = CardCode;
                                 oDocuments.CardName = RznSoc;
@@ -3717,14 +3728,28 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 oDocuments.FolioPrefixString = TipoDoc;
                                 oDocuments.FolioNumber = FolioNum;
                                 oDocuments.Comments = "Creado por addon FE en Aceptación del DTE,  Basado en " + tpoRef + " " + folioRef + ".";
-                                while (!orsAux.EoF)
+                                if (TipoDoc == "61")  
                                 {
-                                    oDocuments.Lines.BaseEntry = ((System.Int32)orsAux.Fields.Item("DocEntry").Value);
-                                    oDocuments.Lines.BaseLine = ((System.Int32)orsAux.Fields.Item("LineNum").Value);
-                                    oDocuments.Lines.BaseType = Convert.ToInt32(((System.String)orsAux.Fields.Item("ObjType").Value), _nf);
-                                    oDocuments.Lines.Quantity = ((System.Double)orsAux.Fields.Item("Quantity").Value);
-                                    oDocuments.Lines.Add();
-                                    orsAux.MoveNext();
+                                    while (!orsAux.EoF)
+                                    {
+                                        oDocuments.Lines.BaseEntry = ((System.Int32)orsAux.Fields.Item("DocEntry").Value);
+                                        oDocuments.Lines.BaseLine = ((System.Int32)orsAux.Fields.Item("LineNum").Value);
+                                        oDocuments.Lines.BaseType = Convert.ToInt32(((System.String)orsAux.Fields.Item("ObjType").Value), _nf);
+                                        oDocuments.Lines.Quantity = ((System.Double)orsAux.Fields.Item("Quantity").Value);
+                                        oDocuments.Lines.Add();
+                                        orsAux.MoveNext();
+                                    }
+                                }
+                                else
+                                {
+                                    while (!orsAux.EoF)
+                                    {
+                                        oDocuments.Lines.ItemCode = (System.String)orsAux.Fields.Item("ItemCode").Value;
+                                        oDocuments.Lines.BaseLine = ((System.Int32)orsAux.Fields.Item("LineNum").Value);
+                                        oDocuments.Lines.Quantity = ((System.Double)orsAux.Fields.Item("Quantity").Value);
+                                        oDocuments.Lines.Add();
+                                        orsAux.MoveNext();
+                                    }
                                 }
                                 oDocuments.DocTotal = MntTotal;
                                 lRetCode = oDocuments.Add();
@@ -3741,13 +3766,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     //guardar registro para monitor de registros creados
                                     var NuevoDocEntry = FCmpny.GetNewObjectKey();
                                     if (GlobalSettings.RunningUnderSQLServer)
-                                        s = @"UPDATE [@VID_FEDTECPRA] SET U_DocEntry = {1}, U_ObjType = '{2}' WHERE DocEntry = {0}";
+                                        s = @"UPDATE [@VID_FEDTECPRA] SET U_DocEntry = {1}, U_ObjType = '{2}', U_EstadoLey = 'ACD'  WHERE DocEntry = {0}";  //##no realizar cambios a U_EstadoLey al realizar pruebas 
                                     else
-                                        s = @"UPDATE ""@VID_FEDTECPRA"" SET ""U_DocEntry"" = {1}, ""U_ObjType"" = '{2}' WHERE ""DocEntry"" = {0}";
-                                    s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO 
+                                        s = @"UPDATE ""@VID_FEDTECPRA"" SET ""U_DocEntry"" = {1}, ""U_ObjType"" = '{2}',  ""U_EstadoLey"" = 'ACD' WHERE ""DocEntry"" = {0}";
+                                    if (TipoDoc == "61") 
+                                        s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO
+                                    else
+                                        s = String.Format(s, DocEntry, NuevoDocEntry, "18");
                                     orsAux.DoQuery(s);
                                     AgregarMensajeGridResumen("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), NuevoDocEntry);
-
                                 }
                             }
                         }
