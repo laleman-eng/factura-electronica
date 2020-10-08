@@ -248,6 +248,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 , ISNULL(U_MFacDifer,'N')       'MFacDifer'
                                 , ISNULL(U_CEdoPortal,'Y')      'CEdoPortal'
                                 , ISNULL(U_BuscarEMDocNum,'Y')  'BuscarEMDocNum'
+                                , ISNULL(U_FechaContDoc,'N')    'FechaContDoc'
                          FROM [@VID_FEPARAM]";
                 else
                     s = @"SELECT IFNULL(""U_CrearDocC"",'N')    ""Crear""
@@ -264,6 +265,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 , IFNULL(""U_MFacDifer"",'N')   ""MFacDifer""
                                 , IFNULL(""U_CEdoPortal"",'Y')  ""CEdoPortal""
                                 , IFNULL(""U_BuscarEMDocNum"",'Y') ""BuscarEMDocNum""
+                                , IFNULL(""U_FechaContDoc"",'N')    ""FechaContDoc""
                          FROM ""@VID_FEPARAM"" ";
                 oDTParams.ExecuteQuery(s);
             }
@@ -282,6 +284,24 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 
             try
             {
+
+                if (pVal.EventType == BoEventTypes.et_VALIDATE && pVal.BeforeAction && pVal.ItemUID == "grid" && pVal.ColUID == "U_FechaConGen")
+                {
+                    var FechaContabilizacion = oGrid.DataTable.GetValue("U_FechaConGen", pVal.Row);
+                    if (FechaContabilizacion != null)
+                    {
+                        DateTime fechaCon = (DateTime)FechaContabilizacion;
+                        DateTime today = DateTime.Today;
+                        int datediff = ((TimeSpan)(today - fechaCon)).Days;
+                        if (datediff > 51 || datediff < 0)
+                        {
+                            FSBOApp.StatusBar.SetText("Fecha contabilizacion no valida", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                            BubbleEvent = false;
+                        }
+                    }
+                    
+                }
+                
                 if ((pVal.EventType == BoEventTypes.et_MATRIX_LINK_PRESSED) && (pVal.BeforeAction) && (pVal.ItemUID == "grid") && (pVal.ColUID == "OC" || pVal.ColUID == "EM" || pVal.ColUID == "RefOri"))
                 {
                     oForm.Freeze(true);
@@ -670,6 +690,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 FSBOApp.StatusBar.SetText("Cargando Documentos, Por Favor Espere ... ", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
                 string sEMCode = oDTParams.GetValue("CodEM", 0).ToString().Trim();
                 string ValidarEM = oDTParams.GetValue("EntMer", 0).ToString().Trim();
+                string FechaContDoc = oDTParams.GetValue("FechaContDoc", 0).ToString().Trim();
 
                 if (GlobalSettings.RunningUnderSQLServer)
                     s = @"SELECT 
@@ -704,7 +725,8 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 	                          ,T0.U_EstadoLey
                               ,T0.U_EstadoLey 'EstadoLeyOld'
                               ,T0.DocEntry
-                              ,T0.U_Xml                              
+                              ,T0.U_Xml 
+                              ,T0.U_FechaConGen                               
                               ,ISNULL((SELECT TOP 1 A.U_FolioRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry AND A.U_TpoDocRef = '801'),'') 'OCOri'
                               ,CAST(' ' AS VARCHAR(30)) 'OC'
                               ,ISNULL((SELECT TOP 1 A.U_FolioRef FROM [@VID_FEXMLCR] A WHERE A.Code = T0.DocEntry AND A.U_TpoDocRef = '" + sEMCode + @"'),'') 'EMOri'
@@ -771,6 +793,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                               ,T0.""U_EstadoLey"" ""EstadoLeyOld""
                               ,T0.""DocEntry""
                               ,T0.""U_Xml""
+                              ,T0.""U_FechaConGen""
                               ,IFNULL((SELECT MAX(A.""U_FolioRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" AND A.""U_TpoDocRef"" = '801'),'') ""OCOri""
                               ,CAST(' ' AS VARCHAR(30)) ""OC""
                               ,IFNULL((SELECT MAX(A.""U_FolioRef"") FROM ""@VID_FEXMLCR"" A WHERE A.""Code"" = T0.""DocEntry"" AND A.""U_TpoDocRef"" = '" + sEMCode + @"'),'') ""EMOri""
@@ -859,6 +882,20 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 oEditColumn = (EditTextColumn)(oColumn);
                 oEditColumn.Editable = false;
                 oEditColumn.TitleObject.Caption = "Fecha Emisión";
+
+                if (FechaContDoc == "Y")
+                {
+                    oGrid.Columns.Item("U_FechaConGen").Type = BoGridColumnType.gct_EditText;
+                    oColumn = (GridColumn)(oGrid.Columns.Item("U_FechaConGen"));
+                    oEditColumn = (EditTextColumn)(oColumn);
+                    oEditColumn.Editable = true;   //false
+                    oEditColumn.Visible = true;
+                    oEditColumn.TitleObject.Caption = "Fecha Contabilización";
+                }
+                else 
+                {
+                    oGrid.Columns.Item("U_FechaConGen").Visible = false;
+                }
 
                 oGrid.Columns.Item("Tiempo Rest.").Type = BoGridColumnType.gct_EditText;
                 oColumn = (GridColumn)(oGrid.Columns.Item("Tiempo Rest."));

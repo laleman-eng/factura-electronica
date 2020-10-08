@@ -197,7 +197,6 @@ Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_D.sql; DestDir: {app}\SQLs\CL
 Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_E.sql; DestDir: {app}\SQLs\CL\SQLServer
 Source: bin\Debug\SQLs\CL\SQLServer\VID_VW_FE_OPCH_R.sql; DestDir: {app}\SQLs\CL\SQLServer
 
-
 ;procedimientos Portal
 Source: bin\Debug\SQLs\CL\Portal\Crear Tabla VID_FELOTES.sql; DestDir: {app}\SQLs\CL\Portal
 Source: bin\Debug\SQLs\CL\Portal\Crear Tabla VID_FESERIES.sql; DestDir: {app}\SQLs\CL\Portal
@@ -207,11 +206,18 @@ Source: bin\Debug\SQLs\CL\Portal\VID_SP_LOTES.sql; DestDir: {app}\SQLs\CL\Portal
 Source: bin\Debug\SQLs\CL\Portal\VID_SP_SERIES.sql; DestDir: {app}\SQLs\CL\Portal
 Source: bin\Debug\SQLs\CL\Portal\VID_SP_EXISTEFOLIO.sql; DestDir: {app}\SQLs\CL\Portal
 Source: bin\Debug\SQLs\CL\Portal\VID_SP_FOLIOSSUCURSAL.sql; DestDir: {app}\SQLs\CL\Portal
+
 ;layouts
 Source: bin\Debug\Reports\CL\Traslado.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 41.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\Reporte 61.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\33_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\34_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\52_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\52D_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\52T_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\56_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\61_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 
 ;Factura Movil
 Source: bin\Debug\RestSharp.dll; DestDir: {app}
