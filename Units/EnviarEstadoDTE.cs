@@ -1368,7 +1368,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         else if (tipoDoc == "61" || tipoDoc == "56")
                         {
                             //si es true actualizo estado para que no aparezca 
-                            CrearDocNCND(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, ((System.String)oGrid.DataTable.GetValue("TpoRefOri", i)).Trim(), ((System.String)oGrid.DataTable.GetValue("RefOri", i)).Trim());
+                            CrearDocNCND(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, ((System.String)oGrid.DataTable.GetValue("TpoRefOri", i)).Trim(), ((System.String)oGrid.DataTable.GetValue("RefOri", i)).Trim(), (oGrid.DataTable.GetValue("U_FechaConGen", i)));
                             
                         }
                         else { 
@@ -3570,7 +3570,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
             return respuesta;
         }
 
-        private bool CrearDocNCND(Int32 DocEntry, String RUT, Int32 FolioNum, String TipoDoc, int nFilaGrid, String tpoRef, String folioRef)
+        private bool CrearDocNCND(Int32 DocEntry, String RUT, Int32 FolioNum, String TipoDoc, int nFilaGrid, String tpoRef, String folioRef, object FechaConGen)
         {
             
             SAPbobsCOM.Recordset ors = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
@@ -3581,6 +3581,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
             Int32 lRetCode;
             Int32 nErr;
             String sErr;
+            String mendocRef;
 
             try
             {
@@ -3589,6 +3590,16 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                 else
                     s = @"SELECT IFNULL(""U_CrearDocC"",'N') ""Crear"", IFNULL(""U_FProv"",'Y') ""FProv"" FROM ""@VID_FEPARAM"" ";
                 ors.DoQuery(s);
+
+                if (tpoRef == "33")
+                {
+                    mendocRef = "Factura";
+                }
+                else 
+                {
+                    mendocRef = "Nota de Credito";
+                }
+
                 if (((System.String)ors.Fields.Item("Crear").Value).Trim() == "Y")
                 {
                     if (GlobalSettings.RunningUnderSQLServer)
@@ -3645,8 +3656,8 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         ors.DoQuery(s);
                         if (ors.RecordCount == 0)
                         {
-                            FSBOApp.StatusBar.SetText("No se ha encontrado " + tpoRef + " en SAP -> " + folioRef, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
-                            AgregarMensajeGridResumen("No se ha encontrado " + tpoRef + " en SAP -> " + folioRef, "", true);
+                            FSBOApp.StatusBar.SetText("No se ha encontrado " + mendocRef + " en SAP -> " + folioRef, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                            AgregarMensajeGridResumen("No se ha encontrado " + mendocRef + " en SAP -> " + folioRef, "", true);
                             return false;
                         }
                         else
@@ -3759,12 +3770,18 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 }
                                 oDocuments.CardCode = CardCode;
                                 oDocuments.CardName = RznSoc;
-                                var date = DateTime.Now;
-                                oDocuments.DocDate = DateTime.Now;
+                                if (FechaConGen != null)
+                                {
+                                    oDocuments.DocDate = Convert.ToDateTime(FechaConGen);
+                                }
+                                else
+                                {
+                                    oDocuments.DocDate = DateTime.Now;
+                                }
                                 oDocuments.DocDueDate = Fchvenc;
                                 oDocuments.FolioPrefixString = TipoDoc;
                                 oDocuments.FolioNumber = FolioNum;
-                                oDocuments.Comments = "Creado por addon FE en Aceptación del DTE,  Basado en " + tpoRef + " " + folioRef + ".";
+                                oDocuments.Comments = "Creado por addon FE en Aceptación del DTE,  Basado en " + mendocRef + " " + folioRef + ".";
                                 if (TipoDoc == "61")  
                                 {
                                     while (!orsAux.EoF)
@@ -3810,7 +3827,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                         s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO
                                     else
                                         s = String.Format(s, DocEntry, NuevoDocEntry, "18");
-                                    orsAux.DoQuery(s);
+                                    //orsAux.DoQuery(s);
                                     AgregarMensajeGridResumen("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), NuevoDocEntry);
                                 }
                             }
