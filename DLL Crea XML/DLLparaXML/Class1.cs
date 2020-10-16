@@ -528,12 +528,23 @@ namespace DLLparaXML
                             SBO_f.oLog.OutLog("Campo opcional TpoCodigo no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
+                        //campos extra Detalle
+                        var iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
 
-
-
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+                            if (NomCol.Contains("Extra"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
 
                         ors.MoveNext();
                     }
@@ -1165,10 +1176,26 @@ namespace DLLparaXML
                                             new XElement("CodImpAdic", ((System.String)ors.Fields.Item("CodImpAdic").Value).Trim()),
                                             new XElement("RecargoMonto", ((System.Double)ors.Fields.Item("RecargoMonto").Value))
                                             );
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+      
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
+
+                        //campos extra Detalle
+                        var iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("Extra"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
 
                         ors.MoveNext();
                     }
@@ -1748,6 +1775,25 @@ namespace DLLparaXML
                         {
                             SBO_f.oLog.OutLog("Campo opcional FchVencim no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
+
+                        //campos extra Detalle
+                        var iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("Extra"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
                         ors.MoveNext();
                     }
                 }//fin Detalle
@@ -1959,10 +2005,27 @@ namespace DLLparaXML
                                             new XElement("CodImpAdic", ((System.String)ors.Fields.Item("CodImpAdic").Value).Trim()),
                                             new XElement("RecargoMonto", ((System.Double)ors.Fields.Item("RecargoMonto").Value))
                                             );
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
+
+                        //campos extra Detalle
+                        var iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("Extra"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
                         ors.MoveNext();
                     }
                 }//fin Detalle
