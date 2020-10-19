@@ -3443,7 +3443,7 @@ namespace Factura_Electronica_VK.CreditNotes
                                             oEditText = (EditText)(oMatrix.Columns.Item("45").Cells.Item(i).Specific);//BaseEntry
                                             oEditTextB = (EditText)(oMatrix.Columns.Item("43").Cells.Item(i).Specific); //basetype
 
-                                            if (BaseEntry != oEditText.Value)
+                                            if (BaseEntry != oEditText.Value && oEditTextB.Value != "16" )  //#prueba
                                                 c = c + 1;
 
                                             if ((oEditText.Value == "") || ((((oEditTextB.Value != "13") && (oEditTextB.Value != "203")) && (ObjType == "14")) || (((oEditTextB.Value != "18") && (oEditTextB.Value != "204")) && (ObjType == "19"))))

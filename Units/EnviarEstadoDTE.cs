@@ -1197,7 +1197,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "N")
                                     {
                                         if (EstadoFinal == "ACD" && (tipoDoc == "33" || tipoDoc == "34"))
-                                            CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                            CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, (oGrid.DataTable.GetValue("U_FechaConGen", i)));
                                     }
                                 }
 
@@ -1233,7 +1233,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                             FSBOApp.StatusBar.SetText("Documento actualizado en el portal, dejar en estado " + EstadoFinal + ", RUT " + ((System.String)oGrid.DataTable.GetValue("U_RUT", i)).Trim() + ", Tipo doc " + ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() + ", Folio " + ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)).ToString(), BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
 
                                         if ((EstadoFinal == "ACD") && sEnviarEstadoPortal == "Y" && ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34")))
-                                            CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                            CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, (oGrid.DataTable.GetValue("U_FechaConGen", i)));
                                     }
 
                                     //para la aceptacion primero envia el recibo de mercaderia y luego debe enviar la aceptacion
@@ -1291,7 +1291,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                             if (sFormPag != "1" && sFormPag != "3" && sEnviarEstadoPortal == "N")
                                             {
                                                 if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
-                                                    CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                                    CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, (oGrid.DataTable.GetValue("U_FechaConGen", i)));
                                             }
 
                                         }
@@ -1346,7 +1346,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                 if (sEnviarEstadoPortal == "Y")
                                                 {
                                                     if ((((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "33") || (((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim() == "34"))
-                                                        CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i);
+                                                        CrearDocto(((System.Int32)oGrid.DataTable.GetValue("DocEntry", i)), ((System.String)oGrid.DataTable.GetValue("U_RUT", i)), ((System.Int32)oGrid.DataTable.GetValue("U_Folio", i)), ((System.String)oGrid.DataTable.GetValue("U_TipoDoc", i)).Trim(), i, (oGrid.DataTable.GetValue("U_FechaConGen", i)));
                                                 }
                                             }
                                         }
@@ -1485,7 +1485,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
 
         }
 
-        private void CrearDocto(Int32 DocEntry, String RUT, Int32 FolioNum, String TipoDoc, int nFilaGrid)
+        private void CrearDocto(Int32 DocEntry, String RUT, Int32 FolioNum, String TipoDoc, int nFilaGrid, object FechaConGen)
         {
             SAPbobsCOM.Recordset ors = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
             SAPbobsCOM.Recordset orsAux = ((SAPbobsCOM.Recordset)FCmpny.GetBusinessObject(BoObjectTypes.BoRecordset));
@@ -1780,8 +1780,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                         oDocuments.CardCode = CardCode;
                                         oDocuments.CardName = RznSoc;
                                         //oDocuments.DocDate = FchEmis;
-                                        var date = DateTime.Now; 
-                                        oDocuments.DocDate = DateTime.Now;
+                                        if (FechaConGen != null)
+                                        {
+                                            oDocuments.DocDate = Convert.ToDateTime(FechaConGen);
+                                        }
+                                        else 
+                                        {
+                                            oDocuments.DocDate = DateTime.Now;
+                                        }
                                         oDocuments.DocDueDate = Fchvenc;
                                         oDocuments.FolioPrefixString = TipoDoc;
                                         oDocuments.FolioNumber = FolioNum;

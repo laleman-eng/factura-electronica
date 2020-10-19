@@ -471,11 +471,13 @@ namespace Factura_Electronica_VK.AsignarFolios
                                 if (!bSubirSuc)
                                 {
                                     FCmpny.EndTransaction(BoWfTransOpt.wf_Commit);
+                                    FSBOApp.StatusBar.SetText("se ha registrado la asignación en SAP, sin envio al portal segun parametrizacion", BoMessageTime.bmt_Medium, BoStatusBarMessageType.smt_Warning);
                                     oForm.Mode = BoFormMode.fm_OK_MODE;
                                 }
                                 else if (EnviarPortal(DocEntryAsig))
                                 {
                                     FCmpny.EndTransaction(BoWfTransOpt.wf_Commit);
+                                    FSBOApp.StatusBar.SetText("se ha registrado la asignación de folios en el portal", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
                                     oForm.Mode = BoFormMode.fm_OK_MODE;
                                 }
                                 else
