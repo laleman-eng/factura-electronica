@@ -208,16 +208,20 @@ Source: bin\Debug\SQLs\CL\Portal\VID_SP_EXISTEFOLIO.sql; DestDir: {app}\SQLs\CL\
 Source: bin\Debug\SQLs\CL\Portal\VID_SP_FOLIOSSUCURSAL.sql; DestDir: {app}\SQLs\CL\Portal
 
 ;layouts
-Source: bin\Debug\Reports\CL\Traslado.rpt; DestDir: {app}\Reports\CL
-Source: bin\Debug\Reports\CL\Reporte 41.rpt; DestDir: {app}\Reports\CL
-Source: bin\Debug\Reports\CL\Reporte 61.rpt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\33_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\34_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\39_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\41_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\46_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\52_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\52D_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\52T_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\56_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 Source: bin\Debug\Reports\CL\61_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\110_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\110R_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\111_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
+Source: bin\Debug\Reports\CL\112_VISUALK_CL.mrt; DestDir: {app}\Reports\CL
 
 ;Factura Movil
 Source: bin\Debug\RestSharp.dll; DestDir: {app}

@@ -171,8 +171,8 @@ namespace DLLparaXML
                         var D1 = ((System.Double)ors.Fields.Item("MntDescuento").Value);
                         xNodo = new XElement("DscRcgGlobal",
                                                     new XElement("NroLinDR", NroLinDR),
-                                                    new XElement("TpoMov", "D"),
-                                                    new XElement("GlosaDR", "Descuento Global"),
+                                                    new XElement("TpoMov", "D"),  //D o R 
+                                                    new XElement("GlosaDR", "Descuento Global"),  
                                                     new XElement("TpoValor", "$"),
                                                     new XElement("ValorDR", ((System.Double)ors.Fields.Item("MntDescuento").Value))
                                             );
