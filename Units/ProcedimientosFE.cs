@@ -72,9 +72,9 @@ namespace Factura_Electronica_VK.ProcedimientosFE
 
 
                 if (GlobalSettings.RunningUnderSQLServer)
-                    s = @"select DocEntry, ISNULL(U_TipoDoc,'') TipoDoc, ISNULL(U_ProcNomE,'') ProcNomE, ISNULL(U_ProcNomD,'') ProcNomD, ISNULL(U_ProcNomR,'') ProcNomR, ISNULL(U_ProcNomC,'') ProcNomC, ISNULL(U_ProcNomDe,'') ProcNomDe, ISNULL(U_ProcNomL,'') ProcNomL, ISNULL(U_ProcNomS,'') ProcNomS, ISNULL(U_Habili,'Y') 'Habilitada', ISNULL(U_CantLineas,0) 'CantLineas' from [@VID_FEPROCED]"; 
+                    s = @"select DocEntry, ISNULL(U_TipoDoc,'') TipoDoc, ISNULL(U_ProcNomE,'') ProcNomE, ISNULL(U_ProcNomD,'') ProcNomD, ISNULL(U_ProcNomR,'') ProcNomR, ISNULL(U_ProcNomC,'') ProcNomC, ISNULL(U_ProcNomDe,'') ProcNomDe, ISNULL(U_ProcNomL,'') ProcNomL, ISNULL(U_ProcNomS,'') ProcNomS, ISNULL(U_Habili,'Y') 'Habilitada', ISNULL(U_CantLineas,0) 'CantLineas' , ISNULL (U_ProcNomDR,'') ProcNomDR from [@VID_FEPROCED]"; 
                 else
-                    s = @"select ""DocEntry"", IFNULL(""U_TipoDoc"",'') ""TipoDoc"", IFNULL(""U_ProcNomE"",'') ""ProcNomE"", IFNULL(""U_ProcNomD"",'') ""ProcNomD"", IFNULL(""U_ProcNomR"",'') ""ProcNomR"", IFNULL(""U_ProcNomC"",'') ""ProcNomC"", IFNULL(""U_ProcNomDe"",'') ""ProcNomDe"", IFNULL(""U_ProcNomL"",'') ""ProcNomL"", IFNULL(""U_ProcNomS"",'') ""ProcNomS"", IFNULL(""U_Habili"",'Y') ""Habilitada"", IFNULL(""U_CantLineas"",0) ""CantLineas"" from ""@VID_FEPROCED"" ";
+                    s = @"select ""DocEntry"", IFNULL(""U_TipoDoc"",'') ""TipoDoc"", IFNULL(""U_ProcNomE"",'') ""ProcNomE"", IFNULL(""U_ProcNomD"",'') ""ProcNomD"", IFNULL(""U_ProcNomR"",'') ""ProcNomR"", IFNULL(""U_ProcNomC"",'') ""ProcNomC"", IFNULL(""U_ProcNomDe"",'') ""ProcNomDe"", IFNULL(""U_ProcNomL"",'') ""ProcNomL"", IFNULL(""U_ProcNomS"",'') ""ProcNomS"", IFNULL(""U_Habili"",'Y') ""Habilitada"", IFNULL(""U_CantLineas"",0) ""CantLineas"" , IFNULL (""U_ProcNomDR"",'') ""ProcNomDR"" from ""@VID_FEPROCED"" ";
                 oRecordSet.DoQuery(s);
 
                 i = 0;
@@ -89,6 +89,7 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                     oDBDSH.SetValue("U_ProcNomD", i, (System.String)(oRecordSet.Fields.Item("ProcNomD").Value));
                     oDBDSH.SetValue("U_ProcNomR", i, (System.String)(oRecordSet.Fields.Item("ProcNomR").Value));
                     oDBDSH.SetValue("U_ProcNomC", i, (System.String)(oRecordSet.Fields.Item("ProcNomC").Value));
+                    oDBDSH.SetValue("U_ProcNomDR", i, (System.String)(oRecordSet.Fields.Item("ProcNomDR").Value));
                     //oDBDSH.SetValue("U_ProcNomDe", i, (System.String)(oRecordSet.Fields.Item("ProcNomDe").Value));
                     //oDBDSH.SetValue("U_ProcNomL", i, (System.String)(oRecordSet.Fields.Item("ProcNomL").Value));
                     //oDBDSH.SetValue("U_ProcNomS", i, (System.String)(oRecordSet.Fields.Item("ProcNomS").Value));
@@ -106,6 +107,7 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                 oDBDSH.SetValue("U_ProcNomD", i, "");
                 oDBDSH.SetValue("U_ProcNomR", i, "");
                 oDBDSH.SetValue("U_ProcNomC", i, "");
+                oDBDSH.SetValue("U_ProcNomDR", i, "");
                 //oDBDSH.SetValue("U_ProcNomDe", i, "");
                 //oDBDSH.SetValue("U_ProcNomL", i, "");
                 //oDBDSH.SetValue("U_ProcNomS", i, "");
@@ -188,6 +190,9 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                                 oEditText = (EditText)(oMtx.Columns.Item("ProcNomC").Cells.Item(i).Specific);
                                 oEditText.Value = "";
 
+                                oEditText = (EditText)(oMtx.Columns.Item("ProcNomDR").Cells.Item(i).Specific);
+                                oEditText.Value = "";
+
                                 oEditText = (EditText)(oMtx.Columns.Item("ProcNomDe").Cells.Item(i).Specific);
                                 oEditText.Value = "";
 
@@ -267,7 +272,7 @@ namespace Factura_Electronica_VK.ProcedimientosFE
             Int32 i;
             SAPbouiCOM.EditText oEditText;
             SAPbouiCOM.ComboBox oComboBox;
-            String DocEntry, ProcNomE, ProcNomD, ProcNomR, ProcNomC, ProcNomL, ProcNomS, Hab, TipoDoc, CantLineas, ProcNomDe;
+            String DocEntry, ProcNomE, ProcNomD, ProcNomR, ProcNomC, ProcNomL, ProcNomS, Hab, TipoDoc, CantLineas, ProcNomDR;
             Int32 _return = 0;
 
             try
@@ -294,6 +299,9 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                     oEditText = (EditText)(oMtx.Columns.Item("ProcNomC").Cells.Item(i).Specific);
                     ProcNomC = (System.String)(oEditText.Value).Trim();
 
+                    oEditText = (EditText)(oMtx.Columns.Item("ProcNomDR").Cells.Item(i).Specific);
+                    ProcNomDR = (System.String)(oEditText.Value).Trim();
+                    
                     //oEditText = (EditText)(oMtx.Columns.Item("ProcNomDe").Cells.Item(i).Specific);
                     //ProcNomDe = (System.String)(oEditText.Value).Trim();
 
@@ -325,6 +333,7 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                     oDBDSH.SetValue("U_ProcNomD", 0, ProcNomD);
                     oDBDSH.SetValue("U_ProcNomR", 0, ProcNomR);
                     oDBDSH.SetValue("U_ProcNomC", 0, ProcNomC);
+                    oDBDSH.SetValue("U_ProcNomDR", 0, ProcNomDR);
                     //oDBDSH.SetValue("U_ProcNomDe", 0, ProcNomDe);
                     //oDBDSH.SetValue("U_ProcNomL", 0, ProcNomL);
                     //oDBDSH.SetValue("U_ProcNomS", 0, ProcNomS);
@@ -340,10 +349,10 @@ namespace Factura_Electronica_VK.ProcedimientosFE
                     {
                         oEditText = (EditText)(oMtx.Columns.Item("DocEntry").Cells.Item(i).Specific);
                         oEditText.Value = _return.ToString();
-                        FSBOApp.StatusBar.SetText("Se ha guardado regsitro Tipo Documento " + TipoDoc, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
+                        FSBOApp.StatusBar.SetText("Se ha guardado registro Tipo Documento " + TipoDoc, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Success);
                     }
                     else
-                        FSBOApp.StatusBar.SetText("No se ha guardado regsitro Tipo Documento " + TipoDoc, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
+                        FSBOApp.StatusBar.SetText("No se ha guardado registro Tipo Documento " + TipoDoc, BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Error);
 
                     i++;
                 }
@@ -367,7 +376,7 @@ namespace Factura_Electronica_VK.ProcedimientosFE
             Int32 i;
             SAPbouiCOM.EditText oEditText;
             SAPbouiCOM.ComboBox oComboBox;
-            String ProcNomE, ProcNomD, ProcNomR, ProcNomC, ProcNomL, ProcNomS, TipoDoc, Hab;
+            String ProcNomE, ProcNomD, ProcNomR, ProcNomC, TipoDoc, Hab, ProcNomDR;
 
             try
             {
@@ -387,6 +396,9 @@ namespace Factura_Electronica_VK.ProcedimientosFE
 
                     oEditText = (EditText)(oMtx.Columns.Item("ProcNomC").Cells.Item(i).Specific);
                     ProcNomC = (System.String)(oEditText.Value).Trim();
+
+                    oEditText = (EditText)(oMtx.Columns.Item("ProcNomDR").Cells.Item(i).Specific);
+                    ProcNomDR = (System.String)(oEditText.Value).Trim();
 
                     //oEditText = (EditText)(oMtx.Columns.Item("ProcNomS").Cells.Item(i).Specific);
                     //ProcNomS = (System.String)(oEditText.Value).Trim();

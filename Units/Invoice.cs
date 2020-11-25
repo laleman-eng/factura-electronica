@@ -3029,6 +3029,7 @@ namespace Factura_Electronica_VK.Invoice
             String ProcD = "";
             String ProcR = "";
             String ProcC = "";
+            String ProcDR = "";
             String TaxIdNum = "";
             String OP18 = "";
             String OP8 = "";
@@ -3095,9 +3096,9 @@ namespace Factura_Electronica_VK.Invoice
                     DocDate = SBO_f.DateToStr(oDocumento.DocDate);
 
                     if (RunningUnderSQLServer)
-                        s = @"SELECT ISNULL(U_ProcNomE,'') 'ProcNomE', ISNULL(U_ProcNomD,'') 'ProcNomD', ISNULL(U_ProcNomR,'') 'ProcNomR', ISNULL(U_ProcNomC,'') 'ProcNomC' FROM [@VID_FEPROCED] where ISNULL(U_Habili,'N') = 'Y' and U_TipoDoc = '{0}'";
+                        s = @"SELECT ISNULL(U_ProcNomE,'') 'ProcNomE', ISNULL(U_ProcNomD,'') 'ProcNomD', ISNULL(U_ProcNomR,'') 'ProcNomR', ISNULL(U_ProcNomC,'') 'ProcNomC' , ISNULL(U_ProcNomDR,'') 'ProcNomDR' FROM [@VID_FEPROCED] where ISNULL(U_Habili,'N') = 'Y' and U_TipoDoc = '{0}'";
                     else
-                        s = @"SELECT IFNULL(""U_ProcNomE"",'') ""ProcNomE"", IFNULL(""U_ProcNomD"",'') ""ProcNomD"", IFNULL(""U_ProcNomR"",'') ""ProcNomR"", IFNULL(""U_ProcNomC"",'') ""ProcNomC"" FROM ""@VID_FEPROCED"" where IFNULL(""U_Habili"",'N') = 'Y' and ""U_TipoDoc"" = '{0}'";
+                        s = @"SELECT IFNULL(""U_ProcNomE"",'') ""ProcNomE"", IFNULL(""U_ProcNomD"",'') ""ProcNomD"", IFNULL(""U_ProcNomR"",'') ""ProcNomR"", IFNULL(""U_ProcNomC"",'') ""ProcNomC"" , IFNULL(""U_ProcNomDR"",'') ""ProcNomDR"" FROM ""@VID_FEPROCED"" where IFNULL(""U_Habili"",'N') = 'Y' and ""U_TipoDoc"" = '{0}'";
 
                     s = String.Format(s, TipoDocElec);
                     ors.DoQuery(s);
@@ -3117,8 +3118,8 @@ namespace Factura_Electronica_VK.Invoice
                         ProcD = ((System.String)ors.Fields.Item("ProcNomD").Value).Trim();
                         ProcR = ((System.String)ors.Fields.Item("ProcNomR").Value).Trim();
                         ProcC = ((System.String)ors.Fields.Item("ProcNomC").Value).Trim();
+                        ProcDR = ((System.String)ors.Fields.Item("ProcNomDR").Value).Trim();
                     }
-
 
                     //PARA ENCABEZADO
                     if (RunningUnderSQLServer)
@@ -3215,6 +3216,27 @@ namespace Factura_Electronica_VK.Invoice
                     {
                         t = DateTime.Now;
                         Reg.SBO_f.oLog.OutLog("XML DE Detalle: " + sXML + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
+                    }
+
+                    // Descuentos y Recargos 
+                    if (ProcDR != "")
+                    {
+                        if (RunningUnderSQLServer)
+                            s = @"exec {0} {1}, '{2}', '{3}'";
+                        else
+                            s = @"call {0} ({1}, '{2}', '{3}')";
+                        s = String.Format(s, ProcDR, oDocumento.DocEntry, TipoDocElec, sObjType);
+
+                        ors.DoQuery(s);
+                        if (ors.RecordCount == 0)
+                            throw new Exception("No se encuentran datos de Descuentos y Recargos para Documento electronico " + TipoDocElec);
+                        if (ors.RecordCount > 0)
+                        {
+                            sXML = Dll.GenerarXMLStringInvoice(ref ors, ref ors2, TipoDocElec, ref miXML, "DR");
+                            //Reg.SBO_f.oLog.OutLog("XML con DR: " + sXML);
+                            if (sXML == "")
+                                throw new Exception("Problema para generar xml Documento electronico (Descuentos y Recargos)" + TipoDocElec);
+                        }
                     }
 
                     //PARA REFERENCIA
