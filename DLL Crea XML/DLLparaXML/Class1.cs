@@ -295,6 +295,34 @@ namespace DLLparaXML
                         SBO_f.oLog.OutLog("Campo opcional DirPostal no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                     }
 
+                    if (TipoDocElec == "33")
+                    {
+                        try 
+                        {
+                            if (((System.String)ors.Fields.Item("TpoMoneda").Value).Trim() != "")
+                            {
+                                var TpoMoneda = ((System.String)ors.Fields.Item("TpoMoneda").Value).Trim();
+                                var TpoCambio = ((System.Double)ors.Fields.Item("TpoCambio").Value);
+                                var MntNetoOtrMnda = ((System.Double)ors.Fields.Item("MntNetoOtrMnda").Value);
+                                var IVAOtrMnda = ((System.Double)ors.Fields.Item("IVAOtrMnda").Value);
+                                var MntTotOtrMnda = ((System.Double)ors.Fields.Item("MntTotOtrMnda").Value);
+
+                                xNodo = new XElement("OtraMoneda",
+                                               new XElement("TpoMoneda", ((System.String)ors.Fields.Item("TpoMoneda").Value).Trim()),
+                                               new XElement("TpoCambio", ((System.Double)ors.Fields.Item("TpoCambio").Value)),
+                                               new XElement("MntNetoOtrMnda", ((System.Double)ors.Fields.Item("MntNetoOtrMnda").Value)),
+                                               new XElement("IVAOtrMnda", ((System.Double)ors.Fields.Item("IVAOtrMnda").Value)),
+                                               new XElement("MntTotOtrMnda", ((System.Double)ors.Fields.Item("MntTotOtrMnda").Value))
+                                               );
+                                miXML.Descendants("Encabezado").LastOrDefault().Add(xNodo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Seccion opcional OtraMoneda no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                        }
+                    }
+
                     //AGREGA Transporte
                     if ((TipoDocElec == "110") || (TipoDocElec == "111"))
                     {
@@ -528,6 +556,30 @@ namespace DLLparaXML
                             SBO_f.oLog.OutLog("Campo opcional TpoCodigo no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
+                        //Campo Opcional Otra Moneda Detalle
+                        try
+                        {
+                            if (((System.String)ors.Fields.Item("Moneda").Value).Trim() != "")
+                            {
+                                var PrcOtrMon = ((System.Double)ors.Fields.Item("PrcOtrMon").Value);
+                                var Moneda = ((System.String)ors.Fields.Item("Moneda").Value).Trim();
+                                var MontoItemOtrMnda = ((System.Double)ors.Fields.Item("MontoItemOtrMnda").Value);
+                                xNodo = new XElement("OtrMnda",
+                                            new XElement("PrcOtrMon", ((System.Double)ors.Fields.Item("PrcOtrMon").Value)),
+                                            new XElement("Moneda", ((System.String)ors.Fields.Item("Moneda").Value).Trim()),
+                                            new XElement("MontoItemOtrMnda", ((System.Double)ors.Fields.Item("MontoItemOtrMnda").Value))
+                                            );
+
+                                miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SBO_f.oLog.OutLog("Campo opcional Otra Moneda  no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                        }
+
+
+
                         //campos extra Detalle
                         var iCol = 0;
                         while (iCol < ors.Fields.Count)
@@ -584,7 +636,32 @@ namespace DLLparaXML
                         ors.MoveNext();
                     }
                 }//fin Referencia
+                else if (Sector == "DR") //Descuentos y Recargos 
+                {
+                    ors.MoveFirst();
+                    while (!ors.EoF)
+                    {
+                        var result = (from nodo in miXML.Descendants("DscRcgGlobal")
+                                      select nodo).FirstOrDefault();
 
+                        var NroLinDR = ((System.Int32)ors.Fields.Item("NroLinDR").Value);
+                        var TpoMov = ((System.String)ors.Fields.Item("TpoMov").Value).Trim();
+                        var GlosaDR = ((System.String)ors.Fields.Item("GlosaDR").Value).Trim();
+                        var TpoValor = ((System.String)ors.Fields.Item("TpoValor").Value).Trim();
+                        var ValorDR = ((System.Double)ors.Fields.Item("ValorDR").Value);
+
+                        xNodo = new XElement("DscRcgGlobal",
+                                        new XElement("NroLinDR", ((System.Int32)ors.Fields.Item("NroLinDR").Value)),
+                                        new XElement("TpoMov", ((System.String)ors.Fields.Item("TpoMov").Value).Trim()),
+                                        new XElement("GlosaDR", ((System.String)ors.Fields.Item("GlosaDR").Value).Trim()),
+                                        new XElement("TpoValor", ((System.String)ors.Fields.Item("TpoValor").Value).Trim()),
+                                        new XElement("ValorDR", ((System.Double)ors.Fields.Item("ValorDR").Value))
+                                        );
+                        miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
+                        ors.MoveNext();
+                    }
+                }
+                
 
                 return miXML.ToString();
             }
