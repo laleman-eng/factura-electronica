@@ -97,10 +97,10 @@
     <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Interop.SAPbobsCOM, Version=9.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Interop.SAPbobsCOM, Version=10.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>SAP EMSA\Interop.SAPbobsCOM.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>SAP 90 x86 SQL2017\Interop.SAPbobsCOM.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

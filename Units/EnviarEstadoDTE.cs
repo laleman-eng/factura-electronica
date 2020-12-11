@@ -392,14 +392,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         try
                         {
                             if (GlobalSettings.RunningUnderSQLServer)
-                                s = @"SELECT DocEntry FROM {0} WHERE DocNum = {1}";
+                                s = @"SELECT DocEntry FROM {0} WHERE FolioNum  = {1}";
                             else
-                                s = @"SELECT ""DocEntry"" FROM ""{0}"" WHERE ""DocNum"" = {1}";
+                                s = @"SELECT ""DocEntry"" FROM ""{0}"" WHERE ""FolioNum"" = {1}";
 
-                            string sDocNum = oGrid.DataTable.GetValue("RefOri", pVal.Row).ToString().Trim();
-                            s = string.Format(s, table, FSBOf.IsNumber(sDocNum) ? sDocNum : "0");
+                            string sFolioNum = oGrid.DataTable.GetValue("RefOri", pVal.Row).ToString().Trim();
+                            s = string.Format(s, table, FSBOf.IsNumber(sFolioNum) ? sFolioNum : "0");
                             oRecordSet.DoQuery(s);
-                            TempDocNumLink = sDocNum;
+                            TempDocNumLink = sFolioNum;
                             oGrid.DataTable.SetValue("RefOri", pVal.Row, oRecordSet.Fields.Item("DocEntry").Value.ToString());
                         }
                         catch { }
@@ -3168,7 +3168,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     s = @"SELECT COUNT(*) 'Cant', T2.U_FolioRef, T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor, ISNULL(REPLACE(T4.LicTradNum,'.',''),'') as 'RUT'
                                                     FROM [@VID_FEXMLCR] T2
                                                     JOIN [@VID_FEXMLC] T0 ON T0.Code = T2.Code
-                                                    LEFT JOIN OPCH T3 ON CAST(T3.DocNum as NVARCHAR(20)) = T2.U_FolioRef
+                                                    LEFT JOIN OPCH T3 ON CAST(T3.FolioNum as NVARCHAR(20)) = T2.U_FolioRef
                                                     LEFT JOIN OCRD T4 ON T3.CardCode = T4.CardCode
                                                     WHERE T2.Code = '{0}'
                                                     AND T2.U_TpoDocRef = '33'
@@ -3178,7 +3178,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     s = @"SELECT COUNT(*) ""Cant"", T2.""U_FolioRef"", T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"", IFNULL(REPLACE(T4.""LicTradNum"",'.',''),'') as ""RUT""
                                                   FROM ""@VID_FEXMLCR"" T2
                                                   JOIN ""@VID_FEXMLC"" T0 ON T0.""Code"" = T2.""Code""
-                                                  LEFT JOIN ""OPCH"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
+                                                  LEFT JOIN ""OPCH"" T3 ON CAST(T3.""FolioNum"" as VARCHAR(20)) = T2.""U_FolioRef""
                                                   LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
                                                  WHERE T2.""Code"" = '{0}'
                                                    AND T2.""U_TpoDocRef"" = '33'
@@ -3239,14 +3239,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
                                                         FROM OPCH T0
                                                         JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
-                                                        WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}'
+                                                        WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}'
                                                         AND T0.CardCode = '{1}'
                                                         GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
                         else
                             s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
                                                         FROM ""OPCH"" T0
                                                         JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
-                                                        WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}'
+                                                        WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}'
                                                         AND T0.""CardCode"" = '{1}'
                                                         GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
                         s = String.Format(s, FolioOC, CardCode);
@@ -3324,7 +3324,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     s = @"SELECT COUNT(*) 'Cant', T2.U_FolioRef, T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor, ISNULL(REPLACE(T4.LicTradNum,'.',''),'') as 'RUT'
                                                     FROM [@VID_FEXMLCR] T2
                                                     JOIN [@VID_FEXMLC] T0 ON T0.Code = T2.Code
-                                                    LEFT JOIN {1} T3 ON CAST(T3.DocNum as NVARCHAR(20)) = T2.U_FolioRef
+                                                    LEFT JOIN {1} T3 ON CAST(T3.FolioNum as NVARCHAR(20)) = T2.U_FolioRef
                                                     LEFT JOIN OCRD T4 ON T3.CardCode = T4.CardCode
                                                     WHERE T2.Code = '{0}'
                                                     AND T2.U_TpoDocRef = '{2}'
@@ -3334,7 +3334,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     s = @"SELECT COUNT(*) ""Cant"", T2.""U_FolioRef"", T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"", IFNULL(REPLACE(T4.""LicTradNum"",'.',''),'') as ""RUT""
                                                   FROM ""@VID_FEXMLCR"" T2
                                                   JOIN ""@VID_FEXMLC"" T0 ON T0.""Code"" = T2.""Code""
-                                                  LEFT JOIN ""{1}"" T3 ON CAST(T3.""DocNum"" as VARCHAR(20)) = T2.""U_FolioRef""
+                                                  LEFT JOIN ""{1}"" T3 ON CAST(T3.""FolioNum"" as VARCHAR(20)) = T2.""U_FolioRef""
                                                   LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
                                                  WHERE T2.""Code"" = '{0}'
                                                    AND T2.""U_TpoDocRef"" = '{2}'
@@ -3420,14 +3420,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
                                                         FROM {2} T0
                                                         JOIN {3} T1 ON T1.DocEntry = T0.DocEntry
-                                                        WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}'
+                                                        WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}'
                                                         AND T0.CardCode = '{1}'
                                                         GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
                         else
                             s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
                                                         FROM ""{2}"" T0
                                                         JOIN ""{3}"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
-                                                        WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}'
+                                                        WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}'
                                                         AND T0.""CardCode"" = '{1}'
                                                         GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
                         s = String.Format(s, FolioRef, CardCode, table, table1);
@@ -3474,13 +3474,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               FROM OPCH T0
                                               JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                               JOIN {1} T3 ON T3.DocEntry = T1.BaseEntry
-                                              WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = {2}"; //22 OC 20 EM
+                                              WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = {2}"; //22 OC 20 EM
                                     else
                                         s = @"SELECT T1.""BaseDocNum"", T1.""BaseEntry"", T1.""BaseType"", T3.""DocTotal""
                                               FROM ""OPCH"" T0
                                               JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                               JOIN ""{1}"" T3 ON T3.""DocEntry"" = T1.""BaseEntry""
-                                              WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = {2}"; //22 OC 20 EM
+                                              WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = {2}"; //22 OC 20 EM
                                     s = String.Format(s, FolioRef, tableRecepcion, objRecepcion);
                                     orsaux.DoQuery(s);
                                     if (orsaux.RecordCount == 0)
@@ -3506,13 +3506,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               FROM ORPC T0
                                               JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
                                               JOIN OPCH T3 ON T3.DocEntry = T1.BaseEntry
-                                              WHERE CAST(T0.DocNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = 18"; //Factura
+                                              WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}' AND T1.BaseType = 18"; //Factura
                                     else
                                         s = @"SELECT T1.""BaseDocNum"", T1.""BaseEntry"", T1.""BaseType"", T3.""DocTotal""
                                               FROM ""ORPC"" T0
                                               JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                               JOIN ""OPCH"" T3 ON T3.""DocEntry"" = T1.""BaseEntry""
-                                              WHERE CAST(T0.""DocNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = 18"; //22 OC 20 EM
+                                              WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}' AND T1.""BaseType"" = 18"; //22 OC 20 EM
                                     s = String.Format(s, FolioRef);
                                     orsaux.DoQuery(s);
                                     if (orsaux.RecordCount == 0)
@@ -3630,14 +3630,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
                                             FROM OPCH T0
                                             JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
-                                            WHERE T0.DocNum = {0}
+                                            WHERE T0.FolioNum = {0}
                                             AND T0.CardCode = '{1}'
                                             GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
                             else
                                 s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
                                             FROM ""OPCH"" T0
                                             JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
-                                            WHERE T0.""DocNum"" = {0}
+                                            WHERE T0.""FolioNum"" = {0}
                                             AND T0.""CardCode"" = '{1}'
                                             GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
                         }
@@ -3647,14 +3647,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
                                             FROM ORPC T0
                                             JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
-                                            WHERE T0.DocNum = {0}
+                                            WHERE T0.FolioNum = {0}
                                             AND T0.CardCode = '{1}'
                                             GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
                             else
                                 s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
                                             FROM ""ORPC"" T0
                                             JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
-                                            WHERE T0.""DocNum"" = {0}
+                                            WHERE T0.""FolioNum"" = {0}
                                             AND T0.""CardCode"" = '{1}'
                                             GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
                         }
@@ -3699,7 +3699,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               FROM OPCH T0
                                               JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
-                                               AND T0.DocNum = {0}
+                                               AND T0.FolioNum = {0}
                                             UNION 
                                             SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode 
                                               FROM OPOR T0
@@ -3708,13 +3708,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.BaseType = T0.ObjType
 			                                              AND P1.BaseLine = T1.LineNum
                                              WHERE 1=1
-                                               AND T0.DocNum = {0}";
+                                               AND T0.FolioNum = {0}";
                                 else
                                     s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode"" 
                                               FROM ""OPCH"" T0
                                               JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
-                                               AND T0.""DocNum"" = {0}
+                                               AND T0.""FolioNum"" = {0}
                                             UNION 
                                             SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"", P1.""ItemCode"" 
                                               FROM ""OPOR"" T0
@@ -3723,7 +3723,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.""BaseType"" = T0.""ObjType""
 			                                              AND P1.""BaseLine"" = T1.""LineNum""
                                              WHERE 1=1
-                                               AND T0.""DocNum"" = {0}";
+                                               AND T0.""FolioNum"" = {0}";
                             }
                             else  //referencia a una NC
                             {
@@ -3732,7 +3732,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               FROM ORPC T0
                                               JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
-                                               AND T0.DocNum = {0}
+                                               AND T0.FolioNum = {0}
                                             UNION 
                                             SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode
                                               FROM OPOR T0
@@ -3741,13 +3741,13 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.BaseType = T0.ObjType
 			                                              AND P1.BaseLine = T1.LineNum
                                              WHERE 1=1
-                                               AND T0.DocNum = {0}";
+                                               AND T0.FolioNum = {0}";
                                 else
                                     s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode""
                                               FROM ""ORPC"" T0
                                               JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
-                                               AND T0.""DocNum"" = {0}
+                                               AND T0.""FolioNum"" = {0}
                                             UNION 
                                             SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" P1.""ItemCode""
                                               FROM ""OPOR"" T0
@@ -3756,7 +3756,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.""BaseType"" = T0.""ObjType""
 			                                              AND P1.""BaseLine"" = T1.""LineNum""
                                              WHERE 1=1
-                                               AND T0.""DocNum"" = {0}";
+                                               AND T0.""FolioNum"" = {0}";
                             }
                             s = String.Format(s, folioRef);
                             orsAux.DoQuery(s);
