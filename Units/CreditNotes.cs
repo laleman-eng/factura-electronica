@@ -804,6 +804,22 @@ namespace Factura_Electronica_VK.CreditNotes
 
                 if ((pVal.EventType == BoEventTypes.et_ITEM_PRESSED) && (!pVal.BeforeAction))
                 {
+
+                    //New nota de credito Autorizado AC
+                    if ((pVal.ItemUID == "1") && (oForm.Mode == BoFormMode.fm_OK_MODE))
+                    {
+                        var bdraft = false;
+                        if (oForm.Title.Contains("Borrador"))
+                            bdraft = true;
+                        else if (oForm.Title.Contains("Draft"))
+                            bdraft = true;
+                        if (oForm.BusinessObject.Type == "14")
+                            CargarReferencia(oForm.BusinessObject.Type, ((System.String)oForm.DataSources.DBDataSources.Item("ORIN").GetValue("DocEntry", 0)).Trim(), bdraft);
+                        else
+                            CargarReferencia(oForm.BusinessObject.Type, ((System.String)oForm.DataSources.DBDataSources.Item("ORPC").GetValue("DocEntry", 0)).Trim(), bdraft);
+                    }
+                    // fin new nota de credito Autorizado AC
+                    
                     if (pVal.ItemUID == "VID_FEDCTO")
                         oForm.PaneLevel = 333;
 
