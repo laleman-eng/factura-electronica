@@ -1996,7 +1996,10 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
             return respuesta;
 
         }
-
+        /// <summary>
+        /// Metodo que se encarga de validar el grid luego de cargarse
+        /// </summary>
+        /// <param name="MostrarMensajes"></param>
         private void ValidarDocumentos(bool MostrarMensajes = true)
         {
             SAPbouiCOM.ProgressBar oProgressBar = null;
@@ -2102,7 +2105,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         }
 
 
-                        //colorea en verde para mostrar que tiene PDF
+                        //colorea en Anaranjado para mostrar que tiene PDF
                         if (((System.String)oGrid.DataTable.GetValue("U_Xml", valorFila)).Trim() == "")
                             oGrid.CommonSetting.SetCellFontColor(numfila + 1, 5, ColorTranslator.ToOle(Color.DarkOrange));
                         //oGrid.CommonSetting.SetCellFontStyle(numfila + 1, 5, BoFontStyle.fs_Bold);
@@ -3236,14 +3239,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     {
                         //Busca datos de la Factura
                         if (GlobalSettings.RunningUnderSQLServer)
-                            s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, COUNT(*) 'Cant'
+                            s = @"SELECT T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate, T0.PayBlock, COUNT(*) 'Cant'
                                                         FROM OPCH T0
                                                         JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                                         WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}'
                                                         AND T0.CardCode = '{1}'
                                                         GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
                         else
-                            s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", COUNT(*) ""Cant""
+                            s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", T0.""PayBlock"", COUNT(*) ""Cant""
                                                         FROM ""OPCH"" T0
                                                         JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                                         WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}'
@@ -3267,6 +3270,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             var CantLineasFE = ((System.Int32)orsaux.Fields.Item("Cant").Value);
                             var AnuladoFE = ((System.String)orsaux.Fields.Item("CANCELED").Value).Trim();
                             var Autorizada = ((System.String)orsaux.Fields.Item("Confirmed").Value).Trim();
+                            var bloqueoPago = ((System.String)orsaux.Fields.Item("PayBlock").Value).Trim();
 
                             if (FEDocStatus != "O")
                             {
@@ -3282,6 +3286,12 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                             {
                                 respuesta = "La Factura en SAP esta Anulada, ";
                                 ValidaResL = "FE ANULADA";
+                            }
+
+                            if (bloqueoPago == "Y")
+                            {
+                                respuesta = "La Factura en SAP esta con bloquedo de pago, ";
+                                ValidaResL = "FE BLOQUEO";
                             }
 
                             if (FEDocStatus == "O" && AnuladoFE == "N")
@@ -3627,14 +3637,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         if (tpoRef == "33") //si NC o ND referencia a factura 
                         {
                             if (GlobalSettings.RunningUnderSQLServer)
-                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
+                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.PayBlock, COUNT(*) 'Cant'
                                             FROM OPCH T0
                                             JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                             WHERE T0.FolioNum = {0}
                                             AND T0.CardCode = '{1}'
                                             GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
                             else
-                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
+                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""PayBlock"", COUNT(*) ""Cant""
                                             FROM ""OPCH"" T0
                                             JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                             WHERE T0.""FolioNum"" = {0}
@@ -3668,6 +3678,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         }
                         else
                         {
+                            var bloqueoPago = ((System.String)ors.Fields.Item("PayBlock").Value).Trim();
+
+                            if (tpoRef == "33" && bloqueoPago == "Y" && TipoDoc =="61")
+                            {
+                                FSBOApp.StatusBar.SetText("Factura Referenciada se encuentra en estado bloqueo de pago ", BoMessageTime.bmt_Short, BoStatusBarMessageType.smt_Warning);
+                                AgregarMensajeGridResumen("Factura Referenciada se encuentra en estado bloqueo de pago ", "", true);
+                                return false;
+                            }
+
                             var CantLineasOC = ((System.Int32)ors.Fields.Item("Cant").Value);
                             var OCDocEntry = ((System.Int32)ors.Fields.Item("DocEntry").Value);
                             var OCDocStatus = ((System.String)ors.Fields.Item("DocStatus").Value).Trim();
@@ -3765,13 +3784,19 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                 var men = "";
                                 if (TipoDoc == "61") //si NC
                                 {
-                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseCreditNotes));
+                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oDrafts));
+                                    oDocuments.DocObjectCode = BoObjectTypes.oPurchaseCreditNotes;
+                                    //oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseCreditNotes));
                                     men = "Nota de Credito";
                                 }
                                 else
                                 {
-                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseInvoices));
+                                    oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oDrafts));
+                                    oDocuments.DocObjectCode = BoObjectTypes.oPurchaseInvoices;
                                     oDocuments.DocumentSubType = BoDocumentSubType.bod_PurchaseDebitMemo;
+
+                                    //oDocuments = ((SAPbobsCOM.Documents)FCmpny.GetBusinessObject(BoObjectTypes.oPurchaseInvoices));
+                                    //oDocuments.DocumentSubType = BoDocumentSubType.bod_PurchaseDebitMemo;
                                     men = "Nota de Debito";
                                 }
                                 oDocuments.CardCode = CardCode;
@@ -3826,14 +3851,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     //guardar registro para monitor de registros creados
                                     var NuevoDocEntry = FCmpny.GetNewObjectKey();
                                     if (GlobalSettings.RunningUnderSQLServer)
-                                        s = @"UPDATE [@VID_FEDTECPRA] SET U_DocEntry = {1}, U_ObjType = '{2}', U_EstadoLey = 'ACD'  WHERE DocEntry = {0}";  //##no realizar cambios a U_EstadoLey al realizar pruebas 
+                                        s = @"UPDATE [@VID_FEDTECPRA] SET U_DocEntry = {1}, U_ObjType = '{2}', U_EstadoLey = 'ACD'  WHERE DocEntry = {0}";  
                                     else
                                         s = @"UPDATE ""@VID_FEDTECPRA"" SET ""U_DocEntry"" = {1}, ""U_ObjType"" = '{2}',  ""U_EstadoLey"" = 'ACD' WHERE ""DocEntry"" = {0}";
                                     if (TipoDoc == "61") 
                                         s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO
                                     else
                                         s = String.Format(s, DocEntry, NuevoDocEntry, "18");
-                                    //orsAux.DoQuery(s);
+                                    orsAux.DoQuery(s);
                                     AgregarMensajeGridResumen("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), NuevoDocEntry);
                                 }
                             }
