@@ -374,6 +374,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     else if (pVal.ColUID == "RefOri")
                     {
                         string objType = oGrid.DataTable.GetValue("TpoRefOri", pVal.Row).ToString();
+                        string rut = oGrid.DataTable.GetValue("U_RUT", pVal.Row).ToString();
                         string table;
                         switch (objType)
                         {
@@ -392,12 +393,20 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         try
                         {
                             if (GlobalSettings.RunningUnderSQLServer)
-                                s = @"SELECT DocEntry FROM {0} WHERE FolioNum  = {1}";
+                                s = @"SELECT T0.DocEntry 
+                                    FROM {0} T0 
+                                    JOIN OCRD T1 ON T0.CardCode = T1.CardCode
+                                    WHERE FolioNum  = {1}
+                                    AND REPLACE (T1.LicTradNum,'.','') = '{2}'";
                             else
-                                s = @"SELECT ""DocEntry"" FROM ""{0}"" WHERE ""FolioNum"" = {1}";
+                                s = @"SELECT T0.""DocEntry"" 
+                                      FROM ""{0}"" T0 
+                                      JOIN OCRD T1 ON T0.""CardCode"" = T1.""CardCode"" 
+                                      WHERE ""FolioNum"" = {1}   
+                                      AND REPLACE(T1.""LicTradNum"",'.','') = '{2}' ";
 
                             string sFolioNum = oGrid.DataTable.GetValue("RefOri", pVal.Row).ToString().Trim();
-                            s = string.Format(s, table, FSBOf.IsNumber(sFolioNum) ? sFolioNum : "0");
+                            s = string.Format(s, table, FSBOf.IsNumber(sFolioNum) ? sFolioNum : "0", rut);
                             oRecordSet.DoQuery(s);
                             TempDocNumLink = sFolioNum;
                             oGrid.DataTable.SetValue("RefOri", pVal.Row, oRecordSet.Fields.Item("DocEntry").Value.ToString());
@@ -3719,6 +3728,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
                                                AND T0.FolioNum = {0}
+                                               AND T0.CardCode = '{1}'
                                             UNION 
                                             SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode 
                                               FROM OPOR T0
@@ -3727,13 +3737,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.BaseType = T0.ObjType
 			                                              AND P1.BaseLine = T1.LineNum
                                              WHERE 1=1
-                                               AND T0.FolioNum = {0}";
+                                               AND T0.FolioNum = {0}
+                                               AND T0.CardCode = '{1}'";
                                 else
                                     s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode"" 
                                               FROM ""OPCH"" T0
                                               JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
                                                AND T0.""FolioNum"" = {0}
+                                               AND T0.""CardCode"" = '{1}'
                                             UNION 
                                             SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"", P1.""ItemCode"" 
                                               FROM ""OPOR"" T0
@@ -3742,7 +3754,8 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.""BaseType"" = T0.""ObjType""
 			                                              AND P1.""BaseLine"" = T1.""LineNum""
                                              WHERE 1=1
-                                               AND T0.""FolioNum"" = {0}";
+                                               AND T0.""FolioNum"" = {0}
+                                               AND T0.""CardCode"" = '{1}'";
                             }
                             else  //referencia a una NC
                             {
@@ -3752,6 +3765,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                               JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
                                              WHERE 1=1
                                                AND T0.FolioNum = {0}
+                                               AND T0.CardCode = '{1}'
                                             UNION 
                                             SELECT P1.DocEntry, P1.LineNum, P1.ObjType, P1.Quantity, P1.ItemCode
                                               FROM OPOR T0
@@ -3760,13 +3774,15 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.BaseType = T0.ObjType
 			                                              AND P1.BaseLine = T1.LineNum
                                              WHERE 1=1
-                                               AND T0.FolioNum = {0}";
+                                               AND T0.FolioNum = {0}
+                                               AND T0.CardCode = '{1}'";
                                 else
                                     s = @"SELECT T0.""DocEntry"", T1.""LineNum"", T1.""ObjType"", T1.""Quantity"", T1.""ItemCode""
                                               FROM ""ORPC"" T0
                                               JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                              WHERE 1=1
                                                AND T0.""FolioNum"" = {0}
+                                               AND T0.""CardCode"" = '{1}'
                                             UNION 
                                             SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" P1.""ItemCode""
                                               FROM ""OPOR"" T0
@@ -3775,9 +3791,10 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                           AND P1.""BaseType"" = T0.""ObjType""
 			                                              AND P1.""BaseLine"" = T1.""LineNum""
                                              WHERE 1=1
-                                               AND T0.""FolioNum"" = {0}";
+                                               AND T0.""FolioNum"" = {0}
+                                               AND T0.""CardCode"" = '{1}'";
                             }
-                            s = String.Format(s, folioRef);
+                            s = String.Format(s, folioRef,CardCode);
                             orsAux.DoQuery(s);
                             if (orsAux.RecordCount > 0)
                             {
