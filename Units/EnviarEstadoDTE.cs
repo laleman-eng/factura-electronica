@@ -3244,14 +3244,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                         JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                                         WHERE CAST(T0.FolioNum as NVARCHAR(30)) = '{0}'
                                                         AND T0.CardCode = '{1}'
-                                                        GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate";
+                                                        GROUP BY T0.DocEntry, T0.DocStatus, T0.CANCELED, T0.Confirmed, T0.DocTotal, T0.VatSum, T0.DocDate ,T0.PayBlock";
                         else
                             s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"", T0.""PayBlock"", COUNT(*) ""Cant""
                                                         FROM ""OPCH"" T0
                                                         JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                                         WHERE CAST(T0.""FolioNum"" as NVARCHAR(30)) = '{0}'
                                                         AND T0.""CardCode"" = '{1}'
-                                                        GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                                                        GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""CANCELED"", T0.""Confirmed"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ,T0.""PayBlock""  ";
                         s = String.Format(s, FolioOC, CardCode);
                         orsaux.DoQuery(s);
 
@@ -3642,14 +3642,14 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                             JOIN PCH1 T1 ON T1.DocEntry = T0.DocEntry
                                             WHERE T0.FolioNum = {0}
                                             AND T0.CardCode = '{1}'
-                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
+                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate , T0.PayBlock";
                             else
                                 s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""PayBlock"", COUNT(*) ""Cant""
                                             FROM ""OPCH"" T0
                                             JOIN ""PCH1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                             WHERE T0.""FolioNum"" = {0}
                                             AND T0.""CardCode"" = '{1}'
-                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" , T0.""PayBlock"" ";
                         }
                         else  //referencia a una NC
                         {
