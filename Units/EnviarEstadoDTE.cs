@@ -580,7 +580,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                     string message = oGrid2.DataTable.GetValue("Descripcion", pVal.Row).ToString();
                     if (message.Contains("Credito"))
                     {
-                        ((EditTextColumn)oGrid2.Columns.Item("Documento")).LinkedObjectType = "19";
+                        ((EditTextColumn)oGrid2.Columns.Item("Documento")).LinkedObjectType = "112";
                     }
                     
                 }
@@ -3184,6 +3184,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                     LEFT JOIN OCRD T4 ON T3.CardCode = T4.CardCode
                                                     WHERE T2.Code = '{0}'
                                                     AND T2.U_TpoDocRef = '33'
+                                                    AND T0.U_RUTEmisor = REPLACE(T4.LicTradNum,'.','')
                                                     GROUP BY T2.U_FolioRef
                                                     , T0.U_FchEmis, T0.U_FchVenc, T0.U_RznSoc, T0.U_MntNeto, T0.U_MntExe, T0.U_MntTotal, T0.U_IVA, T0.U_RUTEmisor,T4.LicTradNum";
                 else
@@ -3194,6 +3195,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                   LEFT JOIN ""OCRD"" T4 ON T3.""CardCode"" = T4.""CardCode""
                                                  WHERE T2.""Code"" = '{0}'
                                                    AND T2.""U_TpoDocRef"" = '33'
+                                                   AND T0.""U_RUTEmisor"" = REPLACE(T4.""LicTradNum"",'.','')
                                                   GROUP BY T2.""U_FolioRef"" 
                                                  , T0.""U_FchEmis"", T0.""U_FchVenc"", T0.""U_RznSoc"", T0.""U_MntNeto"", T0.""U_MntExe"", T0.""U_MntTotal"", T0.""U_IVA"", T0.""U_RUTEmisor"",T4.""LicTradNum"" ";
                 s = String.Format(s, DocEntry);
@@ -3663,19 +3665,19 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                         else  //referencia a una NC
                         {
                             if (GlobalSettings.RunningUnderSQLServer)
-                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, COUNT(*) 'Cant'
+                                s = @"SELECT T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.PayBlock, COUNT(*) 'Cant'
                                             FROM ORPC T0
                                             JOIN RPC1 T1 ON T1.DocEntry = T0.DocEntry
                                             WHERE T0.FolioNum = {0}
                                             AND T0.CardCode = '{1}'
-                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate";
+                                            GROUP BY T0.DocEntry, T0.DocStatus, T0.DocTotal, T0.VatSum, T0.DocDate, T0.""PayBlock""";
                             else
-                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", COUNT(*) ""Cant""
+                                s = @"SELECT T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""PayBlock"", COUNT(*) ""Cant""
                                             FROM ""ORPC"" T0
                                             JOIN ""RPC1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                             WHERE T0.""FolioNum"" = {0}
                                             AND T0.""CardCode"" = '{1}'
-                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" ";
+                                            GROUP BY T0.""DocEntry"", T0.""DocStatus"", T0.""DocTotal"", T0.""VatSum"", T0.""DocDate"" , T0.""PayBlock""";
                         }
                         s = String.Format(s, folioRef, CardCode);
                         ors.DoQuery(s);
@@ -3784,7 +3786,7 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                                AND T0.""FolioNum"" = {0}
                                                AND T0.""CardCode"" = '{1}'
                                             UNION 
-                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"" P1.""ItemCode""
+                                            SELECT P1.""DocEntry"", P1.""LineNum"", P1.""ObjType"", P1.""Quantity"", P1.""ItemCode""
                                               FROM ""OPOR"" T0
                                               JOIN ""POR1"" T1 ON T1.""DocEntry"" = T0.""DocEntry""
                                               JOIN ""PDN1"" P1 ON P1.""BaseEntry"" = T1.""DocEntry""
@@ -3872,9 +3874,9 @@ namespace Factura_Electronica_VK.EnviarEstadoDTE
                                     else
                                         s = @"UPDATE ""@VID_FEDTECPRA"" SET ""U_DocEntry"" = {1}, ""U_ObjType"" = '{2}',  ""U_EstadoLey"" = 'ACD' WHERE ""DocEntry"" = {0}";
                                     if (TipoDoc == "61") 
-                                        s = String.Format(s, DocEntry, NuevoDocEntry, "19");  //revisar aca para la NOTA DE DEBITO
+                                        s = String.Format(s, DocEntry, NuevoDocEntry, "112");  //revisar aca para la NOTA DE DEBITO
                                     else
-                                        s = String.Format(s, DocEntry, NuevoDocEntry, "18");
+                                        s = String.Format(s, DocEntry, NuevoDocEntry, "112");
                                     orsAux.DoQuery(s);
                                     AgregarMensajeGridResumen("Se ha creado satisfactoriamente el documento en SAP, " + men + " -> " + FolioNum.ToString(), NuevoDocEntry);
                                 }
