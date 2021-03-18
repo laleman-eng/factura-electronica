@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using SAPbobsCOM;
 using SAPbouiCOM;
 using VisualD.SBOFunctions;
+using System.Text.RegularExpressions;
 
 namespace DLLparaXML
 {
@@ -19,7 +20,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringInvoice(ref SAPbobsCOM.Recordset ors, ref SAPbobsCOM.Recordset ors2, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -482,7 +483,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         var NroLinDet = ((System.Int32)ors.Fields.Item("NroLinDet").Value);
@@ -490,7 +490,7 @@ namespace DLLparaXML
                         var DescuentoPct = ((System.Double)ors.Fields.Item("DescuentoPct").Value);
                         var IndExe = ((System.Int32)ors.Fields.Item("IndExe").Value);
                         var MontoItem = ((System.Double)ors.Fields.Item("MontoItem").Value);
-                        var VlrCodigo = ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim();
+                        
                         var NmbItem = ((System.String)ors.Fields.Item("NmbItem").Value).Trim();
                         var DscItem = ((System.String)ors.Fields.Item("DscItem").Value).Trim();
                         var PrcItem = ((System.Double)ors.Fields.Item("PrcItem").Value);
@@ -509,10 +509,8 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                       // new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
-                                                        ),
+                                            new XElement("CdgItem"
+                                                ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
                                             new XElement("PrcItem", ((System.Double)ors.Fields.Item("PrcItem").Value)),
@@ -542,19 +540,6 @@ namespace DLLparaXML
                             SBO_f.oLog.OutLog("Campo opcional FchVencim no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
-                        // Campo opcional TpoCodigo
-                        try
-                        {
-                            if (((System.String)ors.Fields.Item("TpoCodigo").Value).Trim() != "")
-                            {
-                                xNodo = new XElement("TpoCodigo", ((System.String)ors.Fields.Item("TpoCodigo").Value).Trim());
-                                miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            SBO_f.oLog.OutLog("Campo opcional TpoCodigo no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
-                        }
 
                         //Campo Opcional Otra Moneda Detalle
                         try
@@ -578,10 +563,61 @@ namespace DLLparaXML
                             SBO_f.oLog.OutLog("Campo opcional Otra Moneda  no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
+                        //Tabla de codigos de items TopCodigo
+                        var iCol = 0;
 
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
 
                         //campos extra Detalle
-                        var iCol = 0;
+                        iCol = 0;
                         while (iCol < ors.Fields.Count)
                         {
                             var NomCol = ors.Fields.Item(iCol).Name;
@@ -674,7 +710,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringLiquidacionFactura(ref SAPbobsCOM.Recordset ors, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -806,7 +842,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         xNodo = new XElement("Detalle",
@@ -815,9 +850,7 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
+                                            new XElement("CdgItem"
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
@@ -827,9 +860,61 @@ namespace DLLparaXML
                                             new XElement("RecargoPct", ((System.Double)ors.Fields.Item("RecargoPct").Value)),
                                             new XElement("TpoDocLiq", ((System.String)ors.Fields.Item("TpoDocLiq").Value).Trim())
                                             );
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+                         
+                        //Tabla de codigos de items TopCodigo
+                        var iCol = 0;
+
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+
                         miXML.Descendants("Liquidacion").LastOrDefault().Add(xNodo);
                         ors.MoveNext();
                     }
@@ -893,7 +978,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringNotaCredito(ref SAPbobsCOM.Recordset ors, ref SAPbobsCOM.Recordset ors2, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -1228,7 +1313,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         xNodo = new XElement("Detalle",
@@ -1237,9 +1321,7 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
+                                            new XElement("CdgItem"
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
@@ -1256,8 +1338,62 @@ namespace DLLparaXML
       
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
 
-                        //campos extra Detalle
+                        //Tabla de codigos de items TopCodigo
                         var iCol = 0;
+
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+
+                        //campos extra Detalle
+                        iCol = 0;
                         while (iCol < ors.Fields.Count)
                         {
                             var NomCol = ors.Fields.Item(iCol).Name;
@@ -1325,7 +1461,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringLiquidacionFacturaNC(ref SAPbobsCOM.Recordset ors, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -1457,7 +1593,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         xNodo = new XElement("Detalle",
@@ -1466,9 +1601,7 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
+                                            new XElement("CdgItem"
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
@@ -1478,9 +1611,60 @@ namespace DLLparaXML
                                             new XElement("RecargoPct", ((System.Double)ors.Fields.Item("RecargoPct").Value)),
                                             new XElement("TpoDocLiq", ((System.String)ors.Fields.Item("TpoDocLiq").Value).Trim())
                                             );
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+
+                        //Tabla de codigos de items TopCodigo
+                        var iCol = 0;
+
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
                         miXML.Descendants("Liquidacion").LastOrDefault().Add(xNodo);
                         ors.MoveNext();
                     }
@@ -1544,7 +1728,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringDelivery(ref SAPbobsCOM.Recordset ors, ref SAPbobsCOM.Recordset ors2, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -1810,7 +1994,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         xNodo = new XElement("Detalle",
@@ -1819,9 +2002,7 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
+                                            new XElement("CdgItem"
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
@@ -1835,9 +2016,7 @@ namespace DLLparaXML
                                             new XElement("CodImpAdic", ((System.String)ors.Fields.Item("CodImpAdic").Value).Trim()),
                                             new XElement("RecargoMonto", ((System.Double)ors.Fields.Item("RecargoMonto").Value))
                                             );
-                        //if (result == null)
-                        //    miXML.Root.Add(xNodo);
-                        //else
+
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
 
                         try
@@ -1853,8 +2032,61 @@ namespace DLLparaXML
                             SBO_f.oLog.OutLog("Campo opcional FchVencim no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
-                        //campos extra Detalle
+                        //Tabla de codigos de items TopCodigo
                         var iCol = 0;
+
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //campos extra Detalle
+                        iCol = 0;
                         while (iCol < ors.Fields.Count)
                         {
                             var NomCol = ors.Fields.Item(iCol).Name;
@@ -1911,7 +2143,7 @@ namespace DLLparaXML
 
         public String GenerarXMLStringPurchase(ref SAPbobsCOM.Recordset ors, ref SAPbobsCOM.Recordset ors2, String TipoDocElec, ref XDocument miXML, String Sector)
         {
-            Int32 i;
+            //Int32 i;
             XElement xNodo = null;
 
             try
@@ -2032,6 +2264,20 @@ namespace DLLparaXML
                                                     new XElement("COMP", ((System.Int32)ors.Fields.Item("COMP").Value)));
                     miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
 
+                    //Campo Opcional CdgIntRecep 
+                    try
+                    {
+                        if (((System.String)ors.Fields.Item("CdgIntRecep").Value).Trim() != "")
+                        {
+                            xNodo = new XElement("CdgIntRecep", ((System.String)ors.Fields.Item("CdgIntRecep").Value).Trim());
+                            miXML.Descendants("Receptor").LastOrDefault().Add(xNodo);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        SBO_f.oLog.OutLog("Campo opcional CdgIntRecep no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                    }
+
                     //para agregar campos EXTRA
                     var iCol = 0;
                     while (iCol < ors.Fields.Count)
@@ -2057,7 +2303,6 @@ namespace DLLparaXML
                     while (!ors.EoF)
                     {
                         var result = (from nodo in miXML.Descendants("Detalle")
-                                      //where nodo.Attribute("id").Value == "1234"
                                       select nodo).FirstOrDefault();
 
                         xNodo = new XElement("Detalle",
@@ -2066,9 +2311,7 @@ namespace DLLparaXML
                                             new XElement("DescuentoPct", ((System.Double)ors.Fields.Item("DescuentoPct").Value)),
                                             new XElement("IndExe", ((System.Int32)ors.Fields.Item("IndExe").Value)),
                                             new XElement("MontoItem", ((System.Double)ors.Fields.Item("MontoItem").Value)),
-                                            new XElement("CdgItem",
-                                                        new XElement("TpoCodigo", "INT1"),
-                                                        new XElement("VlrCodigo", ((System.String)ors.Fields.Item("VlrCodigo").Value).Trim())
+                                            new XElement("CdgItem"
                                                         ),
                                             new XElement("NmbItem", ((System.String)ors.Fields.Item("NmbItem").Value).Trim()),
                                             new XElement("DscItem", ((System.String)ors.Fields.Item("DscItem").Value).Trim()),
@@ -2085,8 +2328,61 @@ namespace DLLparaXML
 
                         miXML.Descendants("Documento").LastOrDefault().Add(xNodo);
 
-                        //campos extra Detalle
+                        //Tabla de codigos de items TopCodigo
                         var iCol = 0;
+
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("TpoCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //Tabla de codigos de items VlrCodigo
+                        iCol = 0;
+                        while (iCol < ors.Fields.Count)
+                        {
+                            var NomCol = ors.Fields.Item(iCol).Name;
+
+                            if (NomCol.Contains("VlrCodigo"))
+                            {
+                                s = ((System.String)ors.Fields.Item(NomCol).Value).Trim();
+                                if (s != "")
+                                {
+                                    string value = NomCol.Substring(NomCol.Length - 1, 1);
+                                    if (Regex.IsMatch(value, @"^[0-9]+$"))
+                                    {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
+                                        xNodo = new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+                                    }
+                                    else
+                                        xNodo = new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim());
+
+                                    miXML.Descendants("CdgItem").LastOrDefault().Add(xNodo);
+                                }
+                            }
+                            iCol++;
+                        }
+
+                        //campos extra Detalle
+                        iCol = 0;
                         while (iCol < ors.Fields.Count)
                         {
                             var NomCol = ors.Fields.Item(iCol).Name;

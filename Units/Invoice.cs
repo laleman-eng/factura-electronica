@@ -3209,7 +3209,7 @@ namespace Factura_Electronica_VK.Invoice
                     else
                         sXML = Dll.GenerarXMLStringInvoice(ref ors, ref ors2, TipoDocElec, ref miXML, "D");
 
-                   // SBO_f.oLog.OutLog(sXML);  TEST para visualizar XML de detalle
+                    SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
                     if (sXML == "")
                         throw new Exception("Problema para generar xml Documento electronico (Detalle)" + TipoDocElec);
                     if (ActDebug == "Y")
