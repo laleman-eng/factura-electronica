@@ -32,7 +32,7 @@ namespace DLLparaXML
                     var E2 = ((System.String)ors.Fields.Item("FchVenc").Value).Trim();
                     var E3 = ((System.String)ors.Fields.Item("TipoDTE").Value).Trim();
                     var E4 = ((System.Int32)ors.Fields.Item("Folio").Value);
-                    var E5 = ((System.String)ors.Fields.Item("IndServicio").Value).Trim();
+                    var E5 = ((System.Int32)ors.Fields.Item("IndServicio").Value);
                     var E6 = ((System.Double)ors.Fields.Item("MntBruto").Value);
                     var E7 = ((System.Double)ors.Fields.Item("MntCancel").Value);
                     var E8 = ((System.Double)ors.Fields.Item("SaldoInsol").Value);
@@ -361,7 +361,7 @@ namespace DLLparaXML
                         }
 
                          //campo Condicional TotClauVenta
-                        if (((System.Int32)ors.Fields.Item("IndServicio").Value) != 3 || ((System.Int32)ors.Fields.Item("IndServicio").Value) != 4 || ((System.Int32)ors.Fields.Item("IndServicio").Value) != 5)
+                        if (((System.Int32)ors.Fields.Item("IndServicio").Value) != 3 && ((System.Int32)ors.Fields.Item("IndServicio").Value) != 4 &&  ((System.Int32)ors.Fields.Item("IndServicio").Value) != 5)
                         {
                             try
                             {
@@ -399,7 +399,7 @@ namespace DLLparaXML
                         }
                         catch (Exception e)
                         {
-                            SBO_f.oLog.OutLog("Campo opcional NombreTransp no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
+                            SBO_f.oLog.OutLog("Campo opcional RUTCiaTransp no soportado en query, Sector " + Sector + " -> " + e.Message + ", TRACE " + e.StackTrace);
                         }
 
                         //campo opcional NomCiaTransp
@@ -491,7 +491,7 @@ namespace DLLparaXML
                         {
                             if ((System.Int32)ors.Fields.Item("Tara").Value > -1)
                             {
-                                xNodo = new XElement("Tara", ((System.String)ors.Fields.Item("Tara").Value).Trim());
+                                xNodo = new XElement("Tara", ((System.Int32)ors.Fields.Item("Tara").Value));
                                 miXML.Descendants("Aduana").LastOrDefault().Add(xNodo);
                             }
                         }
@@ -505,7 +505,7 @@ namespace DLLparaXML
                         {
                             if ((System.Int32)ors.Fields.Item("TotItems").Value > -1)
                             {
-                                xNodo = new XElement("TotItems", ((System.String)ors.Fields.Item("TotItems").Value).Trim());
+                                xNodo = new XElement("TotItems", ((System.Int32)ors.Fields.Item("TotItems").Value));
                                 miXML.Descendants("Aduana").LastOrDefault().Add(xNodo);
                             }
                         }
@@ -518,9 +518,9 @@ namespace DLLparaXML
                         //campo opcional PesoBruto
                         try
                         {
-                            if ((System.Int32)ors.Fields.Item("PesoBruto").Value > -1)
+                            if ((System.Double)ors.Fields.Item("PesoBruto").Value > -1)
                             {
-                                xNodo = new XElement("PesoBruto", ((System.String)ors.Fields.Item("PesoBruto").Value).Trim());
+                                xNodo = new XElement("PesoBruto", ((System.Double)ors.Fields.Item("PesoBruto").Value));
                                 miXML.Descendants("Aduana").LastOrDefault().Add(xNodo);
                             }
                         }
@@ -532,9 +532,9 @@ namespace DLLparaXML
                         //campo opcional PesoNeto
                         try
                         {
-                            if ((System.Int32)ors.Fields.Item("PesoNeto").Value > -1)
+                            if ((System.Double)ors.Fields.Item("PesoNeto").Value > -1)
                             {
-                                xNodo = new XElement("PesoNeto", ((System.String)ors.Fields.Item("PesoNeto").Value).Trim());
+                                xNodo = new XElement("PesoNeto", ((System.Double)ors.Fields.Item("PesoNeto").Value));
                                 miXML.Descendants("Aduana").LastOrDefault().Add(xNodo);
                             }
                         }
