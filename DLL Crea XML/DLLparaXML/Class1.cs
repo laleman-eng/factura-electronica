@@ -763,6 +763,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -775,11 +776,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
@@ -1086,6 +1088,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -1098,11 +1101,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
@@ -1587,6 +1591,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -1599,11 +1604,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
@@ -1886,6 +1892,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -1898,11 +1905,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
@@ -2331,6 +2339,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -2343,11 +2352,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
@@ -2652,6 +2662,7 @@ namespace DLLparaXML
                                     string value = NomCol.Substring(NomCol.Length - 1, 1);
                                     if (Regex.IsMatch(value, @"^[0-9]+$"))  //si contiene numero
                                     {
+                                        string NomColaux = NomCol.Substring(0, NomCol.Length - 1);
                                         var yCol = 0;
                                         while (yCol < ors.Fields.Count)
                                         {
@@ -2664,11 +2675,12 @@ namespace DLLparaXML
                                                     string valueVlr = NomColVlr.Substring(NomColVlr.Length - 1, 1);
                                                     if (Regex.IsMatch(valueVlr, @"^[0-9]+$"))
                                                     {
+                                                        string NomColVlrAux = NomColVlr.Substring(0, NomColVlr.Length - 1);
                                                         if (value == valueVlr)  //si ambos numeros son iguales de TpoCodigo & VlrCodigo
                                                         {
                                                             xNodo = new XElement("CdgItem",
-                                                                new XElement(NomCol, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
-                                                                new XElement(NomColVlr, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
+                                                                new XElement(NomColaux, ((System.String)ors.Fields.Item(NomCol).Value).Trim()),
+                                                                new XElement(NomColVlrAux, ((System.String)ors.Fields.Item(NomColVlr).Value).Trim())
                                                             );
                                                             miXML.Descendants("Detalle").LastOrDefault().Add(xNodo);
                                                         }
