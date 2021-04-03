@@ -3187,7 +3187,7 @@ namespace Factura_Electronica_VK.Invoice
                         Reg.SBO_f.oLog.OutLog("XML DE Encabezado: " + sXML + " " + t.Hour + ":" + t.Minute + ":" + t.Second + ":" + t.Millisecond);
                     }
 
-                    //    SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de detalle
+                   // SBO_f.oLog.OutLog(sXML);  //TEST para visualizar XML de Encabezado
 
                     //PARA DETALLE
                     if (RunningUnderSQLServer)

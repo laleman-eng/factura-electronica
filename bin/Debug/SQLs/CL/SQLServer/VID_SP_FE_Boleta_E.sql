@@ -11,7 +11,7 @@ BEGIN
 		,T0.DocDueDate														[FchVenc]
 		,@TipoDoc															[TipoDTE]
 		,T0.FolioNum														[Folio]
-		,CAST(T0.IndServicio AS VARCHAR)									[IndServicio]
+		,T0.IndServicio														[IndServicio]
 		,0.0																[MntBruto]
 		,0.0																[MntCancel]
 		,0.0																[SaldoInsol]

@@ -13,7 +13,7 @@ BEGIN
 		,T0."DocDueDate"													"FchVenc"
 		,:TipoDoc															"TipoDTE"
 		,T0."FolioNum"														"Folio"
-		,TO_VARCHAR(T0."IndServicio")										"IndServicio"
+		,T0."IndServicio"													"IndServicio"
 		,0.0																"MntBruto"
 		,0.0																"MntCancel"
 		,0.0																"SaldoInsol"
