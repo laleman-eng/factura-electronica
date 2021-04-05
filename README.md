@@ -1,4 +1,4 @@
-#Fcaturación  Electronica 
+# Facturación  Electronica 
 Addon que permita Administrar todos los Documentos Tributarios Electronicos (DTE) hacia el servicio de Impuesto Interno SII. Desarrollado en #C , en Visual studio 2012 - 2015, puede ser ejecutado en Bases de datos SQL y HANA, en arquitectura de 32Bits a 64bits.
 ## Instalación
 La instalación del Addons, se realiza según el procedimiento estándar de SAP Business One, el cual se describe  en el siguiente link:
