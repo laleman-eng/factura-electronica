@@ -1,5 +1,7 @@
 Factura Electronica
-		Visual Studio 2012 - 2015
+
+		Visual Studio 2012 - 2015 
+		
 		Instalación: se instala como Addon generico, en conjunto con un servicio (Servicio Estado DTE)
 		Demo del Addon
 		Bugs conocidos
