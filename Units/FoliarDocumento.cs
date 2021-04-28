@@ -500,6 +500,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                            AND UPPER(LEFT(ISNULL(N1.BeginStr,''),1)) = 'E'
                            AND ISNULL(T0.FolioNum, 0) = 0
                            AND T0.CANCELED = 'N'
+                           AND ISNULL(T0.Indicator,'NULL') <> 'NL'
                            {4}
                            {5}
                         ";
@@ -513,6 +514,7 @@ namespace Factura_Electronica_VK.FoliarDocumento
                            AND UPPER(LEFT(IFNULL(N1.""BeginStr"",''),1)) = 'E'
                            AND IFNULL(T0.""FolioNum"", 0) = 0
                            AND T0.""CANCELED"" = 'N'
+                           AND IFNULL(T0.""Indicator"",'NULL') <> 'NL'
                            {4}
                            {5}
                         ";

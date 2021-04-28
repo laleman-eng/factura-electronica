@@ -215,7 +215,7 @@ namespace Factura_Electronica_VK.Invoice
                         var TipoDTE = ((System.String)oRecordSet.Fields.Item("Doc").Value).Trim();
                         if ((System.String)(oRecordSet.Fields.Item("Valor").Value) == "E")
                         {
-                            if ((DocSubType == "IB") || (DocSubType == "EB"))
+                            if ((DocSubType == "IB") || (DocSubType == "EB"))  //Boleta o Boleta Exenta
                             {
                                 oForm.Items.Item("VID_Estado").Visible = false;
                                 oForm.Items.Item("lblEstado").Visible = false;
@@ -871,6 +871,11 @@ namespace Factura_Electronica_VK.Invoice
                                 TipoDocElec = "43";
                                 TTipoDoc = "43";
                             }
+                            else if (sDocSubType == "--" && (Tipo == "E" || Tipo == "e") && TipoDocElect == "34")
+                            {
+                                TipoDocElec = "34";
+                                TTipoDoc = "34";
+                            }
                             else if (sDocSubType == "--") //Factura
                                 TipoDocElec = "33";
                             else if (sDocSubType == "IE") //Factura Exenta
@@ -981,6 +986,8 @@ namespace Factura_Electronica_VK.Invoice
                                                     oDocument.FolioNumber = FolioNum;
                                                     if (TipoDocElec == "110") //Factura Exportacion
                                                         oDocument.FolioPrefixString = "FX";
+                                                    else if (sDocSubType == "--" && TipoDocElect == "34")   //Documetno Factura pero con Serie Factura Exenta
+                                                        oDocument.FolioPrefixString = "EE";
                                                     else if (sDocSubType == "--") //Factura
                                                         oDocument.FolioPrefixString = "FE";
                                                     else if (sDocSubType == "IE") //Factura Exenta

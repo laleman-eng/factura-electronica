@@ -85,3 +85,15 @@ C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug
 C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
 C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.exe
 C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.pdb
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe.config
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.exe
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Servicio Estado DTE.pdb
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\Interop.SAPbobsCOM.dll
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\System.Net.Http.dll
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\System.Net.Http.xml
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\bin\Debug\es\System.Net.Http.resources.dll
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.ProjectInstaller.resources
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio_Estado_DTE.Service1.resources
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.csproj.GenerateResource.Cache
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.exe
+F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\obj\Debug\Servicio Estado DTE.pdb

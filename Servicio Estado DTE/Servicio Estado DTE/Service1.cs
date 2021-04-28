@@ -12,7 +12,7 @@ using SAPbobsCOM;
 using System.Globalization;
 using System.Net;
 using System.Xml;
-using ServiceStack.Text;
+//using ServiceStack.Text;
 using System.Net.Http;
 using System.Net.Mail;
 //using System.Core;
@@ -33,7 +33,7 @@ namespace Servicio_Estado_DTE
         public SAPbobsCOM.Recordset oRecordSet = null;
         public CultureInfo _nf = new System.Globalization.CultureInfo("en-US");
         public TFunctions Func;
-        public String sVersion = "1.0";
+        public String sVersion = "1.1";
         public String TaxIdNum;
         public Boolean RunningSQLServer = false;
         public Boolean bMultiSoc;
@@ -303,9 +303,22 @@ namespace Servicio_Estado_DTE
                             finally
                             {
                                 if (oCompany != null)
+                                {
+                                    Func.AddLog("Cierre Conexion SAP BD"); 
                                     oCompany.Disconnect();
-                                oCompany = null;
-                                oRecordSet = null;
+                                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oCompany);
+                                    oCompany = null;
+                                   
+                                }
+                                if (oRecordSet != null)
+                                {
+                                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                                    oRecordSet = null;
+                                }
+
+                                GC.Collect();
+                                GC.WaitForPendingFinalizers();
+                                GC.Collect();
                             }
                         }
                     }
@@ -323,9 +336,13 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
                 Tiempo.Enabled = true;
                 Tiempo.Start();
                 Func.AddLog("Fin");
+                System.Threading.Thread.Sleep(30000);
             }
         }
 
@@ -334,13 +351,8 @@ namespace Servicio_Estado_DTE
         public void ConsultarEstado21(String UserWS, String PassWS, String CompnyName)
         {
             String sObjType;
-            String sDocSubType;
-            String TipoDocElec;
             String sDocEntry;
-            Boolean SeProceso = false;
-            String Json, Id, Validation, Status, sMessage;
-            String SerieP = "";
-            String sFolioNum = "0";
+            String sMessage;
             String sTabla;
             String nMultiSoc;
             Int32 lRetCode;
@@ -350,6 +362,7 @@ namespace Servicio_Estado_DTE
             SAPbobsCOM.Recordset oRecordSetAux = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
             SAPbobsCOM.Documents oDocuments;
             SAPbobsCOM.StockTransfer oStockTransfer;
+            SAPbobsCOM.Recordset oRecordSet = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
 
             try
             {
@@ -498,6 +511,7 @@ namespace Servicio_Estado_DTE
                             response = null;
                             GC.Collect();
                             GC.WaitForPendingFinalizers();
+                            GC.Collect();
                             EstadoDTE = "";
                             if (sMessage == "")
                             {
@@ -537,7 +551,7 @@ namespace Servicio_Estado_DTE
                             response = null;
                             GC.Collect();
                             GC.WaitForPendingFinalizers();
-
+                            GC.Collect();
                             lRetCode = FELOGUptM(((System.Int32)oRecordSet.Fields.Item("DocEntry").Value), ((System.Double)oRecordSet.Fields.Item("U_DocEntry").Value), sObjType, ((System.String)oRecordSet.Fields.Item("U_SubType").Value).Trim(), ((System.String)oRecordSet.Fields.Item("U_SeriePE").Value).Trim(), ((System.Double)oRecordSet.Fields.Item("U_FolioNum").Value), EstadoDTE, sMessage, ((System.String)oRecordSet.Fields.Item("U_TipoDoc").Value).Trim(), ((System.String)oRecordSet.Fields.Item("U_UserCode").Value).Trim(), ((System.String)oRecordSet.Fields.Item("U_Json").Value).Trim(), ((System.String)oRecordSet.Fields.Item("U_Id").Value).Trim(), ((System.String)oRecordSet.Fields.Item("U_Validation").Value).Trim(), ((System.DateTime)oRecordSet.Fields.Item("U_DocDate").Value));
                             if (lRetCode == 0)
                                 Func.AddLog("Error al actualizar Log de Documento Electronico, base " + CompnyName + " -> TipoDoc " + (System.String)(oRecordSet.Fields.Item("U_TipoDoc").Value) + " " + Convert.ToString((System.Double)(oRecordSet.Fields.Item("U_FolioNum").Value)));
@@ -601,7 +615,11 @@ namespace Servicio_Estado_DTE
                                             oRecordSetAux.DoQuery(s);
                                         }
                                     }
-                                    oStockTransfer = null;
+                                    if (oStockTransfer != null)
+                                    {
+                                        System.Runtime.InteropServices.Marshal.ReleaseComObject(oStockTransfer);
+                                        oStockTransfer = null;
+                                    }
                                 }
                                 else
                                 {
@@ -650,7 +668,11 @@ namespace Servicio_Estado_DTE
                                             oRecordSetAux.DoQuery(s);
                                         }
                                     }
-                                    oDocuments = null;
+                                    if (oDocuments != null)
+                                    {
+                                        System.Runtime.InteropServices.Marshal.ReleaseComObject(oDocuments);
+                                        oDocuments = null;
+                                    }
 
                                 }
                             }
@@ -669,14 +691,31 @@ namespace Servicio_Estado_DTE
             {
                 Func.AddLog("**Error ConsultaEstado21, base " + CompnyName + ": version " + sVersion + " - " + o.Message + " ** Trace: " + o.StackTrace);
             }
+            finally
+            {
+                if (oRecordSetAux != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSetAux);
+                    oRecordSetAux = null;
+                }
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+            }
         }
 
         //Consulta estado documentos de venta 1 a 1
         public void ConsultarEstado28_29(String UserWS, String PassWS, String CompnyName)
         {
             Int32 lRetCode;
-            String sErrMsg;
-            String EstadoDTE;
+           // String sErrMsg;
+            //String EstadoDTE;
             String OP28Final, OP29Final;
             String EstadoC = "";
             String EstadoSII = "";
@@ -686,6 +725,7 @@ namespace Servicio_Estado_DTE
             String Descrip;
             String[] EstadosValidos = { "ACD", "RCD", "ERM", "RFP", "RFT" };
             SAPbobsCOM.Recordset oRecordSetAux = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
+            SAPbobsCOM.Recordset oRecordSet = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
 
             try
             {
@@ -752,7 +792,7 @@ namespace Servicio_Estado_DTE
                             reader = null;
                             GC.Collect();
                             GC.WaitForPendingFinalizers();
-
+                            GC.Collect();
                             DateTime.TryParse(jFechaEmis.Value, out FechaEmi);
                             DateTime.TryParse(jFechaSII.Value, out FechaRecep);
                             EstadoLey = jCodigo.Value;
@@ -850,7 +890,7 @@ namespace Servicio_Estado_DTE
                                     reader = null;
                                     GC.Collect();
                                     GC.WaitForPendingFinalizers();
-
+                                    GC.Collect();
                                     if (jCodigo != null)
                                         Descrip = jCodigo.Value + "-" + jDescripcion.Value;
                                     else
@@ -888,10 +928,31 @@ namespace Servicio_Estado_DTE
             {
                 Func.AddLog("**Error ConsultaEstado28, base " + CompnyName + ": version " + sVersion + " - " + o.Message + " ** Trace: " + o.StackTrace);
             }
+            finally
+            {
+                if (oRecordSetAux != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSetAux);
+                    oRecordSetAux = null;
+
+                }
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+            }
+
+
         }//Fin 28
 
         public void DejarAceptadoporDefectoCompra(String CompnyName)
         {
+            SAPbobsCOM.Recordset oRecordSet = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
             Int32 lRetCode;
             try
             {
@@ -953,7 +1014,15 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                ;
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
 
@@ -961,6 +1030,7 @@ namespace Servicio_Estado_DTE
         {
             Int32 lRetCode;
             SAPbobsCOM.Recordset oRecordSetAux = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(BoObjectTypes.BoRecordset));
+            SAPbobsCOM.Recordset oRecordSet = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(BoObjectTypes.BoRecordset));
 
             try
             {
@@ -1052,7 +1122,20 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oRecordSetAux = null;
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+                if (oRecordSetAux != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSetAux);
+                    oRecordSetAux = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
 
@@ -1060,18 +1143,19 @@ namespace Servicio_Estado_DTE
         public void ConsultarEstado36(String UserWS, String PassWS, String CompnyName)
         {
             Int32 lRetCode = 0;
-            String sErrMsg;
+            //String sErrMsg;
             String OP36Final;
             DateTime FECHARECEPSII;
             DateTime FECHAEMIS;
-            DateTime FECHADOC;
+           // DateTime FECHADOC;
             DateTime FECHAVENC;
             String Descrip;
-            String Estado;
-            Boolean bLB = false;
-            Boolean bLN = false;
+            //String Estado;
+            //Boolean bLB = false;
+            //Boolean bLN = false;
             String respuesta = "";
             SAPbobsCOM.Recordset orsaux = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
+            SAPbobsCOM.Recordset oRecordSet = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
             Dictionary<string, string> Documents = new Dictionary<string, string>();
             //SAPbobsCOM.Recordset oRecordSetAux = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
 
@@ -1113,7 +1197,7 @@ namespace Servicio_Estado_DTE
                 reader = null;
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
-
+                GC.Collect();
 
                 foreach (var item in results["Table"])
                 {
@@ -1254,7 +1338,7 @@ namespace Servicio_Estado_DTE
                                 reader1 = null;
                                 GC.Collect();
                                 GC.WaitForPendingFinalizers();
-
+                                GC.Collect();
                                 if (xmlResponse == "")
                                     Func.AddLog("Error descargar xml del documento, base " + CompnyName + " TipoDoc: " + TIPODOC.Trim() + " Folio: " + FOLIO.ToString() + " RUT: " + RUTEMISOR);
                                 else
@@ -1427,14 +1511,26 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                orsaux = null;
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+                if (orsaux != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(orsaux);
+                    oRecordSet = orsaux;
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }//Fin 36
 
         private String ValidarDif(String TipoDif, Double DifPor, Double DifMon, Int32 Dias, Double Monto, Double MontoOC, DateTime Fecha, DateTime FechaOC)
         {
             Double DifCal;
-            String respuesta = "";    
+           // String respuesta = "";    
             try
             {
                 if (TipoDif == "M")  //revisar pra que sea + o - 
@@ -1456,7 +1552,7 @@ namespace Servicio_Estado_DTE
                     if (DifCal > Valor)
                         return "Documento supera valor OC";
                 }
-                
+
                 //Para las diferencias de dias con la OC
                 if (TipoDif == "D")
                 {
@@ -1471,7 +1567,13 @@ namespace Servicio_Estado_DTE
             }
             catch (Exception e)
             {
-                return "Error Validar";
+                return "Error Validar " + e.Message;
+            }
+            finally
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
 
@@ -1506,7 +1608,7 @@ namespace Servicio_Estado_DTE
             String Timbre = "";
             SAPbobsCOM.GeneralService oFEXML = null;
             SAPbobsCOM.GeneralData oFEXMLData = null;
-            SAPbobsCOM.GeneralDataCollection oFEXMLLines = null;
+            //SAPbobsCOM.GeneralDataCollection oFEXMLLines = null;
             SAPbobsCOM.GeneralDataParams oFEXMLParameter = null;
             SAPbobsCOM.GeneralData oChild = null;
             SAPbobsCOM.GeneralDataCollection oChildren = null;
@@ -1628,8 +1730,8 @@ namespace Servicio_Estado_DTE
                     oFEXMLData.SetProperty("U_FchVenc", oDate);
                 }
                 oFEXMLData.SetProperty("U_RznSoc", nRznSoc[0].InnerText);
-                
-                if (nFmaPago!= null)
+
+                if (nFmaPago != null)
                     oFEXMLData.SetProperty("U_FmaPago", nFmaPago[0].InnerText);
                 if (nGiroEmis != null)
                     oFEXMLData.SetProperty("U_GiroEmis", nGiroEmis[0].InnerText);
@@ -1670,7 +1772,7 @@ namespace Servicio_Estado_DTE
                 oFEXMLData.SetProperty("U_PDF417", Timbre);
 
                 oChildren = oFEXMLData.Child("VID_FEXMLCD");
-                Int32 i = 0;
+                //Int32 i = 0;
                 Tag = oXml.GetElementsByTagName("Documento");
                 TagD = ((XmlElement)Tag[0]).GetElementsByTagName("Detalle");
                 foreach (XmlElement nodo in TagD)
@@ -1733,7 +1835,7 @@ namespace Servicio_Estado_DTE
                 }
 
                 oChildren = oFEXMLData.Child("VID_FEXMLCR");
-                i = 0;
+                //i = 0;
                 Tag = oXml.GetElementsByTagName("Documento");
                 TagD = ((XmlElement)Tag[0]).GetElementsByTagName("Referencia");
                 foreach (XmlElement nodo in TagD)
@@ -1767,7 +1869,7 @@ namespace Servicio_Estado_DTE
                 }
 
                 oChildren = oFEXMLData.Child("VID_FEXMLCI");
-                i = 0;
+                //i = 0;
                 Tag = oXml.GetElementsByTagName("Totales");
                 TagD = ((XmlElement)Tag[0]).GetElementsByTagName("ImptoReten");
                 foreach (XmlElement nodo in TagD)
@@ -1801,6 +1903,43 @@ namespace Servicio_Estado_DTE
             {
                 Func.AddLog("Error DescomponerXML, base " + CompnyName + " TipoDoc: " + TipoDoc + " Folio: " + Folio + " RUT: " + RUTEmisor + " -> " + z.Message + ", TRACE " + z.StackTrace);
             }
+            finally
+            {
+                if (oFEXML != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFEXML);
+                    oFEXML = null;
+                }
+                if (oFEXMLData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFEXMLData);
+                    oFEXMLData = null;
+                }
+                if (oFEXMLParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFEXMLParameter);
+                    oFEXMLParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+                if (oChild != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChild);
+                    oChild = null;
+                }
+                if (oChildren != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChildren);
+                    oChildren = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+            }
         }
 
         private Boolean AceptacionReclamacion(String EstadoOriginal, String UserWS, String PassWS, String Folio, String TipoDoc, String RUT, String CompnyName)//, String U_ObjType, Double U_DocEntry)
@@ -1815,7 +1954,7 @@ namespace Servicio_Estado_DTE
             WebResponse response;
             StreamReader reader;
             string responseFromServer;
-            SAPbobsCOM.Recordset oRecordSetAux = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(BoObjectTypes.BoRecordset));
+            //SAPbobsCOM.Recordset oRecordSetAux = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(BoObjectTypes.BoRecordset));
 
             try
             {
@@ -1860,6 +1999,7 @@ namespace Servicio_Estado_DTE
                 reader = null;
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
                 //Evento registrado previamente
                 //if (((System.String)jDescripcion.Value).Contains("Acción Completada OK"))
                 if (((System.String)jStatus.Value).Trim() == "OK")
@@ -1931,6 +2071,7 @@ namespace Servicio_Estado_DTE
                         reader = null;
                         GC.Collect();
                         GC.WaitForPendingFinalizers();
+                        GC.Collect();
                         if (((System.String)jStatus1.Value).Trim() == "OK")
                         {
                             Func.AddLog("Se enviado estado DTE al portal, base " + CompnyName + " TipoDoc " + TipoDoc + " Folio " + Folio.ToString() + " Estado " + EstadoOriginal + " -> " + ((System.String)jDescripcion1.Value).Trim());
@@ -1972,10 +2113,7 @@ namespace Servicio_Estado_DTE
         public void ConsultarEstado27_30(String UserWS, String PassWS, String CompnyName)
         {
             Int32 lRetCode = 0;
-            String sErrMsg;
             String OP27Final, OP30Final;
-            Double Monto = 0;
-            Double IVA = 0;
             String EstadoC = "";
             String EstadoSII = "";
             String EstadoLey = "";
@@ -1983,7 +2121,7 @@ namespace Servicio_Estado_DTE
             DateTime FechaEmi;
             String Descrip;
             String RazonSocial;
-            SAPbobsCOM.Recordset oRecordSetAux = (SAPbobsCOM.Recordset)(oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset));
+            SAPbobsCOM.Recordset oRecordSet = ((SAPbobsCOM.Recordset)oCompany.GetBusinessObject(BoObjectTypes.BoRecordset));
 
             try
             {
@@ -2065,7 +2203,7 @@ namespace Servicio_Estado_DTE
                             response = null;
                             GC.Collect();
                             GC.WaitForPendingFinalizers();
-
+                            GC.Collect();
                             DateTime.TryParse(jFechaEmis.Value, out FechaEmi);
 
                             EstadoLey = (jCodigo.Value == null ? "" : jCodigo.Value);
@@ -2122,7 +2260,7 @@ namespace Servicio_Estado_DTE
                                             reader = null;
                                             GC.Collect();
                                             GC.WaitForPendingFinalizers();
-
+                                            GC.Collect();
                                             Descrip = jCodigo.Value + "-" + jDescripcion.Value;
 
                                             lRetCode = FEDTECompraUpt(Convert.ToString(((System.Int32)oRecordSet.Fields.Item("DocEntry").Value)), "", 0, "", DateTime.ParseExact("19000101", "yyyyMMdd", CultureInfo.InvariantCulture), DateTime.ParseExact("19000101", "yyyyMMdd", CultureInfo.InvariantCulture), 0, "", "", "", "", "", "", Descrip, "");
@@ -2151,6 +2289,19 @@ namespace Servicio_Estado_DTE
             {
                 Func.AddLog("**Error, base " + CompnyName + " ConsultaEstado27: version " + sVersion + " - " + o.Message + " ** Trace: " + o.StackTrace);
             }
+            finally 
+            {
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+            }
+
         }//Fin 27
 
         public Boolean ConectarBaseSAP(String BaseName)
@@ -2226,10 +2377,7 @@ namespace Servicio_Estado_DTE
         {
             XmlNodeList Configuracion;
             XmlNodeList lista;
-            Int32 lRetCode;
             TFunctions Func;
-            String sErrMsg;
-            Boolean _return = false;
 
             Func = new TFunctions();
             try
@@ -2435,6 +2583,25 @@ namespace Servicio_Estado_DTE
             {
                 Func.AddLog("EnviarMail: version " + sVersion + " - " + we.Message + " ** Trace: " + we.StackTrace);
             }
+            finally
+            {
+
+                if (msg != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(msg);
+                    msg = null;
+                }
+                if (oRecordSet != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oRecordSet);
+                    oRecordSet = null;
+                }
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+
+            }
         }
 
 
@@ -2485,12 +2652,30 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                //oFELOGLines = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }                
+                                
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
 
         }//fin
@@ -2555,12 +2740,30 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                //oFELOGLines = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }//fin
 
@@ -2621,7 +2824,7 @@ namespace Servicio_Estado_DTE
                 if ((OC != "") || (NV != ""))
                 {
                     oChildren = oFELOGData.Child("VID_FEDTECPRAD");
-                    int i = 0;
+                    //int i = 0;
                     if (OC != "")
                     {
                         oChild = oChildren.Add();
@@ -2655,13 +2858,41 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                oChild = null;
-                oChildren = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+                if (oChild != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChild);
+                    oChild = null;
+                }
+                if (oChildren != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChildren);
+                    oChildren = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
+
             }
         }//fin
 
@@ -2699,11 +2930,31 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
+
             }
         }//fin
 
@@ -2713,7 +2964,7 @@ namespace Servicio_Estado_DTE
             SAPbobsCOM.GeneralData oFELOGData = null;
             //SAPbobsCOM.GeneralDataCollection oFELOGLines = null;
             SAPbobsCOM.GeneralDataParams oFELOGParameter = null;
-            SAPbobsCOM.CompanyService CmpnyService;
+            SAPbobsCOM.CompanyService CmpnyService = null;
             SAPbobsCOM.GeneralData oChild = null;
             SAPbobsCOM.GeneralDataCollection oChildren = null;
 
@@ -2750,7 +3001,7 @@ namespace Servicio_Estado_DTE
                 if ((OC != "") || (NV != ""))
                 {
                     oChildren = oFELOGData.Child("VID_FEDTECPRAD");
-                    int i = 0;
+                    //int i = 0;
                     if (OC != "")
                     {
                         oChild = oChildren.Add();
@@ -2780,14 +3031,40 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                oChild = null;
-                oChildren = null;
-                //oFELOGLines = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+                if (oChild != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChild);
+                    oChild = null;
+                }
+                if (oChildren != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oChildren);
+                    oChildren = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
 
         }//fin
@@ -2797,9 +3074,8 @@ namespace Servicio_Estado_DTE
         {
             SAPbobsCOM.GeneralService oFELOG = null;
             SAPbobsCOM.GeneralData oFELOGData = null;
-            SAPbobsCOM.GeneralDataCollection oFELOGLines = null;
             SAPbobsCOM.GeneralDataParams oFELOGParameter = null;
-            SAPbobsCOM.CompanyService CmpnyService;
+            SAPbobsCOM.CompanyService CmpnyService= null;
 
             CmpnyService = oCompany.GetCompanyService();
 
@@ -2838,12 +3114,30 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                oFELOGLines = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
 
         }//fin FELOGAdd
@@ -2853,10 +3147,9 @@ namespace Servicio_Estado_DTE
         {
             SAPbobsCOM.GeneralService oFELOG = null;
             SAPbobsCOM.GeneralData oFELOGData = null;
-            SAPbobsCOM.GeneralDataCollection oFELOGLines = null;
             SAPbobsCOM.GeneralDataParams oFELOGParameter = null;
             String StrDummy;
-            SAPbobsCOM.CompanyService CmpnyService;
+            SAPbobsCOM.CompanyService CmpnyService = null;
 
             CmpnyService = oCompany.GetCompanyService();
 
@@ -2904,12 +3197,30 @@ namespace Servicio_Estado_DTE
             }
             finally
             {
-                oFELOG = null;
-                oFELOGData = null;
-                oFELOGLines = null;
-                oFELOGParameter = null;
+                if (oFELOG != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOG);
+                    oFELOG = null;
+                }
+                if (oFELOGData != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGData);
+                    oFELOGData = null;
+                }
+                if (oFELOGParameter != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(oFELOGParameter);
+                    oFELOGParameter = null;
+                }
+                if (CmpnyService != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(CmpnyService);
+                    CmpnyService = null;
+                }
+
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
                 

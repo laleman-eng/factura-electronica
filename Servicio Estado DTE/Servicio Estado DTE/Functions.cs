@@ -36,6 +36,9 @@ namespace Servicio_Estado_DTE.Functions
             {
                 Arch.Flush();
                 Arch.Close();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
             }
         }
 

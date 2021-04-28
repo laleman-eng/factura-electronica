@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Servico Estado FE"
-#define MyAppVerName "Servicio Estado FE 1.0.01"
+#define MyAppVerName "Servicio Estado FE 1.8.1"
 #define MyAppPublisher "VisualD"
 #define MyAppURL "http://www.visuald.cl/"
 #define MyAppExeName "Servicio Estado DTE.exe"
@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\VisualD\Servicio Estado FE
 DefaultGroupName={#MyAppName}
-OutputDir =C:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\Output
+OutputDir =F:\VisualK\factura-electronica\Servicio Estado DTE\Servicio Estado DTE\Output
 OutputBaseFilename=SetupServFE
 Compression=lzma
 SolidCompression=true
@@ -37,7 +37,7 @@ Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:Ad
 [Files]
 Source: bin\Debug\Servicio Estado DTE.exe; DestDir: {app}; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: bin\Debug\SAPbobsCOM90.dll; DestDir: {app}
+;Source: bin\Debug\SAPbobsCOM90.dll; DestDir: {app}
 Source: bin\Debug\Servicio Estado DTE.exe.config; DestDir: {app}
 Source: bin\Debug\Servicio Estado DTE.pdb; DestDir: {app}
 Source: bin\Debug\Config.xml; DestDir: {app}
@@ -45,11 +45,11 @@ Source: bin\Debug\Interop.SAPbobsCOM.dll; DestDir: {app}
 Source: bin\Debug\Newtonsoft.Json.dll; DestDir: {app}
 Source: bin\Debug\instalar servicio.bat; DestDir: {app}
 Source: bin\Debug\desinstalar servicio.bat; DestDir: {app}
-Source: bin\Debug\ServiceStack.Text.dll; DestDir: {app}
+;Source: bin\Debug\ServiceStack.Text.dll; DestDir: {app}
 Source: bin\Debug\Config.txt; DestDir: {app}
 Source: bin\Debug\Datos.exe; DestDir: {app}
 Source: bin\Debug\Datos.pdb; DestDir: {app}
-
+Source: bin\Debug\baretail.exe; DestDir: {app}
 
 [Icons]
 Name: {group}\{#MyAppName}; Filename: {app}\{#MyAppExeName}
