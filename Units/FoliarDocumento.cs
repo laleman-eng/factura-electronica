@@ -781,6 +781,40 @@ namespace Factura_Electronica_VK.FoliarDocumento
                             FLineId = -1;
                             sDocEntry = Convert.ToString(((System.Int32)odt.GetValue("DocEntry", i))).Trim();
 
+                            // consideracion especual para factura deudores posibilidad que sea factura exenta baso en regla de numeracion de documento
+                            if (sDocSubType == "--") 
+                            {
+                                if (GlobalSettings.RunningUnderSQLServer)
+                                    s = @"select T0.DocSubType, SUBSTRING(UPPER(T2.BeginStr), 1, 1) 'Tipo', 
+                                                     SUBSTRING(ISNULL(T2.BeginStr,''), 2, LEN(T2.BeginStr)) 'Inst', 
+                                                     SUBSTRING(ISNULL(T2.BeginStr,''), 2, LEN(T2.BeginStr)) 'TipoDocElect', 
+                                                     T0.CANCELED, T0.isIns
+                                             FROM {1} T0 WITH (NOLOCK)
+                                                JOIN NNM1 T2 WITH (NOLOCK) ON T0.Series = T2.Series 
+                                               WHERE T0.DocEntry = {0}";
+                                else
+                                    s = @"select T0.""DocSubType"", SUBSTRING(UPPER(T2.""BeginStr""), 1, 1) ""Tipo"", 
+                                                     SUBSTRING(IFNULL(T2.""BeginStr"",''), 2, LENGTH(T2.""BeginStr"")) ""Inst"", 
+                                                     SUBSTRING(IFNULL(T2.""BeginStr"",''), 2, LENGTH(T2.""BeginStr"")) ""TipoDocElect"", 
+                                                     T0.""CANCELED"", T0.""isIns""
+                                             FROM ""{1}"" T0
+                                             JOIN ""NNM1"" T2 ON T0.""Series"" = T2.""Series""
+                                            WHERE T0.""DocEntry"" = {0} ";
+                                s = String.Format(s, sDocEntry, "OINV");
+                                oRecordSet.DoQuery(s);
+                                string sDocSubTypeSelect = (System.String)(oRecordSet.Fields.Item("DocSubType").Value);
+                                string TipoDocElectSelect = (System.String)(oRecordSet.Fields.Item("TipoDocElect").Value);
+                                string Tipo = (System.String)(oRecordSet.Fields.Item("Tipo").Value);
+                                string MultiSoc = (System.String)(oRecordSet.Fields.Item("Inst").Value);
+                                string Canceled = (System.String)(oRecordSet.Fields.Item("CANCELED").Value);
+
+                                if (TipoDocElectSelect == "34" && (Tipo == "E" || Tipo == "e"))
+                                {
+                                    sDocSubType = "IE";
+                                    TipoDocElect = "34";
+                                }    
+                            }
+
                             if (bFolioPortal)
                             {
                                 if (ObjType == "13")
